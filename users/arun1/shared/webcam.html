@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        #webcam-feed {
+            width: 640px;
+            height: 480px;
+            background-color: black;
+            margin: 20px auto;
+            border: 2px solid #4e4e7e;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #33FF57;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #captured-photo {
+            margin-top: 20px;
+        }
+        #error-message {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Webcam Feed</h1>
+    <div id="webcam-feed">
+        <video id="video" autoplay></video>
+    </div>
+    <div id="error-message"></div>
+    <div>
+        <button id="capture-photo">Capture Photo</button>
+        <button id="start-record">Start Recording</button>
+        <button id="stop-record" disabled>Stop Recording</button>
+    </div>
+    <div id="captured-photo">
+        <h2>Captured Photo</h2>
+        <canvas id="photo-canvas" style="display: none;"></canvas>
+        <img id="photo-output" src="" alt="Captured Photo">
+    </div>
+    <div id="recorded-video">
+        <h2>Recorded Video</h2>
+        <video id="video-output" controls></video>
+    </div>
+
+    <script>
+        const video = document.getElementById('video');
+        const capturePhotoButton = document.getElementById('capture-photo');
+        const startRecordButton = document.getElementById('start-record');
+        const stopRecordButton = document.getElementById('stop-record');
+        const photoCanvas = document.getElementById('photo-canvas');
+        const photoOutput = document.getElementById('photo-output');
+        const videoOutput = document.getElementById('video-output');
+        const errorMessage = document.getElementById('error-message');
+
+        let mediaStream;
+        let mediaRecorder;
+        let recordedChunks = [];
+
+        // Function to display error messages
+        function showError(message) {
+            errorMessage.textContent = message;
+        }
+
+        // Check if the browser supports getUserMedia
+        function isGetUserMediaSupported() {
+            return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+        }
+
+        // Access the webcam
+        async function startWebcam() {
+            if (!isGetUserMediaSupported()) {
+                showError("Your browser does not support accessing the webcam.");
+                return;
+            }
+
+            try {
+                // Request camera and microphone access
+                mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                video.srcObject = mediaStream;
+
+                // Enable buttons once the webcam is accessible
+                capturePhotoButton.disabled = false;
+                startRecordButton.disabled = false;
+                console.log("Webcam accessed successfully!");
+            } catch (error) {
+                console.error("Error accessing webcam:", error);
+                if (error.name === "NotAllowedError") {
+                    showError("Permission denied. Please allow access to your camera and microphone.");
+                } else if (error.name === "NotFoundError") {
+                    showError("No webcam found. Please ensure your device has a camera.");
+                } else {
+                    showError("Failed to access webcam. Please ensure your camera is available and permissions are granted.");
+                }
+            }
+        }
+
+        // Capture a photo
+        capturePhotoButton.addEventListener('click', () => {
+            photoCanvas.width = video.videoWidth;
+            photoCanvas.height = video.videoHeight;
+            const context = photoCanvas.getContext('2d');
+            context.drawImage(video, 0, 0, photoCanvas.width, photoCanvas.height);
+            photoOutput.src = photoCanvas.toDataURL('image/png');
+            photoOutput.style.display = 'block';
+
+            // Send the photo to the server
+            const photoData = photoCanvas.toDataURL('image/png').split(',')[1];
+            fetch(`/upload_photo/${username}`, {
+                method: 'POST',
+                body: JSON.stringify({ photo: photoData }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Photo uploaded:", data);
+            })
+            .catch(error => {
+                console.error("Error uploading photo:", error);
+            });
+        });
+
+        // Start recording
+        startRecordButton.addEventListener('click', () => {
+            recordedChunks = [];
+            mediaRecorder = new MediaRecorder(mediaStream, { mimeType: 'video/webm' });
+            mediaRecorder.ondataavailable = (event) => {
+                if (event.data.size > 0) {
+                    recordedChunks.push(event.data);
+                }
+            };
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                videoOutput.src = URL.createObjectURL(blob);
+                videoOutput.style.display = 'block';
+
+                // Send the video to the server
+                const formData = new FormData();
+                formData.append('video', blob, 'recorded_video.webm');
+                fetch(`/upload_video/${username}`, {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Video uploaded:", data);
+                })
+                .catch(error => {
+                    console.error("Error uploading video:", error);
+                });
+            };
+            mediaRecorder.start();
+            startRecordButton.disabled = true;
+            stopRecordButton.disabled = false;
+        });
+
+        // Stop recording
+        stopRecordButton.addEventListener('click', () => {
+            mediaRecorder.stop();
+            startRecordButton.disabled = false;
+            stopRecordButton.disabled = true;
+        });
+
+        // Release the camera when the page is closed
+        window.addEventListener('beforeunload', () => {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+            }
+        });
+
+        // Start the webcam feed when the page loads
+        startWebcam();
+    </script>
+</body>
+</html>

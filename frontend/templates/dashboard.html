@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live User Monitoring Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+    <!-- Add sound elements -->
+    <audio id="anomaly-sound" preload="auto">
+        <source src="{{ url_for('static', filename='sounds/anomaly.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="usb-sound" preload="auto">
+        <source src="{{ url_for('static', filename='sounds/usb.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</head>
+
+
+<body>
+    <div class="dashboard-container">
+        <!-- Cybersecurity Heading -->
+        <h1 class="dashboard-title">Insider Threat Detection</h1>
+
+        <!-- Top Section: Network Usage & Alerts -->
+        <div class="top-section">
+            <!-- USB Alerts Section -->
+            <div class="usb-alerts-section">
+                <h2>USB Alerts History</h2>
+                <button onclick="clearUsbAlerts()" class="clear-btn">Clear USB History</button>
+                <div id="usb-alerts-container"></div>
+            </div>
+
+            <!-- Network Usage -->
+            <div class="network-section">
+                <h2>Overall Network Usage</h2>
+                <button onclick="clearNetworkGraph()" class="clear-btn">Clear Network Graph</button>
+                <div id="overall-network-graph-container">
+                    <canvas id="overall-network-graph" width="800" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- Alerts Section -->
+            <div class="alerts-section">
+                <h2>Anomaly Alerts</h2>
+                <div id="alerts-container"></div>
+            </div>
+        </div>
+
+        <!-- Bottom Section: User Monitoring -->
+        <div class="bottom-section">
+            <h2>User Monitoring</h2>
+            <div class="user-grid" id="user-grid">
+                {% for user in users %}
+                    <div class="user-tile" id="user-{{ user[0] }}">
+                        <div>{{ user[1] }}<br>({{ user[2] }})</div>
+                        <div class="user-actions">
+                            {% if user[4] == 0 %}
+                                <button class="accept-btn" onclick="acceptUser('{{ user[0] }}')">Accept</button>
+                                <button class="reject-btn" onclick="rejectUser('{{ user[0] }}')">Reject</button>
+                            {% else %}
+                                <span>Accepted</span>
+                            {% endif %}
+                            <button onclick="viewUserLogs('{{ user[0] }}')">View Logs</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span>Total users: <span id="total-count">{{ users|length }}</span></span>
+                <span>Online: <span id="online-count">0</span></span>
+                <span>Offline: <span id="offline-count">0</span></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const socket = io();
+
+        // Track online users
+        const onlineUsers = new Set();
+
+        // Function to update user counts
+        function updateUserCounts() {
+            const totalUsers = document.querySelectorAll('.user-tile').length;
+            const onlineCount = onlineUsers.size;
+            const offlineCount = totalUsers - onlineCount;
+
+            document.getElementById('total-count').textContent = totalUsers;
+            document.getElementById('online-count').textContent = onlineCount;
+            document.getElementById('offline-count').textContent = offlineCount;
+        }
+
+        // Socket event handlers
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
+
+        socket.on('new_user', (data) => {
+            const userGrid = document.getElementById('user-grid');
+            const userTile = document.createElement('div');
+            userTile.className = 'user-tile';
+            userTile.id = `user-${data.user_id}`;
+            userTile.innerHTML = `${data.pc_name} (${data.platform}) <div class="user-actions"><button class="accept-btn" onclick="acceptUser('${data.user_id}')">Accept</button><button class="reject-btn" onclick="rejectUser('${data.user_id}')">Reject</button><button onclick="viewUserLogs('${data.user_id}')">View Logs</button></div>`;
+            userGrid.appendChild(userTile);
+            updateUserCounts();
+        });
+
+        socket.on('user_accepted', (data) => {
+            document.getElementById(`user-${data.user_id}`).querySelector('.user-actions').innerHTML = "<span>Accepted</span><button onclick=\"viewUserLogs('${data.user_id}')\">View Logs</button>";
+            updateUserCounts();
+        });
+
+        socket.on('user_rejected', (data) => {
+            document.getElementById(`user-${data.user_id}`).remove();
+            onlineUsers.delete(data.user_id);
+            updateUserCounts();
+        });
+
+        socket.on('user_removed', (data) => {
+            document.getElementById(`user-${data.user_id}`).remove();
+            onlineUsers.delete(data.user_id);
+            updateUserCounts();
+        });
+
+        socket.on('user_online', (data) => {
+            onlineUsers.add(data.user_id);
+            updateUserCounts();
+        });
+
+        socket.on('user_offline', (data) => {
+            onlineUsers.delete(data.user_id);
+            updateUserCounts();
+        });
+
+        // Function to clear USB alerts
+        function clearUsbAlerts() {
+            fetch('/clear_usb_alerts', {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('usb-alerts-container').innerHTML = '';
+                    alert("USB alerts history cleared");
+                }
+            });
+        }
+
+        // Socket event handler for USB alerts
+        socket.on('usb_alert', (data) => {
+            // Only add to USB alerts container
+            const usbAlertsContainer = document.getElementById('usb-alerts-container');
+            const usbAlertDiv = document.createElement('div');
+            usbAlertDiv.className = 'usb-alert';
+            usbAlertDiv.textContent = data.message;
+            usbAlertsContainer.appendChild(usbAlertDiv);
+        });
+
+        // Socket event handler for insider threat alerts
+        socket.on('insider_threat_alert', (data) => {
+            const alertsContainer = document.getElementById('alerts-container');
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert';
+            alertDiv.textContent = data.message;
+            alertsContainer.appendChild(alertDiv);
+
+            // Highlight the user tile in light red
+            const userTile = document.getElementById(`user-${data.user_id}`);
+            if (userTile) {
+                userTile.classList.add('anomaly-detected');
+            }
+
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 10000);
+        });
+
+        // Function to accept a user
+        function acceptUser(userId) {
+            fetch(`/accept_user/${userId}`, {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    socket.emit('user_accepted', { user_id: userId });
+                    console.log('User accepted');
+                }
+            });
+        }
+
+        // Function to reject a user
+        function rejectUser(userId) {
+            fetch(`/reject_user/${userId}`, {
+                method: 'POST'
+            }).then(response => {
+                if (response.ok) {
+                    socket.emit('user_rejected', { user_id: userId });
+                    console.log('User rejected');
+                }
+            });
+        }
+
+        // Function to view user logs
+        function viewUserLogs(userId) {
+            window.location.href = `/user_logs/${userId}`;
+        }
+
+        // Initialize the network graph
+        const overallNetworkCtx = document.getElementById('overall-network-graph').getContext('2d');
+        const storedGraphData = JSON.parse(localStorage.getItem('overallNetworkGraphData')) || { labels: [], datasets: [{ data: [] }, { data: [] }] };
+
+        const overallNetworkGraph = new Chart(overallNetworkCtx, {
+            type: 'line',
+            data: {
+                labels: storedGraphData.labels,
+                datasets: [{
+                    label: 'Incoming Traffic (Bytes)',
+                    data: storedGraphData.datasets[0].data,
+                    borderColor: 'blue',
+                    fill: false,
+                    lineTension: 0.1
+                },
+                {
+                    label: 'Outgoing Traffic (Bytes)',
+                    data: storedGraphData.datasets[1].data,
+                    borderColor: 'red',
+                    fill: false,
+                    lineTension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        title: {
+                            display: true,
+                            text: 'Time'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Bytes'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Function to fetch overall network usage
+        function fetchOverallNetworkUsage() {
+            fetch('/overall_network_usage')
+                .then(response => response.json())
+                .then(data => {
+                    const timeNow = Date.now();
+                    const incomingBytes = data.bytes_recv;
+                    const outgoingBytes = data.bytes_sent;
+
+                    // Add new data points
+                    overallNetworkGraph.data.labels.push(timeNow);
+                    overallNetworkGraph.data.datasets[0].data.push(incomingBytes);
+                    overallNetworkGraph.data.datasets[1].data.push(outgoingBytes);
+
+                    // Limit the length of the dataset to 60 (for a minute of data)
+                    if (overallNetworkGraph.data.labels.length > 60) {
+                        overallNetworkGraph.data.labels.shift();
+                        overallNetworkGraph.data.datasets[0].data.shift();
+                        overallNetworkGraph.data.datasets[1].data.shift();
+                    }
+
+                    // Update the chart with new data
+                    overallNetworkGraph.update();
+
+                    // Save graph data to localStorage
+                    localStorage.setItem('overallNetworkGraphData', JSON.stringify({
+                        labels: overallNetworkGraph.data.labels,
+                        datasets: overallNetworkGraph.data.datasets
+                    }));
+                })
+                .catch(err => console.log("Error fetching overall network usage:", err));
+        }
+
+        // Function to clear the network graph
+        function clearNetworkGraph() {
+            overallNetworkGraph.data.labels = [];
+            overallNetworkGraph.data.datasets[0].data = [];
+            overallNetworkGraph.data.datasets[1].data = [];
+            overallNetworkGraph.update();
+            localStorage.removeItem('overallNetworkGraphData');
+            console.log("Network graph cleared.");
+        }
+
+        // Load existing USB alerts on page load
+        window.addEventListener('load', function() {
+            fetch('/get_usb_alerts')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('usb-alerts-container');
+                data.alerts.forEach(alert => {
+                    const div = document.createElement('div');
+                    div.className = 'usb-alert';
+                    div.textContent = alert;
+                    container.appendChild(div);
+                });
+            });
+        });
+
+         // Load sound elements
+         const anomalySound = document.getElementById('anomaly-sound');
+        const usbSound = document.getElementById('usb-sound');
+
+        // Function to play anomaly sound
+        function playAnomalySound() {
+            anomalySound.currentTime = 0; // Rewind to start
+            anomalySound.play().catch(e => console.log("Audio play error:", e));
+        }
+
+        // Function to play USB sound
+        function playUsbSound() {
+            usbSound.currentTime = 0; // Rewind to start
+            usbSound.play().catch(e => console.log("Audio play error:", e));
+        }
+
+        // Socket event handler for USB alerts
+        socket.on('usb_alert', (data) => {
+            // Play USB sound
+            playUsbSound();
+            
+            // Only add to USB alerts container
+            const usbAlertsContainer = document.getElementById('usb-alerts-container');
+            const usbAlertDiv = document.createElement('div');
+            usbAlertDiv.className = 'usb-alert';
+            usbAlertDiv.textContent = data.message;
+            usbAlertsContainer.appendChild(usbAlertDiv);
+        });
+
+        // Socket event handler for insider threat alerts
+        socket.on('insider_threat_alert', (data) => {
+            // Play anomaly sound
+            playAnomalySound();
+            
+            const alertsContainer = document.getElementById('alerts-container');
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert';
+            alertDiv.textContent = data.message;
+            alertsContainer.appendChild(alertDiv);
+
+            // Highlight the user tile in light red
+            const userTile = document.getElementById(`user-${data.user_id}`);
+            if (userTile) {
+                userTile.classList.add('anomaly-detected');
+            }
+
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 10000);
+        });
+
+        // Poll every 5 seconds
+        setInterval(fetchOverallNetworkUsage, 5000);
+    </script>
+</body>
+</html>
