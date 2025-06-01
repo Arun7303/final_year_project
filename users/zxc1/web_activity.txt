@@ -1,0 +1,50 @@
+2025-05-27 11:34:08 | http://10.25.6.251:5000/ | Live User Monitoring Dashboard
+2025-05-27 11:33:02 | http://10.25.6.251:5000/login | Admin Login
+2025-05-27 11:20:02 | https://www.google.com/search?q=is+sqlite+relational+database&oq=is+sql+lite+&gs_lcrp=EgZjaHJvbWUqCQgBEAAYChiABDIGCAAQRRg5MgkIARAAGAoYgAQyCQgCEAAYChiABDIJCAMQABgKGIAEMgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIJCAkQABgKGIAEMgkIChAAGAoYgAQyCQgLEAAYChiABDIJCAwQABgKGIAEMgkIDRAAGAoYgAQyCQgOEAAYChiABNIBCTcxMDNqMGoxOagCDrACAfEFgR8x9Ls9U84&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | is sqlite relational database - Google Search
+2025-05-27 11:14:01 | https://www.google.com/search?q=isolation+forest&oq=isolation+for&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMgYIABBFGDkyDggBEEUYJxg7GIAEGIoFMgwIAhAAGBQYhwIYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgAQyBwgKEAAYgAQyBwgLEAAYgAQyBwgMEAAYgAQyBwgNEAAYgAQyBwgOEAAYgATSAQk2ODI2ajBqMTmoAg6wAgHxBVRFiKxl1D2a8QVURYisZdQ9mg&sourceid=chrome-mobile&ie=UTF-8 | isolation forest - Google Search
+2025-05-27 11:10:15 | https://chatgpt.com/c/6835385e-54b4-800c-b477-d3d9c656174e | Flask App Setup
+2025-05-27 11:10:10 | https://chatgpt.com/ | ChatGPT
+2025-05-27 11:10:10 | https://chat.openai.com/ | ChatGPT
+2025-05-27 10:46:05 | https://web.whatsapp.com/ | (2) WhatsApp
+2025-05-27 10:37:06 | https://mail.google.com/mail/u/1/#inbox | Inbox (581) - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-05-27 10:24:33 | http://10.25.6.251:5000/user_logs/082663aa-cfa1-479b-8b04-e2b81144934c | User Logs - kali
+2025-05-27 10:00:58 | https://www.google.com/search?q=how+is+machine+learning+integrated+with+the+live+log+analytics&oq=how+is+machine+learning+integreated+with+the+live+log+&gs_lcrp=EgZjaHJvbWUqCQgBECEYChigATIGCAAQRRg5MgkIARAhGAoYoAEyCQgCECEYChigATIJCAMQIRgKGKABMgkIBBAhGAoYoAEyCQgFECEYChigATIHCAYQIRiPAjIHCAcQIRiPAtIBCTIwOTQzajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | how is machine learning integrated with the live log analytics - Google Search
+2025-05-27 09:28:24 | https://github.com/Arun7303/final_year_project | Arun7303/final_year_project
+2025-05-27 09:28:17 | https://www.youtube.com/results?search_query=deploy+machine+learning+model+with+live+comparision+ | deploy machine learning model with live comparision - YouTube
+2025-05-27 09:28:15 | https://www.coursera.org/programs/even-semester-january-2025-esc47/my-learning?myLearningTab=COMPLETED | TY - Network and Cloud Security (Jan - June 2025) | Coursera
+2025-05-27 09:28:14 | https://www.netflix.com/browse | Home - Netflix
+2025-05-27 09:28:13 | https://mail.google.com/mail/u/1/#inbox/FMfcgzQbfLcZfTMHqzWQSGNFxfbbfbbc | 22.5.2025: Project Stage 1 ESE Schedule - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-05-27 09:16:44 | http://10.25.6.251:5000/webcam/082663aa-cfa1-479b-8b04-e2b81144934c | Webcam Feed
+2025-05-27 09:09:51 | http://192.168.1.101:5000/ | Live User Monitoring Dashboard
+2025-05-27 09:09:42 | https://www.google.com/search?sca_esv=ad43a62fd8d4007c&sxsrf=AHTn8zoxa7C5par3lvUzUS-ZDmZKPalacg:1747926065646&q=how+to+upload+files+in+github+repository+i+have+mistakenly+deleted+in+my+computer+but+i+want+to+continue+pushing+it+in+the+same+github+repository&spell=1&sa=X&ved=2ahUKEwiK6_GBrLeNAxVVg2MGHfPyBiIQBSgAegQIERAB&biw=1920&bih=930&dpr=1 | how to upload files in github repository i have mistakenly deleted in my computer but i want to continue pushing it in the same github repository - Google Search
+2025-05-27 09:09:41 | https://www.youtube.com/ | YouTube
+2025-05-27 09:09:30 | https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks/home/module/1 | Introduction to Cybersecurity Tools & Cyberattacks - Cybersecurity Insights - Week 1 | Coursera
+2025-05-27 09:09:24 | https://www.coursera.org/account/accomplishments/specialization/VNGPSTVC9LV5 | Coursera | Online Courses & Credentials From Top Educators. Join for Free | Coursera
+2025-05-27 09:09:23 | https://www.coursera.org/account/accomplishments/specialization/certificate/VNGPSTVC9LV5 | Coursera | Online Courses & Credentials From Top Educators. Join for Free | Coursera
+2025-05-27 09:09:23 | https://www.coursera.org/account/accomplishments/specialization/certificate/WZZPOAP3O1V8 | Coursera | Online Courses & Credentials From Top Educators. Join for Free | Coursera
+2025-05-27 08:51:12 | https://www.coursera.org/accomplishments | Coursera | Online Courses From Top Universities. Join for Free
+2025-05-27 08:50:50 | https://www.coursera.org/account/accomplishments/specialization/WZZPOAP3O1V8 | Coursera | Online Courses & Credentials From Top Educators. Join for Free | Coursera
+2025-05-27 08:50:41 | https://www.coursera.org/account/accomplishments/specialization/5QAT222S8E9F | Coursera | Online Courses & Credentials From Top Educators. Join for Free | Coursera
+2025-05-27 08:50:26 | https://www.coursera.org/account/accomplishments/specialization/certificate/5QAT222S8E9F | Coursera | Online Courses & Credentials From Top Educators. Join for Free | Coursera
+2025-05-27 08:49:58 | https://www.coursera.org/programs/even-semester-january-2025-esc47 | TY - Network and Cloud Security (Jan - June 2025) | Coursera
+2025-05-27 08:49:40 | http://10.25.0.1:1000/fgtauth?060927a965b6f578 | Firewall Disclaimer
+2025-05-27 08:49:40 | http://www.gstatic.com/generate_204 | Firewall Disclaimer
+2025-05-27 08:49:38 | http://10.25.0.1:1000/keepalive?0803040702080001 | Firewall Authentication Keepalive Window
+2025-05-27 08:49:38 | http://10.25.0.1:1000/ | 10.25.0.1
+2025-05-27 08:49:35 | http://10.25.0.1:1000/fgtauth?060a2ca26fb29a10 | Firewall Authentication
+2025-05-27 08:48:00 | https://www.coursera.org/api/certificate.v1/pdf/5QAT222S8E9F | 
+2025-05-27 08:47:22 | https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks/home/welcome | Introduction to Cybersecurity Tools & Cyberattacks - Home - Week week | Coursera
+2025-05-27 08:47:22 | https://www.coursera.org/learn/introduction-cybersecurity-cyber-attacks/home | Introduction to Cybersecurity Tools & Cyberattacks - Home - Week week | Coursera
+2025-05-27 08:47:13 | https://www.coursera.org/programs/even-semester-january-2025-esc47/specializations/it-fundamentals-cybersecurity | IT Fundamentals for Cybersecurity | Coursera
+2025-05-27 08:47:01 | https://www.coursera.org/programs/even-semester-january-2025-esc47/specializations/it-fundamentals-cybersecurity?authMode=login | IT Fundamentals for Cybersecurity | Coursera
+2025-05-27 08:46:57 | https://www.coursera.org/programs/even-semester-january-2025-esc47/specializations/it-fundamentals-cybersecurity? | IT Fundamentals for Cybersecurity | Coursera
+2025-05-27 08:14:15 | http://192.168.1.101:5000/user_logs/082663aa-cfa1-479b-8b04-e2b81144934c | User Logs - kali
+2025-05-27 07:59:48 | https://chatgpt.com/c/68352345-a9a0-800c-b701-ea1c93fcc30e | Connect to Wi-Fi
+2025-05-27 07:58:20 | https://chatgpt.com/?model=auto | ChatGPT
+2025-05-27 07:57:38 | https://chat.deepseek.com/a/chat/s/108a45e5-67fa-4ba2-aff0-86c796f7e9b7 | Connect to Wi-Fi
+2025-05-27 07:53:32 | http://192.168.1.101:5000/user_logs/0135c0db-e857-49c4-bfaf-42f382c5d330 | User Logs - kali
+2025-05-27 07:52:59 | http://192.168.1.101:5000/login | Admin Login
+2025-05-27 07:50:44 | https://chat.deepseek.com/ | DeepSeek - Into the Unknown
+2025-05-27 07:50:41 | https://www.deepseek.com/ | DeepSeek | 深度求索
+2025-05-27 07:50:36 | https://chatgpt.com/c/68351cd8-bf78-800c-8e98-53d3941a3817 | Module 1 Cybersecurity Overview
+2025-05-27 07:46:21 | https://chat.deepseek.com/a/chat/s/9d6cc81f-01c1-408f-842b-8b57fd91aa99 | DeepSeek - Into the Unknown

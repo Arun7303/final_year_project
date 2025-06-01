@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-# Load ML model
+
 try:
     model = joblib.load('anomaly_detection_model.pkl')
     logger.info("Anomaly detection model loaded successfully")

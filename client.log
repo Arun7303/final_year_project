@@ -1529,3 +1529,207 @@
 2025-05-24 23:54:17,161 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
 2025-05-24 23:54:19,247 - INFO - Network activity reported successfully
 2025-05-24 23:54:19,462 - INFO - System logs updated
+2025-05-26 21:54:30,393 - INFO - User accepted by admin. Starting monitoring...
+2025-05-26 21:54:30,399 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:54:30,531 - INFO - USB monitoring started for Linux
+2025-05-26 21:54:30,537 - INFO - Downloading file: my.txt
+2025-05-26 21:54:30,547 - INFO - Downloading file: bg.png
+2025-05-26 21:54:30,780 - INFO - System logs updated
+2025-05-26 21:54:30,791 - INFO - Network activity reported successfully
+2025-05-26 21:54:40,399 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:54:40,962 - INFO - System logs updated
+2025-05-26 21:54:40,975 - INFO - Network activity reported successfully
+2025-05-26 21:54:50,400 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:54:51,122 - INFO - System logs updated
+2025-05-26 21:54:51,143 - INFO - Network activity reported successfully
+2025-05-26 21:55:00,400 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:55:01,294 - INFO - System logs updated
+2025-05-26 21:55:01,305 - INFO - Network activity reported successfully
+2025-05-26 21:55:10,401 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:55:11,501 - INFO - System logs updated
+2025-05-26 21:55:11,525 - INFO - Network activity reported successfully
+2025-05-26 21:55:20,401 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:55:21,622 - INFO - System logs updated
+2025-05-26 21:55:21,631 - INFO - Network activity reported successfully
+2025-05-26 21:55:30,402 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:55:30,566 - INFO - Downloading file: my.txt
+2025-05-26 21:55:30,571 - INFO - Downloading file: bg.png
+2025-05-26 21:55:31,764 - INFO - System logs updated
+2025-05-26 21:55:31,794 - INFO - Network activity reported successfully
+2025-05-26 21:55:40,403 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:55:41,872 - INFO - System logs updated
+2025-05-26 21:55:41,894 - INFO - Network activity reported successfully
+2025-05-26 21:55:50,403 - ERROR - Error reporting web activity: expected str, bytes or os.PathLike object, not NoneType
+2025-05-26 21:55:51,874 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.101', port=5000): Max retries exceeded with url: /user_details/082663aa-cfa1-479b-8b04-e2b81144934c (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fda87641f20>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-05-26 21:55:51,941 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.101', port=5000): Max retries exceeded with url: /report_network_activity/082663aa-cfa1-479b-8b04-e2b81144934c (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fda876427a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-05-27 07:53:15,268 - INFO - User accepted by admin. Starting monitoring...
+2025-05-27 07:53:15,338 - INFO - USB monitoring started for Linux
+2025-05-27 07:53:15,343 - INFO - Downloading file: my.txt
+2025-05-27 07:53:15,350 - INFO - Downloading file: bg.png
+2025-05-27 07:53:15,396 - INFO - Web activity reported successfully
+2025-05-27 07:53:15,588 - INFO - System logs updated
+2025-05-27 07:53:15,604 - INFO - Network activity reported successfully
+2025-05-27 07:53:25,678 - INFO - System logs updated
+2025-05-27 07:53:35,773 - INFO - System logs updated
+2025-05-27 07:53:45,852 - INFO - System logs updated
+2025-05-27 07:53:55,932 - INFO - System logs updated
+2025-05-27 07:54:06,013 - INFO - System logs updated
+2025-05-27 07:54:15,371 - INFO - Downloading file: my.txt
+2025-05-27 07:54:15,376 - INFO - Downloading file: bg.png
+2025-05-27 07:54:16,089 - INFO - System logs updated
+2025-05-27 07:54:26,171 - INFO - System logs updated
+2025-05-27 07:54:36,263 - INFO - System logs updated
+2025-05-27 07:54:46,357 - INFO - System logs updated
+2025-05-27 07:54:56,434 - INFO - System logs updated
+2025-05-27 07:55:06,512 - INFO - System logs updated
+2025-05-27 07:55:15,394 - INFO - Downloading file: my.txt
+2025-05-27 07:55:15,399 - INFO - Downloading file: bg.png
+2025-05-27 07:55:16,590 - INFO - System logs updated
+2025-05-27 07:55:26,672 - INFO - System logs updated
+2025-05-27 07:55:36,835 - INFO - System logs updated
+2025-05-27 07:55:46,941 - INFO - System logs updated
+2025-05-27 07:55:57,031 - INFO - System logs updated
+2025-05-27 07:56:07,125 - INFO - System logs updated
+2025-05-27 07:56:15,419 - INFO - Downloading file: my.txt
+2025-05-27 07:56:15,425 - INFO - Downloading file: bg.png
+2025-05-27 07:56:17,214 - INFO - System logs updated
+2025-05-27 07:56:27,307 - INFO - System logs updated
+2025-05-27 07:56:37,464 - INFO - System logs updated
+2025-05-27 07:56:47,555 - INFO - System logs updated
+2025-05-27 07:56:57,642 - INFO - System logs updated
+2025-05-27 07:57:07,725 - INFO - System logs updated
+2025-05-27 07:57:15,445 - INFO - Downloading file: my.txt
+2025-05-27 07:57:15,451 - INFO - Downloading file: bg.png
+2025-05-27 07:57:17,830 - INFO - System logs updated
+2025-05-27 07:57:27,917 - INFO - System logs updated
+2025-05-27 07:57:38,076 - INFO - System logs updated
+2025-05-27 07:57:48,155 - INFO - System logs updated
+2025-05-27 07:57:58,241 - INFO - System logs updated
+2025-05-27 07:58:08,389 - INFO - System logs updated
+2025-05-27 07:58:15,434 - INFO - Web activity reported successfully
+2025-05-27 07:58:15,471 - INFO - Downloading file: my.txt
+2025-05-27 07:58:15,476 - INFO - Downloading file: bg.png
+2025-05-27 07:58:15,671 - INFO - Network activity reported successfully
+2025-05-27 07:58:18,477 - INFO - System logs updated
+2025-05-27 07:58:28,560 - INFO - System logs updated
+2025-05-27 07:58:38,643 - INFO - System logs updated
+2025-05-27 07:58:48,729 - INFO - System logs updated
+2025-05-27 07:58:58,812 - INFO - System logs updated
+2025-05-27 07:59:08,955 - INFO - System logs updated
+2025-05-27 08:10:44,164 - INFO - User accepted by admin. Starting monitoring...
+2025-05-27 08:10:44,231 - INFO - USB monitoring started for Linux
+2025-05-27 08:10:44,237 - INFO - Downloading file: my.txt
+2025-05-27 08:10:44,245 - INFO - Downloading file: bg.png
+2025-05-27 08:10:44,367 - INFO - Web activity reported successfully
+2025-05-27 08:10:44,497 - INFO - System logs updated
+2025-05-27 08:10:44,511 - INFO - Network activity reported successfully
+2025-05-27 08:10:54,668 - INFO - System logs updated
+2025-05-27 08:11:04,742 - INFO - System logs updated
+2025-05-27 08:11:14,816 - INFO - System logs updated
+2025-05-27 08:11:24,889 - INFO - System logs updated
+2025-05-27 08:11:34,967 - INFO - System logs updated
+2025-05-27 08:11:36,461 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:11:36,475 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:11:40,223 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:11:40,236 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:11:44,266 - INFO - Downloading file: my.txt
+2025-05-27 08:11:44,271 - INFO - Downloading file: bg.png
+2025-05-27 08:11:45,048 - INFO - System logs updated
+2025-05-27 08:11:45,932 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:11:45,946 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:11:55,125 - INFO - System logs updated
+2025-05-27 08:12:02,303 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:12:02,318 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:12:05,223 - INFO - System logs updated
+2025-05-27 08:12:11,533 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:12:11,547 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:12:15,026 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:12:15,037 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:12:15,297 - INFO - System logs updated
+2025-05-27 08:12:21,384 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:12:21,400 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:12:25,378 - INFO - System logs updated
+2025-05-27 08:12:35,449 - INFO - System logs updated
+2025-05-27 08:12:36,651 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
+2025-05-27 08:12:36,668 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
+2025-05-27 08:12:44,290 - INFO - Downloading file: my.txt
+2025-05-27 08:12:44,295 - INFO - Downloading file: bg.png
+2025-05-27 08:12:45,531 - INFO - System logs updated
+2025-05-27 08:12:55,618 - INFO - System logs updated
+2025-05-27 08:13:05,709 - INFO - System logs updated
+2025-05-27 08:13:15,814 - INFO - System logs updated
+2025-05-27 08:13:25,916 - INFO - System logs updated
+2025-05-27 08:13:36,004 - INFO - System logs updated
+2025-05-27 08:13:44,313 - INFO - Downloading file: my.txt
+2025-05-27 08:13:44,319 - INFO - Downloading file: bg.png
+2025-05-27 08:13:46,093 - INFO - System logs updated
+2025-05-27 08:13:56,198 - INFO - System logs updated
+2025-05-27 08:14:06,287 - INFO - System logs updated
+2025-05-27 08:14:16,439 - INFO - System logs updated
+2025-05-27 08:14:26,519 - INFO - System logs updated
+2025-05-27 08:14:36,608 - INFO - System logs updated
+2025-05-27 08:14:44,339 - INFO - Downloading file: my.txt
+2025-05-27 08:14:44,349 - INFO - Downloading file: bg.png
+2025-05-27 08:14:46,610 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.101', port=5000): Max retries exceeded with url: /user_details/082663aa-cfa1-479b-8b04-e2b81144934c (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcfc09ca250>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-05-27 09:14:42,252 - INFO - User accepted by admin. Starting monitoring...
+2025-05-27 09:14:42,348 - INFO - USB monitoring started for Linux
+2025-05-27 09:14:42,352 - INFO - Downloading file: my.txt
+2025-05-27 09:14:42,359 - INFO - Downloading file: bg.png
+2025-05-27 09:14:42,398 - INFO - Web activity reported successfully
+2025-05-27 09:14:42,551 - INFO - System logs updated
+2025-05-27 09:14:42,563 - INFO - Network activity reported successfully
+2025-05-27 09:14:52,629 - INFO - System logs updated
+2025-05-27 09:15:02,750 - INFO - System logs updated
+2025-05-27 09:15:12,827 - INFO - System logs updated
+2025-05-27 09:15:22,903 - INFO - System logs updated
+2025-05-27 09:15:32,969 - INFO - System logs updated
+2025-05-27 09:15:42,378 - INFO - Downloading file: my.txt
+2025-05-27 09:15:42,384 - INFO - Downloading file: bg.png
+2025-05-27 09:15:43,037 - INFO - System logs updated
+2025-05-27 09:15:53,105 - INFO - System logs updated
+2025-05-27 09:16:03,176 - INFO - System logs updated
+2025-05-27 09:16:13,317 - INFO - System logs updated
+2025-05-27 09:16:23,454 - INFO - System logs updated
+2025-05-27 09:16:33,545 - INFO - System logs updated
+2025-05-27 09:16:42,401 - INFO - Downloading file: my.txt
+2025-05-27 09:16:42,405 - INFO - Downloading file: bg.png
+2025-05-27 09:16:43,624 - INFO - System logs updated
+2025-05-27 09:16:53,708 - INFO - System logs updated
+2025-05-27 11:34:03,097 - INFO - User added successfully. Waiting for admin acceptance...
+2025-05-27 11:34:03,103 - INFO - Waiting for admin acceptance...
+2025-05-27 11:34:08,110 - INFO - Waiting for admin acceptance...
+2025-05-27 11:34:13,115 - INFO - Waiting for admin acceptance...
+2025-05-27 11:34:18,122 - INFO - Waiting for admin acceptance...
+2025-05-27 11:34:23,126 - INFO - User accepted by admin. Starting monitoring...
+2025-05-27 11:34:23,181 - INFO - USB monitoring started for Linux
+2025-05-27 11:34:23,230 - INFO - Web activity reported successfully
+2025-05-27 11:34:23,371 - INFO - System logs updated
+2025-05-27 11:34:23,379 - INFO - Network activity reported successfully
+2025-05-27 11:34:33,463 - INFO - System logs updated
+2025-05-27 11:34:43,529 - INFO - System logs updated
+2025-05-27 11:34:53,661 - INFO - System logs updated
+2025-05-27 11:35:03,724 - INFO - System logs updated
+2025-05-27 11:35:13,786 - INFO - System logs updated
+2025-05-27 11:35:23,849 - INFO - System logs updated
+2025-05-27 11:35:33,937 - INFO - System logs updated
+2025-05-27 11:35:44,021 - INFO - System logs updated
+2025-05-27 11:35:54,099 - INFO - System logs updated
+2025-05-27 11:36:04,183 - INFO - System logs updated
+2025-05-27 11:36:14,261 - INFO - System logs updated
+2025-05-27 11:36:24,350 - INFO - System logs updated
+2025-05-27 11:36:34,437 - INFO - System logs updated
+2025-05-27 11:36:44,515 - INFO - System logs updated
+2025-05-27 11:36:54,590 - INFO - System logs updated
+2025-05-27 11:37:04,667 - INFO - System logs updated
+2025-05-27 11:37:14,742 - INFO - System logs updated
+2025-05-27 11:37:24,820 - INFO - System logs updated
+2025-05-27 11:37:34,898 - INFO - System logs updated
+2025-05-27 11:37:44,975 - INFO - System logs updated
+2025-05-27 11:37:55,050 - INFO - System logs updated
+2025-05-27 11:38:05,135 - INFO - System logs updated
+2025-05-27 11:38:15,215 - INFO - System logs updated
+2025-05-27 11:38:25,279 - INFO - System logs updated
+2025-05-27 11:38:35,350 - INFO - System logs updated
+2025-05-27 11:38:45,430 - INFO - System logs updated
+2025-05-27 11:38:55,516 - INFO - System logs updated
+2025-05-27 11:39:05,593 - INFO - System logs updated

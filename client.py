@@ -36,8 +36,8 @@ else:
         print("Warning: pyudev not installed. USB monitoring won't work on Linux.")
 
 # Configuration
-SERVER_URL = "http://192.168.1.101:5000"  # Replace with actual server IP
-REPORT_INTERVAL = 10  # 5 minutes for web activity reports
+SERVER_URL = "http://10.25.6.251:5000"  # Replace with actual server IP
+REPORT_INTERVAL = 300  # 5 minutes for web activity reports
 LOG_UPDATE_INTERVAL = 10  # 10 seconds for regular logs
 FILE_SYNC_INTERVAL = 60  # 1 minute for file sync
 
@@ -338,16 +338,19 @@ def get_browser_history():
     history = []
     browsers = {
         "chrome": {
-            "windows": os.path.join(os.getenv('LOCALAPPDATA'), 'Google', 'Chrome', 'User Data', 'Default', 'History'),
-            "linux": os.path.expanduser("~/.config/google-chrome/Default/History")
+            "windows": os.path.join(os.getenv('LOCALAPPDATA', ''), 'Google', 'Chrome', 'User Data', 'Default', 'History'),
+            "linux": os.path.expanduser("~/.config/google-chrome/Default/History"),
+            "darwin": os.path.expanduser("~/Library/Application Support/Google/Chrome/Default/History")
         },
         "firefox": {
-            "linux": os.path.expanduser("~/.mozilla/firefox")
+            "windows": os.path.join(os.getenv('APPDATA', ''), 'Mozilla', 'Firefox', 'Profiles'),
+            "linux": os.path.expanduser("~/.mozilla/firefox"),
+            "darwin": os.path.expanduser("~/Library/Application Support/Firefox/Profiles")
         }
     }
 
     def fetch_chrome_history(db_path):
-        if os.path.exists(db_path):
+        if db_path and os.path.exists(db_path):
             try:
                 temp_db = db_path + "_temp"
                 shutil.copy2(db_path, temp_db)
@@ -366,16 +369,58 @@ def get_browser_history():
                         'time': datetime.fromtimestamp(row[2]/1000000-11644473600).strftime('%Y-%m-%d %H:%M:%S')
                     })
                 conn.close()
-                os.remove(temp_db)
+                if os.path.exists(temp_db):
+                    os.remove(temp_db)
             except Exception as e:
                 logging.error(f"Error fetching Chrome history: {e}")
 
-    # Chrome on Windows
-    if platform.system() == 'Windows':
+    def fetch_firefox_history(profile_path):
+        if profile_path and os.path.exists(profile_path):
+            try:
+                # Find the latest profile
+                profiles = [d for d in os.listdir(profile_path) 
+                          if os.path.isdir(os.path.join(profile_path, d)) and d.endswith('.default')]
+                if not profiles:
+                    return
+                    
+                latest_profile = profiles[0]
+                db_path = os.path.join(profile_path, latest_profile, 'places.sqlite')
+                
+                if os.path.exists(db_path):
+                    temp_db = db_path + "_temp"
+                    shutil.copy2(db_path, temp_db)
+                    conn = sqlite3.connect(temp_db)
+                    cursor = conn.cursor()
+                    cursor.execute("""
+                        SELECT url, title, last_visit_date 
+                        FROM moz_places 
+                        JOIN moz_historyvisits ON moz_places.id = moz_historyvisits.place_id 
+                        ORDER BY last_visit_date DESC 
+                        LIMIT 50
+                    """)
+                    for row in cursor.fetchall():
+                        history.append({
+                            'url': row[0],
+                            'title': row[1],
+                            'time': datetime.fromtimestamp(row[2]/1000000).strftime('%Y-%m-%d %H:%M:%S')
+                        })
+                    conn.close()
+                    if os.path.exists(temp_db):
+                        os.remove(temp_db)
+            except Exception as e:
+                logging.error(f"Error fetching Firefox history: {e}")
+
+    # Try Chrome first
+    system = platform.system().lower()
+    if system == 'windows':
         fetch_chrome_history(browsers["chrome"]["windows"])
-    # Chrome on Linux
-    elif platform.system() == 'Linux':
+        fetch_firefox_history(browsers["firefox"]["windows"])
+    elif system == 'linux':
         fetch_chrome_history(browsers["chrome"]["linux"])
+        fetch_firefox_history(browsers["firefox"]["linux"])
+    elif system == 'darwin':  # macOS
+        fetch_chrome_history(browsers["chrome"]["darwin"])
+        fetch_firefox_history(browsers["firefox"]["darwin"])
     
     return history
 
@@ -383,7 +428,7 @@ def get_downloads():
     downloads = []
     try:
         if platform.system() == 'Windows':
-            downloads_path = os.path.join(os.getenv('USERPROFILE'), 'Downloads')
+            downloads_path = os.path.join(os.getenv('USERPROFILE', ''), 'Downloads')
         else:
             downloads_path = os.path.expanduser('~/Downloads')
         
@@ -414,6 +459,11 @@ def report_web_activity(user_id, username):
     while True:
         try:
             activity = collect_web_activity(username)
+            if not activity.get("visited_sites") and not activity.get("downloaded_files"):
+                logging.info("No web activity to report")
+                time.sleep(REPORT_INTERVAL)
+                continue
+                
             resp = requests.post(
                 f"{SERVER_URL}/report_web_activity/{user_id}",
                 json=activity
