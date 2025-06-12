@@ -1733,3 +1733,566 @@
 2025-05-27 11:38:45,430 - INFO - System logs updated
 2025-05-27 11:38:55,516 - INFO - System logs updated
 2025-05-27 11:39:05,593 - INFO - System logs updated
+2025-06-07 18:48:03,664 - INFO - User accepted by admin. Starting monitoring...
+2025-06-07 18:48:03,768 - INFO - USB monitoring started for Linux
+2025-06-07 18:48:03,772 - INFO - Downloading file: my.txt
+2025-06-07 18:48:03,780 - INFO - Downloading file: bg.png
+2025-06-07 18:48:03,836 - INFO - Web activity reported successfully
+2025-06-07 18:48:04,013 - INFO - System logs updated
+2025-06-07 18:48:04,024 - INFO - Network activity reported successfully
+2025-06-07 18:48:14,100 - INFO - System logs updated
+2025-06-07 18:48:24,298 - INFO - System logs updated
+2025-06-07 18:48:33,874 - INFO - Web activity reported successfully
+2025-06-07 18:48:34,070 - INFO - Network activity reported successfully
+2025-06-07 18:48:34,386 - INFO - System logs updated
+2025-06-07 18:48:44,494 - INFO - System logs updated
+2025-06-07 18:48:54,584 - INFO - System logs updated
+2025-06-07 19:47:52,610 - INFO - User accepted by admin. Starting monitoring...
+2025-06-07 19:47:52,684 - INFO - USB monitoring started for Linux
+2025-06-07 19:47:52,691 - INFO - Downloading file: my.txt
+2025-06-07 19:47:52,697 - INFO - Downloading file: bg.png
+2025-06-07 19:47:52,740 - INFO - Web activity reported successfully
+2025-06-07 19:47:52,918 - INFO - Network activity reported successfully
+2025-06-07 19:47:52,952 - INFO - System logs updated
+2025-06-07 19:48:03,033 - INFO - System logs updated
+2025-06-07 19:48:13,113 - INFO - System logs updated
+2025-06-07 19:48:22,780 - INFO - Web activity reported successfully
+2025-06-07 19:48:22,956 - INFO - Network activity reported successfully
+2025-06-07 19:48:23,195 - INFO - System logs updated
+2025-06-07 20:14:26,385 - INFO - User accepted by admin. Starting monitoring...
+2025-06-07 20:14:26,453 - INFO - USB monitoring started for Linux
+2025-06-07 20:14:26,456 - INFO - Downloading file: my.txt
+2025-06-07 20:14:26,462 - INFO - Downloading file: bg.png
+2025-06-07 20:14:26,568 - INFO - Web activity reported successfully
+2025-06-07 20:14:26,668 - INFO - System logs updated
+2025-06-07 20:14:26,681 - INFO - Network activity reported successfully
+2025-06-07 20:14:36,775 - INFO - System logs updated
+2025-06-07 20:14:46,855 - INFO - System logs updated
+2025-06-07 20:14:56,612 - INFO - Web activity reported successfully
+2025-06-07 20:14:56,729 - INFO - Network activity reported successfully
+2025-06-07 20:14:56,947 - INFO - System logs updated
+2025-06-07 20:35:14,256 - INFO - User accepted by admin. Starting monitoring...
+2025-06-07 20:35:14,265 - INFO - USB monitoring started for Linux
+2025-06-07 20:35:14,334 - INFO - Downloading file: my.txt
+2025-06-07 20:35:14,342 - INFO - Downloading file: bg.png
+2025-06-07 20:35:14,386 - INFO - Web activity reported successfully
+2025-06-07 20:35:14,575 - INFO - System logs updated
+2025-06-07 20:35:14,588 - INFO - Network activity reported successfully
+2025-06-07 20:35:24,584 - ERROR - User no longer accepted. Exiting...
+2025-06-07 20:35:48,378 - ERROR - Invalid admin password
+2025-06-07 20:36:05,856 - INFO - User added successfully. Waiting for admin acceptance...
+2025-06-07 20:36:05,862 - INFO - Waiting for admin acceptance...
+2025-06-07 20:36:10,868 - INFO - Waiting for admin acceptance...
+2025-06-07 20:36:15,874 - INFO - User accepted by admin. Starting monitoring...
+2025-06-07 20:36:15,950 - INFO - USB monitoring started for Linux
+2025-06-07 20:36:15,996 - INFO - Web activity reported successfully
+2025-06-07 20:36:16,146 - INFO - Network activity reported successfully
+2025-06-07 20:36:16,184 - INFO - System logs updated
+2025-06-07 20:36:26,272 - INFO - System logs updated
+2025-06-07 20:36:36,364 - INFO - System logs updated
+2025-06-07 20:36:46,046 - INFO - Web activity reported successfully
+2025-06-07 20:36:46,205 - INFO - Network activity reported successfully
+2025-06-07 20:36:46,444 - INFO - System logs updated
+2025-06-07 20:36:56,522 - INFO - System logs updated
+2025-06-08 06:33:19,918 - ERROR - Failed to add user.
+2025-06-08 06:33:29,475 - INFO - User accepted by admin. Starting monitoring...
+2025-06-08 06:33:29,542 - INFO - USB monitoring started for Linux
+2025-06-08 06:33:29,666 - ERROR - Failed to report web activity: {
+  "error": "table file_downloads has no column named path"
+}
+
+2025-06-08 06:33:29,733 - INFO - System logs updated
+2025-06-08 06:33:29,750 - INFO - Network activity reported successfully
+2025-06-08 06:33:39,843 - INFO - System logs updated
+2025-06-08 06:33:50,008 - INFO - System logs updated
+2025-06-08 06:33:59,708 - ERROR - Failed to report web activity: {
+  "error": "table file_downloads has no column named path"
+}
+
+2025-06-08 06:33:59,800 - INFO - Network activity reported successfully
+2025-06-08 06:34:00,084 - INFO - System logs updated
+2025-06-08 06:38:08,207 - ERROR - Invalid admin password
+2025-06-08 06:38:22,630 - ERROR - Failed to add user.
+2025-06-08 06:38:41,487 - INFO - User accepted by admin. Starting monitoring...
+2025-06-08 06:38:41,558 - INFO - USB monitoring started for Linux
+2025-06-08 06:38:41,611 - ERROR - Failed to report web activity: <!doctype html>
+<html lang=en>
+  <head>
+    <title>UnboundLocalError: cannot access local variable &#39;conn_online&#39; where it is not associated with a value
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = false,
+          EVALEX_TRUSTED = false,
+          SECRET = "Vq1PIYz23l81nPDC899M";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>UnboundLocalError</h1>
+<div class="detail">
+  <p class="errormsg">UnboundLocalError: cannot access local variable &#39;conn_online&#39; where it is not associated with a value
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-140544843655552">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py"</cite>,
+      line <em class="line">1536</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843655072">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask_socketio/__init__.py"</cite>,
+      line <em class="line">42</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                         </span>socketio_path=socketio_path)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>def __call__(self, environ, start_response):</pre>
+<pre class="line before"><span class="ws">        </span>environ = environ.copy()</pre>
+<pre class="line before"><span class="ws">        </span>environ[&#39;flask.app&#39;] = self.flask_app</pre>
+<pre class="line current"><span class="ws">        </span>return super().__call__(environ, start_response)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>class _ManagedSession(dict, SessionMixin):</pre>
+<pre class="line after"><span class="ws">    </span>&#34;&#34;&#34;This class is used for user sessions that are managed by</pre>
+<pre class="line after"><span class="ws">    </span>Flask-SocketIO. It is simple dict, expanded with the Flask session</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843655232">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/engineio/middleware.py"</cite>,
+      line <em class="line">74</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span>&#39;200 OK&#39;,</pre>
+<pre class="line before"><span class="ws">                    </span>[(&#39;Content-Type&#39;, static_file[&#39;content_type&#39;])])</pre>
+<pre class="line before"><span class="ws">                </span>with open(static_file[&#39;filename&#39;], &#39;rb&#39;) as f:</pre>
+<pre class="line before"><span class="ws">                    </span>return [f.read()]</pre>
+<pre class="line before"><span class="ws">            </span>elif self.wsgi_app is not None:</pre>
+<pre class="line current"><span class="ws">                </span>return self.wsgi_app(environ, start_response)
+<span class="ws">                </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>return self.not_found(start_response)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def not_found(self, start_response):</pre>
+<pre class="line after"><span class="ws">        </span>start_response(&#34;404 Not Found&#34;, [(&#39;Content-Type&#39;, &#39;text/plain&#39;)])</pre>
+<pre class="line after"><span class="ws">        </span>return [b&#39;Not Found&#39;]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843654912">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py"</cite>,
+      line <em class="line">1514</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843655712">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py"</cite>,
+      line <em class="line">1511</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843656032">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py"</cite>,
+      line <em class="line">919</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)
+<span class="ws">            </span>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843656192">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py"</cite>,
+      line <em class="line">917</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()
+<span class="ws">                </span>     ^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843656352">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py"</cite>,
+      line <em class="line">902</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140544843656512">
+  <h4>File <cite class="filename">"/home/arun/Desktop/model1_final/frontend/app.py"</cite>,
+      line <em class="line">578</em>,
+      in <code class="function">report_web_activity</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">        </span>logger.error(f&#34;Error processing web activity: {e}&#34;)</pre>
+<pre class="line before"><span class="ws">        </span>return jsonify({&#34;error&#34;: str(e)}), 500</pre>
+<pre class="line before"><span class="ws">    </span>finally:</pre>
+<pre class="line before"><span class="ws">        </span>conn_web.close()</pre>
+<pre class="line current"><span class="ws">        </span>conn_online.close()
+<span class="ws">        </span>^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>@app.route(&#34;/report_network_activity/&lt;user_id&gt;&#34;, methods=[&#34;POST&#34;])</pre>
+<pre class="line after"><span class="ws"></span>def report_network_activity(user_id):</pre>
+<pre class="line after"><span class="ws">    </span>try:</pre>
+<pre class="line after"><span class="ws">        </span>data = request.json</pre></div>
+</div>
+</ul>
+  <blockquote>UnboundLocalError: cannot access local variable &#39;conn_online&#39; where it is not associated with a value
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py&#34;, line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask_socketio/__init__.py&#34;, line 42, in __call__
+    return super().__call__(environ, start_response)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/engineio/middleware.py&#34;, line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py&#34;, line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py&#34;, line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py&#34;, line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py&#34;, line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py&#34;, line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File &#34;/home/arun/Desktop/model1_final/frontend/app.py&#34;, line 578, in report_web_activity
+    conn_online.close()
+    ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable &#39;conn_online&#39; where it is not associated with a value
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask_socketio/__init__.py", line 42, in __call__
+    return super().__call__(environ, start_response)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/engineio/middleware.py", line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/arun/Desktop/model1_final/myenv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/arun/Desktop/model1_final/frontend/app.py", line 578, in report_web_activity
+    conn_online.close()
+    ^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'conn_online' where it is not associated with a value
+
+
+-->
+
+2025-06-08 06:38:41,828 - INFO - System logs updated
+2025-06-08 06:38:41,834 - ERROR - Failed to report network activity: {
+  "error": "no such table: network_activity"
+}
+
+2025-06-08 06:38:51,917 - INFO - System logs updated
+2025-06-08 06:39:01,920 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2be0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:11,637 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab27a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:11,873 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2360>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:11,922 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2e00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:21,924 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3020>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:31,927 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:41,559 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:41,659 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3790>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:41,910 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3790>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:41,929 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:39:51,931 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:01,934 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3020>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:11,680 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2f10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:11,936 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2360>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:11,948 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab27a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:21,938 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2be0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:31,941 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab38a0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:41,561 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3ac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:41,700 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3df0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:41,942 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:41,990 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:40:51,944 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3ce0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:01,945 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3bd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:11,727 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2be0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:11,947 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:12,016 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:21,948 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:31,949 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2e00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:41,562 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:41,756 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:41,951 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:42,052 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:41:51,952 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:01,954 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:11,775 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3020>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:11,955 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:12,079 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:21,957 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:31,958 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2be0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:41,564 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3bd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:41,795 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3ac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:41,959 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:42,108 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:42:51,961 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3ac0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:01,962 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3bd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:11,818 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab39b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:11,964 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:12,147 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:21,966 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:31,967 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3020>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:41,565 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:41,842 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3350>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:41,969 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:42,186 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:43:51,970 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3350>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:01,972 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:11,863 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2e00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:11,974 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:12,228 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:21,978 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:31,980 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab39b0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:41,570 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3bd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:41,887 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3ce0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:41,985 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:42,262 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:44:51,987 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3ce0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:45:01,988 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab3bd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:45:11,907 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2be0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:45:11,990 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:45:12,300 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:45:21,992 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5566ab2470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:57:19,623 - INFO - User added successfully. Waiting for admin acceptance...
+2025-06-08 06:57:19,630 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:24,634 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:29,641 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:34,647 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:39,654 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:44,660 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:49,665 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:54,671 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:57:59,678 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:58:04,685 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:58:09,691 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:58:14,699 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:58:19,706 - ERROR - Error fetching user details. Status: 500
+2025-06-08 06:58:24,708 - ERROR - Error checking acceptance status: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/fdad29f4-e4f5-4ca9-97a5-1f4118502bae (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f02a02d5bf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:58:29,710 - ERROR - Error checking acceptance status: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/fdad29f4-e4f5-4ca9-97a5-1f4118502bae (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f02a02d6580>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:58:34,713 - ERROR - Error checking acceptance status: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/fdad29f4-e4f5-4ca9-97a5-1f4118502bae (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f02a02d6250>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:58:39,717 - ERROR - Error checking acceptance status: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/fdad29f4-e4f5-4ca9-97a5-1f4118502bae (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f02a02d6470>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 06:58:44,718 - ERROR - Error checking acceptance status: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/fdad29f4-e4f5-4ca9-97a5-1f4118502bae (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f02a02d5ae0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 07:14:12,255 - INFO - User accepted by admin. Starting monitoring...
+2025-06-08 07:14:12,345 - INFO - USB monitoring started for Linux
+2025-06-08 07:14:12,370 - ERROR - Failed to report web activity: {
+  "error": "no such table: web_activity"
+}
+
+2025-06-08 07:14:12,521 - ERROR - Failed to report network activity: {
+  "error": "no such table: network_activity"
+}
+
+2025-06-08 07:14:12,525 - INFO - System logs updated
+2025-06-08 07:14:22,606 - INFO - System logs updated
+2025-06-08 07:14:32,698 - INFO - System logs updated
+2025-06-08 07:14:42,408 - ERROR - Failed to report web activity: {
+  "error": "no such table: web_activity"
+}
+
+2025-06-08 07:14:42,577 - ERROR - Failed to report network activity: {
+  "error": "no such table: network_activity"
+}
+
+2025-06-08 07:14:42,796 - INFO - System logs updated
+2025-06-08 07:14:52,867 - INFO - System logs updated
+2025-06-08 07:15:02,983 - INFO - System logs updated
+2025-06-08 07:15:12,348 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /get_file_access/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f487af8b130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 07:15:12,438 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_web_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f487af8af10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 07:15:12,619 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /report_network_activity/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f487af8b020>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 07:15:12,986 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.104', port=5000): Max retries exceeded with url: /user_details/bc9f95b2-c576-4c04-b6e8-501db3475223 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f487af8a690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-06-08 07:16:45,500 - INFO - User accepted by admin. Starting monitoring...
+2025-06-08 07:16:45,567 - INFO - USB monitoring started for Linux
+2025-06-08 07:16:45,618 - ERROR - Failed to report web activity: {
+  "error": "no such table: web_activity"
+}
+
+2025-06-08 07:16:45,776 - ERROR - Failed to report network activity: {
+  "error": "no such table: network_activity"
+}
+
+2025-06-08 07:16:45,840 - INFO - System logs updated
+2025-06-08 07:16:55,919 - INFO - System logs updated
+2025-06-08 07:17:05,988 - INFO - System logs updated
+2025-06-08 07:17:15,647 - ERROR - Failed to report web activity: {
+  "error": "no such table: web_activity"
+}
+
+2025-06-08 07:17:15,821 - ERROR - Failed to report network activity: {
+  "error": "no such table: network_activity"
+}
+
+2025-06-08 07:17:16,119 - INFO - System logs updated
+2025-06-08 07:17:26,203 - INFO - System logs updated
+2025-06-08 07:17:36,277 - INFO - System logs updated
+2025-06-08 07:19:34,478 - INFO - User added successfully. Waiting for admin acceptance...
+2025-06-08 07:19:34,485 - INFO - Waiting for admin acceptance...
+2025-06-08 07:19:39,492 - INFO - User accepted by admin. Starting monitoring...
+2025-06-08 07:19:39,561 - INFO - USB monitoring started for Linux
+2025-06-08 07:19:39,613 - INFO - Web activity reported successfully
+2025-06-08 07:19:39,815 - INFO - System logs updated
+2025-06-08 07:19:39,825 - INFO - Network activity reported successfully
+2025-06-08 07:19:49,901 - INFO - System logs updated
+2025-06-08 07:19:59,981 - INFO - System logs updated
+2025-06-08 07:20:09,747 - INFO - Web activity reported successfully
+2025-06-08 07:20:09,894 - INFO - Network activity reported successfully
+2025-06-08 07:20:10,062 - INFO - System logs updated
+2025-06-08 07:20:20,145 - INFO - System logs updated
+2025-06-08 07:20:30,226 - INFO - System logs updated
+2025-06-08 07:20:39,787 - INFO - Web activity reported successfully
+2025-06-08 07:20:39,943 - INFO - Network activity reported successfully
+2025-06-08 07:20:40,306 - INFO - System logs updated
+2025-06-08 07:20:50,382 - INFO - System logs updated
+2025-06-08 07:21:00,473 - INFO - System logs updated
+2025-06-08 07:21:09,826 - INFO - Web activity reported successfully
+2025-06-08 07:21:09,992 - INFO - Network activity reported successfully
+2025-06-08 07:21:10,553 - INFO - System logs updated
+2025-06-08 07:21:20,641 - INFO - System logs updated
+2025-06-08 07:21:30,728 - INFO - System logs updated
+2025-06-08 07:21:39,865 - INFO - Web activity reported successfully
+2025-06-08 07:21:40,037 - INFO - Network activity reported successfully
+2025-06-08 07:21:40,812 - INFO - System logs updated
+2025-06-08 07:21:50,922 - INFO - System logs updated
+2025-06-08 07:22:01,012 - INFO - System logs updated
+2025-06-08 07:22:09,921 - INFO - Web activity reported successfully
+2025-06-08 07:22:10,082 - INFO - Network activity reported successfully
+2025-06-08 07:22:11,106 - INFO - System logs updated
+2025-06-08 07:22:21,193 - INFO - System logs updated
+2025-06-08 07:22:31,280 - INFO - System logs updated
+2025-06-08 07:22:39,962 - INFO - Web activity reported successfully
+2025-06-08 07:22:40,124 - INFO - Network activity reported successfully
+2025-06-08 07:22:41,359 - INFO - System logs updated
+2025-06-08 07:22:51,464 - INFO - System logs updated
+2025-06-08 07:23:01,551 - INFO - System logs updated
+2025-06-08 07:23:10,010 - INFO - Web activity reported successfully
+2025-06-08 07:23:10,171 - INFO - Network activity reported successfully
+2025-06-08 07:23:11,658 - INFO - System logs updated
+2025-06-08 07:23:21,731 - INFO - System logs updated
+2025-06-08 07:23:31,874 - INFO - System logs updated
+2025-06-08 07:23:40,070 - INFO - Web activity reported successfully
+2025-06-08 07:23:40,234 - INFO - Network activity reported successfully
+2025-06-08 07:23:41,958 - INFO - System logs updated
+2025-06-08 07:23:52,041 - INFO - System logs updated
+2025-06-08 07:24:02,199 - INFO - System logs updated
+2025-06-08 07:24:10,152 - INFO - Web activity reported successfully
+2025-06-08 07:24:10,291 - INFO - Network activity reported successfully
+2025-06-08 07:24:12,287 - INFO - System logs updated
+2025-06-08 07:24:22,373 - INFO - System logs updated
+2025-06-08 07:24:32,455 - INFO - System logs updated

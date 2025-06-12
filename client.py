@@ -36,8 +36,8 @@ else:
         print("Warning: pyudev not installed. USB monitoring won't work on Linux.")
 
 # Configuration
-SERVER_URL = "http://10.25.6.251:5000"  # Replace with actual server IP
-REPORT_INTERVAL = 300  # 5 minutes for web activity reports
+SERVER_URL = "http://192.168.0.104:5000"  # Replace with actual server IP
+REPORT_INTERVAL = 30  # 5 minutes for web activity reports
 LOG_UPDATE_INTERVAL = 10  # 10 seconds for regular logs
 FILE_SYNC_INTERVAL = 60  # 1 minute for file sync
 
@@ -429,24 +429,60 @@ def get_downloads():
     try:
         if platform.system() == 'Windows':
             downloads_path = os.path.join(os.getenv('USERPROFILE', ''), 'Downloads')
+            # Also check Edge/Chrome download history
+            try:
+                edge_history = os.path.join(os.getenv('LOCALAPPDATA', ''), 
+                                          'Microsoft', 'Edge', 'User Data', 'Default', 'History')
+                chrome_history = os.path.join(os.getenv('LOCALAPPDATA', ''), 
+                                           'Google', 'Chrome', 'User Data', 'Default', 'History')
+                
+                for history_db in [edge_history, chrome_history]:
+                    if os.path.exists(history_db):
+                        temp_db = history_db + "_temp"
+                        shutil.copy2(history_db, temp_db)
+                        conn = sqlite3.connect(temp_db)
+                        cursor = conn.cursor()
+                        cursor.execute("""
+                            SELECT target_path, total_bytes, start_time 
+                            FROM downloads 
+                            ORDER BY start_time DESC 
+                            LIMIT 20
+                        """)
+                        for row in cursor.fetchall():
+                            if os.path.exists(row[0]):
+                                filename = os.path.basename(row[0])
+                                downloads.append({
+                                    'filename': filename,
+                                    'path': row[0],
+                                    'size': f"{round(row[1] / (1024*1024), 2)} MB" if row[1] else "N/A",
+                                    'timestamp': datetime.fromtimestamp(row[2]/1000000-11644473600).strftime('%Y-%m-%d %H:%M:%S')
+                                })
+                        conn.close()
+                        if os.path.exists(temp_db):
+                            os.remove(temp_db)
+            except Exception as e:
+                logging.error(f"Error reading browser download history: {e}")
         else:
             downloads_path = os.path.expanduser('~/Downloads')
         
+        # Add files from downloads folder
         if os.path.exists(downloads_path):
             for f in os.listdir(downloads_path):
                 full_path = os.path.join(downloads_path, f)
                 if os.path.isfile(full_path):
                     stat = os.stat(full_path)
-                    downloads.append({
-                        'filename': f,
-                        'path': full_path,
-                        'size': f"{round(stat.st_size / (1024*1024), 2)} MB",
-                        'download_time': datetime.fromtimestamp(stat.st_ctime).strftime('%Y-%m-%d %H:%M:%S')
-                    })
+                    # Only add if not already in list
+                    if not any(d['path'] == full_path for d in downloads):
+                        downloads.append({
+                            'filename': f,
+                            'path': full_path,
+                            'size': f"{round(stat.st_size / (1024*1024), 2)} MB",
+                            'timestamp': datetime.fromtimestamp(stat.st_ctime).strftime('%Y-%m-%d %H:%M:%S')
+                        })
     except Exception as e:
         logging.error(f"Error getting downloads: {e}")
     
-    return sorted(downloads, key=lambda x: x['download_time'], reverse=True)[:20]
+    return sorted(downloads, key=lambda x: x['timestamp'], reverse=True)[:20]
 
 def collect_web_activity(username):
     return {
