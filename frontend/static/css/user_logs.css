@@ -49,3 +49,44 @@ pre {
     width: 100%;
     height: 200px;
 }
+/* Location Section Styles */
+#map {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.location-marker {
+    background-color: #33ff57;
+    color: #1e1e2f;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.location-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.location-table th:nth-child(1),
+.location-table td:nth-child(1) {
+    width: 20%;
+}
+
+.location-table th:nth-child(2),
+.location-table td:nth-child(2) {
+    width: 35%;
+}
+
+.location-table th:nth-child(3),
+.location-table td:nth-child(3) {
+    width: 25%;
+}
+
+.location-table th:nth-child(4),
+.location-table td:nth-child(4) {
+    width: 20%;
+}

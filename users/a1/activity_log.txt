@@ -1,0 +1,10 @@
+2025-07-17T10:44:15.732006 - New user added
+2025-07-17T10:44:18.585269 - User accepted by admin
+2025-07-17T10:44:20.785589 - Web activity reported
+2025-07-17T10:44:20.868973 - ANOMALY DETECTED: Anomaly detected for a1 (Score: -0.21, Reasons: High Network (1042302346 bytes > 1000000 bytes))
+2025-07-17T10:44:20.881360 - Network activity reported
+2025-07-17T10:44:30.914094 - ANOMALY DETECTED: Anomaly detected for a1 (Score: -0.21, Reasons: High Network (1043743640 bytes > 1000000 bytes))
+2025-07-17T10:44:40.969087 - ANOMALY DETECTED: Anomaly detected for a1 (Score: -0.21, Reasons: High Network (1044607534 bytes > 1000000 bytes))
+2025-07-17T10:44:50.818252 - Web activity reported
+2025-07-17T10:44:50.922255 - Network activity reported
+2025-07-17T10:44:51.018792 - ANOMALY DETECTED: Anomaly detected for a1 (Score: -0.21, Reasons: High Network (1045293024 bytes > 1000000 bytes))
