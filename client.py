@@ -36,7 +36,7 @@ else:
         print("Warning: pyudev not installed. USB monitoring won't work on Linux.")
 
 # Configuration
-SERVER_URL = "http://192.168.0.104:5000"  # Replace with actual server IP
+SERVER_URL = "http://10.209.17.88:5000"  # Replace with actual server IP
 REPORT_INTERVAL = 30  # 5 minutes for web activity reports
 LOG_UPDATE_INTERVAL = 10  # 10 seconds for regular logs
 FILE_SYNC_INTERVAL = 60  # 1 minute for file sync
@@ -661,18 +661,35 @@ def send_system_logs(user_id, username):
                 logging.error("User no longer accepted. Exiting...")
                 sys.exit(1)
 
-            # Collect system logs
+            # Collect process logs
             logs = []
-            for proc in psutil.process_iter(['pid', 'name', 'cpu_percent', 'memory_percent']):
-                logs.append({
-                    "pid": proc.info['pid'],
-                    "name": proc.info['name'],
-                    "cpu_percent": proc.info['cpu_percent'],
-                    "memory_percent": proc.info['memory_percent']
-                })
+            for proc in psutil.process_iter(['pid', 'name', 'cpu_percent', 'memory_percent', 'create_time']):
+                try:
+                    logs.append({
+                        "pid": proc.info['pid'],
+                        "name": proc.info['name'],
+                        "cpu_percent": proc.info['cpu_percent'],
+                        "memory_percent": proc.info['memory_percent'],
+                        "create_time": proc.info['create_time']
+                    })
+                except (psutil.NoSuchProcess, psutil.AccessDenied):
+                    continue
 
             # Collect network traffic
-            network_traffic = psutil.net_io_counters()._asdict()
+            net_io = psutil.net_io_counters()
+            network_traffic = {
+                "bytes_sent": net_io.bytes_sent,
+                "bytes_recv": net_io.bytes_recv,
+                "packets_sent": net_io.packets_sent,
+                "packets_recv": net_io.packets_recv,
+                "errin": net_io.errin,
+                "errout": net_io.errout,
+                "dropin": net_io.dropin,
+                "dropout": net_io.dropout
+            }
+
+            # Get USB count (updated by USB monitoring thread)
+            usb_count = 0  # This would be updated by your USB monitoring code
 
             # Prepare data
             data = {
@@ -680,7 +697,8 @@ def send_system_logs(user_id, username):
                 "network_traffic": json.dumps(network_traffic),
                 "login_time": login_time,
                 "logout_time": datetime.now().isoformat(),
-                "system_info": json.dumps(get_system_info())
+                "system_info": json.dumps(get_system_info()),
+                "usb_count": usb_count
             }
 
             # Send to server
@@ -689,7 +707,7 @@ def send_system_logs(user_id, username):
                 json=data
             )
             if resp.status_code == 200:
-                logging.info("System logs updated")
+                logging.debug("System logs updated")
             else:
                 logging.error(f"Failed to update logs: {resp.text}")
 
@@ -697,6 +715,20 @@ def send_system_logs(user_id, username):
             logging.error(f"Error in system log collection: {e}")
         
         time.sleep(LOG_UPDATE_INTERVAL)
+
+# Add this to your existing client.py
+
+def collect_system_metrics():
+    """Collect system metrics for anomaly detection"""
+    metrics = {
+        "cpu_percent": psutil.cpu_percent(interval=1),
+        "memory_percent": psutil.virtual_memory().percent,
+        "network_bytes": sum(psutil.net_io_counters()[:2]),  # sent + received
+        "usb_connected": 0  # Will be updated by USB monitoring
+    }
+    return metrics
+
+
 
 def main():
     print("Monitoring Client\n" + "="*20)

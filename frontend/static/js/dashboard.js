@@ -1,70 +1,117 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize audio elements
+    // Audio elements
     const anomalySound = document.getElementById('anomaly-sound');
     const usbSound = document.getElementById('usb-sound');
     
-    // Ensure sounds are properly loaded
-    anomalySound.load();
-    usbSound.load();
-    
-    // Store user interaction state
-    let userInteracted = false;
-    
-    // Track if sounds are allowed
+    // Sound control
     let soundsAllowed = false;
+    const soundToggle = document.getElementById('sound-toggle');
     
-    // Function to enable sounds after user interaction
-    function enableSounds() {
-        if (!userInteracted) {
-            userInteracted = true;
-            // Play and immediately pause to unlock audio
-            anomalySound.play().then(() => {
-                anomalySound.pause();
-                soundsAllowed = true;
-            }).catch(e => console.error("Anomaly sound init error:", e));
-            
-            usbSound.play().then(() => {
-                usbSound.pause();
-                soundsAllowed = true;
-            }).catch(e => console.error("USB sound init error:", e));
+    // Initialize audio
+    function initAudio() {
+        anomalySound.volume = 0.3;
+        usbSound.volume = 0.3;
+        
+        // Try to play/pause to unlock audio on mobile
+        const playPromise = anomalySound.play().then(() => {
+            anomalySound.pause();
+        }).catch(e => console.log("Audio init error:", e));
+    }
+    
+    // Toggle sound
+    function toggleSounds() {
+        soundsAllowed = !soundsAllowed;
+        soundToggle.textContent = soundsAllowed ? "Disable Sounds" : "Enable Sounds";
+        localStorage.setItem('soundsAllowed', soundsAllowed);
+        
+        if (soundsAllowed) {
+            initAudio();
         }
     }
     
-    // Add click event listener to document
-    document.addEventListener('click', enableSounds);
-    
-    // Play sound functions with improved handling
+    // Play anomaly sound
     function playAnomalySound() {
         if (!soundsAllowed) return;
         
         try {
             anomalySound.currentTime = 0;
-            anomalySound.play().catch(e => console.error("Anomaly play failed:", e));
+            anomalySound.play().catch(e => console.log("Anomaly sound play error:", e));
         } catch (e) {
             console.error("Anomaly sound error:", e);
         }
     }
     
+    // Play USB sound
     function playUsbSound() {
         if (!soundsAllowed) return;
         
         try {
             usbSound.currentTime = 0;
-            usbSound.play().catch(e => console.error("USB play failed:", e));
+            usbSound.play().catch(e => console.log("USB sound play error:", e));
         } catch (e) {
             console.error("USB sound error:", e);
         }
     }
     
-    // Initialize socket connection
+    // Initialize
+    soundToggle.addEventListener('click', toggleSounds);
+    
+    // Load sound preference
+    soundsAllowed = localStorage.getItem('soundsAllowed') === 'true';
+    soundToggle.textContent = soundsAllowed ? "Disable Sounds" : "Enable Sounds";
+    if (soundsAllowed) initAudio();
+    
+    // Socket.IO connection
     const socket = io();
     
-    // [Rest of your existing socket and dashboard code...]
-    // Make sure to include all your existing functionality
+    // Track online users and anomaly count
+    const onlineUsers = new Set();
+    let anomalyCount = 0;
     
-    // Modified USB alert handler
-    socket.on('usb_alert', (data) => {
-        console.log("USB Alert:", data);
+    // Update user counts display
+    function updateUserCounts() {
+        const totalUsers = document.querySelectorAll('.user-tile').length;
+        const onlineCount = onlineUsers.size;
+        const offlineCount = totalUsers - onlineCount;
+        
+        document.getElementById('total-count').textContent = totalUsers;
+        document.getElementById('online-count').textContent = onlineCount;
+        document.getElementById('offline-count').textContent = offlineCount;
+        document.getElementById('anomaly-count').textContent = anomalyCount;
+    }
+    
+    // Handle new anomaly alert
+    socket.on('insider_threat_alert', function(data) {
+        anomalyCount++;
+        updateUserCounts();
+        playAnomalySound();
+        
+        const container = document.getElementById('alerts-container');
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert';
+        alertDiv.innerHTML = `
+            <strong>${new Date().toLocaleTimeString()} - Anomaly Detected!</strong>
+            <div>User: ${data.user_id}</div>
+            <div>Score: ${data.score.toFixed(2)}</div>
+            <button class="btn btn-sm btn-outline-info mt-2" 
+                    onclick="showAnomalyDetails('${data.user_id}', ${JSON.stringify(data).replace(/"/g, '&quot;')})">
+                View Details
+            </button>
+        `;
+        container.prepend(alertDiv);
+        
+        // Highlight user tile
+        const userTile = document.getElementById(`user-${data.user_id}`);
+        if (userTile) {
+            userTile.classList.add('anomaly-detected');
+            setTimeout(() => {
+                userTile.classList.remove('anomaly-detected');
+            }, 10000);
+        }
+    });
+    
+    // Handle USB alert
+    socket.on('usb_alert', function(data) {
         playUsbSound();
         
         const container = document.getElementById('usb-alerts-container');
@@ -75,30 +122,42 @@ document.addEventListener('DOMContentLoaded', function() {
         container.scrollTop = container.scrollHeight;
     });
     
-    // Modified anomaly alert handler
-    socket.on('insider_threat_alert', (data) => {
-        console.log("Anomaly Alert:", data);
-        playAnomalySound();
-        
-        const container = document.getElementById('alerts-container');
-        const alertDiv = document.createElement('div');
-        alertDiv.className = 'alert';
-        alertDiv.textContent = data.message;
-        container.appendChild(alertDiv);
-        container.scrollTop = container.scrollHeight;
-        
-        const userTile = document.getElementById(`user-${data.user_id}`);
-        if (userTile) userTile.classList.add('anomaly-detected');
-    });
+    // Other socket handlers (keep your existing ones)
+    socket.on('connect', () => console.log('Connected to server'));
     
-    // Add a sound enable/disable toggle button to your HTML:
-    // <button id="sound-toggle">Enable Sounds</button>
-    const soundToggle = document.getElementById('sound-toggle');
-    if (soundToggle) {
-        soundToggle.addEventListener('click', function() {
-            soundsAllowed = !soundsAllowed;
-            this.textContent = soundsAllowed ? "Disable Sounds" : "Enable Sounds";
-            if (soundsAllowed) enableSounds();
-        });
-    }
+    // Make functions available globally
+    window.playAnomalySound = playAnomalySound;
+    window.playUsbSound = playUsbSound;
+    window.showAnomalyDetails = showAnomalyDetails;
+    window.updateUserCounts = updateUserCounts;
 });
+
+// Global function to show anomaly details
+function showAnomalyDetails(userId, data) {
+    const content = document.getElementById('anomaly-details-content');
+    content.innerHTML = `
+        <div class="mb-3"><strong>User ID:</strong> ${userId}</div>
+        <div class="mb-3"><strong>Alert Message:</strong> ${data.message}</div>
+        <div class="mb-3"><strong>Anomaly Score:</strong> ${data.score.toFixed(2)}</div>
+        <div class="mb-3"><strong>Reasons:</strong></div>
+        <ul class="mb-3">${data.reasons.map(r => `<li>${r}</li>`).join('')}</ul>
+        <div class="mb-3"><strong>Metrics:</strong></div>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>CPU Usage</td><td>${data.metrics.cpu.toFixed(1)}%</td></tr>
+                <tr><td>Memory Usage</td><td>${data.metrics.memory.toFixed(1)}%</td></tr>
+                <tr><td>Network Traffic</td><td>${(data.metrics.network / 1024 / 1024).toFixed(2)} MB</td></tr>
+                <tr><td>USB Connected</td><td>${data.metrics.usb ? 'Yes' : 'No'}</td></tr>
+            </tbody>
+        </table>
+    `;
+    
+    const modal = new bootstrap.Modal(document.getElementById('anomalyModal'));
+    modal.show();
+}

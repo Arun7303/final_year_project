@@ -2296,3 +2296,199 @@ UnboundLocalError: cannot access local variable 'conn_online' where it is not as
 2025-06-08 07:24:12,287 - INFO - System logs updated
 2025-06-08 07:24:22,373 - INFO - System logs updated
 2025-06-08 07:24:32,455 - INFO - System logs updated
+2025-06-16 14:01:52,764 - INFO - User added successfully. Waiting for admin acceptance...
+2025-06-16 14:01:52,771 - INFO - Waiting for admin acceptance...
+2025-06-16 14:01:57,780 - INFO - Waiting for admin acceptance...
+2025-06-16 14:02:02,788 - INFO - Waiting for admin acceptance...
+2025-06-16 14:02:07,797 - INFO - User accepted by admin. Starting monitoring...
+2025-06-16 14:02:07,898 - INFO - USB monitoring started for Linux
+2025-06-16 14:02:07,937 - INFO - Web activity reported successfully
+2025-06-16 14:02:08,128 - INFO - Network activity reported successfully
+2025-06-16 14:02:08,171 - INFO - System logs updated
+2025-06-16 14:02:18,250 - INFO - System logs updated
+2025-06-16 14:02:28,344 - INFO - System logs updated
+2025-06-16 14:02:37,977 - INFO - Web activity reported successfully
+2025-06-16 14:02:38,167 - INFO - Network activity reported successfully
+2025-06-16 14:02:38,422 - INFO - System logs updated
+2025-06-16 14:02:48,495 - INFO - System logs updated
+2025-06-16 14:02:58,607 - INFO - System logs updated
+2025-06-16 14:03:08,014 - INFO - Web activity reported successfully
+2025-06-16 14:03:08,215 - INFO - Network activity reported successfully
+2025-06-16 14:03:08,674 - INFO - System logs updated
+2025-06-16 14:03:18,742 - INFO - System logs updated
+2025-06-16 14:03:28,812 - INFO - System logs updated
+2025-06-19 07:19:37,392 - INFO - User added successfully. Waiting for admin acceptance...
+2025-06-19 07:19:37,403 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:19:42,409 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:19:47,419 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:19:52,428 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:19:57,436 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:20:02,444 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:20:07,451 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:20:12,460 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:20:17,467 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:20:22,474 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:20:27,482 - ERROR - Error fetching user details. Status: 500
+2025-06-19 07:21:43,129 - INFO - User added successfully. Waiting for admin acceptance...
+2025-06-19 07:21:43,209 - INFO - Waiting for admin acceptance...
+2025-06-19 07:21:48,215 - INFO - User accepted by admin. Starting monitoring...
+2025-06-19 07:21:48,302 - INFO - USB monitoring started for Linux
+2025-06-19 07:21:48,344 - INFO - Web activity reported successfully
+2025-06-19 07:21:48,522 - INFO - System logs updated
+2025-06-19 07:21:48,531 - INFO - Network activity reported successfully
+2025-06-19 07:21:58,610 - INFO - System logs updated
+2025-06-19 07:22:08,684 - INFO - System logs updated
+2025-06-19 07:22:18,459 - INFO - Web activity reported successfully
+2025-06-19 07:22:18,619 - INFO - Network activity reported successfully
+2025-06-19 07:22:18,771 - INFO - System logs updated
+2025-06-19 07:22:28,894 - INFO - System logs updated
+2025-06-19 07:22:38,977 - INFO - System logs updated
+2025-06-19 07:22:48,505 - INFO - Web activity reported successfully
+2025-06-19 07:22:48,691 - INFO - Network activity reported successfully
+2025-06-19 07:22:49,062 - INFO - System logs updated
+2025-06-19 07:22:59,153 - INFO - System logs updated
+2025-06-19 07:23:09,156 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.0.110', port=5000): Max retries exceeded with url: /user_details/6fc88ae9-d883-488f-a614-894de687acd0 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fa8da866140>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-07-16 13:25:58,703 - INFO - User added successfully. Waiting for admin acceptance...
+2025-07-16 13:25:58,708 - INFO - Waiting for admin acceptance...
+2025-07-16 13:26:03,714 - INFO - User accepted by admin. Starting monitoring...
+2025-07-16 13:26:03,775 - INFO - USB monitoring started for Linux
+2025-07-16 13:26:03,800 - INFO - Web activity reported successfully
+2025-07-16 13:26:03,872 - INFO - Network activity reported successfully
+2025-07-16 13:26:33,889 - INFO - Web activity reported successfully
+2025-07-16 13:26:33,902 - INFO - Network activity reported successfully
+2025-07-16 13:27:03,916 - INFO - Web activity reported successfully
+2025-07-16 13:27:03,930 - INFO - Network activity reported successfully
+2025-07-16 13:27:33,942 - INFO - Web activity reported successfully
+2025-07-16 13:27:33,953 - INFO - Network activity reported successfully
+2025-07-16 13:28:03,973 - INFO - Web activity reported successfully
+2025-07-16 13:28:03,981 - INFO - Network activity reported successfully
+2025-07-16 13:28:34,065 - INFO - Web activity reported successfully
+2025-07-16 13:28:34,066 - INFO - Network activity reported successfully
+2025-07-16 13:29:04,090 - INFO - Web activity reported successfully
+2025-07-16 13:29:04,097 - INFO - Network activity reported successfully
+2025-07-16 13:29:34,118 - INFO - Web activity reported successfully
+2025-07-16 13:29:34,125 - INFO - Network activity reported successfully
+2025-07-16 13:30:04,211 - INFO - Web activity reported successfully
+2025-07-16 13:30:04,215 - INFO - Network activity reported successfully
+2025-07-16 13:30:34,235 - INFO - Web activity reported successfully
+2025-07-16 13:30:34,243 - INFO - Network activity reported successfully
+2025-07-16 13:31:04,331 - INFO - Network activity reported successfully
+2025-07-16 13:31:04,334 - INFO - Web activity reported successfully
+2025-07-16 13:31:34,424 - INFO - Network activity reported successfully
+2025-07-16 13:31:34,427 - INFO - Web activity reported successfully
+2025-07-16 13:32:04,460 - INFO - Web activity reported successfully
+2025-07-16 13:32:04,462 - INFO - Network activity reported successfully
+2025-07-16 13:32:34,492 - INFO - Web activity reported successfully
+2025-07-16 13:32:34,498 - INFO - Network activity reported successfully
+2025-07-16 13:33:03,834 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:33:03,839 - INFO - Uploading file: my.txt
+2025-07-16 13:33:04,521 - INFO - Web activity reported successfully
+2025-07-16 13:33:04,534 - INFO - Network activity reported successfully
+2025-07-16 13:33:34,553 - INFO - Web activity reported successfully
+2025-07-16 13:33:34,561 - INFO - Network activity reported successfully
+2025-07-16 13:34:03,851 - INFO - Downloading file: my.txt
+2025-07-16 13:34:03,856 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:34:03,862 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:34:04,581 - INFO - Web activity reported successfully
+2025-07-16 13:34:04,588 - INFO - Network activity reported successfully
+2025-07-16 13:34:34,674 - INFO - Network activity reported successfully
+2025-07-16 13:34:34,674 - INFO - Web activity reported successfully
+2025-07-16 13:35:03,878 - INFO - Downloading file: my.txt
+2025-07-16 13:35:03,884 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:35:03,889 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:35:04,763 - INFO - Web activity reported successfully
+2025-07-16 13:35:04,763 - INFO - Network activity reported successfully
+2025-07-16 13:35:34,791 - INFO - Web activity reported successfully
+2025-07-16 13:35:34,796 - INFO - Network activity reported successfully
+2025-07-16 13:35:37,890 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2
+2025-07-16 13:35:37,904 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
+2025-07-16 13:35:52,066 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
+2025-07-16 13:35:52,082 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2
+2025-07-16 13:36:03,908 - INFO - Downloading file: my.txt
+2025-07-16 13:36:03,913 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:36:03,919 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:36:04,883 - INFO - Network activity reported successfully
+2025-07-16 13:36:04,884 - INFO - Web activity reported successfully
+2025-07-16 13:36:34,911 - INFO - Web activity reported successfully
+2025-07-16 13:36:34,913 - INFO - Network activity reported successfully
+2025-07-16 13:37:03,935 - INFO - Downloading file: my.txt
+2025-07-16 13:37:03,941 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:37:03,946 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:37:04,942 - INFO - Network activity reported successfully
+2025-07-16 13:37:04,944 - INFO - Web activity reported successfully
+2025-07-16 13:37:26,565 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2
+2025-07-16 13:37:26,576 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
+2025-07-16 13:37:34,971 - INFO - Web activity reported successfully
+2025-07-16 13:37:34,973 - INFO - Network activity reported successfully
+2025-07-16 13:37:39,171 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
+2025-07-16 13:37:39,183 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2
+2025-07-16 13:37:41,772 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2
+2025-07-16 13:37:41,784 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
+2025-07-16 13:38:03,963 - INFO - Downloading file: my.txt
+2025-07-16 13:38:03,967 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:38:03,972 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:38:04,996 - INFO - Web activity reported successfully
+2025-07-16 13:38:05,002 - INFO - Network activity reported successfully
+2025-07-16 13:38:35,021 - INFO - Web activity reported successfully
+2025-07-16 13:38:35,031 - INFO - Network activity reported successfully
+2025-07-16 13:39:03,989 - INFO - Downloading file: my.txt
+2025-07-16 13:39:03,994 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:39:03,998 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:39:05,046 - INFO - Web activity reported successfully
+2025-07-16 13:39:05,057 - INFO - Network activity reported successfully
+2025-07-16 13:39:35,070 - INFO - Web activity reported successfully
+2025-07-16 13:39:35,082 - INFO - Network activity reported successfully
+2025-07-16 13:40:04,009 - INFO - Downloading file: my.txt
+2025-07-16 13:40:04,013 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:40:04,016 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:40:05,094 - INFO - Web activity reported successfully
+2025-07-16 13:40:05,108 - INFO - Network activity reported successfully
+2025-07-16 13:40:35,122 - INFO - Web activity reported successfully
+2025-07-16 13:40:35,144 - INFO - Network activity reported successfully
+2025-07-16 13:41:04,032 - INFO - Downloading file: my.txt
+2025-07-16 13:41:04,037 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:41:04,041 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:41:05,212 - INFO - Network activity reported successfully
+2025-07-16 13:41:05,215 - INFO - Web activity reported successfully
+2025-07-16 13:41:35,237 - INFO - Web activity reported successfully
+2025-07-16 13:41:35,244 - INFO - Network activity reported successfully
+2025-07-16 13:42:04,049 - INFO - Downloading file: my.txt
+2025-07-16 13:42:04,052 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:42:04,054 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:42:05,263 - INFO - Web activity reported successfully
+2025-07-16 13:42:05,271 - INFO - Network activity reported successfully
+2025-07-16 13:42:35,288 - INFO - Web activity reported successfully
+2025-07-16 13:42:35,296 - INFO - Network activity reported successfully
+2025-07-16 13:43:04,069 - INFO - Downloading file: my.txt
+2025-07-16 13:43:04,075 - INFO - Downloading file: big_photo.jpg
+2025-07-16 13:43:04,080 - INFO - Downloading file: user_web_activity.db
+2025-07-16 13:43:05,383 - INFO - Network activity reported successfully
+2025-07-16 13:43:05,387 - INFO - Web activity reported successfully
+2025-07-16 13:43:35,402 - ERROR - Error reporting network activity: HTTPConnectionPool(host='10.209.17.88', port=5000): Max retries exceeded with url: /report_network_activity/290d29d1-f8c6-4412-8d20-af32fc9259d6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcc6b35d8c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-07-16 13:43:35,403 - ERROR - Error reporting web activity: HTTPConnectionPool(host='10.209.17.88', port=5000): Max retries exceeded with url: /report_web_activity/290d29d1-f8c6-4412-8d20-af32fc9259d6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcc6b35dd00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-07-16 13:43:40,910 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.209.17.88', port=5000): Max retries exceeded with url: /user_details/290d29d1-f8c6-4412-8d20-af32fc9259d6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcc6b35f130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-07-16 13:43:50,918 - ERROR - User no longer accepted. Exiting...
+2025-07-16 13:44:05,422 - ERROR - Failed to report network activity: <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+2025-07-16 13:44:05,423 - ERROR - Failed to report web activity: <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+2025-07-16 13:44:35,439 - ERROR - Failed to report web activity: <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+2025-07-16 13:44:35,443 - ERROR - Failed to report network activity: <!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+

@@ -22,14 +22,16 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
-
+# Load anomaly detection model
 try:
     model = joblib.load('anomaly_detection_model.pkl')
     logger.info("Anomaly detection model loaded successfully")
 except Exception as e:
     logger.error(f"Error loading model: {e}")
     model = None
+
+
+
 
 # Ensure directories exist
 os.makedirs("users/admin", exist_ok=True)
@@ -261,6 +263,92 @@ def logout():
         log_admin_activity("Admin logged out")
     session.pop('admin_logged_in', None)
     return redirect(url_for('login'))
+
+
+
+
+
+
+
+
+
+def detect_anomalies(user_id, username, logs, network_traffic, usb_count):
+    """Detect anomalies in the user's system behavior"""
+    if model is None:
+        return None
+    
+    try:
+        # Calculate metrics from logs
+        logs_df = pd.DataFrame(logs) if logs else pd.DataFrame()
+        
+        if logs_df.empty:
+            return None
+        
+        cpu_usage = logs_df['cpu_percent'].mean()
+        memory_usage = logs_df['memory_percent'].mean()
+        
+        if isinstance(network_traffic, str):
+            network_traffic = json.loads(network_traffic)
+        
+        network_bytes = network_traffic.get('bytes_recv', 0) + network_traffic.get('bytes_sent', 0)
+        usb_connected = 1 if usb_count > 0 else 0
+        
+        features = np.array([[cpu_usage, memory_usage, network_bytes, usb_connected]])
+        prediction = model.predict(features)
+        anomaly_score = model.decision_function(features)
+        
+        if prediction[0] == -1:
+            reasons = []
+            thresholds = {
+                'cpu': 80,
+                'memory': 80,
+                'network': 1000000,
+                'usb': 1
+            }
+            
+            if cpu_usage > thresholds['cpu']:
+                reasons.append(f"High CPU ({cpu_usage:.1f}% > {thresholds['cpu']}%)")
+            if memory_usage > thresholds['memory']:
+                reasons.append(f"High Memory ({memory_usage:.1f}% > {thresholds['memory']}%)")
+            if network_bytes > thresholds['network']:
+                reasons.append(f"High Network ({network_bytes} bytes > {thresholds['network']} bytes)")
+            if usb_connected >= thresholds['usb']:
+                reasons.append("USB Device Connected")
+            
+            reason_str = ", ".join(reasons) if reasons else "Multiple factors"
+            
+            return {
+                "is_anomaly": True,
+                "score": float(anomaly_score[0]),
+                "reasons": reasons,
+                "metrics": {
+                    "cpu": cpu_usage,
+                    "memory": memory_usage,
+                    "network": network_bytes,
+                    "usb": usb_connected
+                }
+            }
+        
+        return {
+            "is_anomaly": False,
+            "score": float(anomaly_score[0]),
+            "reasons": [],
+            "metrics": {
+                "cpu": cpu_usage,
+                "memory": memory_usage,
+                "network": network_bytes,
+                "usb": usb_connected
+            }
+        }
+    
+    except Exception as e:
+        logger.error(f"Anomaly detection error: {e}")
+        return None
+
+
+
+
+
 
 @app.route("/clear_usb_alerts", methods=["POST"])
 def clear_usb_alerts():
@@ -714,17 +802,188 @@ def user_logs(user_id):
                              error_message=f"Error loading logs: {str(e)}",
                              user_id=user_id)
 
+# @app.route("/update_activity/<user_id>", methods=["POST"])
+# def update_activity(user_id):
+#     try:
+#         data = request.json
+        
+#         # Update user data
+#         conn = sqlite3.connect("users.db")
+#         c = conn.cursor()
+#         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
+#         username = c.fetchone()[0]
+        
+#         c.execute("""
+#             UPDATE user_data SET
+#                 logs = ?,
+#                 network_traffic = ?,
+#                 file_operations = ?,
+#                 removable_media_transfers = ?,
+#                 user_activity = ?,
+#                 login_time = ?,
+#                 logout_time = ?,
+#                 login_duration = ?,
+#                 internet_status = ?,
+#                 usb_count = ?,
+#                 system_info = ?
+#             WHERE user_id = ?
+#         """, (
+#             data.get("logs", "[]"),
+#             data.get("network_traffic", "{}"),
+#             data.get("file_operations", "[]"),
+#             data.get("removable_media_transfers", "[]"),
+#             data.get("user_activity", "[]"),
+#             data.get("login_time", ""),
+#             data.get("logout_time", ""),
+#             data.get("login_duration", ""),
+#             data.get("internet_status", ""),
+#             data.get("usb_count", 0),
+#             data.get("system_info", "{}"),
+#             user_id
+#         ))
+#         conn.commit()
+        
+#         # Store HTTP data in user's online_data.db
+#         http_visits = json.loads(data.get("http_visits", "[]"))
+#         http_downloads = json.loads(data.get("http_downloads", "[]"))
+        
+#         user_folder = get_user_folder(username)
+#         online_data_db = os.path.join(user_folder, "online_data.db")
+        
+#         conn_online = sqlite3.connect(online_data_db)
+#         c_online = conn_online.cursor()
+        
+#         for visit in http_visits:
+#             c_online.execute("""
+#                 INSERT OR IGNORE INTO website_visits 
+#                 (url, title, timestamp)
+#                 VALUES (?, ?, ?)
+#             """, (visit.get("url"), visit.get("title", ""), visit.get("timestamp")))
+        
+#         for download in http_downloads:
+#             c_online.execute("""
+#                 INSERT OR IGNORE INTO file_downloads 
+#                 (url, filename, timestamp)
+#                 VALUES (?, ?, ?)
+#             """, (download.get("url"), download.get("filename"), download.get("timestamp")))
+        
+#         conn_online.commit()
+        
+#         # Log the activity with detailed process information
+#         logs = json.loads(data.get("logs", "[]"))
+#         log_user_activity(username, "Activity updated", logs)
+        
+#         # Enhanced Anomaly Detection
+#         if model:
+#             try:
+#                 logs_df = pd.DataFrame(logs) if logs else pd.DataFrame()
+                
+#                 # Calculate metrics
+#                 cpu_usage = logs_df['cpu_percent'].mean() if not logs_df.empty else 0
+#                 memory_usage = logs_df['memory_percent'].mean() if not logs_df.empty else 0
+#                 network_traffic = json.loads(data.get("network_traffic", "{}"))
+#                 network_bytes = network_traffic.get('bytes_recv', 0) + network_traffic.get('bytes_sent', 0)
+#                 usb_connected = 1 if data.get("usb_count", 0) > 0 else 0
+                
+#                 # Create feature array
+#                 features = np.array([[cpu_usage, memory_usage, network_bytes, usb_connected]])
+#                 prediction = model.predict(features)
+                
+#                 if prediction[0] == -1:
+#                     # Determine the reason for anomaly
+#                     reasons = []
+#                     thresholds = {
+#                         'cpu': 80,
+#                         'memory': 80,
+#                         'network': 1000000,
+#                         'usb': 1
+#                     }
+                    
+#                     if cpu_usage > thresholds['cpu']:
+#                         reasons.append(f"High CPU ({cpu_usage:.1f}% > {thresholds['cpu']}%)")
+#                     if memory_usage > thresholds['memory']:
+#                         reasons.append(f"High Memory ({memory_usage:.1f}% > {thresholds['memory']}%)")
+#                     if network_bytes > thresholds['network']:
+#                         reasons.append(f"High Network ({network_bytes} bytes > {thresholds['network']} bytes)")
+#                     if usb_connected >= thresholds['usb']:
+#                         reasons.append("USB Device Connected")
+                    
+#                     reason_str = ", ".join(reasons) if reasons else "Multiple factors"
+#                     alert_msg = f"Anomaly detected for {username} (Reason: {reason_str})"
+                    
+#                     with open('users/admin/anomaly_alerts.txt', 'a') as f:
+#                         f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
+                    
+#                     socketio.emit("insider_threat_alert", {
+#                         "message": alert_msg,
+#                         "user_id": user_id,
+#                         "reasons": reasons
+#                     })
+#             except Exception as e:
+#                 logger.error(f"Anomaly detection error: {e}")
+        
+#         # Emit socket update
+#         socketio.emit("update_logs", {
+#             "user_id": user_id,
+#             "logs": logs,
+#             "network_traffic": json.loads(data.get("network_traffic", "{}")),
+#             "website_visits": http_visits,
+#             "file_downloads": http_downloads
+#         })
+        
+#         return jsonify({"status": "updated"})
+#     except Exception as e:
+#         logger.error(f"Error updating activity: {e}")
+#         return jsonify({"error": str(e)}), 500
+#     finally:
+#         conn.close()
+#         conn_online.close()
+
+
+
+
+
 @app.route("/update_activity/<user_id>", methods=["POST"])
 def update_activity(user_id):
     try:
         data = request.json
         
-        # Update user data
         conn = sqlite3.connect("users.db")
         c = conn.cursor()
-        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
-        username = c.fetchone()[0]
+        c.execute("SELECT username, usb_count FROM user_data WHERE user_id = ?", (user_id,))
+        user = c.fetchone()
         
+        if not user:
+            return jsonify({"error": "User not found"}), 404
+            
+        username = user[0]
+        current_usb_count = user[1]
+        
+        logs = json.loads(data.get("logs", "[]"))
+        network_traffic = data.get("network_traffic", "{}")
+        
+        # Run anomaly detection
+        anomaly_result = detect_anomalies(
+            user_id, username, logs, network_traffic, current_usb_count
+        )
+        
+        if anomaly_result and anomaly_result["is_anomaly"]:
+            alert_msg = f"Anomaly detected for {username} (Score: {anomaly_result['score']:.2f}, Reasons: {', '.join(anomaly_result['reasons'])})"
+            
+            with open(f'users/admin/anomaly_alerts.txt', 'a') as f:
+                f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
+            
+            socketio.emit("insider_threat_alert", {
+                "message": alert_msg,
+                "user_id": user_id,
+                "score": anomaly_result["score"],
+                "reasons": anomaly_result["reasons"],
+                "metrics": anomaly_result["metrics"]
+            })
+            
+            log_user_activity(username, f"ANOMALY DETECTED: {alert_msg}")
+        
+        # Update user data (keep your existing update code)
         c.execute("""
             UPDATE user_data SET
                 logs = ?,
@@ -755,101 +1014,93 @@ def update_activity(user_id):
         ))
         conn.commit()
         
-        # Store HTTP data in user's online_data.db
-        http_visits = json.loads(data.get("http_visits", "[]"))
-        http_downloads = json.loads(data.get("http_downloads", "[]"))
-        
-        user_folder = get_user_folder(username)
-        online_data_db = os.path.join(user_folder, "online_data.db")
-        
-        conn_online = sqlite3.connect(online_data_db)
-        c_online = conn_online.cursor()
-        
-        for visit in http_visits:
-            c_online.execute("""
-                INSERT OR IGNORE INTO website_visits 
-                (url, title, timestamp)
-                VALUES (?, ?, ?)
-            """, (visit.get("url"), visit.get("title", ""), visit.get("timestamp")))
-        
-        for download in http_downloads:
-            c_online.execute("""
-                INSERT OR IGNORE INTO file_downloads 
-                (url, filename, timestamp)
-                VALUES (?, ?, ?)
-            """, (download.get("url"), download.get("filename"), download.get("timestamp")))
-        
-        conn_online.commit()
-        
-        # Log the activity with detailed process information
-        logs = json.loads(data.get("logs", "[]"))
-        log_user_activity(username, "Activity updated", logs)
-        
-        # Enhanced Anomaly Detection
-        if model:
-            try:
-                logs_df = pd.DataFrame(logs) if logs else pd.DataFrame()
-                
-                # Calculate metrics
-                cpu_usage = logs_df['cpu_percent'].mean() if not logs_df.empty else 0
-                memory_usage = logs_df['memory_percent'].mean() if not logs_df.empty else 0
-                network_traffic = json.loads(data.get("network_traffic", "{}"))
-                network_bytes = network_traffic.get('bytes_recv', 0) + network_traffic.get('bytes_sent', 0)
-                usb_connected = 1 if data.get("usb_count", 0) > 0 else 0
-                
-                # Create feature array
-                features = np.array([[cpu_usage, memory_usage, network_bytes, usb_connected]])
-                prediction = model.predict(features)
-                
-                if prediction[0] == -1:
-                    # Determine the reason for anomaly
-                    reasons = []
-                    thresholds = {
-                        'cpu': 80,
-                        'memory': 80,
-                        'network': 1000000,
-                        'usb': 1
-                    }
-                    
-                    if cpu_usage > thresholds['cpu']:
-                        reasons.append(f"High CPU ({cpu_usage:.1f}% > {thresholds['cpu']}%)")
-                    if memory_usage > thresholds['memory']:
-                        reasons.append(f"High Memory ({memory_usage:.1f}% > {thresholds['memory']}%)")
-                    if network_bytes > thresholds['network']:
-                        reasons.append(f"High Network ({network_bytes} bytes > {thresholds['network']} bytes)")
-                    if usb_connected >= thresholds['usb']:
-                        reasons.append("USB Device Connected")
-                    
-                    reason_str = ", ".join(reasons) if reasons else "Multiple factors"
-                    alert_msg = f"Anomaly detected for {username} (Reason: {reason_str})"
-                    
-                    with open('users/admin/anomaly_alerts.txt', 'a') as f:
-                        f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
-                    
-                    socketio.emit("insider_threat_alert", {
-                        "message": alert_msg,
-                        "user_id": user_id,
-                        "reasons": reasons
-                    })
-            except Exception as e:
-                logger.error(f"Anomaly detection error: {e}")
-        
         # Emit socket update
         socketio.emit("update_logs", {
             "user_id": user_id,
             "logs": logs,
             "network_traffic": json.loads(data.get("network_traffic", "{}")),
-            "website_visits": http_visits,
-            "file_downloads": http_downloads
+            "anomaly_detected": anomaly_result["is_anomaly"] if anomaly_result else False
         })
         
-        return jsonify({"status": "updated"})
+        return jsonify({
+            "status": "updated", 
+            "anomaly_detected": anomaly_result["is_anomaly"] if anomaly_result else False
+        })
+    
     except Exception as e:
         logger.error(f"Error updating activity: {e}")
         return jsonify({"error": str(e)}), 500
     finally:
         conn.close()
-        conn_online.close()
+
+
+
+
+        # Model retraining endpoint
+@app.route("/retrain_model", methods=["POST"])
+def retrain_model():
+    global model
+    if 'admin_logged_in' not in session:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    try:
+        from sklearn.ensemble import IsolationForest
+        all_data = []
+        
+        user_folders = [f for f in os.listdir("users") if os.path.isdir(os.path.join("users", f))]
+        
+        for username in user_folders:
+            if username == "admin":
+                continue
+                
+            log_file = os.path.join("users", username, "activity_log.txt")
+            if os.path.exists(log_file):
+                with open(log_file, 'r') as f:
+                    for line in f:
+                        if "CPU:" in line and "Memory:" in line:
+                            try:
+                                parts = line.split()
+                                cpu = float(parts[parts.index("CPU:") + 1].replace("%", ""))
+                                memory = float(parts[parts.index("Memory:") + 1].replace("%", ""))
+                                network = 0
+                                usb = 1 if "USB" in line else 0
+                                is_anomaly = 1 if any(word in line for word in ["ANOMALY", "ALERT", "WARNING"]) else 0
+                                all_data.append([cpu, memory, network, usb, is_anomaly])
+                            except (ValueError, IndexError):
+                                continue
+        
+        if len(all_data) < 100:
+            return jsonify({"error": "Insufficient data for retraining"}), 400
+            
+        df = pd.DataFrame(all_data, columns=["cpu", "memory", "network", "usb", "is_anomaly"])
+        
+        model = IsolationForest(
+            n_estimators=100,
+            max_samples='auto',
+            contamination=0.05,
+            random_state=42
+        )
+        
+        model.fit(df[["cpu", "memory", "network", "usb"]])
+        
+        joblib.dump(model, "anomaly_detection_model.pkl")
+        
+        
+        model = model
+        
+        log_admin_activity("Anomaly detection model retrained")
+        return jsonify({"status": "retrained", "samples": len(df)})
+    
+    except Exception as e:
+        logger.error(f"Model retraining error: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+
+
+
+
+
 
 @app.route("/usb_event", methods=["POST"])
 def usb_event():
