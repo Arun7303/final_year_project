@@ -966,8 +966,9 @@
 
         // Initialize everything when page loads
         window.addEventListener("load", function () {
-            // Initialize map with empty array (will be populated by fetchLogs)
-            initMap([]);
+            // Initialize map with locations from template
+            const locations = JSON.parse('{{ locations | tojson | safe }}');
+            initMap(locations);
             
             loadFileAccess();
             fetchLogs();

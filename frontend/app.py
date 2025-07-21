@@ -30,9 +30,6 @@ except Exception as e:
     logger.error(f"Error loading model: {e}")
     model = None
 
-
-
-
 # Ensure directories exist
 os.makedirs("users/admin", exist_ok=True)
 for filename in ['usb_alerts.txt', 'anomaly_alerts.txt', 'admin_activity.log']:
@@ -81,7 +78,8 @@ def init_user_db():
                 login_duration TEXT DEFAULT '',
                 internet_status TEXT DEFAULT '',
                 usb_count INTEGER DEFAULT 0,
-                system_info TEXT DEFAULT '{}'
+                system_info TEXT DEFAULT '{}',
+                locations TEXT DEFAULT '[]'
             )
         """)
         conn.commit()
@@ -264,14 +262,6 @@ def logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for('login'))
 
-
-
-
-
-
-
-
-
 def detect_anomalies(user_id, username, logs, network_traffic, usb_count):
     """Detect anomalies in the user's system behavior"""
     if model is None:
@@ -345,10 +335,43 @@ def detect_anomalies(user_id, username, logs, network_traffic, usb_count):
         logger.error(f"Anomaly detection error: {e}")
         return None
 
-
-
-
-
+@app.route("/report_location/<user_id>", methods=["POST"])
+def report_location(user_id):
+    try:
+        data = request.json
+        location = data.get("location")
+        username = data.get("username")
+        
+        if not location:
+            return jsonify({"error": "No location data"}), 400
+            
+        conn = sqlite3.connect("users.db")
+        c = conn.cursor()
+        
+        # Get current locations
+        c.execute("SELECT locations FROM user_data WHERE user_id = ?", (user_id,))
+        result = c.fetchone()
+        current_locations = json.loads(result[0]) if result and result[0] else []
+        
+        # Add new location (limit to last 50)
+        current_locations.insert(0, location)
+        current_locations = current_locations[:50]
+        
+        # Update database
+        c.execute("""
+            UPDATE user_data 
+            SET locations = ? 
+            WHERE user_id = ?
+        """, (json.dumps(current_locations), user_id))
+        conn.commit()
+        
+        log_user_activity(username, f"Location updated: {location}")
+        return jsonify({"status": "location_updated"})
+    except Exception as e:
+        logger.error(f"Error updating location: {e}")
+        return jsonify({"error": str(e)}), 500
+    finally:
+        conn.close()
 
 @app.route("/clear_usb_alerts", methods=["POST"])
 def clear_usb_alerts():
@@ -575,12 +598,19 @@ def user_details(user_id):
     try:
         conn = sqlite3.connect("users.db")
         c = conn.cursor()
-        c.execute("SELECT * FROM user_data WHERE user_id = ?", (user_id,))
+        c.execute("""
+            SELECT user_id, username, password, pc_name, platform, accepted, 
+                   logs, network_traffic, file_operations, removable_media_transfers, 
+                   user_activity, login_time, logout_time, login_duration, 
+                   internet_status, usb_count, system_info, locations
+            FROM user_data 
+            WHERE user_id = ?
+        """, (user_id,))
         data = c.fetchone()
-        
+
         if not data:
             return jsonify({"error": "User not found"}), 404
-            
+
         return jsonify({
             "user_id": data[0],
             "username": data[1],
@@ -596,6 +626,7 @@ def user_details(user_id):
             "internet_status": data[14],
             "usb_count": data[15],
             "system_info": data[16] if data[16] else "{}",
+            "locations": data[17] if data[17] else "[]",
             "accepted": data[5]
         })
     except Exception as e:
@@ -694,6 +725,7 @@ def user_logs(user_id):
         web_activity = []
         network_activity = []
         system_info = {}
+        locations = []
         
         # Get user data
         with sqlite3.connect("users.db") as conn:
@@ -775,6 +807,9 @@ def user_logs(user_id):
             # Get system info
             system_info = json.loads(user_data[16]) if user_data[16] else {}
             
+            # Get locations
+            locations = json.loads(user_data[17]) if user_data[17] else []
+            
             return render_template("user_logs.html",
                 user_id=user_id,
                 pc_name=user_data[3],
@@ -793,6 +828,7 @@ def user_logs(user_id):
                 web_activity=web_activity,
                 network_activity=network_activity,
                 system_info=system_info,
+                locations=locations,
                 last_update=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             )
             
@@ -801,147 +837,6 @@ def user_logs(user_id):
         return render_template("error.html", 
                              error_message=f"Error loading logs: {str(e)}",
                              user_id=user_id)
-
-# @app.route("/update_activity/<user_id>", methods=["POST"])
-# def update_activity(user_id):
-#     try:
-#         data = request.json
-        
-#         # Update user data
-#         conn = sqlite3.connect("users.db")
-#         c = conn.cursor()
-#         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
-#         username = c.fetchone()[0]
-        
-#         c.execute("""
-#             UPDATE user_data SET
-#                 logs = ?,
-#                 network_traffic = ?,
-#                 file_operations = ?,
-#                 removable_media_transfers = ?,
-#                 user_activity = ?,
-#                 login_time = ?,
-#                 logout_time = ?,
-#                 login_duration = ?,
-#                 internet_status = ?,
-#                 usb_count = ?,
-#                 system_info = ?
-#             WHERE user_id = ?
-#         """, (
-#             data.get("logs", "[]"),
-#             data.get("network_traffic", "{}"),
-#             data.get("file_operations", "[]"),
-#             data.get("removable_media_transfers", "[]"),
-#             data.get("user_activity", "[]"),
-#             data.get("login_time", ""),
-#             data.get("logout_time", ""),
-#             data.get("login_duration", ""),
-#             data.get("internet_status", ""),
-#             data.get("usb_count", 0),
-#             data.get("system_info", "{}"),
-#             user_id
-#         ))
-#         conn.commit()
-        
-#         # Store HTTP data in user's online_data.db
-#         http_visits = json.loads(data.get("http_visits", "[]"))
-#         http_downloads = json.loads(data.get("http_downloads", "[]"))
-        
-#         user_folder = get_user_folder(username)
-#         online_data_db = os.path.join(user_folder, "online_data.db")
-        
-#         conn_online = sqlite3.connect(online_data_db)
-#         c_online = conn_online.cursor()
-        
-#         for visit in http_visits:
-#             c_online.execute("""
-#                 INSERT OR IGNORE INTO website_visits 
-#                 (url, title, timestamp)
-#                 VALUES (?, ?, ?)
-#             """, (visit.get("url"), visit.get("title", ""), visit.get("timestamp")))
-        
-#         for download in http_downloads:
-#             c_online.execute("""
-#                 INSERT OR IGNORE INTO file_downloads 
-#                 (url, filename, timestamp)
-#                 VALUES (?, ?, ?)
-#             """, (download.get("url"), download.get("filename"), download.get("timestamp")))
-        
-#         conn_online.commit()
-        
-#         # Log the activity with detailed process information
-#         logs = json.loads(data.get("logs", "[]"))
-#         log_user_activity(username, "Activity updated", logs)
-        
-#         # Enhanced Anomaly Detection
-#         if model:
-#             try:
-#                 logs_df = pd.DataFrame(logs) if logs else pd.DataFrame()
-                
-#                 # Calculate metrics
-#                 cpu_usage = logs_df['cpu_percent'].mean() if not logs_df.empty else 0
-#                 memory_usage = logs_df['memory_percent'].mean() if not logs_df.empty else 0
-#                 network_traffic = json.loads(data.get("network_traffic", "{}"))
-#                 network_bytes = network_traffic.get('bytes_recv', 0) + network_traffic.get('bytes_sent', 0)
-#                 usb_connected = 1 if data.get("usb_count", 0) > 0 else 0
-                
-#                 # Create feature array
-#                 features = np.array([[cpu_usage, memory_usage, network_bytes, usb_connected]])
-#                 prediction = model.predict(features)
-                
-#                 if prediction[0] == -1:
-#                     # Determine the reason for anomaly
-#                     reasons = []
-#                     thresholds = {
-#                         'cpu': 80,
-#                         'memory': 80,
-#                         'network': 1000000,
-#                         'usb': 1
-#                     }
-                    
-#                     if cpu_usage > thresholds['cpu']:
-#                         reasons.append(f"High CPU ({cpu_usage:.1f}% > {thresholds['cpu']}%)")
-#                     if memory_usage > thresholds['memory']:
-#                         reasons.append(f"High Memory ({memory_usage:.1f}% > {thresholds['memory']}%)")
-#                     if network_bytes > thresholds['network']:
-#                         reasons.append(f"High Network ({network_bytes} bytes > {thresholds['network']} bytes)")
-#                     if usb_connected >= thresholds['usb']:
-#                         reasons.append("USB Device Connected")
-                    
-#                     reason_str = ", ".join(reasons) if reasons else "Multiple factors"
-#                     alert_msg = f"Anomaly detected for {username} (Reason: {reason_str})"
-                    
-#                     with open('users/admin/anomaly_alerts.txt', 'a') as f:
-#                         f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
-                    
-#                     socketio.emit("insider_threat_alert", {
-#                         "message": alert_msg,
-#                         "user_id": user_id,
-#                         "reasons": reasons
-#                     })
-#             except Exception as e:
-#                 logger.error(f"Anomaly detection error: {e}")
-        
-#         # Emit socket update
-#         socketio.emit("update_logs", {
-#             "user_id": user_id,
-#             "logs": logs,
-#             "network_traffic": json.loads(data.get("network_traffic", "{}")),
-#             "website_visits": http_visits,
-#             "file_downloads": http_downloads
-#         })
-        
-#         return jsonify({"status": "updated"})
-#     except Exception as e:
-#         logger.error(f"Error updating activity: {e}")
-#         return jsonify({"error": str(e)}), 500
-#     finally:
-#         conn.close()
-#         conn_online.close()
-
-
-
-
 
 @app.route("/update_activity/<user_id>", methods=["POST"])
 def update_activity(user_id):
@@ -983,7 +878,7 @@ def update_activity(user_id):
             
             log_user_activity(username, f"ANOMALY DETECTED: {alert_msg}")
         
-        # Update user data (keep your existing update code)
+        # Update user data
         c.execute("""
             UPDATE user_data SET
                 logs = ?,
@@ -1033,10 +928,6 @@ def update_activity(user_id):
     finally:
         conn.close()
 
-
-
-
-        # Model retraining endpoint
 @app.route("/retrain_model", methods=["POST"])
 def retrain_model():
     global model
@@ -1085,22 +976,12 @@ def retrain_model():
         
         joblib.dump(model, "anomaly_detection_model.pkl")
         
-        
-        model = model
-        
         log_admin_activity("Anomaly detection model retrained")
         return jsonify({"status": "retrained", "samples": len(df)})
     
     except Exception as e:
         logger.error(f"Model retraining error: {e}")
         return jsonify({"error": str(e)}), 500
-
-
-
-
-
-
-
 
 @app.route("/usb_event", methods=["POST"])
 def usb_event():
@@ -1385,23 +1266,7 @@ def file_manager(user_id):
     finally:
         conn.close()
 
-@app.route("/webcam/<user_id>")
-def webcam(user_id):
-    try:
-        conn = sqlite3.connect("users.db")
-        c = conn.cursor()
-        c.execute("SELECT username, pc_name FROM user_data WHERE user_id = ?", (user_id,))
-        user = c.fetchone()
-        
-        if not user:
-            return "User not found", 404
-            
-        return render_template("webcam.html", user_id=user_id, pc_name=user[1])
-    except Exception as e:
-        logger.error(f"Error loading webcam page: {e}")
-        return "Error loading webcam page", 500
-    finally:
-        conn.close()
+
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)

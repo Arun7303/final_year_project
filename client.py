@@ -15,6 +15,9 @@ import socket
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 import webbrowser
+import cv2
+from PIL import Image, ImageTk
+import threading
 
 # Windows-specific imports
 if platform.system() == "Windows":
@@ -36,10 +39,11 @@ else:
         print("Warning: pyudev not installed. USB monitoring won't work on Linux.")
 
 # Configuration
-SERVER_URL = "http://10.209.17.88:5000"  # Replace with actual server IP
+SERVER_URL = "http://10.135.82.88:5000"  # Replace with actual server IP
 REPORT_INTERVAL = 30  # 5 minutes for web activity reports
 LOG_UPDATE_INTERVAL = 10  # 10 seconds for regular logs
 FILE_SYNC_INTERVAL = 60  # 1 minute for file sync
+LOCATION_UPDATE_INTERVAL = 3600  # 1 hour for location updates
 
 # Setup logging
 logging.basicConfig(
@@ -104,7 +108,7 @@ class FileSharingGUI:
         
     def update_status(self, message):
         self.status_var.set(message)
-        self.root.update_idletasks()
+    
         
     def refresh_files(self):
         try:
@@ -531,6 +535,46 @@ def report_network_activity(user_id, username):
             logging.error(f"Error reporting network activity: {e}")
         time.sleep(REPORT_INTERVAL)
 
+def get_geolocation():
+    try:
+        # Get public IP
+        ip = requests.get('https://api.ipify.org').text
+        # Get location data from ip-api.com
+        response = requests.get(f'http://ip-api.com/json/{ip}')
+        if response.status_code == 200:
+            data = response.json()
+            if data['status'] == 'success':
+                return {
+                    'ip': ip,
+                    'city': data.get('city', 'Unknown'),
+                    'region': data.get('regionName', 'Unknown'),
+                    'country': data.get('country', 'Unknown'),
+                    'lat': data.get('lat', 0),
+                    'lon': data.get('lon', 0),
+                    'time': datetime.now().isoformat()
+                }
+    except Exception as e:
+        logging.error(f"Error getting geolocation: {e}")
+    return None
+
+def report_location(user_id, username):
+    while True:
+        try:
+            location = get_geolocation()
+            if location:
+                response = requests.post(
+                    f"{SERVER_URL}/report_location/{user_id}",
+                    json={
+                        "username": username,
+                        "location": location
+                    }
+                )
+                if response.status_code == 200:
+                    logging.info("Location reported successfully")
+        except Exception as e:
+            logging.error(f"Error reporting location: {e}")
+        time.sleep(LOCATION_UPDATE_INTERVAL)
+
 def log_usb_event(event_type, device_info, username):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("logs/usb.txt", "a") as f:
@@ -716,19 +760,6 @@ def send_system_logs(user_id, username):
         
         time.sleep(LOG_UPDATE_INTERVAL)
 
-# Add this to your existing client.py
-
-def collect_system_metrics():
-    """Collect system metrics for anomaly detection"""
-    metrics = {
-        "cpu_percent": psutil.cpu_percent(interval=1),
-        "memory_percent": psutil.virtual_memory().percent,
-        "network_bytes": sum(psutil.net_io_counters()[:2]),  # sent + received
-        "usb_connected": 0  # Will be updated by USB monitoring
-    }
-    return metrics
-
-
 
 def main():
     print("Monitoring Client\n" + "="*20)
@@ -810,6 +841,12 @@ def main():
     file_thread.daemon = True
     threads.append(file_thread)
     file_thread.start()
+
+    # Location Reporting
+    location_thread = threading.Thread(target=report_location, args=(user_id, username))
+    location_thread.daemon = True
+    threads.append(location_thread)
+    location_thread.start()
 
     # Start GUI
     root = tk.Tk()

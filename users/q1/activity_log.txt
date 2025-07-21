@@ -1,0 +1,21 @@
+2025-07-21T14:16:12.624899 - New user added
+2025-07-21T14:16:34.685806 - User accepted by admin
+2025-07-21T14:16:37.733928 - Web activity reported
+2025-07-21T14:16:37.864648 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (572933738 bytes > 1000000 bytes))
+2025-07-21T14:16:37.875063 - Network activity reported
+2025-07-21T14:16:38.939712 - Location updated: {'ip': '106.221.211.92', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-07-21T14:16:38.930797'}
+2025-07-21T14:16:47.917182 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (573342436 bytes > 1000000 bytes))
+2025-07-21T14:16:57.967143 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (573819743 bytes > 1000000 bytes))
+2025-07-21T14:17:07.759311 - Web activity reported
+2025-07-21T14:17:07.903314 - Network activity reported
+2025-07-21T14:17:08.014608 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (574374685 bytes > 1000000 bytes))
+2025-07-21T14:17:18.059456 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (575127423 bytes > 1000000 bytes))
+2025-07-21T14:17:28.106842 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (575635819 bytes > 1000000 bytes))
+2025-07-21T14:17:37.852519 - Web activity reported
+2025-07-21T14:17:37.936044 - Network activity reported
+2025-07-21T14:17:38.155513 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (576206957 bytes > 1000000 bytes))
+2025-07-21T14:17:48.201953 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (576833860 bytes > 1000000 bytes))
+2025-07-21T14:17:58.249182 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (577362428 bytes > 1000000 bytes))
+2025-07-21T14:18:07.883477 - Web activity reported
+2025-07-21T14:18:07.967743 - Network activity reported
+2025-07-21T14:18:08.298581 - ANOMALY DETECTED: Anomaly detected for q1 (Score: -0.21, Reasons: High Network (577914366 bytes > 1000000 bytes))

