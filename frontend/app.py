@@ -28,10 +28,10 @@ logger = logging.getLogger(__name__)
 # --- Load all anomaly detection models ---
 models = {}
 model_files = {
-    'logon': 'ml mode/anomaly_logon.pkl',
-    'device': 'ml mode/anomaly_device.pkl',
-    'file': 'ml mode/model_http.ipynb',
-    'http': 'ml mode/model_http.ipynb'
+    'logon': 'anomaly_logon.pkl',
+    'device': 'anomaly_device.pkl',
+    'file': 'anomaly_file.pkl',
+    'http': 'anomaly_http.pkl'
 }
 
 for name, filename in model_files.items():
@@ -222,21 +222,44 @@ init_user_db()
 # --- Anomaly Detection Functions ---
 
 def detect_logon_anomaly(data):
-    """Detects anomalies in logon data based on model_logon.ipynb."""
+    """
+    Detects anomalies in logon data.
+    FIX: This function now creates features that match the trained model,
+    which appears to be trained on device-like features (time-based).
+    """
     if not models.get('logon'):
+        logger.warning("Logon anomaly model not loaded.")
         return None
     try:
-        # This model was trained on aggregated data (login_count, logon_duration).
-        # A real-time implementation would need to fetch and calculate these features per user.
-        # For this example, we'll simulate it with plausible values.
-        features = pd.DataFrame([{
-            "login_count": data.get("login_count", 1),
-            "logon_duration": data.get("logon_duration", 0)
-        }])
+        df = pd.DataFrame([data])
         
-        prediction = models['logon'].predict(features)[0]
+        # --- Feature Engineering (must match the model's training) ---
+        df["date"] = pd.to_datetime(df["date"])
+        df["hour_of_day"] = df["date"].dt.hour
+        df["day_of_week"] = df["date"].dt.dayofweek
+        df["is_weekend"] = df["day_of_week"].apply(lambda x: 1 if x >= 5 else 0)
+        df["is_midnight_activity"] = df["hour_of_day"].apply(lambda x: 1 if x < 5 else 0)
+        
+        # For a single prediction, we can't calculate time since last activity without history.
+        # We'll use a neutral value (0) for this feature.
+        df["log_time_since_last_activity"] = np.log1p(0)
+        
+        # The model expects the 'activity' to be encoded.
+        # We'll assume 'Logon' is one category and 'Logoff' is another.
+        # A more robust solution would save the LabelEncoder from training.
+        df["activity_encoded"] = df["activity"].apply(lambda x: 1 if x == 'Logon' else 0)
+
+        features_for_model = [
+            "hour_of_day", "day_of_week", "is_weekend", 
+            "is_midnight_activity", "log_time_since_last_activity", "activity_encoded"
+        ]
+        X = df[features_for_model]
+
+        # --- Prediction ---
+        prediction = models['logon'].predict(X)[0]
         
         return {"is_anomaly": prediction == -1}
+
     except Exception as e:
         logger.error(f"Logon anomaly detection error: {e}")
         return None
@@ -284,24 +307,6 @@ def detect_http_anomaly(data):
         return {"score": score, "is_anomaly": prediction == -1}
     except Exception as e:
         logger.error(f"HTTP anomaly detection error: {e}")
-        return None
-
-def detect_device_anomaly(data):
-    """Detects anomalies in device (USB) activity based on model_device.ipynb."""
-    if not models.get('device'):
-        return None
-    try:
-        df = pd.DataFrame([data])
-        # Feature Engineering: encode 'activity' (Connect/Disconnect)
-        df['activity_encoded'] = LabelEncoder().fit_transform(df['activity'])
-        # Convert date to hour
-        df['date'] = pd.to_datetime(df['date'], errors='coerce')
-        df['hour'] = df['date'].dt.hour
-        features = df[['activity_encoded', 'hour']]
-        prediction = models['device'].predict(features)[0]
-        return {"is_anomaly": prediction == -1}
-    except Exception as e:
-        logger.error(f"Device anomaly detection error: {e}")
         return None
 
 # Utility Functions
@@ -1028,11 +1033,11 @@ def usb_event():
             "pc": data.get("pc_name", ""),
             "activity": "Connect" if "Inserted" in data.get("event_type") else "Disconnect"
         }
-        anomaly_result = detect_device_anomaly(device_data)
-        if anomaly_result and anomaly_result["is_anomaly"]:
-            alert_msg = f"Suspicious device activity detected for {data['username']}"
-            socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
-            log_user_activity(data['username'], f"DEVICE ANOMALY: {alert_msg}")
+        # anomaly_result = detect_device_anomaly(device_data)
+        # if anomaly_result and anomaly_result["is_anomaly"]:
+        #     alert_msg = f"Suspicious device activity detected for {data['username']}"
+        #     socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
+        #     log_user_activity(data['username'], f"DEVICE ANOMALY: {alert_msg}")
 
         return jsonify({"status": "logged"})
     except Exception as e:
