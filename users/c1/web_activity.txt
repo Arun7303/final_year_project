@@ -1,0 +1,150 @@
+2025-08-08 13:33:13 | http://10.232.224.88:5000/ | Live User Monitoring Dashboard
+2025-08-08 13:29:14 | http://10.232.224.88:5000/user_logs/c4657b0e-f4db-4922-b3e9-edc40ded1603 | User Logs - kali
+2025-08-08 13:28:27 | https://hackergpt.app/auth/login | HackerGPT Lite | AI powered OSINT and Coding Tool
+2025-08-08 13:28:26 | https://pentestgpt.ai/c/ac44f918-d1b4-4b53-be9e-5d569cbd1844 | Vulnerable Student Registration Portal
+2025-08-08 13:28:26 | https://www.kaggle.com/datasets/wenruliu/adult-income-dataset | Adult income dataset
+2025-08-08 13:28:24 | https://www.tenable.com/downloads/nessus?loginAttempted=true | Download Tenable Nessus | Tenable®
+2025-08-08 13:28:17 | https://chatgpt.com/c/6894e057-7bc4-8322-8343-5cd3acbbb53f | Top cybersecurity websites
+2025-08-08 13:28:09 | https://www.google.com/search?sca_esv=4f2a8e6ea63d0d42&sxsrf=AE3TifPuU8xx1rMW5W88gmbS0v2qiMPNpQ:1754630734961&q=K-nearest+neighbor+algorithm.&source=lnms&fbs=AIIjpHyTFN8BbSyNXQ3oA-fn7H5N0_alFIlVM3Dsmdj_aHzoLxwxLLLCfPzthQs1CuDx_B_7V9vIDPjI18wZzD3YDRZzeAMCnFBNiu4UNK10nY1W3-gX2y6stS2FoV4JQyyP9FK5UkKXOvTBA8u7KMVgOmbaCzfkmLLzJtpcTSjDcy-VP2ghw4TdSBLL4_N26YSpPN5ZxtHwRNQ6Zf1dBy7_k9BsgXldE97wl8jR6Zv_NEl0yGdM1Pc&sa=X&ved=2ahUKEwjIja3tvPqOAxV4yzgGHcpsKp4Q0pQJegQIDRAB&biw=1920&bih=930&dpr=1 | K-nearest neighbor algorithm. - Google Search
+2025-08-08 13:28:09 | https://medium.com/machine-learning-researcher/k-nearest-neighbors-in-machine-learning-e794014abd2a | K-Nearest Neighbor with Practical Implementation | by Amir Ali | Aorb Tech | Medium
+2025-08-08 13:28:06 | https://docs.google.com/document/d/190-42yg3C91jTKKhEwsvWUN2RG0z7fNobxM-wJ-EnJg/edit?tab=t.0 | DivyaMunotResume - Google Docs
+2025-08-08 13:28:05 | https://mail.google.com/mail/u/1/#search/divya+munot/FMfcgzQXJQTdRvWWVBcWMfKNFMdPrPMP?projector=1 | Job Application Resources - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-08-08 13:28:05 | https://www.google.com/search?q=enum4linux&oq=enu4&gs_lcrp=EgZjaHJvbWUqCQgBEAAYChiABDIGCAAQRRg5MgkIARAAGAoYgAQyCQgCEAAYChiABDIJCAMQABgKGIAEMgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIMCAkQABgKGMcDGIAE0gEINTE1NWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8 | enum4linux - Google Search
+2025-08-08 13:28:04 | http://10.232.224.88:5000/login | Admin Login
+2025-08-08 13:28:01 | http://10.25.3.92/ | Apache2 Debian Default Page: It works
+2025-08-08 13:28:01 | https://www.dcode.fr/brainfuck-language | Brainfuck Language - Online Decoder, Translator, Interpreter
+2025-08-08 13:28:00 | https://chatgpt.com/c/68959c21-a3ac-832b-93c2-84e3bc91afff | Brainfuck program decoding
+2025-08-08 13:27:57 | https://tryhackme.com/threat-hunting-sim/ | TryHackMe | Cyber Security Training
+2025-08-08 12:28:00 | https://learner.vupune.ac.in/ | EduPlusCampus
+2025-08-08 12:18:02 | https://learner.vupune.ac.in/proceed-payment?fees_type=i1xmHQPgZDd0s7aBxuqLl7bZhjQH/CJ46MyAqcIw8mk=&description=i1xmHQPgZDd0s7aBxuqLl7bZhjQH/CJ46MyAqcIw8mk=&ay=pB3ryXlbMLIHRp2fFeKjbQ==&sem=a5h4e1iM9703nHkihpsx2A==&ishonor=ttmGNAf8InjozICpwjDyaQ== | EduPlusCampus
+2025-08-08 12:18:01 | https://learner.vupune.ac.in/payment-dasboard | EduPlusCampus
+2025-08-08 12:18:00 | https://learner.vupune.ac.in/Accounts | EduPlusCampus
+2025-08-08 12:17:54 | https://learner.vupune.ac.in/LearnerReceiptReport | EduPlusCampus
+2025-08-08 12:17:52 | https://learner.vupune.ac.in/Dashboard | EduPlusCampus
+2025-08-08 12:14:45 | https://tryhackme.com/threat-hunting-sim/scenarios | TryHackMe | Dashboard
+2025-08-08 12:14:28 | https://tryhackme.com/threat-hunting-sim/?ref=nav | TryHackMe | Dashboard
+2025-08-08 12:14:16 | https://tryhackme.com/dashboard | TryHackMe | Dashboard
+2025-08-08 12:14:08 | https://tryhackme.com/login | TryHackMe | Login
+2025-08-08 12:14:05 | https://tryhackme.com/ | Learn Cyber Security | TryHackMe Cyber Training
+2025-08-08 12:14:00 | https://www.vulnhub.com/ | Vulnerable By Design ~ VulnHub
+2025-08-08 12:13:49 | https://www.vulnhub.com/entry/noob-1,746/ | Noob: 1 ~ VulnHub
+2025-08-08 12:13:40 | https://www.google.com/search?q=vulnhub&oq=vul&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMgYIABBFGDkyDggBEEUYJxg7GIAEGIoFMhAIAhAAGJECGLEDGIAEGIoFMg0IAxAAGJECGIAEGIoFMgYIBBBFGDwyBggFEEUYPDIGCAYQRRg9MgYIBxBFGDzSAQgyNDcxajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | vulnhub - Google Search
+2025-08-08 12:13:00 | https://10.25.3.92:20000/mailbox/index.cgi?id=INBOX&xnavigation=1 | 10.25.3.92
+2025-08-08 12:12:58 | https://10.25.3.92:20000/sysinfo.cgi?xnavigation=1 | Dashboard — Usermin 1.830 (Debian Linux 11)
+2025-08-08 12:12:40 | https://10.25.3.92:20000/ | Usermin
+2025-08-08 12:12:33 | https://10.25.3.92:10000/session_login.cgi | 10.25.3.92
+2025-08-08 12:11:59 | https://www.google.com/search?q=brainfuck+decoder&oq=brain&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyBwgCEAAYjwIyBwgDEAAYjwIyBwgEEAAYjwIyBggFEEUYPdIBCDYzOTdqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8 | brainfuck decoder - Google Search
+2025-08-08 12:11:27 | https://chatgpt.com/?model=auto | ChatGPT
+2025-08-08 12:09:49 | http://10.25.3.92:20000/ | 200 — Document follows
+2025-08-08 12:07:31 | https://10.25.3.92:10000/ | Login to Webmin
+2025-08-08 12:07:02 | http://10.25.3.92:10000/ | 200 — Document follows
+2025-08-08 12:04:15 | https://mail.google.com/mail/u/0/#inbox | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/mail/u/0/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/mail/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:08 | https://github.com/DivyaMunot?tab=repositories | DivyaMunot (DivyaMunot) / Repositories
+2025-08-08 12:04:05 | https://chatgpt.com/c/689590c1-c7d8-8327-be22-6bc9cfe1a5e1 | Explain K-NN algorithm
+2025-08-08 12:04:05 | chrome-extension://aahnibhpidkdaeaplfdogejgoajkjgob/launch.html | 
+2025-08-08 12:04:05 | https://mail.google.com/mail/u/1/#search/divya+munot/FMfcgzQXJQTdRvWWVBcWMfKNFMdPrPMP?projector=1&messagePartId=0.1 | Job Application Resources - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-08-08 12:00:48 | https://www.google.com/search?q=k-nearest+neighbor+algorithm.&oq=&gs_lcrp=EgZjaHJvbWUqCQgDECMYJxjqAjIGCAAQRRg6MgkIARAFGEIYwwMyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyDwgFEC4YJxjHARjqAhjRAzIJCAYQIxgnGOoCMgkIBxAjGCcY6gIyCQgIECMYJxjqAjIJCAkQIxgnGOoCMgkIChAjGCcY6gIyCQgLECMYJxjqAjIJCAwQIxgnGOoCMgkIDRAjGCcY6gIyCQgOECMYJxjqAtIBBy0xajBqMTmoAg6wAgHxBQtIbzQrxHHf&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | k-nearest neighbor algorithm. - Google Search
+2025-08-08 11:50:35 | https://learner.vupune.ac.in/payment-status | EduPlusCampus
+2025-08-08 13:33:42 | http://10.232.224.88:5000/ | Live User Monitoring Dashboard
+2025-08-08 13:33:33 | http://10.232.224.88:5000/user_logs/528658f0-c00a-4024-81aa-6b33253d7eaa | User Logs - kali
+2025-08-08 13:29:14 | http://10.232.224.88:5000/user_logs/c4657b0e-f4db-4922-b3e9-edc40ded1603 | User Logs - kali
+2025-08-08 13:28:27 | https://hackergpt.app/auth/login | HackerGPT Lite | AI powered OSINT and Coding Tool
+2025-08-08 13:28:26 | https://pentestgpt.ai/c/ac44f918-d1b4-4b53-be9e-5d569cbd1844 | Vulnerable Student Registration Portal
+2025-08-08 13:28:26 | https://www.kaggle.com/datasets/wenruliu/adult-income-dataset | Adult income dataset
+2025-08-08 13:28:24 | https://www.tenable.com/downloads/nessus?loginAttempted=true | Download Tenable Nessus | Tenable®
+2025-08-08 13:28:17 | https://chatgpt.com/c/6894e057-7bc4-8322-8343-5cd3acbbb53f | Top cybersecurity websites
+2025-08-08 13:28:09 | https://www.google.com/search?sca_esv=4f2a8e6ea63d0d42&sxsrf=AE3TifPuU8xx1rMW5W88gmbS0v2qiMPNpQ:1754630734961&q=K-nearest+neighbor+algorithm.&source=lnms&fbs=AIIjpHyTFN8BbSyNXQ3oA-fn7H5N0_alFIlVM3Dsmdj_aHzoLxwxLLLCfPzthQs1CuDx_B_7V9vIDPjI18wZzD3YDRZzeAMCnFBNiu4UNK10nY1W3-gX2y6stS2FoV4JQyyP9FK5UkKXOvTBA8u7KMVgOmbaCzfkmLLzJtpcTSjDcy-VP2ghw4TdSBLL4_N26YSpPN5ZxtHwRNQ6Zf1dBy7_k9BsgXldE97wl8jR6Zv_NEl0yGdM1Pc&sa=X&ved=2ahUKEwjIja3tvPqOAxV4yzgGHcpsKp4Q0pQJegQIDRAB&biw=1920&bih=930&dpr=1 | K-nearest neighbor algorithm. - Google Search
+2025-08-08 13:28:09 | https://medium.com/machine-learning-researcher/k-nearest-neighbors-in-machine-learning-e794014abd2a | K-Nearest Neighbor with Practical Implementation | by Amir Ali | Aorb Tech | Medium
+2025-08-08 13:28:06 | https://docs.google.com/document/d/190-42yg3C91jTKKhEwsvWUN2RG0z7fNobxM-wJ-EnJg/edit?tab=t.0 | DivyaMunotResume - Google Docs
+2025-08-08 13:28:05 | https://mail.google.com/mail/u/1/#search/divya+munot/FMfcgzQXJQTdRvWWVBcWMfKNFMdPrPMP?projector=1 | Job Application Resources - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-08-08 13:28:05 | https://www.google.com/search?q=enum4linux&oq=enu4&gs_lcrp=EgZjaHJvbWUqCQgBEAAYChiABDIGCAAQRRg5MgkIARAAGAoYgAQyCQgCEAAYChiABDIJCAMQABgKGIAEMgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIMCAkQABgKGMcDGIAE0gEINTE1NWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8 | enum4linux - Google Search
+2025-08-08 13:28:04 | http://10.232.224.88:5000/login | Admin Login
+2025-08-08 13:28:01 | http://10.25.3.92/ | Apache2 Debian Default Page: It works
+2025-08-08 13:28:01 | https://www.dcode.fr/brainfuck-language | Brainfuck Language - Online Decoder, Translator, Interpreter
+2025-08-08 13:28:00 | https://chatgpt.com/c/68959c21-a3ac-832b-93c2-84e3bc91afff | Brainfuck program decoding
+2025-08-08 13:27:57 | https://tryhackme.com/threat-hunting-sim/ | TryHackMe | Cyber Security Training
+2025-08-08 12:28:00 | https://learner.vupune.ac.in/ | EduPlusCampus
+2025-08-08 12:18:02 | https://learner.vupune.ac.in/proceed-payment?fees_type=i1xmHQPgZDd0s7aBxuqLl7bZhjQH/CJ46MyAqcIw8mk=&description=i1xmHQPgZDd0s7aBxuqLl7bZhjQH/CJ46MyAqcIw8mk=&ay=pB3ryXlbMLIHRp2fFeKjbQ==&sem=a5h4e1iM9703nHkihpsx2A==&ishonor=ttmGNAf8InjozICpwjDyaQ== | EduPlusCampus
+2025-08-08 12:18:01 | https://learner.vupune.ac.in/payment-dasboard | EduPlusCampus
+2025-08-08 12:18:00 | https://learner.vupune.ac.in/Accounts | EduPlusCampus
+2025-08-08 12:17:54 | https://learner.vupune.ac.in/LearnerReceiptReport | EduPlusCampus
+2025-08-08 12:17:52 | https://learner.vupune.ac.in/Dashboard | EduPlusCampus
+2025-08-08 12:14:45 | https://tryhackme.com/threat-hunting-sim/scenarios | TryHackMe | Dashboard
+2025-08-08 12:14:28 | https://tryhackme.com/threat-hunting-sim/?ref=nav | TryHackMe | Dashboard
+2025-08-08 12:14:16 | https://tryhackme.com/dashboard | TryHackMe | Dashboard
+2025-08-08 12:14:08 | https://tryhackme.com/login | TryHackMe | Login
+2025-08-08 12:14:05 | https://tryhackme.com/ | Learn Cyber Security | TryHackMe Cyber Training
+2025-08-08 12:14:00 | https://www.vulnhub.com/ | Vulnerable By Design ~ VulnHub
+2025-08-08 12:13:49 | https://www.vulnhub.com/entry/noob-1,746/ | Noob: 1 ~ VulnHub
+2025-08-08 12:13:40 | https://www.google.com/search?q=vulnhub&oq=vul&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMgYIABBFGDkyDggBEEUYJxg7GIAEGIoFMhAIAhAAGJECGLEDGIAEGIoFMg0IAxAAGJECGIAEGIoFMgYIBBBFGDwyBggFEEUYPDIGCAYQRRg9MgYIBxBFGDzSAQgyNDcxajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | vulnhub - Google Search
+2025-08-08 12:13:00 | https://10.25.3.92:20000/mailbox/index.cgi?id=INBOX&xnavigation=1 | 10.25.3.92
+2025-08-08 12:12:58 | https://10.25.3.92:20000/sysinfo.cgi?xnavigation=1 | Dashboard — Usermin 1.830 (Debian Linux 11)
+2025-08-08 12:12:40 | https://10.25.3.92:20000/ | Usermin
+2025-08-08 12:12:33 | https://10.25.3.92:10000/session_login.cgi | 10.25.3.92
+2025-08-08 12:11:59 | https://www.google.com/search?q=brainfuck+decoder&oq=brain&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyBwgCEAAYjwIyBwgDEAAYjwIyBwgEEAAYjwIyBggFEEUYPdIBCDYzOTdqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8 | brainfuck decoder - Google Search
+2025-08-08 12:11:27 | https://chatgpt.com/?model=auto | ChatGPT
+2025-08-08 12:09:49 | http://10.25.3.92:20000/ | 200 — Document follows
+2025-08-08 12:07:31 | https://10.25.3.92:10000/ | Login to Webmin
+2025-08-08 12:07:02 | http://10.25.3.92:10000/ | 200 — Document follows
+2025-08-08 12:04:15 | https://mail.google.com/mail/u/0/#inbox | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/mail/u/0/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/mail/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:08 | https://github.com/DivyaMunot?tab=repositories | DivyaMunot (DivyaMunot) / Repositories
+2025-08-08 12:04:05 | https://chatgpt.com/c/689590c1-c7d8-8327-be22-6bc9cfe1a5e1 | Explain K-NN algorithm
+2025-08-08 12:04:05 | chrome-extension://aahnibhpidkdaeaplfdogejgoajkjgob/launch.html | 
+2025-08-08 12:04:05 | https://mail.google.com/mail/u/1/#search/divya+munot/FMfcgzQXJQTdRvWWVBcWMfKNFMdPrPMP?projector=1&messagePartId=0.1 | Job Application Resources - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-08-08 12:00:48 | https://www.google.com/search?q=k-nearest+neighbor+algorithm.&oq=&gs_lcrp=EgZjaHJvbWUqCQgDECMYJxjqAjIGCAAQRRg6MgkIARAFGEIYwwMyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyDwgFEC4YJxjHARjqAhjRAzIJCAYQIxgnGOoCMgkIBxAjGCcY6gIyCQgIECMYJxjqAjIJCAkQIxgnGOoCMgkIChAjGCcY6gIyCQgLECMYJxjqAjIJCAwQIxgnGOoCMgkIDRAjGCcY6gIyCQgOECMYJxjqAtIBBy0xajBqMTmoAg6wAgHxBQtIbzQrxHHf&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | k-nearest neighbor algorithm. - Google Search
+2025-08-08 13:33:42 | http://10.232.224.88:5000/ | Live User Monitoring Dashboard
+2025-08-08 13:33:33 | http://10.232.224.88:5000/user_logs/528658f0-c00a-4024-81aa-6b33253d7eaa | User Logs - kali
+2025-08-08 13:29:14 | http://10.232.224.88:5000/user_logs/c4657b0e-f4db-4922-b3e9-edc40ded1603 | User Logs - kali
+2025-08-08 13:28:27 | https://hackergpt.app/auth/login | HackerGPT Lite | AI powered OSINT and Coding Tool
+2025-08-08 13:28:26 | https://pentestgpt.ai/c/ac44f918-d1b4-4b53-be9e-5d569cbd1844 | Vulnerable Student Registration Portal
+2025-08-08 13:28:26 | https://www.kaggle.com/datasets/wenruliu/adult-income-dataset | Adult income dataset
+2025-08-08 13:28:24 | https://www.tenable.com/downloads/nessus?loginAttempted=true | Download Tenable Nessus | Tenable®
+2025-08-08 13:28:17 | https://chatgpt.com/c/6894e057-7bc4-8322-8343-5cd3acbbb53f | Top cybersecurity websites
+2025-08-08 13:28:09 | https://www.google.com/search?sca_esv=4f2a8e6ea63d0d42&sxsrf=AE3TifPuU8xx1rMW5W88gmbS0v2qiMPNpQ:1754630734961&q=K-nearest+neighbor+algorithm.&source=lnms&fbs=AIIjpHyTFN8BbSyNXQ3oA-fn7H5N0_alFIlVM3Dsmdj_aHzoLxwxLLLCfPzthQs1CuDx_B_7V9vIDPjI18wZzD3YDRZzeAMCnFBNiu4UNK10nY1W3-gX2y6stS2FoV4JQyyP9FK5UkKXOvTBA8u7KMVgOmbaCzfkmLLzJtpcTSjDcy-VP2ghw4TdSBLL4_N26YSpPN5ZxtHwRNQ6Zf1dBy7_k9BsgXldE97wl8jR6Zv_NEl0yGdM1Pc&sa=X&ved=2ahUKEwjIja3tvPqOAxV4yzgGHcpsKp4Q0pQJegQIDRAB&biw=1920&bih=930&dpr=1 | K-nearest neighbor algorithm. - Google Search
+2025-08-08 13:28:09 | https://medium.com/machine-learning-researcher/k-nearest-neighbors-in-machine-learning-e794014abd2a | K-Nearest Neighbor with Practical Implementation | by Amir Ali | Aorb Tech | Medium
+2025-08-08 13:28:06 | https://docs.google.com/document/d/190-42yg3C91jTKKhEwsvWUN2RG0z7fNobxM-wJ-EnJg/edit?tab=t.0 | DivyaMunotResume - Google Docs
+2025-08-08 13:28:05 | https://mail.google.com/mail/u/1/#search/divya+munot/FMfcgzQXJQTdRvWWVBcWMfKNFMdPrPMP?projector=1 | Job Application Resources - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-08-08 13:28:05 | https://www.google.com/search?q=enum4linux&oq=enu4&gs_lcrp=EgZjaHJvbWUqCQgBEAAYChiABDIGCAAQRRg5MgkIARAAGAoYgAQyCQgCEAAYChiABDIJCAMQABgKGIAEMgkIBBAAGAoYgAQyCQgFEAAYChiABDIJCAYQABgKGIAEMgkIBxAAGAoYgAQyCQgIEAAYChiABDIMCAkQABgKGMcDGIAE0gEINTE1NWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8 | enum4linux - Google Search
+2025-08-08 13:28:04 | http://10.232.224.88:5000/login | Admin Login
+2025-08-08 13:28:01 | http://10.25.3.92/ | Apache2 Debian Default Page: It works
+2025-08-08 13:28:01 | https://www.dcode.fr/brainfuck-language | Brainfuck Language - Online Decoder, Translator, Interpreter
+2025-08-08 13:28:00 | https://chatgpt.com/c/68959c21-a3ac-832b-93c2-84e3bc91afff | Brainfuck program decoding
+2025-08-08 13:27:57 | https://tryhackme.com/threat-hunting-sim/ | TryHackMe | Cyber Security Training
+2025-08-08 12:28:00 | https://learner.vupune.ac.in/ | EduPlusCampus
+2025-08-08 12:18:02 | https://learner.vupune.ac.in/proceed-payment?fees_type=i1xmHQPgZDd0s7aBxuqLl7bZhjQH/CJ46MyAqcIw8mk=&description=i1xmHQPgZDd0s7aBxuqLl7bZhjQH/CJ46MyAqcIw8mk=&ay=pB3ryXlbMLIHRp2fFeKjbQ==&sem=a5h4e1iM9703nHkihpsx2A==&ishonor=ttmGNAf8InjozICpwjDyaQ== | EduPlusCampus
+2025-08-08 12:18:01 | https://learner.vupune.ac.in/payment-dasboard | EduPlusCampus
+2025-08-08 12:18:00 | https://learner.vupune.ac.in/Accounts | EduPlusCampus
+2025-08-08 12:17:54 | https://learner.vupune.ac.in/LearnerReceiptReport | EduPlusCampus
+2025-08-08 12:17:52 | https://learner.vupune.ac.in/Dashboard | EduPlusCampus
+2025-08-08 12:14:45 | https://tryhackme.com/threat-hunting-sim/scenarios | TryHackMe | Dashboard
+2025-08-08 12:14:28 | https://tryhackme.com/threat-hunting-sim/?ref=nav | TryHackMe | Dashboard
+2025-08-08 12:14:16 | https://tryhackme.com/dashboard | TryHackMe | Dashboard
+2025-08-08 12:14:08 | https://tryhackme.com/login | TryHackMe | Login
+2025-08-08 12:14:05 | https://tryhackme.com/ | Learn Cyber Security | TryHackMe Cyber Training
+2025-08-08 12:14:00 | https://www.vulnhub.com/ | Vulnerable By Design ~ VulnHub
+2025-08-08 12:13:49 | https://www.vulnhub.com/entry/noob-1,746/ | Noob: 1 ~ VulnHub
+2025-08-08 12:13:40 | https://www.google.com/search?q=vulnhub&oq=vul&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMgYIABBFGDkyDggBEEUYJxg7GIAEGIoFMhAIAhAAGJECGLEDGIAEGIoFMg0IAxAAGJECGIAEGIoFMgYIBBBFGDwyBggFEEUYPDIGCAYQRRg9MgYIBxBFGDzSAQgyNDcxajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | vulnhub - Google Search
+2025-08-08 12:13:00 | https://10.25.3.92:20000/mailbox/index.cgi?id=INBOX&xnavigation=1 | 10.25.3.92
+2025-08-08 12:12:58 | https://10.25.3.92:20000/sysinfo.cgi?xnavigation=1 | Dashboard — Usermin 1.830 (Debian Linux 11)
+2025-08-08 12:12:40 | https://10.25.3.92:20000/ | Usermin
+2025-08-08 12:12:33 | https://10.25.3.92:10000/session_login.cgi | 10.25.3.92
+2025-08-08 12:11:59 | https://www.google.com/search?q=brainfuck+decoder&oq=brain&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyBwgCEAAYjwIyBwgDEAAYjwIyBwgEEAAYjwIyBggFEEUYPdIBCDYzOTdqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8 | brainfuck decoder - Google Search
+2025-08-08 12:11:27 | https://chatgpt.com/?model=auto | ChatGPT
+2025-08-08 12:09:49 | http://10.25.3.92:20000/ | 200 — Document follows
+2025-08-08 12:07:31 | https://10.25.3.92:10000/ | Login to Webmin
+2025-08-08 12:07:02 | http://10.25.3.92:10000/ | 200 — Document follows
+2025-08-08 12:04:15 | https://mail.google.com/mail/u/0/#inbox | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/mail/u/0/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:13 | https://mail.google.com/mail/ | Inbox (88) - arunadhikari0000@gmail.com - Gmail
+2025-08-08 12:04:08 | https://github.com/DivyaMunot?tab=repositories | DivyaMunot (DivyaMunot) / Repositories
+2025-08-08 12:04:05 | https://chatgpt.com/c/689590c1-c7d8-8327-be22-6bc9cfe1a5e1 | Explain K-NN algorithm
+2025-08-08 12:04:05 | chrome-extension://aahnibhpidkdaeaplfdogejgoajkjgob/launch.html | 
+2025-08-08 12:04:05 | https://mail.google.com/mail/u/1/#search/divya+munot/FMfcgzQXJQTdRvWWVBcWMfKNFMdPrPMP?projector=1&messagePartId=0.1 | Job Application Resources - 202100406@vupune.ac.in - vishwakarma university Mail
+2025-08-08 12:00:48 | https://www.google.com/search?q=k-nearest+neighbor+algorithm.&oq=&gs_lcrp=EgZjaHJvbWUqCQgDECMYJxjqAjIGCAAQRRg6MgkIARAFGEIYwwMyCQgCECMYJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyDwgFEC4YJxjHARjqAhjRAzIJCAYQIxgnGOoCMgkIBxAjGCcY6gIyCQgIECMYJxjqAjIJCAkQIxgnGOoCMgkIChAjGCcY6gIyCQgLECMYJxjqAjIJCAwQIxgnGOoCMgkIDRAjGCcY6gIyCQgOECMYJxjqAtIBBy0xajBqMTmoAg6wAgHxBQtIbzQrxHHf&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | k-nearest neighbor algorithm. - Google Search

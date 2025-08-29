@@ -3,15 +3,18 @@ from flask_socketio import SocketIO, emit
 import sqlite3
 import joblib
 import numpy as np
+import pandas as pd
 from datetime import datetime
 import json
 import logging
 import psutil
 import os
-import pandas as pd
-from collections import defaultdict
 import shutil
 from werkzeug.utils import secure_filename
+import time
+import threading
+import pickle
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -22,19 +25,55 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Load anomaly detection model
-try:
-    model = joblib.load('anomaly_detection_model.pkl')
-    logger.info("Anomaly detection model loaded successfully")
-except Exception as e:
-    logger.error(f"Error loading model: {e}")
-    model = None
+# --- Load all anomaly detection models ---
+models = {}
+model_files = {
+    'logon': 'anomaly_logon.pkl',
+    'device': 'anomaly_device.pkl',
+    'file': 'anomaly_file.pkl',
+    'http': 'anomaly_http.pkl'
+}
+
+for name, filename in model_files.items():
+    try:
+        with open(filename, 'rb') as f:
+            models[name] = pickle.load(f)
+        logger.info(f"Anomaly detection model '{name}' loaded successfully")
+    except FileNotFoundError:
+        logger.error(f"Model file not found: {filename}. Anomaly detection for '{name}' will be disabled.")
+        models[name] = None
+    except Exception as e:
+        logger.error(f"Error loading model '{name}': {e}")
+        models[name] = None
+
 
 # Ensure directories exist
 os.makedirs("users/admin", exist_ok=True)
 for filename in ['usb_alerts.txt', 'anomaly_alerts.txt', 'admin_activity.log']:
     if not os.path.exists(f"users/admin/{filename}"):
         open(f"users/admin/{filename}", 'w').close()
+
+# --- User Online Status Tracking ---
+online_users = {}  # user_id: last_seen_timestamp
+
+def check_offline_users():
+    while True:
+        try:
+            offline_threshold = time.time() - 30  # 30 seconds timeout
+            offline_user_ids = [user_id for user_id, last_seen in list(online_users.items()) if last_seen < offline_threshold]
+            
+            for user_id in offline_user_ids:
+                if user_id in online_users:
+                    del online_users[user_id]
+                    socketio.emit('user_offline', {'user_id': user_id})
+                    logger.info(f"User {user_id} is offline.")
+        except Exception as e:
+            logger.error(f"Error in check_offline_users: {e}")
+        socketio.sleep(15) # Check every 15 seconds
+
+# Start the background thread
+threading.Thread(target=check_offline_users, daemon=True).start()
+
 
 # Database Functions
 def init_admin_db():
@@ -180,6 +219,91 @@ def init_user_databases(username):
 init_admin_db()
 init_user_db()
 
+# --- Anomaly Detection Functions ---
+
+def detect_logon_anomaly(data):
+    """Detects anomalies in logon data based on model_logon.ipynb."""
+    if not models.get('logon'):
+        return None
+    try:
+        # This model was trained on aggregated data (login_count, logon_duration).
+        # A real-time implementation would need to fetch and calculate these features per user.
+        # For this example, we'll simulate it with plausible values.
+        features = pd.DataFrame([{
+            "login_count": data.get("login_count", 1),
+            "logon_duration": data.get("logon_duration", 0)
+        }])
+        
+        prediction = models['logon'].predict(features)[0]
+        
+        return {"is_anomaly": prediction == -1}
+    except Exception as e:
+        logger.error(f"Logon anomaly detection error: {e}")
+        return None
+
+def detect_file_anomaly(data):
+    """Detects anomalies in file access data based on model_file.ipynb."""
+    if not models.get('file'):
+        return None
+    try:
+        df = pd.DataFrame([data])
+        df['date'] = pd.to_datetime(df['date'], errors='coerce')
+        
+        # Feature Engineering to match the notebook
+        df['activity_new'] = LabelEncoder().fit_transform(df['activity'])
+        df['to_removable_media_new'] = LabelEncoder().fit_transform(df['to_removable_media'])
+        df['from_removable_media_new'] = LabelEncoder().fit_transform(df['from_removable_media'])
+        df['hour'] = df['date'].dt.hour
+        
+        features = df[['activity_new', 'to_removable_media_new', 'from_removable_media_new', 'hour']]
+        
+        prediction = models['file'].predict(features)[0]
+        
+        return {"is_anomaly": prediction == -1}
+    except Exception as e:
+        logger.error(f"File anomaly detection error: {e}")
+        return None
+
+def detect_http_anomaly(data):
+    """Detects anomalies in HTTP data based on model_http.ipynb."""
+    if not models.get('http'):
+        return None
+    try:
+        df = pd.DataFrame([data])
+        
+        # Feature Engineering
+        df['content_length'] = df['content'].apply(len)
+        df['url_length'] = df['url'].apply(len)
+        df['activity_encoded'] = LabelEncoder().fit_transform(df['activity'])
+
+        features = df[['content_length', 'url_length', 'activity_encoded']]
+        
+        score = models['http'].decision_function(features)[0]
+        prediction = models['http'].predict(features)[0]
+
+        return {"score": score, "is_anomaly": prediction == -1}
+    except Exception as e:
+        logger.error(f"HTTP anomaly detection error: {e}")
+        return None
+
+def detect_device_anomaly(data):
+    """Detects anomalies in device (USB) activity based on model_device.ipynb."""
+    if not models.get('device'):
+        return None
+    try:
+        df = pd.DataFrame([data])
+        # Feature Engineering: encode 'activity' (Connect/Disconnect)
+        df['activity_encoded'] = LabelEncoder().fit_transform(df['activity'])
+        # Convert date to hour
+        df['date'] = pd.to_datetime(df['date'], errors='coerce')
+        df['hour'] = df['date'].dt.hour
+        features = df[['activity_encoded', 'hour']]
+        prediction = models['device'].predict(features)[0]
+        return {"is_anomaly": prediction == -1}
+    except Exception as e:
+        logger.error(f"Device anomaly detection error: {e}")
+        return None
+
 # Utility Functions
 def get_user_folder(username):
     user_folder = os.path.join("users", username)
@@ -229,13 +353,14 @@ def get_all_users():
     finally:
         conn.close()
 
-# Routes
+# --- Main Routes ---
 @app.route("/")
 def dashboard():
     if 'admin_logged_in' not in session:
         return redirect(url_for('login'))
-    return render_template("dashboard.html", users=get_all_users())
+    return render_template("dashboard.html", users=get_all_users(), online_user_ids=list(online_users.keys()))
 
+# ... (login, logout routes remain the same) ...
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -262,79 +387,52 @@ def logout():
     session.pop('admin_logged_in', None)
     return redirect(url_for('login'))
 
-def detect_anomalies(user_id, username, logs, network_traffic, usb_count):
-    """Detect anomalies in the user's system behavior"""
-    if model is None:
-        return None
-    
-    try:
-        # Calculate metrics from logs
-        logs_df = pd.DataFrame(logs) if logs else pd.DataFrame()
-        
-        if logs_df.empty:
-            return None
-        
-        cpu_usage = logs_df['cpu_percent'].mean()
-        memory_usage = logs_df['memory_percent'].mean()
-        
-        if isinstance(network_traffic, str):
-            network_traffic = json.loads(network_traffic)
-        
-        network_bytes = network_traffic.get('bytes_recv', 0) + network_traffic.get('bytes_sent', 0)
-        usb_connected = 1 if usb_count > 0 else 0
-        
-        features = np.array([[cpu_usage, memory_usage, network_bytes, usb_connected]])
-        prediction = model.predict(features)
-        anomaly_score = model.decision_function(features)
-        
-        if prediction[0] == -1:
-            reasons = []
-            thresholds = {
-                'cpu': 80,
-                'memory': 80,
-                'network': 1000000,
-                'usb': 1
-            }
-            
-            if cpu_usage > thresholds['cpu']:
-                reasons.append(f"High CPU ({cpu_usage:.1f}% > {thresholds['cpu']}%)")
-            if memory_usage > thresholds['memory']:
-                reasons.append(f"High Memory ({memory_usage:.1f}% > {thresholds['memory']}%)")
-            if network_bytes > thresholds['network']:
-                reasons.append(f"High Network ({network_bytes} bytes > {thresholds['network']} bytes)")
-            if usb_connected >= thresholds['usb']:
-                reasons.append("USB Device Connected")
-            
-            reason_str = ", ".join(reasons) if reasons else "Multiple factors"
-            
-            return {
-                "is_anomaly": True,
-                "score": float(anomaly_score[0]),
-                "reasons": reasons,
-                "metrics": {
-                    "cpu": cpu_usage,
-                    "memory": memory_usage,
-                    "network": network_bytes,
-                    "usb": usb_connected
-                }
-            }
-        
-        return {
-            "is_anomaly": False,
-            "score": float(anomaly_score[0]),
-            "reasons": [],
-            "metrics": {
-                "cpu": cpu_usage,
-                "memory": memory_usage,
-                "network": network_bytes,
-                "usb": usb_connected
-            }
-        }
-    
-    except Exception as e:
-        logger.error(f"Anomaly detection error: {e}")
-        return None
 
+# --- New Anomaly Detection Routes ---
+
+@app.route("/report_logon_activity", methods=["POST"])
+def report_logon_activity():
+    data = request.json
+    username = data.get("user")
+    user_id = data.get("user_id")
+    anomaly_result = detect_logon_anomaly(data)
+    
+    if anomaly_result and anomaly_result["is_anomaly"]:
+        alert_msg = f"Suspicious logon behavior detected for {username}"
+        socketio.emit("logon_anomaly_alert", {"message": alert_msg, "user_id": user_id})
+        log_user_activity(username, f"LOGON ANOMALY: {alert_msg}")
+        
+    return jsonify({"status": "processed"})
+
+@app.route("/report_file_activity", methods=["POST"])
+def report_file_activity():
+    data = request.json
+    username = data.get("user")
+    user_id = data.get("user_id")
+    anomaly_result = detect_file_anomaly(data)
+    
+    if anomaly_result and anomaly_result["is_anomaly"]:
+        alert_msg = f"Suspicious file activity detected for {username}: {data.get('activity')} on {data.get('filename')}"
+        socketio.emit("file_anomaly_alert", {"message": alert_msg, "user_id": user_id})
+        log_user_activity(username, f"FILE ANOMALY: {alert_msg}")
+        
+    return jsonify({"status": "processed"})
+
+@app.route("/report_http_activity", methods=["POST"])
+def report_http_activity():
+    data = request.json
+    username = data.get("user")
+    user_id = data.get("user_id")
+    anomaly_result = detect_http_anomaly(data)
+
+    if anomaly_result and anomaly_result["is_anomaly"]:
+        alert_msg = f"Suspicious HTTP activity detected for {username} (URL: {data.get('url')[:30]}...)"
+        socketio.emit("http_anomaly_alert", {"message": alert_msg, "user_id": user_id, "score": anomaly_result.get('score', 0)})
+        log_user_activity(username, f"HTTP ANOMALY: {alert_msg}")
+
+    return jsonify({"status": "processed"})
+
+# ... (Existing routes like /report_location, /clear_usb_alerts, etc. remain the same) ...
 @app.route("/report_location/<user_id>", methods=["POST"])
 def report_location(user_id):
     try:
@@ -852,59 +950,24 @@ def update_activity(user_id):
             return jsonify({"error": "User not found"}), 404
             
         username = user[0]
-        current_usb_count = user[1]
         
-        logs = json.loads(data.get("logs", "[]"))
-        network_traffic = data.get("network_traffic", "{}")
-        
-        # Run anomaly detection
-        anomaly_result = detect_anomalies(
-            user_id, username, logs, network_traffic, current_usb_count
-        )
-        
-        if anomaly_result and anomaly_result["is_anomaly"]:
-            alert_msg = f"Anomaly detected for {username} (Score: {anomaly_result['score']:.2f}, Reasons: {', '.join(anomaly_result['reasons'])})"
-            
-            with open(f'users/admin/anomaly_alerts.txt', 'a') as f:
-                f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
-            
-            socketio.emit("insider_threat_alert", {
-                "message": alert_msg,
-                "user_id": user_id,
-                "score": anomaly_result["score"],
-                "reasons": anomaly_result["reasons"],
-                "metrics": anomaly_result["metrics"]
-            })
-            
-            log_user_activity(username, f"ANOMALY DETECTED: {alert_msg}")
-        
-        # Update user data
+        # Update user data with client-provided network usage
         c.execute("""
             UPDATE user_data SET
                 logs = ?,
                 network_traffic = ?,
-                file_operations = ?,
-                removable_media_transfers = ?,
-                user_activity = ?,
                 login_time = ?,
                 logout_time = ?,
-                login_duration = ?,
-                internet_status = ?,
-                usb_count = ?,
-                system_info = ?
+                system_info = ?,
+                usb_count = ?
             WHERE user_id = ?
         """, (
             data.get("logs", "[]"),
             data.get("network_traffic", "{}"),
-            data.get("file_operations", "[]"),
-            data.get("removable_media_transfers", "[]"),
-            data.get("user_activity", "[]"),
             data.get("login_time", ""),
             data.get("logout_time", ""),
-            data.get("login_duration", ""),
-            data.get("internet_status", ""),
-            data.get("usb_count", 0),
             data.get("system_info", "{}"),
+            data.get("usb_count", 0),
             user_id
         ))
         conn.commit()
@@ -912,76 +975,17 @@ def update_activity(user_id):
         # Emit socket update
         socketio.emit("update_logs", {
             "user_id": user_id,
-            "logs": logs,
-            "network_traffic": json.loads(data.get("network_traffic", "{}")),
-            "anomaly_detected": anomaly_result["is_anomaly"] if anomaly_result else False
+            "logs": json.loads(data.get("logs", "[]")),
+            "network_traffic": json.loads(data.get("network_traffic", "{}"))
         })
         
-        return jsonify({
-            "status": "updated", 
-            "anomaly_detected": anomaly_result["is_anomaly"] if anomaly_result else False
-        })
+        return jsonify({"status": "updated"})
     
     except Exception as e:
         logger.error(f"Error updating activity: {e}")
         return jsonify({"error": str(e)}), 500
     finally:
         conn.close()
-
-@app.route("/retrain_model", methods=["POST"])
-def retrain_model():
-    global model
-    if 'admin_logged_in' not in session:
-        return jsonify({"error": "Unauthorized"}), 401
-    
-    try:
-        from sklearn.ensemble import IsolationForest
-        all_data = []
-        
-        user_folders = [f for f in os.listdir("users") if os.path.isdir(os.path.join("users", f))]
-        
-        for username in user_folders:
-            if username == "admin":
-                continue
-                
-            log_file = os.path.join("users", username, "activity_log.txt")
-            if os.path.exists(log_file):
-                with open(log_file, 'r') as f:
-                    for line in f:
-                        if "CPU:" in line and "Memory:" in line:
-                            try:
-                                parts = line.split()
-                                cpu = float(parts[parts.index("CPU:") + 1].replace("%", ""))
-                                memory = float(parts[parts.index("Memory:") + 1].replace("%", ""))
-                                network = 0
-                                usb = 1 if "USB" in line else 0
-                                is_anomaly = 1 if any(word in line for word in ["ANOMALY", "ALERT", "WARNING"]) else 0
-                                all_data.append([cpu, memory, network, usb, is_anomaly])
-                            except (ValueError, IndexError):
-                                continue
-        
-        if len(all_data) < 100:
-            return jsonify({"error": "Insufficient data for retraining"}), 400
-            
-        df = pd.DataFrame(all_data, columns=["cpu", "memory", "network", "usb", "is_anomaly"])
-        
-        model = IsolationForest(
-            n_estimators=100,
-            max_samples='auto',
-            contamination=0.05,
-            random_state=42
-        )
-        
-        model.fit(df[["cpu", "memory", "network", "usb"]])
-        
-        joblib.dump(model, "anomaly_detection_model.pkl")
-        
-        log_admin_activity("Anomaly detection model retrained")
-        return jsonify({"status": "retrained", "samples": len(df)})
-    
-    except Exception as e:
-        logger.error(f"Model retraining error: {e}")
-        return jsonify({"error": str(e)}), 500
 
 @app.route("/usb_event", methods=["POST"])
 def usb_event():
@@ -1016,6 +1020,20 @@ def usb_event():
             "user_id": user_id
         })
         
+        # --- Device Anomaly Detection ---
+        device_data = {
+            "id": data.get("id", str(uuid.uuid4())),
+            "date": data.get("timestamp", datetime.now().isoformat()),
+            "user": data.get("username"),
+            "pc": data.get("pc_name", ""),
+            "activity": "Connect" if "Inserted" in data.get("event_type") else "Disconnect"
+        }
+        anomaly_result = detect_device_anomaly(device_data)
+        if anomaly_result and anomaly_result["is_anomaly"]:
+            alert_msg = f"Suspicious device activity detected for {data['username']}"
+            socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
+            log_user_activity(data['username'], f"DEVICE ANOMALY: {alert_msg}")
+
         return jsonify({"status": "logged"})
     except Exception as e:
         logger.error(f"Error logging USB event: {e}")
@@ -1023,6 +1041,7 @@ def usb_event():
     finally:
         conn.close()
 
+# ... (Other routes like /get_admin_activity, etc. remain the same) ...
 @app.route("/get_admin_activity", methods=["GET"])
 def get_admin_activity():
     try:
@@ -1041,7 +1060,8 @@ def overall_network_usage():
         logger.error(f"Error getting network usage: {e}")
         return jsonify({"error": str(e)}), 500
 
-# File Sharing Routes
+# --- File Sharing Routes ---
+# ... (All file sharing routes remain the same) ...
 @app.route("/create_shared_folder/<user_id>", methods=["POST"])
 def create_shared_folder(user_id):
     try:
@@ -1266,7 +1286,19 @@ def file_manager(user_id):
     finally:
         conn.close()
 
+# SocketIO events
+@socketio.on('user_heartbeat')
+def handle_user_heartbeat(data):
+    user_id = data.get('user_id')
+    if user_id:
+        if user_id not in online_users:
+            socketio.emit('user_online', {'user_id': user_id})
+            logger.info(f"User {user_id} is online.")
+        online_users[user_id] = time.time()
 
+@socketio.on('disconnect')
+def handle_disconnect():
+    pass
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)

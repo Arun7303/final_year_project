@@ -332,25 +332,30 @@
                     <thead>
                         <tr>
                             <th>Metric</th>
-                            <th>Value</th>
+                            <th>Total Value</th>
+                            <th>Since Last Update</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Bytes Sent</td>
-                            <td>{{ network_traffic.bytes_sent }}</td>
+                            <td id="bytes-sent-total">0</td>
+                            <td id="bytes-sent-delta">0</td>
                         </tr>
                         <tr>
                             <td>Bytes Received</td>
-                            <td>{{ network_traffic.bytes_recv }}</td>
+                            <td id="bytes-recv-total">0</td>
+                            <td id="bytes-recv-delta">0</td>
                         </tr>
                         <tr>
                             <td>Packets Sent</td>
-                            <td>{{ network_traffic.packets_sent }}</td>
+                            <td id="packets-sent-total">0</td>
+                            <td id="packets-sent-delta">0</td>
                         </tr>
                         <tr>
                             <td>Packets Received</td>
-                            <td>{{ network_traffic.packets_recv }}</td>
+                            <td id="packets-recv-total">0</td>
+                            <td id="packets-recv-delta">0</td>
                         </tr>
                     </tbody>
                 </table>
@@ -745,6 +750,8 @@
         // Function to update web activity table
         function updateWebActivityTable(activities) {
             const tableBody = document.querySelector("#web-activity-section tbody");
+            if (!tableBody) return;
+            
             tableBody.innerHTML = "";
 
             activities.forEach((activity) => {
@@ -772,6 +779,8 @@
         // Function to update network activity table
         function updateNetworkActivityTable(activities) {
             const tableBody = document.querySelector("#network-activity-section tbody");
+            if (!tableBody) return;
+            
             tableBody.innerHTML = "";
 
             activities.forEach((activity) => {
@@ -788,36 +797,66 @@
             });
         }
 
-        // Function to fetch logs and update all tables and graphs
+        let prevNetworkData = {
+            bytes_sent: 0,
+            bytes_recv: 0,
+            packets_sent: 0,
+            packets_recv: 0
+        };
+
         function fetchLogs() {
             fetch(`/user_details/${userId}`)
                 .then((response) => response.json())
                 .then((data) => {
-                    // Update process logs
+                    // --- PROCESS LOGS ---
                     if (data.logs) {
                         const logs = JSON.parse(data.logs);
                         updateLogsTable(logs);
                     }
 
-                    // Update network traffic graph
+                    // --- NETWORK TRAFFIC ---
                     if (data.network_traffic) {
                         const networkTraffic = JSON.parse(data.network_traffic);
-                        const timeNow = Date.now();
-                        const incomingBytes = networkTraffic.bytes_recv || 0;
-                        const outgoingBytes = networkTraffic.bytes_sent || 0;
 
+                        // Ensure numbers
+                        const bytesSent = Number(networkTraffic.bytes_sent) || 0;
+                        const bytesRecv = Number(networkTraffic.bytes_recv) || 0;
+                        const packetsSent = Number(networkTraffic.packets_sent) || 0;
+                        const packetsRecv = Number(networkTraffic.packets_recv) || 0;
+
+                        const timeNow = Date.now();
+
+                        // Calculate deltas
+                        const bytesSentDelta = bytesSent - prevNetworkData.bytes_sent;
+                        const bytesRecvDelta = bytesRecv - prevNetworkData.bytes_recv;
+                        const packetsSentDelta = packetsSent - prevNetworkData.packets_sent;
+                        const packetsRecvDelta = packetsRecv - prevNetworkData.packets_recv;
+
+                        // Update totals table
+                        document.getElementById("bytes-sent-total").textContent = bytesSent.toLocaleString();
+                        document.getElementById("bytes-recv-total").textContent = bytesRecv.toLocaleString();
+                        document.getElementById("packets-sent-total").textContent = packetsSent.toLocaleString();
+                        document.getElementById("packets-recv-total").textContent = packetsRecv.toLocaleString();
+
+                        // Update deltas table
+                        document.getElementById("bytes-sent-delta").textContent = bytesSentDelta.toLocaleString();
+                        document.getElementById("bytes-recv-delta").textContent = bytesRecvDelta.toLocaleString();
+                        document.getElementById("packets-sent-delta").textContent = packetsSentDelta.toLocaleString();
+                        document.getElementById("packets-recv-delta").textContent = packetsRecvDelta.toLocaleString();
+
+                        // Update chart
                         networkGraph.data.labels.push(timeNow);
-                        networkGraph.data.datasets[0].data.push(incomingBytes);
-                        networkGraph.data.datasets[1].data.push(outgoingBytes);
+                        networkGraph.data.datasets[0].data.push(bytesRecv);
+                        networkGraph.data.datasets[1].data.push(bytesSent);
 
                         if (networkGraph.data.labels.length > 60) {
                             networkGraph.data.labels.shift();
                             networkGraph.data.datasets[0].data.shift();
                             networkGraph.data.datasets[1].data.shift();
                         }
-
                         networkGraph.update();
 
+                        // Save to localStorage
                         localStorage.setItem(
                             `networkGraphData_${userId}`,
                             JSON.stringify({
@@ -825,6 +864,14 @@
                                 datasets: networkGraph.data.datasets,
                             })
                         );
+
+                        // Save current values for next delta
+                        prevNetworkData = {
+                            bytes_sent: bytesSent,
+                            bytes_recv: bytesRecv,
+                            packets_sent: packetsSent,
+                            packets_recv: packetsRecv
+                        };
                     }
 
                     // Update web activity
@@ -971,7 +1018,27 @@
             initMap(locations);
             
             loadFileAccess();
-            fetchLogs();
+            
+            // Set initial values from template
+            const initialNetworkTraffic = JSON.parse('{{ network_traffic | tojson | safe }}');
+            if (initialNetworkTraffic) {
+                document.getElementById("bytes-sent-total").textContent = (initialNetworkTraffic.bytes_sent || 0).toLocaleString();
+                document.getElementById("bytes-recv-total").textContent = (initialNetworkTraffic.bytes_recv || 0).toLocaleString();
+                document.getElementById("packets-sent-total").textContent = (initialNetworkTraffic.packets_sent || 0).toLocaleString();
+                document.getElementById("packets-recv-total").textContent = (initialNetworkTraffic.packets_recv || 0).toLocaleString();
+                
+                // Set initial values for delta calculation
+                prevNetworkData = {
+                    bytes_sent: initialNetworkTraffic.bytes_sent || 0,
+                    bytes_recv: initialNetworkTraffic.bytes_recv || 0,
+                    packets_sent: initialNetworkTraffic.packets_sent || 0,
+                    packets_recv: initialNetworkTraffic.packets_recv || 0
+                };
+            }
+            
+            // FIX: The page is already populated with the latest data from the template.
+            // We'll let the interval handle the first fetch to ensure a delta is calculated.
+            // fetchLogs(); // This line was removed.
 
             // Poll every 5 seconds
             setInterval(fetchLogs, 5000);

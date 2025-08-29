@@ -1,0 +1,17 @@
+2025-08-19T17:02:42.108528 - New user added
+2025-08-19T17:02:55.461539 - User accepted by admin
+2025-08-19T17:02:57.269117 - Web activity reported
+2025-08-19T17:02:57.378551 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (557134581 bytes > 1000000 bytes))
+2025-08-19T17:02:57.389615 - Network activity reported
+2025-08-19T17:03:04.470367 - Location updated: {'ip': '223.228.38.152', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-08-19T17:03:04.450350'}
+2025-08-19T17:03:07.459786 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (571879866 bytes > 1000000 bytes))
+2025-08-19T17:03:17.535418 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (589945858 bytes > 1000000 bytes))
+2025-08-19T17:03:27.304786 - Web activity reported
+2025-08-19T17:03:27.454065 - Network activity reported
+2025-08-19T17:03:27.608891 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (609349564 bytes > 1000000 bytes))
+2025-08-19T17:03:37.696918 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (631045683 bytes > 1000000 bytes))
+2025-08-19T17:03:47.799928 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (650683933 bytes > 1000000 bytes))
+2025-08-19T17:03:57.341696 - Web activity reported
+2025-08-19T17:03:57.520076 - Network activity reported
+2025-08-19T17:03:57.882403 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (669065520 bytes > 1000000 bytes))
+2025-08-19T17:04:07.979003 - ANOMALY DETECTED: Anomaly detected for yu1 (Score: -0.21, Reasons: High Network (689567290 bytes > 1000000 bytes))

@@ -1,0 +1,18 @@
+2025-08-28T13:43:59.793764 - New user added
+2025-08-28T13:44:07.069394 - User accepted by admin
+2025-08-28T13:44:09.874391 - Web activity reported
+2025-08-28T13:44:09.947371 - Network activity reported
+2025-08-28T13:44:10.030847 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:44:10.718916 - Location updated: {'ip': '182.70.73.16', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-08-28T13:44:10.709032'}
+2025-08-28T13:44:20.146447 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:44:30.271467 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:44:39.901351 - Web activity reported
+2025-08-28T13:44:39.978026 - Network activity reported
+2025-08-28T13:44:40.370825 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:44:50.482614 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:45:00.605637 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:45:09.930024 - Web activity reported
+2025-08-28T13:45:10.005921 - Network activity reported
+2025-08-28T13:45:10.716975 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:45:20.829734 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )
+2025-08-28T13:45:30.943910 - ANOMALY DETECTED: Anomaly detected for mn12 (Score: -0.12, Reasons: )

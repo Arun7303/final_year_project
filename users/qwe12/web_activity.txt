@@ -1,0 +1,150 @@
+2025-08-28 14:28:44 | http://192.168.1.6:5000/user_logs/762fffc8-2baa-4768-9451-ae814c306149 | User Logs - kali
+2025-08-28 14:28:41 | http://192.168.1.6:5000/ | Live User Monitoring Dashboard
+2025-08-28 14:28:34 | http://192.168.1.6:5000/login | Admin Login
+2025-08-28 14:04:56 | https://www.google.com/search?q=google+100gb+plan&oq=google+100&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABDIHCAoQABiABDIHCAsQABiABDIHCAwQABiABDIHCA0QABiABDIHCA4QABiABNIBCTg4NzVqMGoxOagCDrACAfEFbIDwbV5l3Fk&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | google 100gb plan - Google Search
+2025-08-28 13:51:24 | https://gemini.google.com/app/eada2d9ffba10011 | Google Gemini
+2025-08-28 13:49:46 | https://gemini.google.com/app | Google Gemini
+2025-08-28 13:49:13 | https://chat.deepseek.com/a/chat/s/3275e251-5b63-4a4c-bbb8-28052c2801d8 | Fix Network Table Display Issue - DeepSeek
+2025-08-28 13:47:54 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/Forvis%20Mazars/2025-26/uja3xmor8epdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081751Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=a081e58f92ae84933be11a20c4a3d365d4cdd4b9ebdaa55d7426fd7d7bf900b2 | uja3xmor8epdf
+2025-08-28 13:47:51 | https://tpo.vierp.in/company-info | TPO
+2025-08-28 13:47:41 | https://tpo.vierp.in/apply_company | TPO
+2025-08-28 13:47:15 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/AthenaHealth/2025-26/yqzucp34x7pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081711Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=f9e690ead8c6a314f0a33ef6facaa2602714e4217196ba2adc35a0d89d35a16e | yqzucp34x7pdf
+2025-08-28 13:47:02 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/OrbitAvanya%20Tech%20LLP/2025-26/37qh37rsm5pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081657Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=2e485c1937b44f52af407ec7dcbd625ddea500f1eaea0a63f4b23a3cac5bf5ea | 37qh37rsm5pdf
+2025-08-28 13:45:13 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/OrbitAvanya%20Tech%20LLP/2025-26/37qh37rsm5pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081507Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=b4f51ec62cee01ff2a9406c21d339932fe479ed7c0b0abd8685ebd1dfa2807c1 | 37qh37rsm5pdf
+2025-08-28 13:44:54 | https://tpo.vierp.in/home | TPO
+2025-08-28 13:44:52 | https://tpo.vierp.in/ | TPO
+2025-08-28 13:43:24 | http://192.168.1.6:5000/user_logs/1203cf67-a8e5-48fe-967f-2379d2eed095 | User Logs - kali
+2025-08-28 13:36:57 | https://www.google.com/search?q=does+just+dial+provide+api&client=ms-android-xiaomi-rvo2b&sca_esv=cc2881f0e79ae444&sxsrf=AE3TifNR2jCrA1tLf3QimKOTGuPWxk4lcw%3A1755957411119&udm=50&fbs=AIIjpHyXkckd7Il21lobbVJc1XW8aZqHOa7zrchYF6qd5sCEEbSpt3BUJeJXdMfQiO-V2H1vmf0v-EpDkWIwO9ip0ah9BBOt2zAjXwSdPtENGJlL9XC-PVzUBB7wdjb4xEVKh8jp2_eF__AAe4hnslyPZSBnqpxbMgnIE36DEI5s4xlkn6J0VkJG0MJ_4bqVzV8cxHrKVkyq6QleumgojWcs3x0AVCV8RATCBntSp65olytyelEuRAQ&aep=1&ntc=1&sa=X&ved=2ahUKEwiy0-uNi6GPAxXbxzgGHVD5CuMQ2J8OegQICxAE&biw=392&bih=740&dpr=2.75&mtid=rcipaNOSNpnx4-EP86FP&mstk=AUtExfAXTQZ_VvkfLgefXFGzCHi0YvO5uaWReZyU20jp-1vXwNmq4Isr4TJx9fUi00uY7BolxA-vWjk1ppN-UlcLb1pDUIdt9iTLGOm13il4IQK7xkuGBCk3DhUc9Vy_aZPB_rI_Q_NR-6aMeBv5dMOr4hSo6k9HbxydlN61uUNUDpMmzoZ-H5pnfqy7HALzy5DdbLF_oVm7Li31RKOZbvf5wt4Lx4r8_C7T3z7X4nfIHvg2xaz2chRsbl7e1T8S9peI7gX5-xtwTNfHd7qT12o810woqMZkOtPG-pL03hSZUV0g_97qp78hyx3_xrRRfnOW_b1WXtHw50RWJw&csuir=1 | does just dial provide api - Google Search
+2025-08-28 13:36:56 | https://one.google.com/ai-student?utm_source=gemini&utm_medium=paid_media&utm_campaign=gemini_students_in_microsite_pmax&icid=gemini_students_landing_page&_gl=1*27baqe*_gcl_aw*R0NMLjE3NTYwMDQ4MzkuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXU5Z0kwRG5kYkZrMXBrekR5UTdrUFVhaG1COERRTDR5VnhseWNmOERDNGNDMktZWEJvS19yb2FBZ2FERUFMd193Y0I.*_gcl_dc*R0NMLjE3NTYwMDQ4MzkuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXU5Z0kwRG5kYkZrMXBrekR5UTdrUFVhaG1COERRTDR5VnhseWNmOERDNGNDMktZWEJvS19yb2FBZ2FERUFMd193Y0I.*_gcl_au*MTIyNDUyMDk2OS4xNzU2MDA0ODM5*_ga*MTAyNjA4MjY1My4xNzU2MDA0ODQw*_ga_WC57KJ50ZZ*czE3NTYwMDQ4MzkkbzEkZzAkdDE3NTYwMDQ4MzkkajYwJGwwJGgw&g1_landing_page=75 | Google One plans
+2025-08-28 13:36:54 | https://store.google.com/in/product/pixel_9a?utm_source=sem_bkws&utm_medium=dr&utm_campaign=GS107236&gclsrc=aw.ds&gad_source=1&gad_campaignid=22567042227&gbraid=0AAAAACfFHMMy2K1NC79L2-tu_CmEwm3mV&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApa_likxt_Z-dVDEIulf4UNOQMz3lan98w9719eF0nW35U3POHgtQm0aAlX9EALw_wcB&hl=en-IN | Pixel 9a, AI Magic Made Simple - Google Store
+2025-08-28 13:36:47 | https://www.google.com/search?q=cost+of+living+in+uk+for+international+students&oq=cost+of+living+in+uk+&gs_lcrp=EgZjaHJvbWUqDQgBEAAYkQIYgAQYigUyBggAEEUYOTINCAEQABiRAhiABBiKBTIMCAIQABgUGIcCGIAEMg0IAxAAGJECGIAEGIoFMg0IBBAAGJECGIAEGIoFMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAEMgcIChAAGIAEMgcICxAAGIAEMgcIDBAAGIAEMgcIDRAAGIAEMgcIDhAAGIAE0gEJNjM3NWowajE5qAIOsAIB8QXZygS2n5LP1w&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | cost of living in uk for international students - Google Search
+2025-08-28 13:36:45 | https://quillbot.com/ai-content-detector | AI Detector - Advanced AI Checker for ChatGPT, GPT-4 & Gemini
+2025-08-28 13:36:42 | https://chatgpt.com/c/68aec625-6478-8329-a7fd-2356b0622181 | ChatGPT
+2025-08-28 13:36:39 | https://learner.vupune.ac.in/vustudentjoining | EduPlusCampus
+2025-08-28 13:36:32 | https://learner.vupune.ac.in/payment-dasboard | EduPlusCampus
+2025-08-28 13:36:32 | https://learner.vupune.ac.in/Accounts | EduPlusCampus
+2025-08-28 13:36:17 | https://learner.vupune.ac.in/LearnerReceiptReport | EduPlusCampus
+2025-08-28 13:36:11 | https://learner.vupune.ac.in/admission-fee-receipt?rec_no=josB/fqF4wKMdHl%2BaBaxlg== | EduPlusCampus
+2025-08-28 13:35:59 | https://learner.vupune.ac.in/Dashboard | EduPlusCampus
+2025-08-28 13:35:56 | https://learner.vupune.ac.in/Registration | EduPlusCampus
+2025-08-28 13:35:36 | https://learner.vupune.ac.in/late-registration-fees | EduPlusCampus
+2025-08-28 13:35:28 | https://learner.vupune.ac.in/Examination | EduPlusCampus
+2025-08-28 13:35:24 | https://learner.vupune.ac.in/ | EduPlusCampus
+2025-08-28 13:30:26 | https://tryhackme.com/room/windowsfundamentals2x0x | TryHackMe | Windows Fundamentals 2
+2025-08-28 13:25:52 | https://medium.com/@valerie7995/windows-fundamentals-2-tryhackme-28fff71022f | Windows Fundamentals 2 [TryHackMe] | by ValerieTafur | Medium
+2025-08-28 13:25:49 | https://www.google.com/search?q=What+is+the+name+of+the+service+that+lists+Systems+Internals+as+the+manufacturer%3F&oq=What+is+the+name+of+the+service+that+lists+Systems+Internals+as+the+manufacturer%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIJCAIQABgeGMcD0gEHOTM5ajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | What is the name of the service that lists Systems Internals as the manufacturer? - Google Search
+2025-08-28 13:24:14 | https://tryhackme.com/paths | TryHackMe | Paths
+2025-08-28 13:24:09 | https://tryhackme.com/dashboard | TryHackMe | Dashboard
+2025-08-28 13:24:08 | https://tryhackme.com/ | TryHackMe | Cyber Security Training
+2025-08-28 13:22:25 | https://tpo.vierp.in/student-personalDetailsNew | TPO
+2025-08-28 13:22:19 | https://tpo.vierp.in/student-profile | TPO
+2025-08-28 13:21:20 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/Informica%20Solutions%21/2025-26/fhrpgl6ba8pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T075116Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=5b481fd151d6873774086b6779f429837aab04aa1ce15a738cb405378bbfe9fe | fhrpgl6ba8pdf
+2025-08-28 13:03:25 | https://chat.deepseek.com/ | DeepSeek - Into the Unknown
+2025-08-28 12:52:06 | http://10.46.12.88:5000/ | Live User Monitoring Dashboard
+2025-08-28 12:45:15 | http://192.168.1.6:5000/user_logs/76f0d9a9-8cc8-4a2a-b81e-9ce03521c649 | User Logs - kali
+2025-08-28 12:45:09 | http://192.168.1.6:5000/user_logs/9fb67727-79f5-4acc-8d84-b7d4a83781e3 | User Logs - kali
+2025-08-28 12:31:49 | https://www.primevideo.com/detail/0JN0AX6UQ69RZX6TRX47VOB6A4/ref=atv_hm_hom_c_qmo1GR_brws_15_1?jic=36%7CCgtmcmVld2l0aGFkcxIMc3Vic2NyaXB0aW9u | Prime Video: Half CA - Season 2
+2025-08-28 12:30:44 | https://www.primevideo.com/ | Prime Video: Watch movies, TV shows, sports, and live TV
+2025-08-28 12:29:29 | https://chat.deepseek.com/a/chat/s/801ebd6f-e354-4d23-8fbc-860067c3a3af | Fixing Individual Network Usage Display - DeepSeek
+2025-08-28 12:26:14 | https://tpo.vierp.in/application-tracking | TPO
+2025-08-28 12:25:35 | https://www.youtube.com/ | (747) YouTube
+2025-08-28 14:29:51 | http://192.168.1.6:5000/user_logs/5323b8eb-e2a2-48ce-9b71-328801b95565 | User Logs - kali
+2025-08-28 14:29:49 | http://192.168.1.6:5000/ | Live User Monitoring Dashboard
+2025-08-28 14:28:44 | http://192.168.1.6:5000/user_logs/762fffc8-2baa-4768-9451-ae814c306149 | User Logs - kali
+2025-08-28 14:28:34 | http://192.168.1.6:5000/login | Admin Login
+2025-08-28 14:04:56 | https://www.google.com/search?q=google+100gb+plan&oq=google+100&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABDIHCAoQABiABDIHCAsQABiABDIHCAwQABiABDIHCA0QABiABDIHCA4QABiABNIBCTg4NzVqMGoxOagCDrACAfEFbIDwbV5l3Fk&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | google 100gb plan - Google Search
+2025-08-28 13:51:24 | https://gemini.google.com/app/eada2d9ffba10011 | Google Gemini
+2025-08-28 13:49:46 | https://gemini.google.com/app | Google Gemini
+2025-08-28 13:49:13 | https://chat.deepseek.com/a/chat/s/3275e251-5b63-4a4c-bbb8-28052c2801d8 | Fix Network Table Display Issue - DeepSeek
+2025-08-28 13:47:54 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/Forvis%20Mazars/2025-26/uja3xmor8epdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081751Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=a081e58f92ae84933be11a20c4a3d365d4cdd4b9ebdaa55d7426fd7d7bf900b2 | uja3xmor8epdf
+2025-08-28 13:47:51 | https://tpo.vierp.in/company-info | TPO
+2025-08-28 13:47:41 | https://tpo.vierp.in/apply_company | TPO
+2025-08-28 13:47:15 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/AthenaHealth/2025-26/yqzucp34x7pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081711Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=f9e690ead8c6a314f0a33ef6facaa2602714e4217196ba2adc35a0d89d35a16e | yqzucp34x7pdf
+2025-08-28 13:47:02 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/OrbitAvanya%20Tech%20LLP/2025-26/37qh37rsm5pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081657Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=2e485c1937b44f52af407ec7dcbd625ddea500f1eaea0a63f4b23a3cac5bf5ea | 37qh37rsm5pdf
+2025-08-28 13:45:13 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/OrbitAvanya%20Tech%20LLP/2025-26/37qh37rsm5pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081507Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=b4f51ec62cee01ff2a9406c21d339932fe479ed7c0b0abd8685ebd1dfa2807c1 | 37qh37rsm5pdf
+2025-08-28 13:44:54 | https://tpo.vierp.in/home | TPO
+2025-08-28 13:44:52 | https://tpo.vierp.in/ | TPO
+2025-08-28 13:43:24 | http://192.168.1.6:5000/user_logs/1203cf67-a8e5-48fe-967f-2379d2eed095 | User Logs - kali
+2025-08-28 13:36:57 | https://www.google.com/search?q=does+just+dial+provide+api&client=ms-android-xiaomi-rvo2b&sca_esv=cc2881f0e79ae444&sxsrf=AE3TifNR2jCrA1tLf3QimKOTGuPWxk4lcw%3A1755957411119&udm=50&fbs=AIIjpHyXkckd7Il21lobbVJc1XW8aZqHOa7zrchYF6qd5sCEEbSpt3BUJeJXdMfQiO-V2H1vmf0v-EpDkWIwO9ip0ah9BBOt2zAjXwSdPtENGJlL9XC-PVzUBB7wdjb4xEVKh8jp2_eF__AAe4hnslyPZSBnqpxbMgnIE36DEI5s4xlkn6J0VkJG0MJ_4bqVzV8cxHrKVkyq6QleumgojWcs3x0AVCV8RATCBntSp65olytyelEuRAQ&aep=1&ntc=1&sa=X&ved=2ahUKEwiy0-uNi6GPAxXbxzgGHVD5CuMQ2J8OegQICxAE&biw=392&bih=740&dpr=2.75&mtid=rcipaNOSNpnx4-EP86FP&mstk=AUtExfAXTQZ_VvkfLgefXFGzCHi0YvO5uaWReZyU20jp-1vXwNmq4Isr4TJx9fUi00uY7BolxA-vWjk1ppN-UlcLb1pDUIdt9iTLGOm13il4IQK7xkuGBCk3DhUc9Vy_aZPB_rI_Q_NR-6aMeBv5dMOr4hSo6k9HbxydlN61uUNUDpMmzoZ-H5pnfqy7HALzy5DdbLF_oVm7Li31RKOZbvf5wt4Lx4r8_C7T3z7X4nfIHvg2xaz2chRsbl7e1T8S9peI7gX5-xtwTNfHd7qT12o810woqMZkOtPG-pL03hSZUV0g_97qp78hyx3_xrRRfnOW_b1WXtHw50RWJw&csuir=1 | does just dial provide api - Google Search
+2025-08-28 13:36:56 | https://one.google.com/ai-student?utm_source=gemini&utm_medium=paid_media&utm_campaign=gemini_students_in_microsite_pmax&icid=gemini_students_landing_page&_gl=1*27baqe*_gcl_aw*R0NMLjE3NTYwMDQ4MzkuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXU5Z0kwRG5kYkZrMXBrekR5UTdrUFVhaG1COERRTDR5VnhseWNmOERDNGNDMktZWEJvS19yb2FBZ2FERUFMd193Y0I.*_gcl_dc*R0NMLjE3NTYwMDQ4MzkuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXU5Z0kwRG5kYkZrMXBrekR5UTdrUFVhaG1COERRTDR5VnhseWNmOERDNGNDMktZWEJvS19yb2FBZ2FERUFMd193Y0I.*_gcl_au*MTIyNDUyMDk2OS4xNzU2MDA0ODM5*_ga*MTAyNjA4MjY1My4xNzU2MDA0ODQw*_ga_WC57KJ50ZZ*czE3NTYwMDQ4MzkkbzEkZzAkdDE3NTYwMDQ4MzkkajYwJGwwJGgw&g1_landing_page=75 | Google One plans
+2025-08-28 13:36:54 | https://store.google.com/in/product/pixel_9a?utm_source=sem_bkws&utm_medium=dr&utm_campaign=GS107236&gclsrc=aw.ds&gad_source=1&gad_campaignid=22567042227&gbraid=0AAAAACfFHMMy2K1NC79L2-tu_CmEwm3mV&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApa_likxt_Z-dVDEIulf4UNOQMz3lan98w9719eF0nW35U3POHgtQm0aAlX9EALw_wcB&hl=en-IN | Pixel 9a, AI Magic Made Simple - Google Store
+2025-08-28 13:36:47 | https://www.google.com/search?q=cost+of+living+in+uk+for+international+students&oq=cost+of+living+in+uk+&gs_lcrp=EgZjaHJvbWUqDQgBEAAYkQIYgAQYigUyBggAEEUYOTINCAEQABiRAhiABBiKBTIMCAIQABgUGIcCGIAEMg0IAxAAGJECGIAEGIoFMg0IBBAAGJECGIAEGIoFMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAEMgcIChAAGIAEMgcICxAAGIAEMgcIDBAAGIAEMgcIDRAAGIAEMgcIDhAAGIAE0gEJNjM3NWowajE5qAIOsAIB8QXZygS2n5LP1w&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | cost of living in uk for international students - Google Search
+2025-08-28 13:36:45 | https://quillbot.com/ai-content-detector | AI Detector - Advanced AI Checker for ChatGPT, GPT-4 & Gemini
+2025-08-28 13:36:42 | https://chatgpt.com/c/68aec625-6478-8329-a7fd-2356b0622181 | ChatGPT
+2025-08-28 13:36:39 | https://learner.vupune.ac.in/vustudentjoining | EduPlusCampus
+2025-08-28 13:36:32 | https://learner.vupune.ac.in/payment-dasboard | EduPlusCampus
+2025-08-28 13:36:32 | https://learner.vupune.ac.in/Accounts | EduPlusCampus
+2025-08-28 13:36:17 | https://learner.vupune.ac.in/LearnerReceiptReport | EduPlusCampus
+2025-08-28 13:36:11 | https://learner.vupune.ac.in/admission-fee-receipt?rec_no=josB/fqF4wKMdHl%2BaBaxlg== | EduPlusCampus
+2025-08-28 13:35:59 | https://learner.vupune.ac.in/Dashboard | EduPlusCampus
+2025-08-28 13:35:56 | https://learner.vupune.ac.in/Registration | EduPlusCampus
+2025-08-28 13:35:36 | https://learner.vupune.ac.in/late-registration-fees | EduPlusCampus
+2025-08-28 13:35:28 | https://learner.vupune.ac.in/Examination | EduPlusCampus
+2025-08-28 13:35:24 | https://learner.vupune.ac.in/ | EduPlusCampus
+2025-08-28 13:30:26 | https://tryhackme.com/room/windowsfundamentals2x0x | TryHackMe | Windows Fundamentals 2
+2025-08-28 13:25:52 | https://medium.com/@valerie7995/windows-fundamentals-2-tryhackme-28fff71022f | Windows Fundamentals 2 [TryHackMe] | by ValerieTafur | Medium
+2025-08-28 13:25:49 | https://www.google.com/search?q=What+is+the+name+of+the+service+that+lists+Systems+Internals+as+the+manufacturer%3F&oq=What+is+the+name+of+the+service+that+lists+Systems+Internals+as+the+manufacturer%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIJCAIQABgeGMcD0gEHOTM5ajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | What is the name of the service that lists Systems Internals as the manufacturer? - Google Search
+2025-08-28 13:24:14 | https://tryhackme.com/paths | TryHackMe | Paths
+2025-08-28 13:24:09 | https://tryhackme.com/dashboard | TryHackMe | Dashboard
+2025-08-28 13:24:08 | https://tryhackme.com/ | TryHackMe | Cyber Security Training
+2025-08-28 13:22:25 | https://tpo.vierp.in/student-personalDetailsNew | TPO
+2025-08-28 13:22:19 | https://tpo.vierp.in/student-profile | TPO
+2025-08-28 13:21:20 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/Informica%20Solutions%21/2025-26/fhrpgl6ba8pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T075116Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=5b481fd151d6873774086b6779f429837aab04aa1ce15a738cb405378bbfe9fe | fhrpgl6ba8pdf
+2025-08-28 13:03:25 | https://chat.deepseek.com/ | DeepSeek - Into the Unknown
+2025-08-28 12:52:06 | http://10.46.12.88:5000/ | Live User Monitoring Dashboard
+2025-08-28 12:45:15 | http://192.168.1.6:5000/user_logs/76f0d9a9-8cc8-4a2a-b81e-9ce03521c649 | User Logs - kali
+2025-08-28 12:45:09 | http://192.168.1.6:5000/user_logs/9fb67727-79f5-4acc-8d84-b7d4a83781e3 | User Logs - kali
+2025-08-28 12:31:49 | https://www.primevideo.com/detail/0JN0AX6UQ69RZX6TRX47VOB6A4/ref=atv_hm_hom_c_qmo1GR_brws_15_1?jic=36%7CCgtmcmVld2l0aGFkcxIMc3Vic2NyaXB0aW9u | Prime Video: Half CA - Season 2
+2025-08-28 12:30:44 | https://www.primevideo.com/ | Prime Video: Watch movies, TV shows, sports, and live TV
+2025-08-28 12:29:29 | https://chat.deepseek.com/a/chat/s/801ebd6f-e354-4d23-8fbc-860067c3a3af | Fixing Individual Network Usage Display - DeepSeek
+2025-08-28 12:26:14 | https://tpo.vierp.in/application-tracking | TPO
+2025-08-28 14:30:30 | http://192.168.1.6:5000/ | Live User Monitoring Dashboard
+2025-08-28 14:29:51 | http://192.168.1.6:5000/user_logs/5323b8eb-e2a2-48ce-9b71-328801b95565 | User Logs - kali
+2025-08-28 14:28:44 | http://192.168.1.6:5000/user_logs/762fffc8-2baa-4768-9451-ae814c306149 | User Logs - kali
+2025-08-28 14:28:34 | http://192.168.1.6:5000/login | Admin Login
+2025-08-28 14:04:56 | https://www.google.com/search?q=google+100gb+plan&oq=google+100&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABDIHCAoQABiABDIHCAsQABiABDIHCAwQABiABDIHCA0QABiABDIHCA4QABiABNIBCTg4NzVqMGoxOagCDrACAfEFbIDwbV5l3Fk&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | google 100gb plan - Google Search
+2025-08-28 13:51:24 | https://gemini.google.com/app/eada2d9ffba10011 | Google Gemini
+2025-08-28 13:49:46 | https://gemini.google.com/app | Google Gemini
+2025-08-28 13:49:13 | https://chat.deepseek.com/a/chat/s/3275e251-5b63-4a4c-bbb8-28052c2801d8 | Fix Network Table Display Issue - DeepSeek
+2025-08-28 13:47:54 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/Forvis%20Mazars/2025-26/uja3xmor8epdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081751Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=a081e58f92ae84933be11a20c4a3d365d4cdd4b9ebdaa55d7426fd7d7bf900b2 | uja3xmor8epdf
+2025-08-28 13:47:51 | https://tpo.vierp.in/company-info | TPO
+2025-08-28 13:47:41 | https://tpo.vierp.in/apply_company | TPO
+2025-08-28 13:47:15 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/AthenaHealth/2025-26/yqzucp34x7pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081711Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=f9e690ead8c6a314f0a33ef6facaa2602714e4217196ba2adc35a0d89d35a16e | yqzucp34x7pdf
+2025-08-28 13:47:02 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/OrbitAvanya%20Tech%20LLP/2025-26/37qh37rsm5pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081657Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=2e485c1937b44f52af407ec7dcbd625ddea500f1eaea0a63f4b23a3cac5bf5ea | 37qh37rsm5pdf
+2025-08-28 13:45:13 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/OrbitAvanya%20Tech%20LLP/2025-26/37qh37rsm5pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T081507Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=b4f51ec62cee01ff2a9406c21d339932fe479ed7c0b0abd8685ebd1dfa2807c1 | 37qh37rsm5pdf
+2025-08-28 13:44:54 | https://tpo.vierp.in/home | TPO
+2025-08-28 13:44:52 | https://tpo.vierp.in/ | TPO
+2025-08-28 13:43:24 | http://192.168.1.6:5000/user_logs/1203cf67-a8e5-48fe-967f-2379d2eed095 | User Logs - kali
+2025-08-28 13:36:57 | https://www.google.com/search?q=does+just+dial+provide+api&client=ms-android-xiaomi-rvo2b&sca_esv=cc2881f0e79ae444&sxsrf=AE3TifNR2jCrA1tLf3QimKOTGuPWxk4lcw%3A1755957411119&udm=50&fbs=AIIjpHyXkckd7Il21lobbVJc1XW8aZqHOa7zrchYF6qd5sCEEbSpt3BUJeJXdMfQiO-V2H1vmf0v-EpDkWIwO9ip0ah9BBOt2zAjXwSdPtENGJlL9XC-PVzUBB7wdjb4xEVKh8jp2_eF__AAe4hnslyPZSBnqpxbMgnIE36DEI5s4xlkn6J0VkJG0MJ_4bqVzV8cxHrKVkyq6QleumgojWcs3x0AVCV8RATCBntSp65olytyelEuRAQ&aep=1&ntc=1&sa=X&ved=2ahUKEwiy0-uNi6GPAxXbxzgGHVD5CuMQ2J8OegQICxAE&biw=392&bih=740&dpr=2.75&mtid=rcipaNOSNpnx4-EP86FP&mstk=AUtExfAXTQZ_VvkfLgefXFGzCHi0YvO5uaWReZyU20jp-1vXwNmq4Isr4TJx9fUi00uY7BolxA-vWjk1ppN-UlcLb1pDUIdt9iTLGOm13il4IQK7xkuGBCk3DhUc9Vy_aZPB_rI_Q_NR-6aMeBv5dMOr4hSo6k9HbxydlN61uUNUDpMmzoZ-H5pnfqy7HALzy5DdbLF_oVm7Li31RKOZbvf5wt4Lx4r8_C7T3z7X4nfIHvg2xaz2chRsbl7e1T8S9peI7gX5-xtwTNfHd7qT12o810woqMZkOtPG-pL03hSZUV0g_97qp78hyx3_xrRRfnOW_b1WXtHw50RWJw&csuir=1 | does just dial provide api - Google Search
+2025-08-28 13:36:56 | https://one.google.com/ai-student?utm_source=gemini&utm_medium=paid_media&utm_campaign=gemini_students_in_microsite_pmax&icid=gemini_students_landing_page&_gl=1*27baqe*_gcl_aw*R0NMLjE3NTYwMDQ4MzkuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXU5Z0kwRG5kYkZrMXBrekR5UTdrUFVhaG1COERRTDR5VnhseWNmOERDNGNDMktZWEJvS19yb2FBZ2FERUFMd193Y0I.*_gcl_dc*R0NMLjE3NTYwMDQ4MzkuQ2owS0NRand6YVhGQmhEbEFSSXNBRlB2LXU5Z0kwRG5kYkZrMXBrekR5UTdrUFVhaG1COERRTDR5VnhseWNmOERDNGNDMktZWEJvS19yb2FBZ2FERUFMd193Y0I.*_gcl_au*MTIyNDUyMDk2OS4xNzU2MDA0ODM5*_ga*MTAyNjA4MjY1My4xNzU2MDA0ODQw*_ga_WC57KJ50ZZ*czE3NTYwMDQ4MzkkbzEkZzAkdDE3NTYwMDQ4MzkkajYwJGwwJGgw&g1_landing_page=75 | Google One plans
+2025-08-28 13:36:54 | https://store.google.com/in/product/pixel_9a?utm_source=sem_bkws&utm_medium=dr&utm_campaign=GS107236&gclsrc=aw.ds&gad_source=1&gad_campaignid=22567042227&gbraid=0AAAAACfFHMMy2K1NC79L2-tu_CmEwm3mV&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApa_likxt_Z-dVDEIulf4UNOQMz3lan98w9719eF0nW35U3POHgtQm0aAlX9EALw_wcB&hl=en-IN | Pixel 9a, AI Magic Made Simple - Google Store
+2025-08-28 13:36:47 | https://www.google.com/search?q=cost+of+living+in+uk+for+international+students&oq=cost+of+living+in+uk+&gs_lcrp=EgZjaHJvbWUqDQgBEAAYkQIYgAQYigUyBggAEEUYOTINCAEQABiRAhiABBiKBTIMCAIQABgUGIcCGIAEMg0IAxAAGJECGIAEGIoFMg0IBBAAGJECGIAEGIoFMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAEMgcIChAAGIAEMgcICxAAGIAEMgcIDBAAGIAEMgcIDRAAGIAEMgcIDhAAGIAE0gEJNjM3NWowajE5qAIOsAIB8QXZygS2n5LP1w&client=ms-android-xiaomi-rvo2b&sourceid=chrome-mobile&ie=UTF-8 | cost of living in uk for international students - Google Search
+2025-08-28 13:36:45 | https://quillbot.com/ai-content-detector | AI Detector - Advanced AI Checker for ChatGPT, GPT-4 & Gemini
+2025-08-28 13:36:42 | https://chatgpt.com/c/68aec625-6478-8329-a7fd-2356b0622181 | ChatGPT
+2025-08-28 13:36:39 | https://learner.vupune.ac.in/vustudentjoining | EduPlusCampus
+2025-08-28 13:36:32 | https://learner.vupune.ac.in/payment-dasboard | EduPlusCampus
+2025-08-28 13:36:32 | https://learner.vupune.ac.in/Accounts | EduPlusCampus
+2025-08-28 13:36:17 | https://learner.vupune.ac.in/LearnerReceiptReport | EduPlusCampus
+2025-08-28 13:36:11 | https://learner.vupune.ac.in/admission-fee-receipt?rec_no=josB/fqF4wKMdHl%2BaBaxlg== | EduPlusCampus
+2025-08-28 13:35:59 | https://learner.vupune.ac.in/Dashboard | EduPlusCampus
+2025-08-28 13:35:56 | https://learner.vupune.ac.in/Registration | EduPlusCampus
+2025-08-28 13:35:36 | https://learner.vupune.ac.in/late-registration-fees | EduPlusCampus
+2025-08-28 13:35:28 | https://learner.vupune.ac.in/Examination | EduPlusCampus
+2025-08-28 13:35:24 | https://learner.vupune.ac.in/ | EduPlusCampus
+2025-08-28 13:30:26 | https://tryhackme.com/room/windowsfundamentals2x0x | TryHackMe | Windows Fundamentals 2
+2025-08-28 13:25:52 | https://medium.com/@valerie7995/windows-fundamentals-2-tryhackme-28fff71022f | Windows Fundamentals 2 [TryHackMe] | by ValerieTafur | Medium
+2025-08-28 13:25:49 | https://www.google.com/search?q=What+is+the+name+of+the+service+that+lists+Systems+Internals+as+the+manufacturer%3F&oq=What+is+the+name+of+the+service+that+lists+Systems+Internals+as+the+manufacturer%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIJCAIQABgeGMcD0gEHOTM5ajBqMagCALACAA&sourceid=chrome&ie=UTF-8 | What is the name of the service that lists Systems Internals as the manufacturer? - Google Search
+2025-08-28 13:24:14 | https://tryhackme.com/paths | TryHackMe | Paths
+2025-08-28 13:24:09 | https://tryhackme.com/dashboard | TryHackMe | Dashboard
+2025-08-28 13:24:08 | https://tryhackme.com/ | TryHackMe | Cyber Security Training
+2025-08-28 13:22:25 | https://tpo.vierp.in/student-personalDetailsNew | TPO
+2025-08-28 13:22:19 | https://tpo.vierp.in/student-profile | TPO
+2025-08-28 13:21:20 | https://easyplacements.s3.ap-south-1.amazonaws.com/Company_Attachments/VIT/Informica%20Solutions%21/2025-26/fhrpgl6ba8pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250828T075116Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIASPWL33DPQPC4UCGN%2F20250828%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=5b481fd151d6873774086b6779f429837aab04aa1ce15a738cb405378bbfe9fe | fhrpgl6ba8pdf
+2025-08-28 13:03:25 | https://chat.deepseek.com/ | DeepSeek - Into the Unknown
+2025-08-28 12:52:06 | http://10.46.12.88:5000/ | Live User Monitoring Dashboard
+2025-08-28 12:45:15 | http://192.168.1.6:5000/user_logs/76f0d9a9-8cc8-4a2a-b81e-9ce03521c649 | User Logs - kali
+2025-08-28 12:45:09 | http://192.168.1.6:5000/user_logs/9fb67727-79f5-4acc-8d84-b7d4a83781e3 | User Logs - kali
+2025-08-28 12:31:49 | https://www.primevideo.com/detail/0JN0AX6UQ69RZX6TRX47VOB6A4/ref=atv_hm_hom_c_qmo1GR_brws_15_1?jic=36%7CCgtmcmVld2l0aGFkcxIMc3Vic2NyaXB0aW9u | Prime Video: Half CA - Season 2
+2025-08-28 12:30:44 | https://www.primevideo.com/ | Prime Video: Watch movies, TV shows, sports, and live TV
+2025-08-28 12:29:29 | https://chat.deepseek.com/a/chat/s/801ebd6f-e354-4d23-8fbc-860067c3a3af | Fixing Individual Network Usage Display - DeepSeek
+2025-08-28 12:26:14 | https://tpo.vierp.in/application-tracking | TPO

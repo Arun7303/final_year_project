@@ -3178,3 +3178,499 @@ UnboundLocalError: cannot access local variable 'conn_online' where it is not as
 2025-07-21 14:22:22,445 - INFO - Web activity reported successfully
 2025-07-21 14:22:22,523 - INFO - Network activity reported successfully
 2025-07-21 14:22:23,836 - INFO - Location reported successfully
+2025-07-30 13:04:36,677 - INFO - User added successfully. Waiting for admin acceptance...
+2025-07-30 13:04:36,683 - INFO - Waiting for admin acceptance...
+2025-07-30 13:04:41,688 - INFO - Waiting for admin acceptance...
+2025-07-30 13:04:46,693 - INFO - Waiting for admin acceptance...
+2025-07-30 13:04:51,700 - INFO - User accepted by admin. Starting monitoring...
+2025-07-30 13:04:51,908 - INFO - USB monitoring started for Linux
+2025-07-30 13:04:51,944 - INFO - Web activity reported successfully
+2025-07-30 13:04:52,114 - INFO - Network activity reported successfully
+2025-07-30 13:04:53,220 - INFO - Location reported successfully
+2025-07-30 13:05:21,982 - INFO - Web activity reported successfully
+2025-07-30 13:05:22,161 - INFO - Network activity reported successfully
+2025-07-30 13:05:32,738 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
+2025-07-30 13:05:32,753 - INFO - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
+2025-07-30 13:05:40,697 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
+2025-07-30 13:05:40,709 - INFO - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
+2025-07-30 13:05:52,025 - INFO - Web activity reported successfully
+2025-07-30 13:05:52,204 - INFO - Network activity reported successfully
+2025-07-30 13:06:22,063 - INFO - Web activity reported successfully
+2025-07-30 13:06:22,247 - INFO - Network activity reported successfully
+2025-08-08 13:33:01,425 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-08 13:33:01,436 - INFO - Waiting for admin acceptance...
+2025-08-08 13:33:06,440 - INFO - Waiting for admin acceptance...
+2025-08-08 13:33:11,444 - INFO - Waiting for admin acceptance...
+2025-08-08 13:33:16,450 - INFO - User accepted by admin. Starting monitoring...
+2025-08-08 13:33:16,598 - INFO - Web activity reported successfully
+2025-08-08 13:33:16,746 - INFO - Network activity reported successfully
+2025-08-08 13:33:18,476 - INFO - Location reported successfully
+2025-08-08 13:33:46,703 - INFO - Web activity reported successfully
+2025-08-08 13:33:46,801 - INFO - Network activity reported successfully
+2025-08-08 13:34:16,748 - INFO - Web activity reported successfully
+2025-08-08 13:34:16,853 - INFO - Network activity reported successfully
+2025-08-08 14:36:17,357 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-08 14:36:17,364 - INFO - Waiting for admin acceptance...
+2025-08-08 14:36:22,373 - INFO - Waiting for admin acceptance...
+2025-08-08 14:36:27,381 - INFO - Waiting for admin acceptance...
+2025-08-08 14:36:32,388 - INFO - User accepted by admin. Starting monitoring...
+2025-08-08 14:36:32,530 - INFO - Web activity reported successfully
+2025-08-08 14:36:32,682 - INFO - Network activity reported successfully
+2025-08-08 14:36:34,215 - INFO - Location reported successfully
+2025-08-08 14:37:02,580 - INFO - Web activity reported successfully
+2025-08-08 14:37:02,758 - INFO - Network activity reported successfully
+2025-08-08 14:37:32,617 - INFO - Web activity reported successfully
+2025-08-08 14:37:32,808 - INFO - Network activity reported successfully
+2025-08-08 14:38:02,648 - INFO - Web activity reported successfully
+2025-08-08 14:38:02,859 - INFO - Network activity reported successfully
+2025-08-08 14:38:32,690 - INFO - Web activity reported successfully
+2025-08-08 14:38:32,908 - INFO - Network activity reported successfully
+2025-08-08 14:38:54,163 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.232.224.88', port=5000): Max retries exceeded with url: /user_details/651dee31-44ea-4af3-b17c-faaefdb768f6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fde6890f460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-18 16:02:50,068 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-18 16:02:50,076 - INFO - Waiting for admin acceptance...
+2025-08-18 16:02:55,083 - INFO - Waiting for admin acceptance...
+2025-08-18 16:03:00,087 - INFO - User accepted by admin. Starting monitoring...
+2025-08-18 16:03:00,216 - INFO - Web activity reported successfully
+2025-08-18 16:03:00,388 - INFO - Network activity reported successfully
+2025-08-18 16:03:05,999 - INFO - Location reported successfully
+2025-08-18 16:03:30,250 - INFO - Web activity reported successfully
+2025-08-18 16:03:30,432 - INFO - Network activity reported successfully
+2025-08-19 17:01:58,300 - ERROR - Invalid admin password
+2025-08-19 17:02:11,150 - ERROR - Failed to add user.
+2025-08-19 17:02:24,889 - ERROR - Invalid admin password
+2025-08-19 17:02:42,109 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-19 17:02:42,113 - INFO - Waiting for admin acceptance...
+2025-08-19 17:02:47,116 - INFO - Waiting for admin acceptance...
+2025-08-19 17:02:52,124 - INFO - Waiting for admin acceptance...
+2025-08-19 17:02:57,132 - INFO - User accepted by admin. Starting monitoring...
+2025-08-19 17:02:57,271 - INFO - Web activity reported successfully
+2025-08-19 17:02:57,390 - INFO - Network activity reported successfully
+2025-08-19 17:03:04,473 - INFO - Location reported successfully
+2025-08-19 17:03:27,307 - INFO - Web activity reported successfully
+2025-08-19 17:03:27,456 - INFO - Network activity reported successfully
+2025-08-19 17:03:57,343 - INFO - Web activity reported successfully
+2025-08-19 17:03:57,521 - INFO - Network activity reported successfully
+2025-08-19 17:04:17,991 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51dae0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:27,373 - ERROR - Error reporting web activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_web_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:27,578 - ERROR - Error reporting network activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_network_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f460>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:27,993 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51dae0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:37,996 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51c270>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:47,998 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f680>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:57,245 - ERROR - Error syncing files: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /get_file_access/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f790>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:57,401 - ERROR - Error reporting web activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_web_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51dbf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:57,632 - ERROR - Error reporting network activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_network_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51dbf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:04:58,000 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51fdf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:08,002 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:18,004 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51fce0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:27,426 - ERROR - Error reporting web activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_web_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:27,675 - ERROR - Error reporting network activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_network_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f240>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:28,008 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51fce0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:38,011 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:48,013 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51fdf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:57,249 - ERROR - Error syncing files: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /get_file_access/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51dbf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:57,446 - ERROR - Error reporting web activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_web_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51ecf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:57,712 - ERROR - Error reporting network activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_network_activity/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51ecf0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:05:58,015 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f790>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-19 17:06:08,017 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/c93880e0-fff6-4744-8f9c-12c864abe604 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe2ad51f680>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 10:28:29,389 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-28 10:28:29,393 - INFO - Waiting for admin acceptance...
+2025-08-28 10:28:34,398 - INFO - Waiting for admin acceptance...
+2025-08-28 10:28:39,405 - INFO - User accepted by admin. Starting monitoring...
+2025-08-28 10:28:39,544 - INFO - Web activity reported successfully
+2025-08-28 10:28:39,790 - INFO - Network activity reported successfully
+2025-08-28 10:28:40,693 - INFO - Location reported successfully
+2025-08-28 10:29:10,042 - INFO - Web activity reported successfully
+2025-08-28 10:29:10,299 - INFO - Network activity reported successfully
+2025-08-28 10:29:40,078 - INFO - Web activity reported successfully
+2025-08-28 10:29:40,353 - INFO - Network activity reported successfully
+2025-08-28 10:30:10,183 - INFO - Web activity reported successfully
+2025-08-28 10:30:10,412 - INFO - Network activity reported successfully
+2025-08-28 10:30:40,292 - INFO - Web activity reported successfully
+2025-08-28 10:30:40,472 - INFO - Network activity reported successfully
+2025-08-28 10:31:10,336 - INFO - Web activity reported successfully
+2025-08-28 10:31:10,533 - INFO - Network activity reported successfully
+2025-08-28 10:31:40,450 - INFO - Web activity reported successfully
+2025-08-28 10:31:40,604 - INFO - Network activity reported successfully
+2025-08-28 10:32:10,500 - INFO - Web activity reported successfully
+2025-08-28 10:32:10,664 - INFO - Network activity reported successfully
+2025-08-28 10:32:40,556 - INFO - Web activity reported successfully
+2025-08-28 10:32:40,723 - INFO - Network activity reported successfully
+2025-08-28 10:33:10,606 - INFO - Web activity reported successfully
+2025-08-28 10:33:10,780 - INFO - Network activity reported successfully
+2025-08-28 10:33:40,717 - INFO - Web activity reported successfully
+2025-08-28 10:33:40,837 - INFO - Network activity reported successfully
+2025-08-28 10:34:10,760 - INFO - Web activity reported successfully
+2025-08-28 10:34:10,931 - INFO - Network activity reported successfully
+2025-08-28 10:34:40,810 - INFO - Web activity reported successfully
+2025-08-28 10:34:40,989 - INFO - Network activity reported successfully
+2025-08-28 10:35:10,855 - INFO - Web activity reported successfully
+2025-08-28 10:35:11,039 - INFO - Network activity reported successfully
+2025-08-28 10:35:40,900 - INFO - Web activity reported successfully
+2025-08-28 10:35:41,090 - INFO - Network activity reported successfully
+2025-08-28 10:36:11,022 - INFO - Web activity reported successfully
+2025-08-28 10:36:11,160 - INFO - Network activity reported successfully
+2025-08-28 10:36:41,132 - INFO - Web activity reported successfully
+2025-08-28 10:36:41,225 - INFO - Network activity reported successfully
+2025-08-28 10:37:11,264 - INFO - Web activity reported successfully
+2025-08-28 10:37:11,332 - INFO - Network activity reported successfully
+2025-08-28 10:37:41,376 - INFO - Web activity reported successfully
+2025-08-28 10:37:41,413 - INFO - Network activity reported successfully
+2025-08-28 10:38:11,495 - INFO - Web activity reported successfully
+2025-08-28 10:38:11,496 - INFO - Network activity reported successfully
+2025-08-28 10:38:41,543 - INFO - Web activity reported successfully
+2025-08-28 10:38:41,568 - INFO - Network activity reported successfully
+2025-08-28 10:39:11,681 - INFO - Network activity reported successfully
+2025-08-28 10:39:11,683 - INFO - Web activity reported successfully
+2025-08-28 10:39:41,750 - INFO - Web activity reported successfully
+2025-08-28 10:39:41,792 - INFO - Network activity reported successfully
+2025-08-28 10:40:11,891 - INFO - Web activity reported successfully
+2025-08-28 10:40:11,892 - INFO - Network activity reported successfully
+2025-08-28 10:40:41,973 - INFO - Web activity reported successfully
+2025-08-28 10:40:42,016 - INFO - Network activity reported successfully
+2025-08-28 10:41:12,019 - INFO - Web activity reported successfully
+2025-08-28 10:41:12,099 - INFO - Network activity reported successfully
+2025-08-28 10:41:42,092 - INFO - Web activity reported successfully
+2025-08-28 10:41:42,200 - INFO - Network activity reported successfully
+2025-08-28 10:42:12,135 - INFO - Web activity reported successfully
+2025-08-28 10:42:12,258 - INFO - Network activity reported successfully
+2025-08-28 10:42:42,175 - INFO - Web activity reported successfully
+2025-08-28 10:42:42,312 - INFO - Network activity reported successfully
+2025-08-28 10:43:12,212 - INFO - Web activity reported successfully
+2025-08-28 10:43:12,377 - INFO - Network activity reported successfully
+2025-08-28 10:43:42,264 - INFO - Web activity reported successfully
+2025-08-28 10:43:42,442 - INFO - Network activity reported successfully
+2025-08-28 10:44:12,323 - INFO - Web activity reported successfully
+2025-08-28 10:44:12,519 - INFO - Network activity reported successfully
+2025-08-28 10:44:42,368 - INFO - Web activity reported successfully
+2025-08-28 10:44:42,628 - INFO - Network activity reported successfully
+2025-08-28 10:45:12,418 - INFO - Web activity reported successfully
+2025-08-28 10:45:12,683 - INFO - Network activity reported successfully
+2025-08-28 10:45:42,463 - INFO - Web activity reported successfully
+2025-08-28 10:45:42,746 - INFO - Network activity reported successfully
+2025-08-28 10:46:12,512 - INFO - Web activity reported successfully
+2025-08-28 10:46:12,806 - INFO - Network activity reported successfully
+2025-08-28 12:03:45,608 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/9fb67727-79f5-4acc-8d84-b7d4a83781e3 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fbeb8e179b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 12:06:09,965 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/9fb67727-79f5-4acc-8d84-b7d4a83781e3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbeb8e17240>, 'Connection to 10.46.12.88 timed out. (connect timeout=None)'))
+2025-08-28 12:06:16,109 - ERROR - Error syncing files: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /get_file_access/9fb67727-79f5-4acc-8d84-b7d4a83781e3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbeb8e17350>, 'Connection to 10.46.12.88 timed out. (connect timeout=None)'))
+2025-08-28 12:06:18,157 - ERROR - Error reporting web activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_web_activity/9fb67727-79f5-4acc-8d84-b7d4a83781e3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbeb8e17ac0>, 'Connection to 10.46.12.88 timed out. (connect timeout=None)'))
+2025-08-28 12:06:18,161 - ERROR - Error reporting network activity: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /report_network_activity/9fb67727-79f5-4acc-8d84-b7d4a83781e3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbeb8e179b0>, 'Connection to 10.46.12.88 timed out. (connect timeout=None)'))
+2025-08-28 12:08:33,329 - ERROR - Error in system log collection: HTTPConnectionPool(host='10.46.12.88', port=5000): Max retries exceeded with url: /user_details/9fb67727-79f5-4acc-8d84-b7d4a83781e3 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbeb8e17ce0>, 'Connection to 10.46.12.88 timed out. (connect timeout=None)'))
+2025-08-28 12:41:42,022 - ERROR - Invalid choice
+2025-08-28 12:42:31,923 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-28 12:42:31,928 - INFO - Waiting for admin acceptance...
+2025-08-28 12:42:36,935 - INFO - User accepted by admin. Starting monitoring...
+2025-08-28 12:42:36,995 - INFO - Web activity reported successfully
+2025-08-28 12:42:37,067 - INFO - Network activity reported successfully
+2025-08-28 12:42:37,875 - INFO - Location reported successfully
+2025-08-28 12:43:07,030 - INFO - Web activity reported successfully
+2025-08-28 12:43:07,116 - INFO - Network activity reported successfully
+2025-08-28 12:43:37,127 - INFO - Web activity reported successfully
+2025-08-28 12:43:37,159 - INFO - Network activity reported successfully
+2025-08-28 12:44:07,159 - INFO - Web activity reported successfully
+2025-08-28 12:44:07,191 - INFO - Network activity reported successfully
+2025-08-28 12:44:37,188 - INFO - Web activity reported successfully
+2025-08-28 12:44:37,227 - INFO - Network activity reported successfully
+2025-08-28 12:45:07,215 - INFO - Web activity reported successfully
+2025-08-28 12:45:07,260 - INFO - Network activity reported successfully
+2025-08-28 12:45:37,247 - INFO - Web activity reported successfully
+2025-08-28 12:45:37,317 - INFO - Network activity reported successfully
+2025-08-28 12:46:07,271 - INFO - Web activity reported successfully
+2025-08-28 12:46:07,350 - INFO - Network activity reported successfully
+2025-08-28 12:46:37,297 - INFO - Web activity reported successfully
+2025-08-28 12:46:37,383 - INFO - Network activity reported successfully
+2025-08-28 12:47:07,324 - INFO - Web activity reported successfully
+2025-08-28 12:47:07,418 - INFO - Network activity reported successfully
+2025-08-28 12:47:37,349 - INFO - Web activity reported successfully
+2025-08-28 12:47:37,462 - INFO - Network activity reported successfully
+2025-08-28 12:48:07,377 - INFO - Web activity reported successfully
+2025-08-28 12:48:07,503 - INFO - Network activity reported successfully
+2025-08-28 12:48:37,403 - INFO - Web activity reported successfully
+2025-08-28 12:48:37,542 - INFO - Network activity reported successfully
+2025-08-28 12:49:07,428 - INFO - Web activity reported successfully
+2025-08-28 12:49:07,574 - INFO - Network activity reported successfully
+2025-08-28 12:49:37,456 - INFO - Web activity reported successfully
+2025-08-28 12:49:37,619 - INFO - Network activity reported successfully
+2025-08-28 12:50:07,486 - INFO - Web activity reported successfully
+2025-08-28 12:50:07,648 - INFO - Network activity reported successfully
+2025-08-28 12:50:37,510 - INFO - Web activity reported successfully
+2025-08-28 12:50:37,680 - INFO - Network activity reported successfully
+2025-08-28 12:51:07,538 - INFO - Web activity reported successfully
+2025-08-28 12:51:07,717 - INFO - Network activity reported successfully
+2025-08-28 12:51:37,562 - INFO - Web activity reported successfully
+2025-08-28 12:51:37,748 - INFO - Network activity reported successfully
+2025-08-28 12:52:07,592 - INFO - Web activity reported successfully
+2025-08-28 12:52:07,783 - INFO - Network activity reported successfully
+2025-08-28 12:52:35,085 - ERROR - Error in system log collection: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2025-08-28 12:52:37,029 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /get_file_access/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f350>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 12:52:37,628 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820e690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 12:52:37,807 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820e690>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 12:53:07,655 - INFO - Web activity reported successfully
+2025-08-28 12:53:07,840 - INFO - Network activity reported successfully
+2025-08-28 12:53:37,683 - INFO - Web activity reported successfully
+2025-08-28 12:53:37,875 - INFO - Network activity reported successfully
+2025-08-28 12:54:07,719 - INFO - Web activity reported successfully
+2025-08-28 12:54:07,906 - INFO - Network activity reported successfully
+2025-08-28 12:54:37,745 - INFO - Web activity reported successfully
+2025-08-28 12:54:37,940 - INFO - Network activity reported successfully
+2025-08-28 12:55:07,772 - INFO - Web activity reported successfully
+2025-08-28 12:55:07,976 - INFO - Network activity reported successfully
+2025-08-28 12:55:37,800 - INFO - Web activity reported successfully
+2025-08-28 12:55:38,010 - INFO - Network activity reported successfully
+2025-08-28 12:56:07,822 - INFO - Web activity reported successfully
+2025-08-28 12:56:08,041 - INFO - Network activity reported successfully
+2025-08-28 12:56:27,981 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f680>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 12:56:37,853 - INFO - Web activity reported successfully
+2025-08-28 12:56:38,076 - INFO - Network activity reported successfully
+2025-08-28 12:57:07,951 - INFO - Web activity reported successfully
+2025-08-28 12:57:08,109 - INFO - Network activity reported successfully
+2025-08-28 12:57:37,978 - INFO - Web activity reported successfully
+2025-08-28 12:57:38,146 - INFO - Network activity reported successfully
+2025-08-28 12:58:08,005 - INFO - Web activity reported successfully
+2025-08-28 12:58:08,187 - INFO - Network activity reported successfully
+2025-08-28 12:58:38,033 - INFO - Web activity reported successfully
+2025-08-28 12:58:38,220 - INFO - Network activity reported successfully
+2025-08-28 12:59:08,133 - INFO - Web activity reported successfully
+2025-08-28 12:59:08,251 - INFO - Network activity reported successfully
+2025-08-28 12:59:38,223 - INFO - Web activity reported successfully
+2025-08-28 12:59:38,284 - INFO - Network activity reported successfully
+2025-08-28 13:00:08,257 - INFO - Web activity reported successfully
+2025-08-28 13:00:08,315 - INFO - Network activity reported successfully
+2025-08-28 13:00:38,285 - INFO - Web activity reported successfully
+2025-08-28 13:00:38,349 - INFO - Network activity reported successfully
+2025-08-28 13:01:08,313 - INFO - Web activity reported successfully
+2025-08-28 13:01:08,379 - INFO - Network activity reported successfully
+2025-08-28 13:01:38,342 - INFO - Web activity reported successfully
+2025-08-28 13:01:38,410 - INFO - Network activity reported successfully
+2025-08-28 13:02:08,371 - INFO - Web activity reported successfully
+2025-08-28 13:02:08,441 - INFO - Network activity reported successfully
+2025-08-28 13:02:38,397 - INFO - Web activity reported successfully
+2025-08-28 13:02:38,466 - INFO - Network activity reported successfully
+2025-08-28 13:03:08,423 - INFO - Web activity reported successfully
+2025-08-28 13:03:08,501 - INFO - Network activity reported successfully
+2025-08-28 13:03:38,452 - INFO - Web activity reported successfully
+2025-08-28 13:03:38,535 - INFO - Network activity reported successfully
+2025-08-28 13:04:08,549 - INFO - Web activity reported successfully
+2025-08-28 13:04:08,584 - INFO - Network activity reported successfully
+2025-08-28 13:04:38,580 - INFO - Web activity reported successfully
+2025-08-28 13:04:38,613 - INFO - Network activity reported successfully
+2025-08-28 13:05:08,606 - INFO - Web activity reported successfully
+2025-08-28 13:05:08,647 - INFO - Network activity reported successfully
+2025-08-28 13:05:38,700 - INFO - Web activity reported successfully
+2025-08-28 13:05:38,701 - INFO - Network activity reported successfully
+2025-08-28 13:06:08,794 - INFO - Network activity reported successfully
+2025-08-28 13:06:08,794 - INFO - Web activity reported successfully
+2025-08-28 13:06:38,817 - INFO - Web activity reported successfully
+2025-08-28 13:06:38,825 - INFO - Network activity reported successfully
+2025-08-28 13:07:08,846 - INFO - Web activity reported successfully
+2025-08-28 13:07:08,869 - INFO - Network activity reported successfully
+2025-08-28 13:07:38,872 - INFO - Web activity reported successfully
+2025-08-28 13:07:38,901 - INFO - Network activity reported successfully
+2025-08-28 13:08:08,896 - INFO - Web activity reported successfully
+2025-08-28 13:08:08,933 - INFO - Network activity reported successfully
+2025-08-28 13:08:38,919 - INFO - Web activity reported successfully
+2025-08-28 13:08:38,967 - INFO - Network activity reported successfully
+2025-08-28 13:09:08,945 - INFO - Web activity reported successfully
+2025-08-28 13:09:08,999 - INFO - Network activity reported successfully
+2025-08-28 13:09:38,971 - INFO - Web activity reported successfully
+2025-08-28 13:09:39,033 - INFO - Network activity reported successfully
+2025-08-28 13:10:08,995 - INFO - Web activity reported successfully
+2025-08-28 13:10:09,067 - INFO - Network activity reported successfully
+2025-08-28 13:10:39,020 - INFO - Web activity reported successfully
+2025-08-28 13:10:39,099 - INFO - Network activity reported successfully
+2025-08-28 13:11:09,045 - INFO - Web activity reported successfully
+2025-08-28 13:11:09,132 - INFO - Network activity reported successfully
+2025-08-28 13:11:39,069 - INFO - Web activity reported successfully
+2025-08-28 13:11:39,173 - INFO - Network activity reported successfully
+2025-08-28 13:12:09,098 - INFO - Web activity reported successfully
+2025-08-28 13:12:09,205 - INFO - Network activity reported successfully
+2025-08-28 13:12:39,127 - INFO - Web activity reported successfully
+2025-08-28 13:12:39,237 - INFO - Network activity reported successfully
+2025-08-28 13:13:09,154 - INFO - Web activity reported successfully
+2025-08-28 13:13:09,272 - INFO - Network activity reported successfully
+2025-08-28 13:13:39,247 - INFO - Web activity reported successfully
+2025-08-28 13:13:39,300 - INFO - Network activity reported successfully
+2025-08-28 13:14:09,274 - INFO - Web activity reported successfully
+2025-08-28 13:14:09,329 - INFO - Network activity reported successfully
+2025-08-28 13:14:39,303 - INFO - Web activity reported successfully
+2025-08-28 13:14:39,358 - INFO - Network activity reported successfully
+2025-08-28 13:15:09,332 - INFO - Web activity reported successfully
+2025-08-28 13:15:09,387 - INFO - Network activity reported successfully
+2025-08-28 13:15:39,359 - INFO - Web activity reported successfully
+2025-08-28 13:15:39,414 - INFO - Network activity reported successfully
+2025-08-28 13:16:09,386 - INFO - Web activity reported successfully
+2025-08-28 13:16:09,442 - INFO - Network activity reported successfully
+2025-08-28 13:16:39,412 - INFO - Web activity reported successfully
+2025-08-28 13:16:39,469 - INFO - Network activity reported successfully
+2025-08-28 13:17:09,500 - INFO - Network activity reported successfully
+2025-08-28 13:17:09,503 - INFO - Web activity reported successfully
+2025-08-28 13:17:39,582 - INFO - Network activity reported successfully
+2025-08-28 13:17:39,584 - INFO - Web activity reported successfully
+2025-08-28 13:18:09,682 - INFO - Network activity reported successfully
+2025-08-28 13:18:09,684 - INFO - Web activity reported successfully
+2025-08-28 13:18:39,713 - INFO - Web activity reported successfully
+2025-08-28 13:18:39,719 - INFO - Network activity reported successfully
+2025-08-28 13:19:09,741 - INFO - Web activity reported successfully
+2025-08-28 13:19:09,750 - INFO - Network activity reported successfully
+2025-08-28 13:19:39,839 - INFO - Network activity reported successfully
+2025-08-28 13:19:39,841 - INFO - Web activity reported successfully
+2025-08-28 13:20:09,939 - INFO - Network activity reported successfully
+2025-08-28 13:20:09,942 - INFO - Web activity reported successfully
+2025-08-28 13:20:40,041 - INFO - Web activity reported successfully
+2025-08-28 13:20:40,043 - INFO - Network activity reported successfully
+2025-08-28 13:21:10,067 - INFO - Web activity reported successfully
+2025-08-28 13:21:10,073 - INFO - Network activity reported successfully
+2025-08-28 13:21:40,095 - INFO - Web activity reported successfully
+2025-08-28 13:21:40,112 - INFO - Network activity reported successfully
+2025-08-28 13:22:10,121 - INFO - Web activity reported successfully
+2025-08-28 13:22:10,144 - INFO - Network activity reported successfully
+2025-08-28 13:22:40,148 - INFO - Web activity reported successfully
+2025-08-28 13:22:40,179 - INFO - Network activity reported successfully
+2025-08-28 13:23:10,178 - INFO - Web activity reported successfully
+2025-08-28 13:23:10,214 - INFO - Network activity reported successfully
+2025-08-28 13:23:40,208 - INFO - Web activity reported successfully
+2025-08-28 13:23:40,244 - INFO - Network activity reported successfully
+2025-08-28 13:24:10,346 - INFO - Web activity reported successfully
+2025-08-28 13:24:10,367 - INFO - Network activity reported successfully
+2025-08-28 13:24:40,368 - INFO - Web activity reported successfully
+2025-08-28 13:24:40,406 - INFO - Network activity reported successfully
+2025-08-28 13:25:10,468 - INFO - Web activity reported successfully
+2025-08-28 13:25:10,471 - INFO - Network activity reported successfully
+2025-08-28 13:25:40,499 - INFO - Web activity reported successfully
+2025-08-28 13:25:40,509 - INFO - Network activity reported successfully
+2025-08-28 13:26:10,526 - INFO - Web activity reported successfully
+2025-08-28 13:26:10,549 - INFO - Network activity reported successfully
+2025-08-28 13:26:40,558 - INFO - Web activity reported successfully
+2025-08-28 13:26:40,592 - INFO - Network activity reported successfully
+2025-08-28 13:27:10,585 - INFO - Web activity reported successfully
+2025-08-28 13:27:10,627 - INFO - Network activity reported successfully
+2025-08-28 13:27:40,610 - INFO - Web activity reported successfully
+2025-08-28 13:27:40,659 - INFO - Network activity reported successfully
+2025-08-28 13:28:10,638 - INFO - Web activity reported successfully
+2025-08-28 13:28:10,691 - INFO - Network activity reported successfully
+2025-08-28 13:28:33,015 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820dbf0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:28:37,260 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /get_file_access/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f350>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:28:40,661 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f130>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:28:40,732 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f9b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:28:43,018 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fbd0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:28:53,021 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fdf0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:03,024 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c8050>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:10,676 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c8270>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:10,753 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fdf0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:13,026 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fbd0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:23,029 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f9b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:33,032 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f130>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:37,263 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /get_file_access/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f350>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:40,690 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820dbf0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:40,779 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820dbf0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:43,035 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f350>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:29:53,038 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f130>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:30:03,041 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f9b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:30:10,704 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fbd0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:30:10,799 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fdf0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:30:13,044 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842f8050>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:30:40,729 - INFO - Web activity reported successfully
+2025-08-28 13:30:40,835 - INFO - Network activity reported successfully
+2025-08-28 13:31:10,759 - INFO - Web activity reported successfully
+2025-08-28 13:31:10,870 - INFO - Network activity reported successfully
+2025-08-28 13:31:40,792 - INFO - Web activity reported successfully
+2025-08-28 13:31:40,906 - INFO - Network activity reported successfully
+2025-08-28 13:32:10,817 - INFO - Web activity reported successfully
+2025-08-28 13:32:10,940 - INFO - Network activity reported successfully
+2025-08-28 13:32:40,849 - INFO - Web activity reported successfully
+2025-08-28 13:32:40,979 - INFO - Network activity reported successfully
+2025-08-28 13:33:10,875 - INFO - Web activity reported successfully
+2025-08-28 13:33:11,015 - INFO - Network activity reported successfully
+2025-08-28 13:33:40,900 - INFO - Web activity reported successfully
+2025-08-28 13:33:41,049 - INFO - Network activity reported successfully
+2025-08-28 13:34:11,012 - INFO - Web activity reported successfully
+2025-08-28 13:34:11,106 - INFO - Network activity reported successfully
+2025-08-28 13:34:26,190 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ff00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:34:36,193 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fce0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:34:37,289 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /get_file_access/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fac0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:34:41,028 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ee00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:34:41,127 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ee00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:34:46,196 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fac0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:34:56,199 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fce0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:06,202 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ff00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:11,042 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f020>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:11,147 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ef10>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:16,205 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c8050>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:26,208 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c8270>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:36,211 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c8490>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:37,292 - ERROR - Error syncing files: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /get_file_access/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c86b0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:41,060 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b842c88d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:41,166 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ef10>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:46,215 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f020>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:35:56,218 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ff00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:36:06,221 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fce0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:36:11,075 - ERROR - Error reporting web activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_web_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820fac0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:36:11,186 - ERROR - Error reporting network activity: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /report_network_activity/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820ee00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+2025-08-28 13:36:41,104 - INFO - Web activity reported successfully
+2025-08-28 13:36:41,224 - INFO - Network activity reported successfully
+2025-08-28 13:37:11,133 - INFO - Web activity reported successfully
+2025-08-28 13:37:11,257 - INFO - Network activity reported successfully
+2025-08-28 13:37:41,165 - INFO - Web activity reported successfully
+2025-08-28 13:37:41,286 - INFO - Network activity reported successfully
+2025-08-28 13:38:11,260 - INFO - Web activity reported successfully
+2025-08-28 13:38:11,320 - INFO - Network activity reported successfully
+2025-08-28 13:38:41,357 - INFO - Web activity reported successfully
+2025-08-28 13:38:41,358 - INFO - Network activity reported successfully
+2025-08-28 13:39:11,449 - INFO - Network activity reported successfully
+2025-08-28 13:39:11,452 - INFO - Web activity reported successfully
+2025-08-28 13:39:41,478 - INFO - Web activity reported successfully
+2025-08-28 13:39:41,486 - INFO - Network activity reported successfully
+2025-08-28 13:40:11,502 - INFO - Web activity reported successfully
+2025-08-28 13:40:11,528 - INFO - Network activity reported successfully
+2025-08-28 13:40:41,532 - INFO - Web activity reported successfully
+2025-08-28 13:40:41,565 - INFO - Network activity reported successfully
+2025-08-28 13:41:11,555 - INFO - Web activity reported successfully
+2025-08-28 13:41:11,604 - INFO - Network activity reported successfully
+2025-08-28 13:41:41,580 - INFO - Web activity reported successfully
+2025-08-28 13:41:41,642 - INFO - Network activity reported successfully
+2025-08-28 13:42:11,615 - INFO - Web activity reported successfully
+2025-08-28 13:42:11,677 - INFO - Network activity reported successfully
+2025-08-28 13:42:20,638 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f570>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 13:42:30,639 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/1203cf67-a8e5-48fe-967f-2379d2eed095 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f1b8820f130>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-08-28 13:42:38,976 - INFO - Location reported successfully
+2025-08-28 13:42:41,641 - INFO - Web activity reported successfully
+2025-08-28 13:42:41,712 - INFO - Network activity reported successfully
+2025-08-28 13:43:11,666 - INFO - Web activity reported successfully
+2025-08-28 13:43:11,748 - INFO - Network activity reported successfully
+2025-08-28 13:43:59,794 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-28 13:43:59,797 - INFO - Waiting for admin acceptance...
+2025-08-28 13:44:04,800 - INFO - Waiting for admin acceptance...
+2025-08-28 13:44:09,810 - INFO - User accepted by admin. Starting monitoring...
+2025-08-28 13:44:09,876 - INFO - Web activity reported successfully
+2025-08-28 13:44:09,948 - INFO - Network activity reported successfully
+2025-08-28 13:44:10,720 - INFO - Location reported successfully
+2025-08-28 13:44:39,902 - INFO - Web activity reported successfully
+2025-08-28 13:44:39,978 - INFO - Network activity reported successfully
+2025-08-28 13:45:09,931 - INFO - Web activity reported successfully
+2025-08-28 13:45:10,007 - INFO - Network activity reported successfully
+2025-08-28 14:29:32,548 - INFO - User added successfully. Waiting for admin acceptance...
+2025-08-28 14:29:32,552 - INFO - Waiting for admin acceptance...
+2025-08-28 14:29:37,559 - INFO - Waiting for admin acceptance...
+2025-08-28 14:29:42,565 - INFO - Waiting for admin acceptance...
+2025-08-28 14:29:47,573 - INFO - User accepted by admin. Starting monitoring...
+2025-08-28 14:29:47,631 - INFO - Web activity reported successfully
+2025-08-28 14:29:47,695 - INFO - Network activity reported successfully
+2025-08-28 14:29:48,673 - INFO - Location reported successfully
+2025-08-28 14:30:17,664 - INFO - Web activity reported successfully
+2025-08-28 14:30:17,727 - INFO - Network activity reported successfully
+2025-08-28 14:30:47,694 - INFO - Web activity reported successfully
+2025-08-28 14:30:47,759 - INFO - Network activity reported successfully
+2025-08-28 15:19:58,483 - INFO - User accepted by admin. Starting monitoring...
+2025-08-28 15:19:58,592 - INFO - Web activity reported successfully
+2025-08-28 15:19:58,663 - INFO - Network activity reported successfully
+2025-08-28 15:19:59,540 - INFO - Location reported successfully
+2025-08-28 15:20:28,619 - INFO - Web activity reported successfully
+2025-08-28 15:20:28,692 - INFO - Network activity reported successfully
+2025-08-28 15:46:06,516 - INFO - User accepted by admin. Starting monitoring...
+2025-08-28 15:46:06,643 - INFO - Web activity reported successfully
+2025-08-28 15:46:06,699 - INFO - Network activity reported successfully
+2025-08-28 15:46:07,590 - INFO - Location reported successfully
+2025-08-28 15:46:36,669 - INFO - Web activity reported successfully
+2025-08-28 15:46:36,756 - INFO - Network activity reported successfully
+2025-08-28 15:47:06,698 - INFO - Web activity reported successfully
+2025-08-28 15:47:06,788 - INFO - Network activity reported successfully
+2025-08-28 15:47:16,947 - ERROR - Error in system log collection: HTTPConnectionPool(host='192.168.1.6', port=5000): Max retries exceeded with url: /user_details/76f0d9a9-8cc8-4a2a-b81e-9ce03521c649 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f224bda29c0>: Failed to establish a new connection: [Errno 111] Connection refused'))

@@ -92,6 +92,11 @@ body {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.user-tile.user-tile-online {
+    border-color: #28a745;
+    box-shadow: 0 0 10px #28a745;
+}
+
 .user-tile.anomaly-detected {
     background-color: #ffcccc;
     border-color: #ff4444;
@@ -167,6 +172,13 @@ button:hover {
     color: #fff;
     border-radius: 4px;
 }
+
+/* --- New Anomaly Alert Styles --- */
+.alert.alert-logon { border-left-color: #ff4444; } /* Red */
+.alert.alert-device { border-left-color: #ffae42; } /* Orange */
+.alert.alert-file { border-left-color: #33a1c9; } /* Blue */
+.alert.alert-http { border-left-color: #9d33c9; } /* Purple */
+
 
 .alert strong {
     color: #ff6b6b;

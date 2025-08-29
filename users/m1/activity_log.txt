@@ -1,0 +1,27 @@
+2025-08-08T14:36:17.355411 - New user added
+2025-08-08T14:36:29.714313 - User accepted by admin
+2025-08-08T14:36:32.528409 - Web activity reported
+2025-08-08T14:36:32.670494 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (28514815 bytes > 1000000 bytes))
+2025-08-08T14:36:32.679747 - Network activity reported
+2025-08-08T14:36:34.214088 - Location updated: {'ip': '27.59.111.59', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-08-08T14:36:34.199831'}
+2025-08-08T14:36:42.785669 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (29026624 bytes > 1000000 bytes))
+2025-08-08T14:36:52.884972 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (29382190 bytes > 1000000 bytes))
+2025-08-08T14:37:02.577298 - Web activity reported
+2025-08-08T14:37:02.755685 - Network activity reported
+2025-08-08T14:37:02.982731 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (29867451 bytes > 1000000 bytes))
+2025-08-08T14:37:13.080985 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (30184499 bytes > 1000000 bytes))
+2025-08-08T14:37:23.179638 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (30496180 bytes > 1000000 bytes))
+2025-08-08T14:37:32.615207 - Web activity reported
+2025-08-08T14:37:32.805484 - Network activity reported
+2025-08-08T14:37:33.263637 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (31486271 bytes > 1000000 bytes))
+2025-08-08T14:37:43.344633 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (31998619 bytes > 1000000 bytes))
+2025-08-08T14:37:53.431068 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (32495546 bytes > 1000000 bytes))
+2025-08-08T14:38:02.647352 - Web activity reported
+2025-08-08T14:38:02.857036 - Network activity reported
+2025-08-08T14:38:03.508030 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (33071467 bytes > 1000000 bytes))
+2025-08-08T14:38:13.597564 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (33657065 bytes > 1000000 bytes))
+2025-08-08T14:38:23.931658 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (34355724 bytes > 1000000 bytes))
+2025-08-08T14:38:32.687469 - Web activity reported
+2025-08-08T14:38:32.906829 - Network activity reported
+2025-08-08T14:38:34.011810 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (34906684 bytes > 1000000 bytes))
+2025-08-08T14:38:44.103925 - ANOMALY DETECTED: Anomaly detected for m1 (Score: -0.21, Reasons: High Network (35484627 bytes > 1000000 bytes))
