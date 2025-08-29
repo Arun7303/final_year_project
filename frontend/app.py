@@ -28,10 +28,10 @@ logger = logging.getLogger(__name__)
 # --- Load all anomaly detection models ---
 models = {}
 model_files = {
-    'logon': 'anomaly_logon.pkl',
-    'device': 'anomaly_device.pkl',
-    'file': 'anomaly_file.pkl',
-    'http': 'anomaly_http.pkl'
+    'logon': 'ml mode/anomaly_logon.pkl',
+    'device': 'ml mode/anomaly_device.pkl',
+    'file': 'ml mode/model_http.ipynb',
+    'http': 'ml mode/model_http.ipynb'
 }
 
 for name, filename in model_files.items():

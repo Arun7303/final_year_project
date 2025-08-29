@@ -1,2 +1,0 @@
-2025-07-21T13:15:00.758597 - New user added
-2025-07-21T13:15:04.989981 - User accepted by admin
