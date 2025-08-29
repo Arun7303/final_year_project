@@ -13,34 +13,39 @@ import sqlite3
 import shutil
 import socket
 import tkinter as tk
+import base64
 from tkinter import ttk, messagebox, filedialog
 import webbrowser
 import cv2
 from PIL import Image, ImageTk
-import threading
 import socketio
+from PIL import Image
 
-# Windows-specific imports
+try:
+    import cv2
+    from mss import mss
+except ImportError:
+    print("Warning: opencv-python or mss not installed. Webcam and screenshot features will be disabled.")
+    cv2 = None
+    mss = None
+
 if platform.system() == "Windows":
     try:
-        import win32api
-        import win32con
-        import win32file
         import wmi
     except ImportError:
-        print("Warning: pywin32 modules not installed. Some Windows-specific features may not work.")
+        print("Warning: pywin32/wmi not installed. USB monitoring won't work on Windows.")
+        wmi = None
 else:
-    # Optional: define dummy variables or handlers to prevent errors if code tries to call these
-    win32api = None
-    win32con = None
-    win32file = None
+    wmi = None
     try:
         import pyudev
     except ImportError:
         print("Warning: pyudev not installed. USB monitoring won't work on Linux.")
+        pyudev = None
+
 
 # Configuration
-SERVER_URL = "http://192.168.1.6:5000"  # Replace with actual server IP
+SERVER_URL = "http://192.168.1.6:5000"
 REPORT_INTERVAL = 30
 LOG_UPDATE_INTERVAL = 10
 FILE_SYNC_INTERVAL = 60
@@ -63,6 +68,11 @@ sio = socketio.Client()
 # Ensure directories exist
 os.makedirs("logs", exist_ok=True)
 os.makedirs("shared", exist_ok=True)
+
+
+webcam_thread = None
+stop_webcam_stream_event = threading.Event()
+
 
 class FileSharingGUI:
     def __init__(self, root, user_id, username):
@@ -138,21 +148,19 @@ class FileSharingGUI:
         # ... (code remains the same)
         pass
 
-# --- New Anomaly Data Logging Functions ---
-
 def log_logon_activity(user_id, username, activity):
-    """Sends logon/logoff data for anomaly detection."""
+    """
+    Sends logon/logoff data for anomaly detection.
+    FIX: Sends raw data required by the model's feature engineering.
+    """
     try:
-        # Simulate logon duration and count for the demo
-        # A real implementation would query the database for this user's history
         requests.post(
             f"{SERVER_URL}/report_logon_activity",
             json={
                 "user_id": user_id,
                 "user": username,
                 "activity": activity,
-                "login_count": 5, # Simulated
-                "logon_duration": 3600 # Simulated
+                "date": datetime.now().isoformat() # Send the current timestamp
             }
         )
     except Exception as e:
@@ -198,7 +206,6 @@ def log_http_activity(user_id, username):
     except Exception as e:
         logging.error(f"Error sending http activity: {e}")
 
-# ... (validate_password, register_user, check_acceptance remain the same) ...
 def validate_password(username, password):
     try:
         resp = requests.post(
@@ -536,11 +543,13 @@ def report_location(user_id, username):
             logging.error(f"Error reporting location: {e}")
         time.sleep(LOCATION_UPDATE_INTERVAL)
 
-
-def log_usb_event(event_type, device_info, username):
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("logs/usb.txt", "a") as f:
-        f.write(f"{timestamp} - {event_type}: {device_info}\n")
+def log_usb_event(event_type, operation, device_info, username, details={}):
+    """Sends detailed USB event data to the server."""
+    timestamp = datetime.now().isoformat()
+    log_file = os.path.join("logs", "usb.txt")
+    
+    with open(log_file, "a") as f:
+        f.write(f"{timestamp} - {operation}: {device_info} | Details: {details}\n")
     
     try:
         requests.post(
@@ -548,15 +557,18 @@ def log_usb_event(event_type, device_info, username):
             json={
                 "username": username,
                 "event_type": event_type,
+                "operation": operation,
                 "device_info": device_info,
                 "timestamp": timestamp,
-                "pc_name": platform.node()
+                "pc_name": platform.node(),
+                "details": details
             }
         )
     except Exception as e:
         logging.error(f"Error sending USB event: {e}")
 
 def monitor_usb_windows(username):
+    """Monitors for USB connections and simulates file transfers."""
     c = wmi.WMI()
     insert_watcher = c.Win32_USBControllerDevice.watch_for("creation")
     remove_watcher = c.Win32_USBControllerDevice.watch_for("deletion")
@@ -564,19 +576,26 @@ def monitor_usb_windows(username):
     logging.info("USB monitoring started for Windows")
     while True:
         try:
-            insert_event = insert_watcher(timeout_ms=2000)
+            insert_event = insert_watcher(timeout_ms=5000)
             if insert_event:
-                device_info = insert_event.Dependent
+                device_info = str(insert_event.Dependent)
                 logging.info(f"USB Inserted: {device_info}")
-                log_usb_event("USB Inserted", str(device_info), username)
+                log_usb_event("Inserted", "USB Inserted", device_info, username)
+
+                # Simulate a file transfer from the USB for anomaly detection
+                # time.sleep(2)
+                # file_details = {"filename": "confidential_report.docx", "size": "2.5 MB"}
+                # log_usb_event("Inserted", "File Copied from USB", device_info, username, details=file_details)
 
             remove_event = remove_watcher(timeout_ms=2000)
+
             if remove_event:
-                device_info = remove_event.Dependent
+                device_info = str(remove_event.Dependent)
                 logging.info(f"USB Removed: {device_info}")
-                log_usb_event("USB Removed", str(device_info), username)
+                log_usb_event("Removed", "USB Removed", device_info, username)
         except Exception as e:
-            logging.error(f"USB monitoring error: {e}")
+            if 'timed out' not in str(e).lower():
+                logging.error(f"USB monitoring error: {e}")
 
 def monitor_usb_linux(username):
     context = pyudev.Context()
@@ -587,10 +606,10 @@ def monitor_usb_linux(username):
     for device in iter(monitor.poll, None):
         if device.action == "add":
             logging.info(f"USB Inserted: {device.device_path}")
-            log_usb_event("USB Inserted", str(device.device_path), username)
+            log_usb_event("Inserted", "USB Inserted", str(device.device_path), username)
         elif device.action == "remove":
             logging.info(f"USB Removed: {device.device_path}")
-            log_usb_event("USB Removed", str(device.device_path), username)
+            log_usb_event("Removed", "USB Removed", str(device.device_path), username)
 
 def sync_shared_files(user_id, username):
     while True:
@@ -718,6 +737,101 @@ def send_heartbeat(user_id):
             logging.error(f"Error sending heartbeat: {e}")
         time.sleep(HEARTBEAT_INTERVAL)
 
+def webcam_stream_worker(user_id):
+    """Captures webcam frames and sends them to the server."""
+    if not cv2:
+        logging.error("OpenCV is not available. Cannot start webcam.")
+        return
+
+    cap = cv2.VideoCapture(0)
+    if not cap.isOpened():
+        logging.error("Could not open webcam.")
+        return
+    
+    logging.info(f"Webcam stream started for user {user_id}")
+    
+    while not stop_webcam_stream_event.is_set():
+        ret, frame = cap.read()
+        if not ret:
+            logging.warning("Failed to grab frame from webcam.")
+            time.sleep(0.5)
+            continue
+        
+        # Resize for performance
+        frame = cv2.resize(frame, (640, 480))
+        _, buffer = cv2.imencode('.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 80])
+        b64_frame = base64.b64encode(buffer).decode('utf-8')
+        
+        try:
+            sio.emit('webcam_frame', {'user_id': user_id, 'frame': b64_frame})
+        except Exception as e:
+            logging.error(f"Failed to send webcam frame: {e}")
+            break # Stop streaming if connection is lost
+        
+        sio.sleep(0.1) # ~10 FPS
+
+    cap.release()
+    logging.info(f"Webcam stream stopped for user {user_id}")
+
+def take_screenshot_worker(user_id):
+    """Captures the screen and sends it to the server."""
+    if not mss:
+        logging.error("MSS is not available. Cannot take screenshot.")
+        return
+        
+    try:
+        with mss() as sct:
+            sct_img = sct.grab(sct.monitors[1])
+            img = Image.frombytes("RGB", sct_img.size, sct_img.bgra, "raw", "BGRX")
+            
+            # Convert to bytes
+            from io import BytesIO
+            buffered = BytesIO()
+            img.save(buffered, format="JPEG", quality=80)
+            b64_frame = base64.b64encode(buffered.getvalue()).decode('utf-8')
+            
+            sio.emit('screenshot_data', {'user_id': user_id, 'frame': b64_frame})
+            logging.info(f"Screenshot sent for user {user_id}")
+    except Exception as e:
+        logging.error(f"Failed to take or send screenshot: {e}")
+
+
+# Global event and thread for webcam streaming
+stop_webcam_stream_event = threading.Event()
+webcam_thread = None
+
+@sio.event
+def connect():
+    logging.info("Connected to server.")
+
+@sio.event
+def disconnect():
+    logging.info("Disconnected from server.")
+
+@sio.on('user_logged_out')
+def on_user_logged_out(data):
+    logging.info("Received remote logout command. Shutting down.")
+    os._exit(0)
+
+@sio.on('start_webcam_stream')
+def on_start_webcam_stream(data):
+    global webcam_thread
+    user_id = data.get('user_id')
+    if webcam_thread is None or not webcam_thread.is_alive():
+        stop_webcam_stream_event.clear()
+        webcam_thread = threading.Thread(target=webcam_stream_worker, args=(user_id,), daemon=True)
+        webcam_thread.start()
+
+@sio.on('stop_webcam_stream')
+def on_stop_webcam_stream(data):
+    stop_webcam_stream_event.set()
+
+@sio.on('take_screenshot')
+def on_take_screenshot(data):
+    user_id = data.get('user_id')
+    # Run in a thread to avoid blocking heartbeat
+    threading.Thread(target=take_screenshot_worker, args=(user_id,), daemon=True).start()
+
 def main():
     print("Monitoring Client\n" + "="*20)
     print("1. New User\n2. Existing User")
@@ -823,3 +937,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

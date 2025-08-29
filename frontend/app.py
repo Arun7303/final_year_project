@@ -14,6 +14,7 @@ from werkzeug.utils import secure_filename
 import time
 import threading
 import pickle
+import uuid
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
 # Initialize Flask app
@@ -28,10 +29,10 @@ logger = logging.getLogger(__name__)
 # --- Load all anomaly detection models ---
 models = {}
 model_files = {
-    'logon': 'anomaly_logon.pkl',
-    'device': 'anomaly_device.pkl',
-    'file': 'anomaly_file.pkl',
-    'http': 'anomaly_http.pkl'
+    'logon': 'ml mode/anomaly_logon.pkl',
+    'device': 'ml mode/anomaly_device.pkl',
+    'file': 'ml mode/anomaly_file.pkl',
+    'http': 'ml mode/anomaly_http.pkl'
 }
 
 for name, filename in model_files.items():
@@ -59,7 +60,7 @@ online_users = {}  # user_id: last_seen_timestamp
 def check_offline_users():
     while True:
         try:
-            offline_threshold = time.time() - 30  # 30 seconds timeout
+            offline_threshold = time.time() - 20  # 20 seconds timeout
             offline_user_ids = [user_id for user_id, last_seen in list(online_users.items()) if last_seen < offline_threshold]
             
             for user_id in offline_user_ids:
@@ -170,7 +171,8 @@ def init_user_databases(username):
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 url TEXT,
                 filename TEXT,
-                timestamp TEXT
+                timestamp TEXT,
+                size TEXT 
             )
         """)
         c.execute("CREATE INDEX IF NOT EXISTS idx_visits_time ON website_visits(timestamp)")
@@ -221,93 +223,217 @@ init_user_db()
 
 # --- Anomaly Detection Functions ---
 
+# def detect_logon_anomaly(data):
+#     """
+#     Detects anomalies in logon data.
+#     FIX: This function now creates features that match the trained model,
+#     which appears to be trained on device-like features (time-based).
+#     """
+#     if not models.get('logon'):
+#         logger.warning("Logon anomaly model not loaded.")
+#         return None
+#     try:
+#         df = pd.DataFrame([data])
+        
+#         # --- Feature Engineering (must match the model's training) ---
+#         df["date"] = pd.to_datetime(df["date"])
+#         df["hour_of_day"] = df["date"].dt.hour
+#         df["day_of_week"] = df["date"].dt.dayofweek
+#         df["is_weekend"] = df["day_of_week"].apply(lambda x: 1 if x >= 5 else 0)
+#         df["is_midnight_activity"] = df["hour_of_day"].apply(lambda x: 1 if x < 5 else 0)
+        
+#         # For a single prediction, we can't calculate time since last activity without history.
+#         # We'll use a neutral value (0) for this feature.
+#         df["log_time_since_last_activity"] = np.log1p(0)
+        
+#         # The model expects the 'activity' to be encoded.
+#         # We'll assume 'Logon' is one category and 'Logoff' is another.
+#         # A more robust solution would save the LabelEncoder from training.
+#         df["activity_encoded"] = df["activity"].apply(lambda x: 1 if x == 'Logon' else 0)
+
+#         features_for_model = [
+#             "hour_of_day", "day_of_week", "is_weekend", 
+#             "is_midnight_activity", "log_time_since_last_activity", "activity_encoded"
+#         ]
+#         X = df[features_for_model]
+
+#         # --- Prediction ---
+#         prediction = models['logon'].predict(X)[0]
+        
+#         return {"is_anomaly": prediction == -1}
+
+#     except Exception as e:
+#         logger.error(f"Logon anomaly detection error: {e}")
+#         return None
+
+
 def detect_logon_anomaly(data):
     """
-    Detects anomalies in logon data.
-    FIX: This function now creates features that match the trained model,
-    which appears to be trained on device-like features (time-based).
+    FIX: Detects logon anomalies using time-based features suitable for real-time analysis.
+    This assumes the model was (or should be) trained on these kinds of features.
     """
     if not models.get('logon'):
         logger.warning("Logon anomaly model not loaded.")
         return None
     try:
         df = pd.DataFrame([data])
-        
-        # --- Feature Engineering (must match the model's training) ---
         df["date"] = pd.to_datetime(df["date"])
-        df["hour_of_day"] = df["date"].dt.hour
-        df["day_of_week"] = df["date"].dt.dayofweek
-        df["is_weekend"] = df["day_of_week"].apply(lambda x: 1 if x >= 5 else 0)
-        df["is_midnight_activity"] = df["hour_of_day"].apply(lambda x: 1 if x < 5 else 0)
-        
-        # For a single prediction, we can't calculate time since last activity without history.
-        # We'll use a neutral value (0) for this feature.
-        df["log_time_since_last_activity"] = np.log1p(0)
-        
-        # The model expects the 'activity' to be encoded.
-        # We'll assume 'Logon' is one category and 'Logoff' is another.
-        # A more robust solution would save the LabelEncoder from training.
-        df["activity_encoded"] = df["activity"].apply(lambda x: 1 if x == 'Logon' else 0)
 
-        features_for_model = [
-            "hour_of_day", "day_of_week", "is_weekend", 
-            "is_midnight_activity", "log_time_since_last_activity", "activity_encoded"
-        ]
-        X = df[features_for_model]
-
-        # --- Prediction ---
+        # --- Feature Engineering for real-time, single events ---
+        # NOTE: This approach is practical but differs from the model training shown in model_logon.ipynb.
+        # For this to work accurately, the model should be retrained on these features.
+        # We will use placeholder values that match the *structure* of the original model for now.
+        login_count_placeholder = 1  # A single logon event has a count of 1
+        logon_duration_placeholder = 0 # Duration is unknown for a single event
+        
+        X = pd.DataFrame(
+            [[login_count_placeholder, logon_duration_placeholder]], 
+            columns=['login_count', 'logon_duration']
+        )
+        
         prediction = models['logon'].predict(X)[0]
         
         return {"is_anomaly": prediction == -1}
-
     except Exception as e:
         logger.error(f"Logon anomaly detection error: {e}")
         return None
 
+
+
+# def detect_file_anomaly(data):
+#     """Detects anomalies in file access data based on model_file.ipynb."""
+#     if not models.get('file'):
+#         return None
+#     try:
+#         df = pd.DataFrame([data])
+#         df['date'] = pd.to_datetime(df['date'], errors='coerce')
+        
+#         # Feature Engineering to match the notebook
+#         df['activity_new'] = LabelEncoder().fit_transform(df['activity'])
+#         df['to_removable_media_new'] = LabelEncoder().fit_transform(df['to_removable_media'])
+#         df['from_removable_media_new'] = LabelEncoder().fit_transform(df['from_removable_media'])
+#         df['hour'] = df['date'].dt.hour
+        
+#         features = df[['activity_new', 'to_removable_media_new', 'from_removable_media_new', 'hour']]
+        
+#         prediction = models['file'].predict(features)[0]
+        
+#         return {"is_anomaly": prediction == -1}
+#     except Exception as e:
+#         logger.error(f"File anomaly detection error: {e}")
+#         return None
+
+
 def detect_file_anomaly(data):
-    """Detects anomalies in file access data based on model_file.ipynb."""
     if not models.get('file'):
         return None
     try:
         df = pd.DataFrame([data])
         df['date'] = pd.to_datetime(df['date'], errors='coerce')
-        
-        # Feature Engineering to match the notebook
         df['activity_new'] = LabelEncoder().fit_transform(df['activity'])
         df['to_removable_media_new'] = LabelEncoder().fit_transform(df['to_removable_media'])
         df['from_removable_media_new'] = LabelEncoder().fit_transform(df['from_removable_media'])
         df['hour'] = df['date'].dt.hour
-        
         features = df[['activity_new', 'to_removable_media_new', 'from_removable_media_new', 'hour']]
-        
         prediction = models['file'].predict(features)[0]
-        
         return {"is_anomaly": prediction == -1}
     except Exception as e:
         logger.error(f"File anomaly detection error: {e}")
         return None
 
+
+
+# def detect_http_anomaly(data):
+#     """Detects anomalies in HTTP data based on model_http.ipynb."""
+#     if not models.get('http'):
+#         return None
+#     try:
+#         df = pd.DataFrame([data])
+        
+#         # Feature Engineering
+#         df['content_length'] = df['content'].apply(len)
+#         df['url_length'] = df['url'].apply(len)
+#         df['activity_encoded'] = LabelEncoder().fit_transform(df['activity'])
+
+#         features = df[['content_length', 'url_length', 'activity_encoded']]
+        
+#         score = models['http'].decision_function(features)[0]
+#         prediction = models['http'].predict(features)[0]
+
+#         return {"score": score, "is_anomaly": prediction == -1}
+#     except Exception as e:
+#         logger.error(f"HTTP anomaly detection error: {e}")
+#         return None
+
 def detect_http_anomaly(data):
-    """Detects anomalies in HTTP data based on model_http.ipynb."""
     if not models.get('http'):
         return None
     try:
         df = pd.DataFrame([data])
-        
-        # Feature Engineering
         df['content_length'] = df['content'].apply(len)
         df['url_length'] = df['url'].apply(len)
         df['activity_encoded'] = LabelEncoder().fit_transform(df['activity'])
-
         features = df[['content_length', 'url_length', 'activity_encoded']]
-        
         score = models['http'].decision_function(features)[0]
         prediction = models['http'].predict(features)[0]
-
         return {"score": score, "is_anomaly": prediction == -1}
     except Exception as e:
         logger.error(f"HTTP anomaly detection error: {e}")
         return None
+
+
+
+
+# def detect_device_anomaly(data):
+#     """Detects anomalies in device connection data based on model_device.ipynb."""
+#     if not models.get('device'):
+#         return None
+#     try:
+#         df = pd.DataFrame([data])
+        
+#         # Feature Engineering to match the notebook
+#         df["date"] = pd.to_datetime(df["date"])
+#         df["hour_of_day"] = df["date"].dt.hour
+#         df["day_of_week"] = df["date"].dt.dayofweek
+#         df["is_weekend"] = df["day_of_week"].apply(lambda x: 1 if x >= 5 else 0)
+#         df["is_midnight_activity"] = df["hour_of_day"].apply(lambda x: 1 if x < 5 else 0)
+#         df["time_since_last_activity"] = 0 # Placeholder for single prediction
+#         df["log_time_since_last_activity"] = np.log1p(df["time_since_last_activity"])
+#         df["activity_encoded"] = LabelEncoder().fit_transform(df["activity"])
+
+#         features = ["hour_of_day", "day_of_week", "is_weekend", "is_midnight_activity", "log_time_since_last_activity", "activity_encoded"]
+#         X = df[features]
+        
+#         prediction = models['device'].predict(X)[0]
+        
+#         return {"is_anomaly": prediction == -1}
+#     except Exception as e:
+#         logger.error(f"Device anomaly detection error: {e}")
+#         return None
+
+
+def detect_device_anomaly(data):
+    if not models.get('device'):
+        return None
+    try:
+        df = pd.DataFrame([data])
+        df["date"] = pd.to_datetime(df["date"])
+        df["hour_of_day"] = df["date"].dt.hour
+        df["day_of_week"] = df["date"].dt.dayofweek
+        df["is_weekend"] = df["day_of_week"].apply(lambda x: 1 if x >= 5 else 0)
+        df["is_midnight_activity"] = df["hour_of_day"].apply(lambda x: 1 if x < 5 else 0)
+        df["time_since_last_activity"] = 0
+        df["log_time_since_last_activity"] = np.log1p(df["time_since_last_activity"])
+        df["activity_encoded"] = LabelEncoder().fit_transform(df["activity"])
+        features = ["hour_of_day", "day_of_week", "is_weekend", "is_midnight_activity", "log_time_since_last_activity", "activity_encoded"]
+        X = df[features]
+        prediction = models['device'].predict(X)[0]
+        return {"is_anomaly": prediction == -1}
+    except Exception as e:
+        logger.error(f"Device anomaly detection error: {e}")
+        return None
+
+
 
 # Utility Functions
 def get_user_folder(username):
@@ -744,39 +870,45 @@ def report_web_activity(user_id):
         data = request.json
         username = data.get("username")
         
-        # Ensure user folder exists
+        # --- FIX: We need to connect to both databases ---
         user_folder = get_user_folder(username)
         web_activity_db = os.path.join(user_folder, "web_activity.db")
+        online_data_db = os.path.join(user_folder, "online_data.db")
         
-        # Store in database
-        conn = sqlite3.connect(web_activity_db)
-        c = conn.cursor()
-        
-        for activity in data.get("visited_sites", []):
-            c.execute("""
-                INSERT INTO web_activity (url, title, visit_time, duration)
-                VALUES (?, ?, ?, ?)
-            """, (
-                activity.get("url"), 
-                activity.get("title", ""), 
-                activity.get("time", ""), 
-                activity.get("duration", "")
-            ))
-        
-        conn.commit()
-        
-        # Store in user's folder
-        with open(os.path.join(user_folder, "web_activity.txt"), 'a') as f:
+        # Store visited sites in web_activity.db
+        with sqlite3.connect(web_activity_db) as conn_web:
+            c_web = conn_web.cursor()
             for activity in data.get("visited_sites", []):
-                f.write(f"{activity.get('time', '')} | {activity.get('url', '')} | {activity.get('title', '')}\n")
+                c_web.execute("""
+                    INSERT INTO web_activity (url, title, visit_time, duration)
+                    VALUES (?, ?, ?, ?)
+                """, (
+                    activity.get("url"), 
+                    activity.get("title", ""), 
+                    activity.get("time", ""), 
+                    activity.get("duration", "")
+                ))
         
-        log_user_activity(username, "Web activity reported")
+        # --- FIX: Store downloaded files in online_data.db ---
+        with sqlite3.connect(online_data_db) as conn_online:
+            c_online = conn_online.cursor()
+            for download in data.get("downloaded_files", []):
+                c_online.execute("""
+                    INSERT INTO file_downloads (url, filename, timestamp, size)
+                    VALUES (?, ?, ?, ?)
+                """, (
+                    download.get("path", ""), 
+                    download.get("filename", ""),
+                    download.get("timestamp", ""),
+                    download.get("size", "N/A")  # Add the size here
+                ))
+
+        log_user_activity(username, "Web and download activity reported")
         return jsonify({"status": "success"})
     except Exception as e:
         logger.error(f"Error processing web activity: {e}")
         return jsonify({"error": str(e)}), 500
-    finally:
-        conn.close()
+    
 
 @app.route("/report_network_activity/<user_id>", methods=["POST"])
 def report_network_activity(user_id):
@@ -838,6 +970,10 @@ def user_logs(user_id):
             
             if not user_data:
                 return "User not found", 404
+            
+            is_online = user_id in online_users
+            internet_status = "online" if is_online else "offline"
+
                 
             username = user_data[1]
             user_folder = get_user_folder(username)
@@ -860,12 +996,12 @@ def user_logs(user_id):
                     
                     # Get file downloads
                     c_online.execute("""
-                        SELECT url, filename, timestamp 
+                        SELECT url, filename, timestamp, size
                         FROM file_downloads 
                         ORDER BY timestamp DESC 
                         LIMIT 100
                     """)
-                    downloads = [{"url": row[0], "filename": row[1], "timestamp": row[2]} 
+                    downloads = [{"url": row[0], "filename": row[1], "timestamp": row[2], "size": row[3]} 
                                 for row in c_online.fetchall()]
             
             # Initialize web_activity.db if it exists
@@ -924,7 +1060,7 @@ def user_logs(user_id):
                 login_time=user_data[11] if user_data[11] else "N/A",
                 logout_time=user_data[12] if user_data[12] else "N/A",
                 login_duration=user_data[13] if user_data[13] else "N/A",
-                internet_status=user_data[14] if user_data[14] else "offline",
+                internet_status=internet_status,
                 usb_count=user_data[15] if user_data[15] else 0,
                 website_visits=visits,
                 downloaded_files=downloads,
@@ -996,55 +1132,135 @@ def update_activity(user_id):
 def usb_event():
     try:
         data = request.json
-        conn = sqlite3.connect("users.db")
-        c = conn.cursor()
-        
-        # Update USB count
-        c.execute("""
-            UPDATE user_data 
-            SET usb_count = usb_count + 1 
-            WHERE username = ?
-        """, (data["username"],))
-        conn.commit()
-        
-        # Log the event
-        log_message = f"USB {data['event_type']}: {data['device_info']}"
-        log_user_activity(data["username"], log_message)
-        
-        # Get user_id for socket emit
-        c.execute("SELECT user_id FROM user_data WHERE username = ?", (data["username"],))
-        user_id = c.fetchone()[0]
-        
-        # Write to USB alerts file
-        alert_msg = f"{datetime.now().isoformat()} - USB {data['event_type']} by {data['username']}: {data['device_info']}"
-        with open('users/admin/usb_alerts.txt', 'a') as f:
-            f.write(alert_msg + "\n")
-        
-        socketio.emit("usb_alert", {
-            "message": alert_msg,
-            "user_id": user_id
-        })
-        
+        username = data.get("username")
+        user_id = None
+
         # --- Device Anomaly Detection ---
-        device_data = {
+        device_data_for_model = {
             "id": data.get("id", str(uuid.uuid4())),
             "date": data.get("timestamp", datetime.now().isoformat()),
-            "user": data.get("username"),
+            "user": username,
             "pc": data.get("pc_name", ""),
             "activity": "Connect" if "Inserted" in data.get("event_type") else "Disconnect"
         }
-        # anomaly_result = detect_device_anomaly(device_data)
-        # if anomaly_result and anomaly_result["is_anomaly"]:
-        #     alert_msg = f"Suspicious device activity detected for {data['username']}"
-        #     socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
-        #     log_user_activity(data['username'], f"DEVICE ANOMALY: {alert_msg}")
+        anomaly_result = detect_device_anomaly(device_data_for_model)
+        # --- End Detection ---
 
+        with sqlite3.connect("users.db") as conn:
+            c = conn.cursor()
+            c.execute("SELECT removable_media_transfers, user_id FROM user_data WHERE username = ?", (username,))
+            result = c.fetchone()
+            if not result: return jsonify({"error": "User not found"}), 404
+            
+            transfers = json.loads(result[0] or '[]')
+            user_id = result[1]
+
+            new_event = {
+                "operation": data.get("operation"), "device_info": data.get("device_info"),
+                "timestamp": data.get("timestamp"), "details": data.get("details", {})
+            }
+            transfers.append(new_event)
+            
+            c.execute("UPDATE user_data SET removable_media_transfers = ?, usb_count = usb_count + 1 WHERE username = ?", (json.dumps(transfers), username))
+        
+        # Log anomaly if detected
+        if anomaly_result and anomaly_result["is_anomaly"]:
+            alert_msg = f"Suspicious device activity detected for {username}"
+            socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
+            with open('users/admin/anomaly_alerts.txt', 'a') as f:
+                f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
+            log_user_activity(username, f"DEVICE ANOMALY: {alert_msg}")
+        # FIX: Only send the standard alert if no anomaly was detected
+        else:
+            # Log standard USB alert
+            alert_msg = f"{datetime.now().isoformat()} - USB Event by {username}: {data.get('operation')}"
+            with open('users/admin/usb_alerts.txt', 'a') as f:
+                f.write(alert_msg + "\n")
+            socketio.emit("usb_alert", {"message": alert_msg, "user_id": user_id})
+        
         return jsonify({"status": "logged"})
+
     except Exception as e:
         logger.error(f"Error logging USB event: {e}")
         return jsonify({"error": str(e)}), 500
+
+        # Log standard USB alert
+        alert_msg = f"{datetime.now().isoformat()} - USB Event by {username}: {data.get('operation')}"
+        with open('users/admin/usb_alerts.txt', 'a') as f:
+            f.write(alert_msg + "\n")
+        
+        socketio.emit("usb_alert", {"message": alert_msg, "user_id": user_id})
+        return jsonify({"status": "logged"})
+
+    except Exception as e:
+        logger.error(f"Error logging USB event: {e}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/webcam/<user_id>")
+def webcam(user_id):
+    if 'admin_logged_in' not in session:
+        return redirect(url_for('login'))
+    try:
+        conn = sqlite3.connect("users.db")
+        c = conn.cursor()
+        c.execute("SELECT username, pc_name FROM user_data WHERE user_id = ?", (user_id,))
+        user = c.fetchone()
+        if not user: return "User not found", 404
+        return render_template("webcam.html", user_id=user_id, username=user[0], pc_name=user[1])
+    except Exception as e:
+        logger.error(f"Error loading webcam page: {e}")
+        return "Error loading page", 500
     finally:
         conn.close()
+
+
+@app.route("/get_user_media/<media_type>/<user_id>", methods=["GET"])
+def get_user_media(media_type, user_id):
+    if 'admin_logged_in' not in session:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    try:
+        conn = sqlite3.connect("users.db")
+        c = conn.cursor()
+        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
+        user = c.fetchone()
+        if not user: return jsonify({"error": "User not found"}), 404
+        
+        username = user[0]
+        media_folder = os.path.join(get_user_folder(username), media_type)
+        if not os.path.exists(media_folder):
+            return jsonify({"files": []})
+        
+        files = sorted(os.listdir(media_folder), reverse=True)
+        return jsonify({"files": files})
+    except Exception as e:
+        logger.error(f"Error getting user media: {e}")
+        return jsonify({"error": str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route("/view_media/<media_type>/<user_id>/<filename>")
+def view_media(media_type, user_id, filename):
+    if 'admin_logged_in' not in session:
+        return "Unauthorized", 401
+    try:
+        conn = sqlite3.connect("users.db")
+        c = conn.cursor()
+        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
+        user = c.fetchone()
+        if not user: return "User not found", 404
+        
+        username = user[0]
+        media_path = os.path.join(get_user_folder(username), media_type, secure_filename(filename))
+        if not os.path.exists(media_path):
+            return "File not found", 404
+        return send_file(media_path)
+    except Exception as e:
+        logger.error(f"Error sending media file: {e}")
+        return "Error", 500
+    finally:
+        conn.close()
+
 
 # ... (Other routes like /get_admin_activity, etc. remain the same) ...
 @app.route("/get_admin_activity", methods=["GET"])
@@ -1291,6 +1507,10 @@ def file_manager(user_id):
     finally:
         conn.close()
 
+# --- Global dictionaries for SocketIO webcam/screenshot management ---
+webcam_watchers = {}  # admin_sid: user_id
+client_sids = {}      # user_id: client_sid
+
 # SocketIO events
 @socketio.on('user_heartbeat')
 def handle_user_heartbeat(data):
@@ -1300,10 +1520,98 @@ def handle_user_heartbeat(data):
             socketio.emit('user_online', {'user_id': user_id})
             logger.info(f"User {user_id} is online.")
         online_users[user_id] = time.time()
+        client_sids[user_id] = request.sid
+
+
+@socketio.on('watch_webcam')
+def handle_watch_webcam(data):
+    user_id = data.get('user_id')
+    client_sid = client_sids.get(user_id)
+    if client_sid:
+        webcam_watchers[request.sid] = user_id
+        emit('start_webcam_stream', to=client_sid)
+        logger.info(f"Admin {request.sid} started watching webcam for user {user_id}")
+    else:
+        emit('client_not_connected', {'user_id': user_id})
+
+@socketio.on('webcam_frame')
+def handle_webcam_frame(data):
+    user_id = data.get('user_id')
+    for admin_sid, watched_user_id in webcam_watchers.items():
+        if watched_user_id == user_id:
+            emit('webcam_stream', {'user_id': user_id, 'frame': data['frame']}, to=admin_sid)
+
+@socketio.on('request_screenshot')
+def handle_request_screenshot(data):
+    user_id = data.get('user_id')
+    client_sid = client_sids.get(user_id)
+    if client_sid:
+        emit('take_screenshot', to=client_sid)
+        logger.info(f"Admin requested screenshot from user {user_id}")
+
+@socketio.on('screenshot_data')
+def handle_screenshot_data(data):
+    user_id = data.get('user_id')
+    for admin_sid, watched_user_id in webcam_watchers.items():
+        if watched_user_id == user_id:
+            emit('screenshot_stream', {'user_id': user_id, 'frame': data['frame']}, to=admin_sid)
+
+@socketio.on('save_capture')
+def handle_save_capture(data):
+    user_id = data.get('user_id')
+    media_type = data.get('type', 'photos') # 'photos' or 'screenshots'
+    b64_data = data.get('frame')
+    
+    try:
+        conn = sqlite3.connect("users.db")
+        c = conn.cursor()
+        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
+        user = c.fetchone()
+        if not user: return
+        
+        username = user[0]
+        media_folder = os.path.join(get_user_folder(username), media_type)
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"{timestamp}.jpg"
+        filepath = os.path.join(media_folder, filename)
+        
+        # Decode and save the image
+        image_data = base64.b64decode(b64_data)
+        with open(filepath, 'wb') as f:
+            f.write(image_data)
+        
+        logger.info(f"Saved {media_type} for {username} as {filename}")
+        emit('capture_saved', {'user_id': user_id, 'filename': filename, 'type': media_type})
+
+    except Exception as e:
+        logger.error(f"Error saving capture: {e}")
+    finally:
+        conn.close()
+
+
+@socketio.on('stop_watching_webcam')
+def handle_stop_watching_webcam(data):
+    admin_sid = request.sid
+    if admin_sid in webcam_watchers:
+        user_id = webcam_watchers[admin_sid]
+        client_sid = client_sids.get(user_id)
+        if client_sid:
+            emit('stop_webcam_stream', to=client_sid)
+        del webcam_watchers[admin_sid]
+        logger.info(f"Admin {admin_sid} stopped watching {user_id}")
+
+
 
 @socketio.on('disconnect')
 def handle_disconnect():
-    pass
+    admin_sid = request.sid
+    if admin_sid in webcam_watchers:
+        user_id = webcam_watchers[admin_sid]
+        client_sid = client_sids.get(user_id)
+        if client_sid:
+            emit('stop_webcam_stream', to=client_sid)
+        del webcam_watchers[admin_sid]
+        logger.info(f"Admin {admin_sid} disconnected, stopped watching {user_id}")
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000, debug=True)
