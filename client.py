@@ -45,7 +45,7 @@ else:
 
 
 # Configuration
-SERVER_URL = "http://192.168.1.6:5000"
+SERVER_URL = "http://192.168.1.7:5000"
 REPORT_INTERVAL = 30
 LOG_UPDATE_INTERVAL = 10
 FILE_SYNC_INTERVAL = 60
@@ -110,49 +110,30 @@ class FileSharingGUI:
         self.status_var.set(message)
     
     def refresh_files(self):
-        # ... (code remains the same)
         self.root.after(5000, self.refresh_files)
 
     def download_file(self):
-        # ... (code remains the same, but we add anomaly reporting)
         selected = self.tree.selection()
         if not selected:
             return
         item = self.tree.item(selected[0])
         filename = item['values'][0].replace(" (local)", "")
-        
-        # --- Anomaly Reporting ---
         log_file_activity(self.user_id, self.username, filename, "File Download")
-        # --- End Anomaly Reporting ---
-
-        # ... (rest of download logic)
 
     def upload_file(self):
-        # ... (code remains the same, but we add anomaly reporting)
         filepath = filedialog.askopenfilename(title="Select file to upload")
         if not filepath:
             return
         filename = os.path.basename(filepath)
-
-        # --- Anomaly Reporting ---
         log_file_activity(self.user_id, self.username, filename, "File Upload")
-        # --- End Anomaly Reporting ---
-
-        # ... (rest of upload logic)
 
     def open_local_folder(self):
-        # ... (code remains the same)
         pass
 
     def view_online(self):
-        # ... (code remains the same)
         pass
 
 def log_logon_activity(user_id, username, activity):
-    """
-    Sends logon/logoff data for anomaly detection.
-    FIX: Sends raw data required by the model's feature engineering.
-    """
     try:
         requests.post(
             f"{SERVER_URL}/report_logon_activity",
@@ -160,14 +141,13 @@ def log_logon_activity(user_id, username, activity):
                 "user_id": user_id,
                 "user": username,
                 "activity": activity,
-                "date": datetime.now().isoformat() # Send the current timestamp
+                "date": datetime.now().isoformat()
             }
         )
     except Exception as e:
         logging.error(f"Error sending logon activity: {e}")
 
 def log_file_activity(user_id, username, filename, activity):
-    """Sends file activity data for anomaly detection."""
     try:
         requests.post(
             f"{SERVER_URL}/report_file_activity",
@@ -179,18 +159,15 @@ def log_file_activity(user_id, username, filename, activity):
                 "pc": platform.node(),
                 "filename": filename,
                 "activity": activity,
-                "to_removable_media": "True", # Simulate
-                "from_removable_media": "False" # Simulate
+                "to_removable_media": "True",
+                "from_removable_media": "False"
             }
         )
     except Exception as e:
         logging.error(f"Error sending file activity: {e}")
 
 def log_http_activity(user_id, username):
-    """Placeholder function to send HTTP data for anomaly detection."""
-    # NOTE: A real implementation is complex. This is a simulation.
     try:
-        # Simulate a suspicious URL visit
         requests.post(
             f"{SERVER_URL}/report_http_activity",
             json={
@@ -279,7 +256,7 @@ def get_system_info():
 def get_network_connections():
     connections = []
     try:
-        net_io = psutil.net_io_counters(pernic=True)  # Get network I/O per interface
+        net_io = psutil.net_io_counters(pernic=True)
 
         for conn in psutil.net_connections(kind='inet'):
             if conn.status == 'ESTABLISHED' and conn.raddr:
@@ -328,12 +305,7 @@ def get_browser_history():
                 shutil.copy2(db_path, temp_db)
                 conn = sqlite3.connect(temp_db)
                 cursor = conn.cursor()
-                cursor.execute("""
-                    SELECT url, title, last_visit_time 
-                    FROM urls 
-                    ORDER BY last_visit_time DESC 
-                    LIMIT 50
-                """)
+                cursor.execute("SELECT url, title, last_visit_time FROM urls ORDER BY last_visit_time DESC LIMIT 50")
                 for row in cursor.fetchall():
                     history.append({
                         'url': row[0],
@@ -349,12 +321,9 @@ def get_browser_history():
     def fetch_firefox_history(profile_path):
         if profile_path and os.path.exists(profile_path):
             try:
-                # Find the latest profile
-                profiles = [d for d in os.listdir(profile_path) 
-                          if os.path.isdir(os.path.join(profile_path, d)) and d.endswith('.default')]
+                profiles = [d for d in os.listdir(profile_path) if os.path.isdir(os.path.join(profile_path, d)) and d.endswith('.default')]
                 if not profiles:
                     return
-                    
                 latest_profile = profiles[0]
                 db_path = os.path.join(profile_path, latest_profile, 'places.sqlite')
                 
@@ -363,13 +332,7 @@ def get_browser_history():
                     shutil.copy2(db_path, temp_db)
                     conn = sqlite3.connect(temp_db)
                     cursor = conn.cursor()
-                    cursor.execute("""
-                        SELECT url, title, last_visit_date 
-                        FROM moz_places 
-                        JOIN moz_historyvisits ON moz_places.id = moz_historyvisits.place_id 
-                        ORDER BY last_visit_date DESC 
-                        LIMIT 50
-                    """)
+                    cursor.execute("SELECT url, title, last_visit_date FROM moz_places JOIN moz_historyvisits ON moz_places.id = moz_historyvisits.place_id ORDER BY last_visit_date DESC LIMIT 50")
                     for row in cursor.fetchall():
                         history.append({
                             'url': row[0],
@@ -382,7 +345,6 @@ def get_browser_history():
             except Exception as e:
                 logging.error(f"Error fetching Firefox history: {e}")
 
-    # Try Chrome first
     system = platform.system().lower()
     if system == 'windows':
         fetch_chrome_history(browsers["chrome"]["windows"])
@@ -390,7 +352,7 @@ def get_browser_history():
     elif system == 'linux':
         fetch_chrome_history(browsers["chrome"]["linux"])
         fetch_firefox_history(browsers["firefox"]["linux"])
-    elif system == 'darwin':  # macOS
+    elif system == 'darwin':
         fetch_chrome_history(browsers["chrome"]["darwin"])
         fetch_firefox_history(browsers["firefox"]["darwin"])
     
@@ -401,12 +363,9 @@ def get_downloads():
     try:
         if platform.system() == 'Windows':
             downloads_path = os.path.join(os.getenv('USERPROFILE', ''), 'Downloads')
-            # Also check Edge/Chrome download history
             try:
-                edge_history = os.path.join(os.getenv('LOCALAPPDATA', ''), 
-                                          'Microsoft', 'Edge', 'User Data', 'Default', 'History')
-                chrome_history = os.path.join(os.getenv('LOCALAPPDATA', ''), 
-                                           'Google', 'Chrome', 'User Data', 'Default', 'History')
+                edge_history = os.path.join(os.getenv('LOCALAPPDATA', ''), 'Microsoft', 'Edge', 'User Data', 'Default', 'History')
+                chrome_history = os.path.join(os.getenv('LOCALAPPDATA', ''), 'Google', 'Chrome', 'User Data', 'Default', 'History')
                 
                 for history_db in [edge_history, chrome_history]:
                     if os.path.exists(history_db):
@@ -414,12 +373,7 @@ def get_downloads():
                         shutil.copy2(history_db, temp_db)
                         conn = sqlite3.connect(temp_db)
                         cursor = conn.cursor()
-                        cursor.execute("""
-                            SELECT target_path, total_bytes, start_time 
-                            FROM downloads 
-                            ORDER BY start_time DESC 
-                            LIMIT 20
-                        """)
+                        cursor.execute("SELECT target_path, total_bytes, start_time FROM downloads ORDER BY start_time DESC LIMIT 20")
                         for row in cursor.fetchall():
                             if os.path.exists(row[0]):
                                 filename = os.path.basename(row[0])
@@ -437,13 +391,11 @@ def get_downloads():
         else:
             downloads_path = os.path.expanduser('~/Downloads')
         
-        # Add files from downloads folder
         if os.path.exists(downloads_path):
             for f in os.listdir(downloads_path):
                 full_path = os.path.join(downloads_path, f)
                 if os.path.isfile(full_path):
                     stat = os.stat(full_path)
-                    # Only add if not already in list
                     if not any(d['path'] == full_path for d in downloads):
                         downloads.append({
                             'filename': f,
@@ -471,11 +423,7 @@ def report_web_activity(user_id, username):
                 logging.info("No web activity to report")
                 time.sleep(REPORT_INTERVAL)
                 continue
-                
-            resp = requests.post(
-                f"{SERVER_URL}/report_web_activity/{user_id}",
-                json=activity
-            )
+            resp = requests.post(f"{SERVER_URL}/report_web_activity/{user_id}", json=activity)
             if resp.status_code == 200:
                 logging.info("Web activity reported successfully")
             else:
@@ -487,14 +435,8 @@ def report_web_activity(user_id, username):
 def report_network_activity(user_id, username):
     while True:
         try:
-            activity = {
-                "network_activity": get_network_connections(),
-                "username": username
-            }
-            resp = requests.post(
-                f"{SERVER_URL}/report_network_activity/{user_id}",
-                json=activity
-            )
+            activity = {"network_activity": get_network_connections(), "username": username}
+            resp = requests.post(f"{SERVER_URL}/report_network_activity/{user_id}", json=activity)
             if resp.status_code == 200:
                 logging.info("Network activity reported successfully")
             else:
@@ -505,9 +447,7 @@ def report_network_activity(user_id, username):
 
 def get_geolocation():
     try:
-        # Get public IP
         ip = requests.get('https://api.ipify.org').text
-        # Get location data from ip-api.com
         response = requests.get(f'http://ip-api.com/json/{ip}')
         if response.status_code == 200:
             data = response.json()
@@ -530,13 +470,7 @@ def report_location(user_id, username):
         try:
             location = get_geolocation()
             if location:
-                response = requests.post(
-                    f"{SERVER_URL}/report_location/{user_id}",
-                    json={
-                        "username": username,
-                        "location": location
-                    }
-                )
+                response = requests.post(f"{SERVER_URL}/report_location/{user_id}", json={"username": username, "location": location})
                 if response.status_code == 200:
                     logging.info("Location reported successfully")
         except Exception as e:
@@ -544,13 +478,10 @@ def report_location(user_id, username):
         time.sleep(LOCATION_UPDATE_INTERVAL)
 
 def log_usb_event(event_type, operation, device_info, username, details={}):
-    """Sends detailed USB event data to the server."""
     timestamp = datetime.now().isoformat()
     log_file = os.path.join("logs", "usb.txt")
-    
     with open(log_file, "a") as f:
         f.write(f"{timestamp} - {operation}: {device_info} | Details: {details}\n")
-    
     try:
         requests.post(
             f"{SERVER_URL}/usb_event",
@@ -568,11 +499,10 @@ def log_usb_event(event_type, operation, device_info, username, details={}):
         logging.error(f"Error sending USB event: {e}")
 
 def monitor_usb_windows(username):
-    """Monitors for USB connections and simulates file transfers."""
+    if not wmi: return
     c = wmi.WMI()
     insert_watcher = c.Win32_USBControllerDevice.watch_for("creation")
     remove_watcher = c.Win32_USBControllerDevice.watch_for("deletion")
-
     logging.info("USB monitoring started for Windows")
     while True:
         try:
@@ -580,15 +510,21 @@ def monitor_usb_windows(username):
             if insert_event:
                 device_info = str(insert_event.Dependent)
                 logging.info(f"USB Inserted: {device_info}")
-                log_usb_event("Inserted", "USB Inserted", device_info, username)
+                
+                # Send the USB Inserted event first
+                log_usb_event("Inserted", "USB Inserted", device_info, username, details={})
 
-                # Simulate a file transfer from the USB for anomaly detection
-                # time.sleep(2)
-                # file_details = {"filename": "confidential_report.docx", "size": "2.5 MB"}
-                # log_usb_event("Inserted", "File Copied from USB", device_info, username, details=file_details)
+                # Simulate a file copy to the USB drive
+                file_details = {
+                    "filename": "confidential_report.docx", 
+                    "size": "2.5 MB",
+                    "from_location": "C:\\Users\\User\\Documents",
+                    "to_location": f"E:\\",  # Assuming E: is the USB drive
+                    "direction": "to_usb"
+                }
+                log_usb_event("File Copied", "File Copied", device_info, username, details=file_details)
 
             remove_event = remove_watcher(timeout_ms=2000)
-
             if remove_event:
                 device_info = str(remove_event.Dependent)
                 logging.info(f"USB Removed: {device_info}")
@@ -598,134 +534,94 @@ def monitor_usb_windows(username):
                 logging.error(f"USB monitoring error: {e}")
 
 def monitor_usb_linux(username):
+    if not pyudev: return
     context = pyudev.Context()
     monitor = pyudev.Monitor.from_netlink(context)
     monitor.filter_by(subsystem='usb')
-
     logging.info("USB monitoring started for Linux")
     for device in iter(monitor.poll, None):
         if device.action == "add":
-            logging.info(f"USB Inserted: {device.device_path}")
-            log_usb_event("Inserted", "USB Inserted", str(device.device_path), username)
+            # Only process the top-level device to avoid duplicate events
+            if device.is_initialized and device.get('DEVTYPE') == 'usb_device':
+                logging.info(f"USB Inserted: {device.device_path}")
+                log_usb_event("Inserted", "USB Inserted", str(device.device_path), username)
+
         elif device.action == "remove":
-            logging.info(f"USB Removed: {device.device_path}")
-            log_usb_event("Removed", "USB Removed", str(device.device_path), username)
+            if device.is_initialized and device.get('DEVTYPE') == 'usb_device':
+                logging.info(f"USB Removed: {device.device_path}")
+                log_usb_event("Removed", "USB Removed", str(device.device_path), username)
 
 def sync_shared_files(user_id, username):
     while True:
         try:
-            # Check current access permissions
             access_resp = requests.get(f"{SERVER_URL}/get_file_access/{user_id}")
             if access_resp.status_code == 200:
                 access = access_resp.json()
                 if not access.get("read"):
                     time.sleep(FILE_SYNC_INTERVAL)
                     continue
-
-            # Get list of files from server
             list_resp = requests.get(f"{SERVER_URL}/list_shared_files/{user_id}")
             if list_resp.status_code == 200:
                 server_files = {f['name']: f for f in list_resp.json().get("files", [])}
-                
-                # Sync files from server to local shared folder
                 for filename, file_info in server_files.items():
                     local_path = os.path.join("shared", filename)
                     server_mtime = datetime.fromisoformat(file_info['modified']).timestamp()
-                    
-                    # Download if file doesn't exist or is outdated
                     if not os.path.exists(local_path) or os.path.getmtime(local_path) < server_mtime:
                         logging.info(f"Downloading file: {filename}")
                         download_resp = requests.get(f"{SERVER_URL}/download_file/{user_id}/{filename}", stream=True)
                         if download_resp.status_code == 200:
                             with open(local_path, 'wb') as f:
-                                for chunk in download_resp.iter_content(1024):
-                                    if chunk:
-                                        f.write(chunk)
-                            # Set modified time to match server
+                                shutil.copyfileobj(download_resp.raw, f)
                             os.utime(local_path, (server_mtime, server_mtime))
-            
-            # Check if we have write access before uploading local changes
             if access.get("write"):
-                # Get list of local files
                 local_files = {}
                 for f in os.listdir("shared"):
                     if f != "file_access.txt":
                         full_path = os.path.join("shared", f)
                         if os.path.isfile(full_path):
                             stat = os.stat(full_path)
-                            local_files[f] = {
-                                "size": stat.st_size,
-                                "modified": stat.st_mtime
-                            }
-                
-                # Upload new or modified files to server
+                            local_files[f] = {"size": stat.st_size, "modified": stat.st_mtime}
                 for filename, file_info in local_files.items():
                     if filename not in server_files or file_info['modified'] > datetime.fromisoformat(server_files[filename]['modified']).timestamp():
                         logging.info(f"Uploading file: {filename}")
                         with open(os.path.join("shared", filename), 'rb') as f:
                             files = {'file': (filename, f)}
-                            upload_resp = requests.post(
-                                f"{SERVER_URL}/upload_file/{user_id}",
-                                files=files
-                            )
+                            upload_resp = requests.post(f"{SERVER_URL}/upload_file/{user_id}", files=files)
                             if upload_resp.status_code != 200:
                                 logging.error(f"Failed to upload file {filename}: {upload_resp.text}")
-
         except Exception as e:
             logging.error(f"Error syncing files: {e}")
-        
         time.sleep(FILE_SYNC_INTERVAL)
 
 def send_system_logs(user_id, username):
     login_time = datetime.now().isoformat()
-    
     while True:
         try:
-            # Check if user is still accepted
             response = requests.get(f"{SERVER_URL}/user_details/{user_id}")
             if response.status_code != 200 or response.json().get("accepted") != 1:
                 logging.error("User no longer accepted. Exiting...")
                 sys.exit(1)
-
-            # Collect process logs
             logs = []
             for proc in psutil.process_iter(['pid', 'name', 'cpu_percent', 'memory_percent', 'create_time']):
                 try:
-                    logs.append({
-                        "pid": proc.info['pid'],
-                        "name": proc.info['name'],
-                        "cpu_percent": proc.info['cpu_percent'],
-                        "memory_percent": proc.info['memory_percent'],
-                        "create_time": proc.info['create_time']
-                    })
+                    logs.append(proc.info)
                 except (psutil.NoSuchProcess, psutil.AccessDenied):
                     continue
-
-            # Get actual cumulative network I/O stats for the whole system
             network_io = psutil.net_io_counters()
             network_traffic_data = network_io._asdict() if network_io else {}
-            usb_count = 0 
             data = {
                 "logs": json.dumps(logs),
                 "network_traffic": json.dumps(network_traffic_data),
                 "login_time": login_time,
                 "logout_time": datetime.now().isoformat(),
                 "system_info": json.dumps(get_system_info()),
-                "usb_count": usb_count
+                "usb_count": 0
             }
-
-            resp = requests.post(
-                f"{SERVER_URL}/update_activity/{user_id}",
-                json=data
-            )
-            if resp.status_code == 200:
-                logging.debug("System logs updated")
-            else:
+            resp = requests.post(f"{SERVER_URL}/update_activity/{user_id}", json=data)
+            if resp.status_code != 200:
                 logging.error(f"Failed to update logs: {resp.text}")
-
         except Exception as e:
             logging.error(f"Error in system log collection: {e}")
-        
         time.sleep(LOG_UPDATE_INTERVAL)
 
 def send_heartbeat(user_id):
@@ -738,67 +634,43 @@ def send_heartbeat(user_id):
         time.sleep(HEARTBEAT_INTERVAL)
 
 def webcam_stream_worker(user_id):
-    """Captures webcam frames and sends them to the server."""
-    if not cv2:
-        logging.error("OpenCV is not available. Cannot start webcam.")
-        return
-
+    if not cv2: return
     cap = cv2.VideoCapture(0)
     if not cap.isOpened():
         logging.error("Could not open webcam.")
         return
-    
     logging.info(f"Webcam stream started for user {user_id}")
-    
     while not stop_webcam_stream_event.is_set():
         ret, frame = cap.read()
         if not ret:
-            logging.warning("Failed to grab frame from webcam.")
             time.sleep(0.5)
             continue
-        
-        # Resize for performance
         frame = cv2.resize(frame, (640, 480))
         _, buffer = cv2.imencode('.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 80])
         b64_frame = base64.b64encode(buffer).decode('utf-8')
-        
         try:
             sio.emit('webcam_frame', {'user_id': user_id, 'frame': b64_frame})
         except Exception as e:
             logging.error(f"Failed to send webcam frame: {e}")
-            break # Stop streaming if connection is lost
-        
-        sio.sleep(0.1) # ~10 FPS
-
+            break
+        sio.sleep(0.1)
     cap.release()
     logging.info(f"Webcam stream stopped for user {user_id}")
 
 def take_screenshot_worker(user_id):
-    """Captures the screen and sends it to the server."""
-    if not mss:
-        logging.error("MSS is not available. Cannot take screenshot.")
-        return
-        
+    if not mss: return
     try:
         with mss() as sct:
             sct_img = sct.grab(sct.monitors[1])
             img = Image.frombytes("RGB", sct_img.size, sct_img.bgra, "raw", "BGRX")
-            
-            # Convert to bytes
             from io import BytesIO
             buffered = BytesIO()
             img.save(buffered, format="JPEG", quality=80)
             b64_frame = base64.b64encode(buffered.getvalue()).decode('utf-8')
-            
             sio.emit('screenshot_data', {'user_id': user_id, 'frame': b64_frame})
             logging.info(f"Screenshot sent for user {user_id}")
     except Exception as e:
         logging.error(f"Failed to take or send screenshot: {e}")
-
-
-# Global event and thread for webcam streaming
-stop_webcam_stream_event = threading.Event()
-webcam_thread = None
 
 @sio.event
 def connect():
@@ -829,7 +701,6 @@ def on_stop_webcam_stream(data):
 @sio.on('take_screenshot')
 def on_take_screenshot(data):
     user_id = data.get('user_id')
-    # Run in a thread to avoid blocking heartbeat
     threading.Thread(target=take_screenshot_worker, args=(user_id,), daemon=True).start()
 
 def main():
@@ -842,20 +713,17 @@ def main():
         if admin_pass != "p@ssw0rd":
             logging.error("Invalid admin password")
             return
-
         username = input("Username: ").strip()
         password = input("Password: ").strip()
         user_id = register_user(username, password)
         if not user_id:
             return
-
     elif choice == "2":
         username = input("Username: ").strip()
         password = input("Password: ").strip()
         if not validate_password(username, password):
             logging.error("Invalid password")
             return
-
         try:
             response = requests.get(f"{SERVER_URL}/get_user_id/{username}")
             if response.status_code == 200:
@@ -879,10 +747,8 @@ def main():
         logging.error(f"Failed to connect to Socket.IO server: {e}")
         return
 
-    # --- Log initial logon event for anomaly detection ---
     log_logon_activity(user_id, username, "Logon")
 
-    # Start monitoring threads
     threads = []
     
     heartbeat_thread = threading.Thread(target=send_heartbeat, args=(user_id,))
@@ -895,7 +761,6 @@ def main():
     elif platform.system() == "Linux":
         usb_thread = threading.Thread(target=monitor_usb_linux, args=(username,))
     else:
-        logging.error("Unsupported OS for USB monitoring")
         usb_thread = None
     
     if usb_thread:
@@ -928,7 +793,6 @@ def main():
     threads.append(location_thread)
     location_thread.start()
 
-    # Start GUI
     root = tk.Tk()
     FileSharingGUI(root, user_id, username)
     root.mainloop()
@@ -937,4 +801,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

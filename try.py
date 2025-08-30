@@ -452,40 +452,30 @@ def usb_event():
         current_transfers = json.loads(result[1]) if result[1] else []
 
         operation = data.get("operation")
-        device_data = {"date": data.get("timestamp"), "user": username, "activity": operation}
+        device_data = {"date": data.get("timestamp"), "user": username, "activity": "Connect"}
         anomaly_result = detect_device_anomaly(device_data)
 
-        # Check for a specific file transfer operation
-        is_file_transfer = "File Copied" in operation or "File Moved" in operation
+        is_file_copy_anomaly = "File Copied" in operation
+        is_device_anomaly = anomaly_result and anomaly_result["is_anomaly"]
         
         # Add the new USB event to the user's log
-        transfer_entry = {
+        current_transfers.append({
             "operation": operation,
             "device_info": data.get("device_info"),
             "timestamp": data.get("timestamp"),
             "details": data.get("details", {})
-        }
-        current_transfers.insert(0, transfer_entry)
-        
+        })
         c.execute("UPDATE user_data SET usb_count = usb_count + 1, removable_media_transfers = ? WHERE user_id = ?", (json.dumps(current_transfers), user_id))
         conn.commit()
-        
-        alert_msg = f"{datetime.now().isoformat()} - USB Event: {operation} by {username}"
-        
-        if is_file_transfer:
-            add_risk_score(user_id, 'usb_file_copy')
-            file_details = data.get("details", {})
-            file_name = file_details.get("filename", "N/A")
-            direction = file_details.get("direction", "N/A")
-            from_loc = file_details.get("from_location", "N/A")
-            to_loc = file_details.get("to_location", "N/A")
 
-            alert_msg = f"ANOMALY: File '{file_name}' transferred from '{from_loc}' to '{to_loc}' ({direction.upper()})"
+        if is_file_copy_anomaly:
+            add_risk_score(user_id, 'usb_file_copy')
+            alert_msg = f"ANOMALY: USB file copy detected for {username}"
             socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
             with open('users/admin/anomaly_alerts.txt', 'a') as f:
                 f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
         
-        elif anomaly_result and anomaly_result["is_anomaly"]:
+        elif is_device_anomaly:
             add_risk_score(user_id, 'device')
             alert_msg = f"ANOMALY: Suspicious device connection for {username}"
             socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
@@ -493,9 +483,10 @@ def usb_event():
                 f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
         
         else:
-            socketio.emit("usb_alert", {"message": alert_msg, "user_id": user_id})
+            alert_msg = f"{datetime.now().isoformat()} - USB Event: {operation} by {username}"
             with open('users/admin/usb_alerts.txt', 'a') as f:
                 f.write(alert_msg + "\n")
+            socketio.emit("usb_alert", {"message": alert_msg, "user_id": user_id})
         
         return jsonify({"status": "logged"})
 
@@ -505,8 +496,8 @@ def usb_event():
     finally:
         conn.close()
 
-# ... (rest of the app.py code remains unchanged) ...
-
+# ... (All other routes like user management, file sharing, etc., remain the same) ...
+# ... (Webcam and screenshot routes also remain the same) ...
 @app.route("/report_location/<user_id>", methods=["POST"])
 def report_location(user_id):
     try:
@@ -928,33 +919,27 @@ def user_logs(user_id):
         network_activity = []
         system_info = {}
         locations = []
-        removable_media_transfers = []
-
+        
         with sqlite3.connect("users.db") as conn:
             c = conn.cursor()
-            c.execute("""
-                SELECT user_id, username, password, pc_name, platform, accepted, 
-                       logs, network_traffic, file_operations, removable_media_transfers, 
-                       user_activity, login_time, logout_time, login_duration, 
-                       internet_status, usb_count, system_info, locations
-                FROM user_data 
-                WHERE user_id = ?
-            """, (user_id,))
+            c.execute("SELECT * FROM user_data WHERE user_id = ?", (user_id,))
             user_data = c.fetchone()
-
+            
             if not user_data:
                 return "User not found", 404
-
+            
             is_online = user_id in online_users
             internet_status = "online" if is_online else "offline"
 
+                
             username = user_data[1]
             user_folder = get_user_folder(username)
-
+            
             online_data_db = os.path.join(user_folder, "online_data.db")
             if os.path.exists(online_data_db):
                 with sqlite3.connect(online_data_db) as conn_online:
                     c_online = conn_online.cursor()
+                    
                     c_online.execute("""
                         SELECT url, title, timestamp 
                         FROM website_visits 
@@ -1009,11 +994,11 @@ def user_logs(user_id):
                         "received_bytes": row[5],
                         "timestamp": row[6]
                     } for row in c_network.fetchall()]
-
+            
             system_info = json.loads(user_data[16]) if user_data[16] else {}
+            
             locations = json.loads(user_data[17]) if user_data[17] else []
-            removable_media_transfers = json.loads(user_data[9]) if user_data[9] else []
-
+            
             # Convert login duration seconds to a readable format
             duration_sec = user_data[13] if user_data[13] is not None else 0
             if duration_sec > 0:
@@ -1029,7 +1014,7 @@ def user_logs(user_id):
                 logs=json.loads(user_data[6]) if user_data[6] else [],
                 network_traffic=json.loads(user_data[7]) if user_data[7] else {},
                 file_operations=json.loads(user_data[8]) if user_data[8] else [],
-                removable_media_transfers=removable_media_transfers,
+                removable_media_transfers=json.loads(user_data[9]) if user_data[9] else [],
                 user_activity=json.loads(user_data[10]) if user_data[10] else [],
                 login_time=user_data[11] if user_data[11] else "N/A",
                 logout_time=user_data[12] if user_data[12] else "N/A",

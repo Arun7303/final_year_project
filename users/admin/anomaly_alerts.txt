@@ -1,0 +1,36 @@
+2025-08-30T17:21:06.278446 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:06.294107 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:08.429073 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:08.448108 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:19.554545 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:19.574446 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:21.656461 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:21:21.674482 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:29:17.197510 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:29:17.217246 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:29:20.058168 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:29:20.073130 - ANOMALY: Suspicious device connection for a1
+2025-08-30T17:34:20.865917 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:34:20.883317 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:34:22.848156 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:34:22.866830 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:37:39.650320 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:37:42.725532 - ANOMALY: File 'confidential_report.docx' transferred from '/home/user/Documents' to '/devices/pci0000:00/0000:00:14.0/usb3/3-6' (TO_USB)
+2025-08-30T17:37:57.212992 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:38:02.576903 - ANOMALY: File 'confidential_report.docx' transferred from '/home/user/Documents' to '/devices/pci0000:00/0000:00:14.0/usb3/3-6' (TO_USB)
+2025-08-30T17:38:57.590767 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:39:52.773228 - ANOMALY: File 'confidential_report.docx' transferred from '/home/user/Documents' to '/devices/pci0000:00/0000:00:14.0/usb3/3-6' (TO_USB)
+2025-08-30T17:45:18.224836 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:45:21.762979 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:47:13.911452 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:47:18.094955 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:47:52.794155 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:47:57.593144 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:50:36.832860 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:52:16.134205 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:59:01.258819 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T17:59:06.322188 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T18:00:26.473040 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T18:00:28.745534 - ANOMALY: Suspicious device connection for 1234
+2025-08-30T18:02:25.815922 - ANOMALY: Suspicious device connection for a1
+2025-08-30T18:02:29.998478 - ANOMALY: Suspicious device connection for a1
