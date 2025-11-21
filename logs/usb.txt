@@ -1,202 +1,154 @@
-2025-03-31 21:37:57 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-03-31 21:37:57 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-03-31 21:38:02 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-03-31 21:38:02 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-01 14:43:35 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-01 14:43:35 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 16:23:20 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb4/4-2/4-2:1.0
-2025-04-06 16:23:20 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb4/4-2
-2025-04-06 16:23:20 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb4/4-2
-2025-04-06 16:23:20 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb4/4-2/4-2:1.0
-2025-04-06 16:23:20 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb4/4-2/4-2:1.0
-2025-04-06 16:23:20 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb4/4-2
-2025-04-06 16:23:54 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 16:23:54 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 16:42:17 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 16:42:17 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 17:56:44 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 17:56:44 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 17:56:54 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 17:56:54 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 17:57:15 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 17:57:15 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 18:06:06 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-06 18:06:06 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 18:06:13 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-06 18:06:13 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-07 07:34:58 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-07 07:34:58 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-07 07:35:23 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-07 07:35:23 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-07 07:35:42 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-04-07 07:35:43 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-07 07:35:57 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-04-07 07:35:57 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-05-27 08:11:36 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:11:36 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:11:40 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:11:40 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:11:45 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:11:45 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:12:02 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:12:02 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:12:11 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:12:11 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:12:15 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:12:15 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:12:21 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-05-27 08:12:21 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:12:36 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1/3-1:1.0
-2025-05-27 08:12:36 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-1
-2025-07-16 13:35:37 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2
-2025-07-16 13:35:37 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
-2025-07-16 13:35:52 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
-2025-07-16 13:35:52 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2
-2025-07-16 13:37:26 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2
-2025-07-16 13:37:26 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
-2025-07-16 13:37:39 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
-2025-07-16 13:37:39 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-2
-2025-07-16 13:37:41 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2
-2025-07-16 13:37:41 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-2/3-2:1.0
-2025-07-30 13:05:32 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-07-30 13:05:32 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-07-30 13:05:40 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6
-2025-07-30 13:05:40 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0
-2025-08-29T13:05:20.751074 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T13:05:20.775183 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T13:05:35.272513 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T13:05:35.295780 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T13:10:01.974693 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T13:10:01.996349 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T13:10:21.623440 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T13:10:21.647542 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T14:46:14.451933 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T14:46:14.460691 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T14:46:32.559451 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T14:46:32.563810 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T14:56:04.927959 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T14:56:04.937364 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T14:56:09.731642 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T14:56:09.740471 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:11:00.208304 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:11:00.215992 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:11:03.465454 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:11:03.471026 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:26:12.310246 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:26:12.333357 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:26:18.157250 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:26:18.180820 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:33:54.234754 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:33:54.256663 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:33:57.765250 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:33:57.790651 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:36:38.574908 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:36:38.595718 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:36:40.355074 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:36:40.381770 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:52:45.696377 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:52:45.716336 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:52:50.723447 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:52:50.749101 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:54:12.007161 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:54:12.028647 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:54:14.752397 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T15:54:14.775150 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:59:57.302952 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T15:59:57.323219 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:00:00.539684 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:00:00.564261 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T16:15:06.151143 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T16:15:06.151143 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T16:15:06.179242 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:15:06.194964 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:16:22.335476 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:16:22.360226 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T16:34:57.067073 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T16:34:57.085325 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:34:58.526862 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T16:34:58.550742 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T17:46:09.598751 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-29T17:46:09.618754 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T17:46:12.925227 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-29T17:46:12.948547 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:36:56.136974 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:36:56.155943 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:02.182564 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:02.199768 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:37:21.297132 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:37:21.318965 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:25.132792 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:25.150600 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:37:26.622254 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:37:26.637598 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:28.075172 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:28.094719 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:37:29.088685 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:37:29.107244 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:31.246270 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:37:31.270700 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:44:19.429817 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:44:19.449510 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:44:21.208662 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:44:21.226965 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:44:29.857413 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:44:29.890033 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:44:31.440053 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:44:31.468686 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:51:30.164909 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:51:30.186774 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:51:34.969771 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:51:34.990565 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:52:12.933244 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T16:52:12.951705 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:52:14.504231 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T16:52:14.523031 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:00:07.974072 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:00:07.995165 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:00:11.035860 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:00:11.057850 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:03:05.273224 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:03:05.288084 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:03:08.205909 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:03:08.228318 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:19:19.905508 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:19:20.005470 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:19:24.164474 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:19:24.192756 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:21:06.262252 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:21:06.279659 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:21:08.411047 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:21:08.430285 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:21:19.534960 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:21:19.555887 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:21:21.636198 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:21:21.657859 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:29:17.177325 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:29:17.198908 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:29:20.034371 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:29:20.059370 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:34:20.842244 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:34:20.866847 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:34:22.830826 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:34:22.849379 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6/3-6:1.0 | Details: {}
-2025-08-30T17:37:39.631639 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:37:42.703773 - File Copied: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {'filename': 'confidential_report.docx', 'size': '2.5 MB', 'from_location': '/home/user/Documents', 'to_location': '/devices/pci0000:00/0000:00:14.0/usb3/3-6', 'direction': 'to_usb'}
-2025-08-30T17:37:57.193838 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:38:02.552808 - File Copied: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {'filename': 'confidential_report.docx', 'size': '2.5 MB', 'from_location': '/home/user/Documents', 'to_location': '/devices/pci0000:00/0000:00:14.0/usb3/3-6', 'direction': 'to_usb'}
-2025-08-30T17:38:57.571237 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:39:52.752784 - File Copied: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {'filename': 'confidential_report.docx', 'size': '2.5 MB', 'from_location': '/home/user/Documents', 'to_location': '/devices/pci0000:00/0000:00:14.0/usb3/3-6', 'direction': 'to_usb'}
-2025-08-30T17:45:18.207595 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:45:21.671363 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:47:13.893247 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:47:18.075467 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:47:52.774422 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:47:57.569903 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:50:36.815379 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:52:16.103855 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:59:01.235518 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T17:59:06.306176 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T18:00:26.453677 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T18:00:28.717477 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T18:02:25.794385 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
-2025-08-30T18:02:29.973178 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-10-29T11:14:18.560165 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-10-29T11:14:22.022438 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-10-29T12:48:57.767008 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-10-29T12:48:59.112173 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-10-29T12:51:14.593036 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-10-29T12:51:24.708363 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T09:13:30.568629 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T09:13:33.033033 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T21:39:53.146385 - USB Removed: Bus 003 Device 011: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:39:53.280007 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:39:53.306102 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:39:58.332076 - USB Inserted: Bus 003 Device 012: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:39:58.351289 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:39:58.449186 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:40:08.495985 - USB Removed: Bus 003 Device 012: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:40:08.522933 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:40:08.553924 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:40:13.645199 - USB Inserted: Bus 003 Device 013: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:40:13.669894 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:40:13.692821 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:42:39.030217 - USB Inserted: Bus 003 Device 014: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:42:39.050407 - USB Removed: Bus 003 Device 013: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:44:04.232592 - USB Removed: Bus 003 Device 014: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:44:04.254875 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:44:04.413328 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:44:19.474353 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:44:19.496991 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:44:19.517985 - USB Inserted: Bus 003 Device 015: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:44:29.560754 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:44:29.581282 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:44:29.605763 - USB Removed: Bus 003 Device 015: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:44:34.632561 - USB Inserted: Bus 003 Device 016: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:44:34.652677 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:44:34.675636 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:45:09.753996 - USB Removed: Bus 003 Device 016: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:45:09.904564 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:45:09.929547 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:45:14.964450 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:45:14.992169 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:45:15.014660 - USB Inserted: Bus 003 Device 017: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:45:30.134615 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:45:30.161109 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:45:30.183543 - USB Removed: Bus 003 Device 017: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:45:35.213963 - USB Inserted: Bus 003 Device 018: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:45:35.236491 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:45:35.322782 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:46:54.265460 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:46:54.288745 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:46:54.313643 - USB Removed: Bus 003 Device 018: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:47:04.602124 - USB Inserted: Bus 003 Device 019: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:47:04.622705 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:47:04.646021 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:47:14.782318 - USB Removed: Bus 003 Device 019: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:47:14.805879 - USB Removed: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:47:14.826533 - USB Removed: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:47:19.858773 - USB Inserted: 3-6:HP USB Flash Drive | Details: {}
+2025-11-20T21:47:19.883307 - USB Inserted: 3-6:1.0:Unknown Unknown | Details: {}
+2025-11-20T21:47:19.902479 - USB Inserted: Bus 003 Device 020: ID 03f0:1985 HP, Inc USB Flash Drive | Details: {}
+2025-11-20T21:53:02.484281 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T21:53:11.994194 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T21:53:43.563809 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T21:53:46.489232 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T21:56:52.500215 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T21:56:54.865566 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:06.382513 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:09.311692 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:21.972941 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:25.555727 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:42.595805 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:50.231774 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:02:58.576996 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:03:04.803571 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:08:06.027266 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:08:11.923888 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:08:28.184092 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-20T22:08:35.742871 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:50:44.949045 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:50:49.175754 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:51:35.707804 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:51:40.627891 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:54:42.935900 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:54:47.054317 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:54:54.618570 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:54:59.220710 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:55:14.818515 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:55:21.248760 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-5 | Details: {}
+2025-11-21T07:55:25.795380 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-5 | Details: {}
+2025-11-21T07:55:30.825580 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:55:40.061070 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb4/4-2 | Details: {}
+2025-11-21T07:55:49.566250 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb4/4-2 | Details: {}
+2025-11-21T07:55:50.180105 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb4/4-2 | Details: {}
+2025-11-21T07:55:50.763455 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb4/4-2 | Details: {}
+2025-11-21T07:59:03.419016 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:59:13.491383 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:59:29.277864 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T07:59:35.964015 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:01:53.732339 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:01:57.780811 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:02:09.822160 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:02:12.612602 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:12:45.487156 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:12:48.276499 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:10.494468 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:14.005730 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:17.567197 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:19.965508 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:24.430393 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:28.859241 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:40.995228 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:44.311874 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:54.491035 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:13:56.900120 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:18:23.912652 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:18:48.311076 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:19:10.403182 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:19:21.412775 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:19:34.135918 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:39:18.108068 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:39:28.640754 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:39:39.650623 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:39:54.115795 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:40:05.597778 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:40:20.193506 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:40:55.843286 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:41:12.609787 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:42:18.931488 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:42:29.591973 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:43:38.154408 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:44:23.331284 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:44:25.934652 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:44:30.887365 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:44:34.018307 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:44:55.287419 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:44:59.008383 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:45:21.991717 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:45:25.284683 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:52:30.663308 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:52:34.613948 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:52:39.291180 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:52:41.825388 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:52:46.982500 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:52:49.896371 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:53:02.400468 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T08:53:03.901608 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:07:05.466258 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:07:07.244028 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:31:36.975255 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:31:38.663424 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:37:25.416763 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:37:31.544845 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:44:57.314639 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:45:03.187415 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:45:08.407847 - USB Removed: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}
+2025-11-21T09:45:11.976492 - USB Inserted: /devices/pci0000:00/0000:00:14.0/usb3/3-6 | Details: {}

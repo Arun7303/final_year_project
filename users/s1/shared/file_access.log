@@ -1,0 +1,2 @@
+2025-11-21T13:00:36.645824 - USER:s1 - ACTION:get_file_access - DETAILS:{"read": true, "write": true}
+2025-11-21T13:00:40.713512 - USER:s1 - ACTION:get_file_access - DETAILS:{"read": true, "write": true}

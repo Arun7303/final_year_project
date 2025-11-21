@@ -278,8 +278,8 @@
                     <tr>
                         <td>{{ log.pid }}</td>
                         <td>{{ log.name }}</td>
-                        <td>{{ log.cpu_percent|round(1) }}</td>
-                        <td>{{ log.memory_percent|round(1) }}</td>
+                        <td>{{ (log.cpu_percent or 0)|round(1) }}</td>
+                        <td>{{ (log.memory_percent or 0)|round(1) }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -381,7 +381,7 @@
                                         {% if location.lat %}
                                         <a href="https://www.openstreetmap.org/?mlat={{ location.lat }}&mlon={{ location.lon }}#map=12/{{ location.lat }}/{{ location.lon }}"
                                             target="_blank">
-                                            {{ location.lat|round(4) }}, {{ location.lon|round(4) }}
+                                            {{ (location.lat or 0)|round(4) }}, {{ (location.lon or 0)|round(4) }}
                                         </a>
                                         {% else %} N/A {% endif %}
                                     </td>
@@ -460,7 +460,10 @@
                 <h2 class="section-title">Network Activity</h2>
                 <div class="card activity-card">
                     <div class="card-header bg-warning text-dark">
-                        Network Connections
+                        <strong>Individual Network Connections</strong>
+                        <small class="d-block mt-1" style="font-size: 0.85em; opacity: 0.9;">
+                            Shows each active connection with remote IP, port, and process information
+                        </small>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -470,8 +473,8 @@
                                     <th>Remote IP</th>
                                     <th>Port</th>
                                     <th>Status</th>
-                                    <th>Sent</th>
-                                    <th>Received</th>
+                                    <th>PID</th>
+                                    <th>Interface</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -481,9 +484,81 @@
                                     <td>{{ activity.remote_ip }}</td>
                                     <td>{{ activity.port }}</td>
                                     <td>{{ activity.status }}</td>
-                                    <td>{{ activity.sent_bytes }} bytes</td>
-                                    <td>{{ activity.received_bytes }} bytes</td>
+                                    <td>{{ activity.pid or 'N/A' }}</td>
+                                    <td>{{ activity.interface or 'N/A' }}</td>
                                 </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Network Packet Analysis</h2>
+                <div class="card activity-card">
+                    <div class="card-header bg-danger text-white">
+                        <strong>Interface-Level Traffic Statistics</strong>
+                        <small class="d-block mt-1" style="font-size: 0.85em; opacity: 0.9;">
+                            Shows real-time traffic rates and packet statistics per network interface (wlan0, eth0, lo, etc.)
+                        </small>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Interface</th>
+                                    <th>Bytes Sent (Δ)</th>
+                                    <th>Bytes Recv (Δ)</th>
+                                    <th>Send Rate</th>
+                                    <th>Recv Rate</th>
+                                    <th>Packets Sent (Δ)</th>
+                                    <th>Packets Recv (Δ)</th>
+                                    <th>Errors</th>
+                                    <th>Drops</th>
+                                    <th>Total Sent</th>
+                                    <th>Total Recv</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="packet-analysis-table">
+                                {% for packet in packet_analysis %}
+                                {% if packet.interface %}
+                                <tr>
+                                    <td><strong>{{ packet.interface }}</strong></td>
+                                    <td>{{ (packet.bytes_sent / 1024)|round(2) if packet.bytes_sent else 0 }} KB</td>
+                                    <td>{{ (packet.bytes_recv / 1024)|round(2) if packet.bytes_recv else 0 }} KB</td>
+                                    <td>
+                                        <span class="badge bg-primary">
+                                            {{ (packet.bytes_sent_rate / 1024)|round(2) if packet.bytes_sent_rate else 0 }} KB/s
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-success">
+                                            {{ (packet.bytes_recv_rate / 1024)|round(2) if packet.bytes_recv_rate else 0 }} KB/s
+                                        </span>
+                                    </td>
+                                    <td>{{ packet.packets_sent or 0 }}</td>
+                                    <td>{{ packet.packets_recv or 0 }}</td>
+                                    <td>
+                                        {% if packet.errors_in or packet.errors_out %}
+                                        <span class="badge bg-danger">{{ (packet.errors_in or 0) + (packet.errors_out or 0) }}</span>
+                                        {% else %}
+                                        <span class="badge bg-secondary">0</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if packet.drops_in or packet.drops_out %}
+                                        <span class="badge bg-warning">{{ (packet.drops_in or 0) + (packet.drops_out or 0) }}</span>
+                                        {% else %}
+                                        <span class="badge bg-secondary">0</span>
+                                        {% endif %}
+                                    </td>
+                                    <td><small>{{ (packet.total_bytes_sent / 1024 / 1024)|round(2) if packet.total_bytes_sent else 0 }} MB</small></td>
+                                    <td><small>{{ (packet.total_bytes_recv / 1024 / 1024)|round(2) if packet.total_bytes_recv else 0 }} MB</small></td>
+                                    <td><small>{{ packet.timestamp }}</small></td>
+                                </tr>
+                                {% endif %}
                                 {% endfor %}
                             </tbody>
                         </table>
@@ -678,18 +753,42 @@
                 // Function to update the logs table
                 function updateLogsTable(logs) {
                     const logsTableBody = document.getElementById("process-logs").getElementsByTagName("tbody")[0];
-                    logsTableBody.innerHTML = "";
+                    
+                    // Save logs to localStorage for persistence
+                    if (logs && logs.length > 0) {
+                        localStorage.setItem(`processLogs_${userId}`, JSON.stringify(logs));
+                        logsTableBody.innerHTML = "";
 
-                    logs.forEach((log) => {
-                        const row = document.createElement("tr");
-                        row.innerHTML = `
-                    <td>${log.pid}</td>
-                    <td>${log.name}</td>
-                    <td>${log.cpu_percent.toFixed(1)}</td>
-                    <td>${log.memory_percent.toFixed(1)}</td>
-                `;
-                        logsTableBody.appendChild(row);
-                    });
+                        logs.forEach((log) => {
+                            const row = document.createElement("tr");
+                            row.innerHTML = `
+                        <td>${log.pid || 'N/A'}</td>
+                        <td>${log.name || 'Unknown'}</td>
+                        <td>${(log.cpu_percent || 0).toFixed(1)}</td>
+                        <td>${(log.memory_percent || 0).toFixed(1)}</td>
+                    `;
+                            logsTableBody.appendChild(row);
+                        });
+                    } else {
+                        // If no new logs, try to restore from localStorage
+                        const savedLogs = localStorage.getItem(`processLogs_${userId}`);
+                        if (savedLogs) {
+                            const parsedLogs = JSON.parse(savedLogs);
+                            if (parsedLogs && parsedLogs.length > 0) {
+                                logsTableBody.innerHTML = "";
+                                parsedLogs.forEach((log) => {
+                                    const row = document.createElement("tr");
+                                    row.innerHTML = `
+                                <td>${log.pid || 'N/A'}</td>
+                                <td>${log.name || 'Unknown'}</td>
+                                <td>${(log.cpu_percent || 0).toFixed(1)}</td>
+                                <td>${(log.memory_percent || 0).toFixed(1)}</td>
+                            `;
+                                    logsTableBody.appendChild(row);
+                                });
+                            }
+                        }
+                    }
                 }
                 
                 // Function to update the USB transfers table
@@ -861,7 +960,76 @@
 
                         })
                         .catch((err) => console.log("Error fetching logs:", err));
+                    
+                    // Fetch packet data separately
+                    fetchPacketData();
                 }
+                
+                function updatePacketAnalysisTable(packets) {
+                    const tableBody = document.getElementById("packet-analysis-table");
+                    if (!tableBody) return;
+                    
+                    tableBody.innerHTML = "";
+                    
+                    if (!packets || packets.length === 0) {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `<td colspan="12" class="text-center">No packet analysis data available</td>`;
+                        tableBody.appendChild(row);
+                        return;
+                    }
+                    
+                    // Only show interface-level entries (filter out IP entries)
+                    const interfacePackets = packets.filter(p => p.interface);
+                    
+                    if (interfacePackets.length === 0) {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `<td colspan="12" class="text-center">No interface traffic data available</td>`;
+                        tableBody.appendChild(row);
+                        return;
+                    }
+                    
+                    interfacePackets.forEach((packet) => {
+                        const row = document.createElement("tr");
+                        const bytesSentKB = packet.bytes_sent ? (packet.bytes_sent / 1024).toFixed(2) : '0';
+                        const bytesRecvKB = packet.bytes_recv ? (packet.bytes_recv / 1024).toFixed(2) : '0';
+                        const bytesSentRateKB = packet.bytes_sent_rate ? (packet.bytes_sent_rate / 1024).toFixed(2) : '0';
+                        const bytesRecvRateKB = packet.bytes_recv_rate ? (packet.bytes_recv_rate / 1024).toFixed(2) : '0';
+                        const errors = (packet.errors_in || 0) + (packet.errors_out || 0);
+                        const drops = (packet.drops_in || 0) + (packet.drops_out || 0);
+                        const totalSentMB = packet.total_bytes_sent ? (packet.total_bytes_sent / 1024 / 1024).toFixed(2) : '0';
+                        const totalRecvMB = packet.total_bytes_recv ? (packet.total_bytes_recv / 1024 / 1024).toFixed(2) : '0';
+                        
+                        row.innerHTML = `
+                            <td><strong>${packet.interface || 'N/A'}</strong></td>
+                            <td>${bytesSentKB} KB</td>
+                            <td>${bytesRecvKB} KB</td>
+                            <td><span class="badge bg-primary">${bytesSentRateKB} KB/s</span></td>
+                            <td><span class="badge bg-success">${bytesRecvRateKB} KB/s</span></td>
+                            <td>${packet.packets_sent || 0}</td>
+                            <td>${packet.packets_recv || 0}</td>
+                            <td>${errors > 0 ? '<span class="badge bg-danger">' + errors + '</span>' : '<span class="badge bg-secondary">0</span>'}</td>
+                            <td>${drops > 0 ? '<span class="badge bg-warning">' + drops + '</span>' : '<span class="badge bg-secondary">0</span>'}</td>
+                            <td><small>${totalSentMB} MB</small></td>
+                            <td><small>${totalRecvMB} MB</small></td>
+                            <td><small>${packet.timestamp || 'N/A'}</small></td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                }
+                
+                function fetchPacketData() {
+                    fetch(`/get_packet_data/${userId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.packet_analysis) {
+                                updatePacketAnalysisTable(data.packet_analysis);
+                            }
+                        })
+                        .catch(err => console.error("Error fetching packet data:", err));
+                }
+                
+                // Auto-refresh packet data every 5 seconds for real-time updates
+                setInterval(fetchPacketData, 5000);
 
                 // Logout User
                 function logoutUser(userId) {
@@ -1005,6 +1173,19 @@
                             packets_sent: initialNetworkTraffic.packets_sent || 0,
                             packets_recv: initialNetworkTraffic.packets_recv || 0
                         };
+                    }
+
+                    // Initialize process logs from template or localStorage
+                    const initialLogs = JSON.parse('{{ logs | tojson | safe }}');
+                    if (initialLogs && initialLogs.length > 0) {
+                        updateLogsTable(initialLogs);
+                    } else {
+                        // Try to load from localStorage if no template data
+                        const savedLogs = localStorage.getItem(`processLogs_${userId}`);
+                        if (savedLogs) {
+                            const parsedLogs = JSON.parse(savedLogs);
+                            updateLogsTable(parsedLogs);
+                        }
                     }
 
                     // FIX: The page is already populated with the latest data from the template.

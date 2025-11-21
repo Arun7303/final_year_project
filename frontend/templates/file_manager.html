@@ -51,6 +51,10 @@
             background-color: #dc3545;
             color: white;
         }
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
@@ -99,11 +103,18 @@
         const userId = new URLSearchParams(window.location.search).get('user_id') || "{{ user_id }}";
         let currentAccess = { read: false, write: false };
 
+        console.log("File Manager initialized for user:", userId);
+
         // Check file access permissions
         function checkPermissions() {
+            console.log("Checking permissions for user:", userId);
             fetch(`/get_file_access/${userId}`)
-                .then(response => response.json())
+                .then(response => {
+                    console.log("Permission response status:", response.status);
+                    return response.json();
+                })
                 .then(data => {
+                    console.log("Permission data:", data);
                     if (data.error) {
                         throw new Error(data.error);
                     }
@@ -113,6 +124,8 @@
                     // Hide upload section if no write access
                     if (!data.write) {
                         document.getElementById('upload-section').style.display = 'none';
+                    } else {
+                        document.getElementById('upload-section').style.display = 'block';
                     }
                     
                     // Load files if read access
@@ -133,7 +146,7 @@
                     document.getElementById('file-list').innerHTML = `
                         <tr>
                             <td colspan="4" class="text-center text-danger">
-                                Error loading file access permissions
+                                Error loading file access permissions: ${error.message}
                             </td>
                         </tr>
                     `;
@@ -156,9 +169,14 @@
 
         // Load files from server
         function loadFiles() {
+            console.log("Loading files for user:", userId);
             fetch(`/list_shared_files/${userId}`)
-                .then(response => response.json())
+                .then(response => {
+                    console.log("File list response status:", response.status);
+                    return response.json();
+                })
                 .then(data => {
+                    console.log("File list data:", data);
                     const fileList = document.getElementById('file-list');
                     
                     if (data.error) {
@@ -194,6 +212,9 @@
                                 <button class="btn btn-sm btn-primary" onclick="downloadFile('${file.name}')">
                                     Download
                                 </button>
+                                <button class="btn btn-sm btn-info" onclick="viewFile('${file.name}')">
+                                    View Online
+                                </button>
                                 ${currentAccess.write ? `
                                 <button class="btn btn-sm btn-danger" onclick="deleteFile('${file.name}')">
                                     Delete
@@ -209,7 +230,7 @@
                     document.getElementById('file-list').innerHTML = `
                         <tr>
                             <td colspan="4" class="text-center text-danger">
-                                Error loading files
+                                Error loading files: ${error.message}
                             </td>
                         </tr>
                     `;
@@ -234,16 +255,21 @@
                 formData.append('file', input.files[i]);
             }
             
+            console.log("Uploading files:", input.files.length);
             fetch(`/upload_file/${userId}`, {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log("Upload response status:", response.status);
+                return response.json();
+            })
             .then(data => {
+                console.log("Upload response data:", data);
                 if (data.error) {
                     throw new Error(data.error);
                 }
-                alert("Files uploaded successfully");
+                alert(`Files uploaded successfully! Uploaded ${data.count} file(s).`);
                 loadFiles();
                 document.getElementById('file-input').value = '';
             })
@@ -260,6 +286,19 @@
                 return;
             }
             
+            console.log("Downloading file:", filename);
+            window.open(`/download_file/${userId}/${encodeURIComponent(filename)}`, '_blank');
+        }
+
+        // View file online
+        function viewFile(filename) {
+            if (!currentAccess.read) {
+                alert("You don't have read access");
+                return;
+            }
+            
+            console.log("Viewing file online:", filename);
+            // Open file in new tab for viewing
             window.open(`/download_file/${userId}/${encodeURIComponent(filename)}`, '_blank');
         }
 
@@ -274,11 +313,16 @@
                 return;
             }
             
+            console.log("Deleting file:", filename);
             fetch(`/delete_file/${userId}/${encodeURIComponent(filename)}`, {
                 method: 'DELETE'
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log("Delete response status:", response.status);
+                return response.json();
+            })
             .then(data => {
+                console.log("Delete response data:", data);
                 if (data.error) {
                     throw new Error(data.error);
                 }
@@ -302,6 +346,7 @@
 
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM loaded, initializing file manager");
             checkPermissions();
             
             // Refresh files every 30 seconds

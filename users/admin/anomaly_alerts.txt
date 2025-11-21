@@ -34,3 +34,157 @@
 2025-08-30T18:00:28.745534 - ANOMALY: Suspicious device connection for 1234
 2025-08-30T18:02:25.815922 - ANOMALY: Suspicious device connection for a1
 2025-08-30T18:02:29.998478 - ANOMALY: Suspicious device connection for a1
+2025-08-30T18:12:52.294108 - ANOMALY: Suspicious device connection for a1
+2025-08-30T18:13:02.914853 - ANOMALY: Suspicious device connection for a1
+2025-08-30T18:14:17.818526 - ANOMALY: Suspicious device connection for a1
+2025-08-30T18:23:30.103917 - ANOMALY: Suspicious device connection for a1
+2025-08-30T18:23:45.120235 - ANOMALY: Suspicious device connection for a1
+2025-09-24T22:10:50.414928 - ANOMALY: Suspicious device connection for q1
+2025-09-24T22:10:58.768667 - ANOMALY: Suspicious device connection for q1
+2025-10-28T18:02:31.137278 - ANOMALY: Suspicious device connection for q1
+2025-10-28T18:02:31.156228 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T09:57:25.202085 - Suspicious logon behavior detected for q1
+2025-10-29T09:57:25.218961 - Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T09:57:25.240232 - Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T09:57:25.256044 - ANOMALY: Suspicious device connection for q1
+2025-10-29T09:57:25.314438 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T10:07:25.618105 - Suspicious logon behavior detected for q1
+2025-10-29T10:07:25.634096 - Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T10:07:25.659065 - Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T10:07:25.676246 - ANOMALY: Suspicious device connection for q1
+2025-10-29T10:07:25.693708 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T10:16:36.748512 - LOGON ANOMALY: Suspicious logon behavior detected for q1
+2025-10-29T10:16:36.766342 - FILE ANOMALY: Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T10:16:36.786439 - HTTP ANOMALY: Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T10:16:36.801399 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for q1
+2025-10-29T10:16:36.816762 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T10:18:32.621461 - LOGON ANOMALY: Suspicious logon behavior detected for q1
+2025-10-29T10:18:32.643978 - FILE ANOMALY: Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T10:18:32.664661 - HTTP ANOMALY: Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T10:18:32.680583 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for q1
+2025-10-29T10:18:32.697225 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T11:00:40.059747 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:00:40.079114 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:00:40.098936 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:00:40.119844 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for z1
+2025-10-29T11:00:40.138964 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T11:02:14.105529 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:02:14.132079 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:02:14.153860 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:02:14.169747 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for z1
+2025-10-29T11:02:14.191978 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T11:02:37.248477 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:02:37.266925 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:02:37.289692 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:02:37.307458 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for z1
+2025-10-29T11:02:37.324972 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T11:02:48.747948 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:02:48.763822 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:02:48.783340 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:02:48.799703 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for z1
+2025-10-29T11:02:48.822467 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T11:14:34.222953 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:14:34.239845 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:14:34.257001 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:14:34.274105 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for z1
+2025-10-29T11:14:34.294324 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T12:49:18.090490 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T12:49:18.146190 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T12:49:18.197307 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T12:49:18.247281 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for z1
+2025-10-29T12:49:18.304151 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-29T12:51:58.094372 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-10-29T12:51:58.133816 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-10-29T12:51:58.172405 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-10-29T12:51:58.206936 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-10-29T12:51:58.238919 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-10-30T21:26:58.511464 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-10-30T21:26:58.544088 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-10-30T21:26:58.666061 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-10-30T21:26:58.695988 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-10-30T21:26:58.733786 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-11-20T19:33:13.672190 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T19:47:23.024173 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T20:24:16.889148 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T20:43:36.968296 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:31:00.809454 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:32:33.908264 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:39:47.969927 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:39:58.349217 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:39:58.447556 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:39:58.467315 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:40:13.668255 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:40:13.690397 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:40:13.716463 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:42:39.049272 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:44:19.495060 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:44:19.516233 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:44:19.538032 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:44:34.650883 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:44:34.672477 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:44:34.695105 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:45:14.989843 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:45:15.013025 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:45:15.097590 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:45:35.233627 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:45:35.321534 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:45:35.340077 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:46:14.034720 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:47:04.620769 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:47:04.644748 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:47:04.757669 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:47:19.880939 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:47:19.901064 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:47:19.920484 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:52:43.005803 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:53:12.017142 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:53:46.515281 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:56:54.889655 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T21:58:42.104665 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T22:02:09.334311 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T22:02:25.577392 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T22:02:50.255654 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T22:03:04.828252 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T22:08:11.943349 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-20T22:08:35.763335 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T07:59:13.514769 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T07:59:36.084795 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:01:04.357981 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:01:04.456404 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-11-21T08:01:04.573103 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-11-21T08:01:05.209146 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:01:05.321738 - ANOMALY: File 'client_data.xlsx' transferred from 'C:/Users/q1/Documents/client_data.xlsx' to 'E:/client_data.xlsx' (OUTBOUND)
+2025-11-21T08:01:57.801489 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:02:12.634069 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:12:48.304606 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:13:14.030554 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:13:19.989568 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:13:28.884487 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:13:44.333970 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:13:56.979117 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:19:10.534523 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:19:21.437763 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:39:28.664380 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:39:39.675553 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:39:54.140006 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:42:29.616176 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:44:25.962269 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:44:34.043353 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:44:59.133584 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:45:25.311381 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:47:24.338572 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:47:41.751906 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:10.746721 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:15.662972 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:19.631928 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:49.522401 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-11-21T08:50:13.308894 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-11-21T08:52:34.636828 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:52:41.848800 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:52:49.917841 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T08:53:03.929315 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for a1
+2025-11-21T09:07:07.263927 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for s1
+2025-11-21T09:31:38.689340 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for arun
+2025-11-21T09:37:31.572986 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for arun
+2025-11-21T09:45:03.209573 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for arun
+2025-11-21T09:45:11.997088 - DEVICE ANOMALY: ANOMALY: Suspicious device connection for arun

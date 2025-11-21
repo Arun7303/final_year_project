@@ -1,0 +1,1549 @@
+2025-10-29T09:57:01.632456 - ADMIN - Admin logged in
+2025-10-29T09:57:25.191393 - USER:q1 - LOGON ANOMALY: Suspicious logon behavior detected for q1
+2025-10-29T09:57:25.212406 - USER:q1 - FILE ANOMALY: Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T09:57:25.234056 - USER:q1 - HTTP ANOMALY: Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T09:58:09.269972 - USER:q1 - Web and download activity reported
+2025-10-29T09:58:09.300937 - USER:q1 - Network activity reported
+2025-10-29T09:58:10.615823 - USER:q1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T09:58:10.603741'}
+2025-10-29T09:58:39.310304 - USER:q1 - Web and download activity reported
+2025-10-29T09:58:39.332094 - USER:q1 - Network activity reported
+2025-10-29T09:59:09.349147 - USER:q1 - Web and download activity reported
+2025-10-29T09:59:09.376490 - USER:q1 - Network activity reported
+2025-10-29T09:59:39.387398 - USER:q1 - Web and download activity reported
+2025-10-29T09:59:39.418133 - USER:q1 - Network activity reported
+2025-10-29T10:00:09.424278 - USER:q1 - Web and download activity reported
+2025-10-29T10:00:09.453493 - USER:q1 - Network activity reported
+2025-10-29T10:00:39.467737 - USER:q1 - Web and download activity reported
+2025-10-29T10:00:39.491546 - USER:q1 - Network activity reported
+2025-10-29T10:01:09.512755 - USER:q1 - Web and download activity reported
+2025-10-29T10:01:09.526864 - USER:q1 - Network activity reported
+2025-10-29T10:01:39.550065 - USER:q1 - Web and download activity reported
+2025-10-29T10:01:39.564343 - USER:q1 - Network activity reported
+2025-10-29T10:02:09.589075 - USER:q1 - Web and download activity reported
+2025-10-29T10:02:09.602626 - USER:q1 - Network activity reported
+2025-10-29T10:02:39.632022 - USER:q1 - Web and download activity reported
+2025-10-29T10:02:39.642805 - USER:q1 - Network activity reported
+2025-10-29T10:03:09.844038 - USER:q1 - Network activity reported
+2025-10-29T10:03:09.860352 - USER:q1 - Web and download activity reported
+2025-10-29T10:03:39.893420 - USER:q1 - Network activity reported
+2025-10-29T10:03:39.903452 - USER:q1 - Web and download activity reported
+2025-10-29T10:04:09.943717 - USER:q1 - Web and download activity reported
+2025-10-29T10:04:09.945497 - USER:q1 - Network activity reported
+2025-10-29T10:04:35.305294 - ADMIN - Admin logged in
+2025-10-29T10:04:40.048389 - USER:q1 - Network activity reported
+2025-10-29T10:04:40.059201 - USER:q1 - Web and download activity reported
+2025-10-29T10:05:12.847088 - USER:q1 - Web and download activity reported
+2025-10-29T10:05:12.894564 - USER:q1 - Network activity reported
+2025-10-29T10:05:14.358904 - USER:q1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T10:05:14.346341'}
+2025-10-29T10:05:42.884744 - USER:q1 - Web and download activity reported
+2025-10-29T10:05:42.932380 - USER:q1 - Network activity reported
+2025-10-29T10:06:12.985811 - USER:q1 - Network activity reported
+2025-10-29T10:06:12.993514 - USER:q1 - Web and download activity reported
+2025-10-29T10:06:43.028923 - USER:q1 - Web and download activity reported
+2025-10-29T10:06:43.032331 - USER:q1 - Network activity reported
+2025-10-29T10:07:13.076789 - USER:q1 - Web and download activity reported
+2025-10-29T10:07:13.084419 - USER:q1 - Network activity reported
+2025-10-29T10:07:19.491892 - ADMIN - Cleared risk score for user ID: 15575ae1-2050-4cf7-b4e9-7e307c53d67d
+2025-10-29T10:07:25.607688 - USER:q1 - LOGON ANOMALY: Suspicious logon behavior detected for q1
+2025-10-29T10:07:25.627854 - USER:q1 - FILE ANOMALY: Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T10:07:25.652146 - USER:q1 - HTTP ANOMALY: Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T10:07:43.116727 - USER:q1 - Web and download activity reported
+2025-10-29T10:07:43.137955 - USER:q1 - Network activity reported
+2025-10-29T10:08:13.211603 - USER:q1 - Network activity reported
+2025-10-29T10:08:13.224825 - USER:q1 - Web and download activity reported
+2025-10-29T10:08:43.257298 - USER:q1 - Network activity reported
+2025-10-29T10:08:43.269805 - USER:q1 - Web and download activity reported
+2025-10-29T10:09:13.303767 - USER:q1 - Network activity reported
+2025-10-29T10:09:13.312551 - USER:q1 - Web and download activity reported
+2025-10-29T10:09:43.407579 - USER:q1 - Network activity reported
+2025-10-29T10:09:43.418274 - USER:q1 - Web and download activity reported
+2025-10-29T10:11:13.480987 - USER:q1 - Web and download activity reported
+2025-10-29T10:11:13.491651 - USER:q1 - Network activity reported
+2025-10-29T10:11:17.786381 - ADMIN - Admin logged in
+2025-10-29T10:11:44.101762 - USER:q1 - Network activity reported
+2025-10-29T10:11:44.113454 - USER:q1 - Web and download activity reported
+2025-10-29T10:11:45.666557 - USER:q1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T10:11:45.653207'}
+2025-10-29T10:12:14.154385 - USER:q1 - Web and download activity reported
+2025-10-29T10:12:14.156251 - USER:q1 - Network activity reported
+2025-10-29T10:12:44.191830 - USER:q1 - Web and download activity reported
+2025-10-29T10:12:44.202689 - USER:q1 - Network activity reported
+2025-10-29T10:13:14.237271 - USER:q1 - Web and download activity reported
+2025-10-29T10:13:14.246549 - USER:q1 - Network activity reported
+2025-10-29T10:13:44.282255 - USER:q1 - Web and download activity reported
+2025-10-29T10:13:44.287028 - USER:q1 - Network activity reported
+2025-10-29T10:14:14.911548 - USER:q1 - Network activity reported
+2025-10-29T10:14:14.923371 - USER:q1 - Web and download activity reported
+2025-10-29T10:14:44.958783 - USER:q1 - Network activity reported
+2025-10-29T10:14:44.968757 - USER:q1 - Web and download activity reported
+2025-10-29T10:15:15.004640 - USER:q1 - Network activity reported
+2025-10-29T10:15:15.020352 - USER:q1 - Web and download activity reported
+2025-10-29T10:15:45.045163 - USER:q1 - Network activity reported
+2025-10-29T10:15:45.055198 - USER:q1 - Web and download activity reported
+2025-10-29T10:16:12.641079 - ADMIN - Admin logged in
+2025-10-29T10:16:15.124723 - USER:q1 - Network activity reported
+2025-10-29T10:16:15.136701 - USER:q1 - Web and download activity reported
+2025-10-29T10:16:36.736154 - USER:q1 - LOGON ANOMALY: Suspicious logon behavior detected for q1
+2025-10-29T10:16:36.758841 - USER:q1 - FILE ANOMALY: Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T10:16:36.778057 - USER:q1 - HTTP ANOMALY: Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T10:16:45.172920 - USER:q1 - Network activity reported
+2025-10-29T10:16:45.176009 - USER:q1 - Web and download activity reported
+2025-10-29T10:17:15.216199 - USER:q1 - Network activity reported
+2025-10-29T10:17:15.236365 - USER:q1 - Web and download activity reported
+2025-10-29T10:17:45.265175 - USER:q1 - Network activity reported
+2025-10-29T10:17:45.278769 - USER:q1 - Web and download activity reported
+2025-10-29T10:18:15.311871 - USER:q1 - Web and download activity reported
+2025-10-29T10:18:15.312107 - USER:q1 - Network activity reported
+2025-10-29T10:18:32.609924 - USER:q1 - LOGON ANOMALY: Suspicious logon behavior detected for q1
+2025-10-29T10:18:32.635557 - USER:q1 - FILE ANOMALY: Suspicious file activity detected for q1: Mass_Delete on sensitive.db
+2025-10-29T10:18:32.658648 - USER:q1 - HTTP ANOMALY: Suspicious HTTP activity detected for q1 (URL: http://example.com/download/ve...)
+2025-10-29T10:18:45.350744 - USER:q1 - Web and download activity reported
+2025-10-29T10:18:45.360187 - USER:q1 - Network activity reported
+2025-10-29T10:19:15.381515 - USER:q1 - Web and download activity reported
+2025-10-29T10:19:15.394829 - USER:q1 - Network activity reported
+2025-10-29T10:19:45.416170 - USER:q1 - Web and download activity reported
+2025-10-29T10:19:45.427410 - USER:q1 - Network activity reported
+2025-10-29T10:20:15.461798 - USER:q1 - Network activity reported
+2025-10-29T10:20:15.464325 - USER:q1 - Web and download activity reported
+2025-10-29T10:20:15.542000 - ADMIN - Admin logged in
+2025-10-29T10:20:45.510074 - USER:q1 - Network activity reported
+2025-10-29T10:20:45.520869 - USER:q1 - Web and download activity reported
+2025-10-29T10:21:15.554298 - USER:q1 - Network activity reported
+2025-10-29T10:21:15.563976 - USER:q1 - Web and download activity reported
+2025-10-29T10:21:45.604865 - USER:q1 - Network activity reported
+2025-10-29T10:21:45.617804 - USER:q1 - Web and download activity reported
+2025-10-29T10:22:15.653366 - USER:q1 - Network activity reported
+2025-10-29T10:22:15.690614 - USER:q1 - Web and download activity reported
+2025-10-29T10:22:45.954493 - USER:q1 - Network activity reported
+2025-10-29T10:22:45.966744 - USER:q1 - Web and download activity reported
+2025-10-29T10:23:14.924985 - USER:q1 - Web and download activity reported
+2025-10-29T10:23:14.980057 - USER:q1 - Network activity reported
+2025-10-29T10:23:17.318511 - USER:q1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T10:23:17.300844'}
+2025-10-29T10:23:45.004568 - USER:q1 - Web and download activity reported
+2025-10-29T10:23:45.017624 - USER:q1 - Network activity reported
+2025-10-29T10:24:15.047792 - USER:q1 - Web and download activity reported
+2025-10-29T10:24:15.058247 - USER:q1 - Network activity reported
+2025-10-29T10:24:45.094279 - USER:q1 - Web and download activity reported
+2025-10-29T10:24:45.098048 - USER:q1 - Network activity reported
+2025-10-29T10:25:15.128994 - USER:q1 - Web and download activity reported
+2025-10-29T10:25:15.137911 - USER:q1 - Network activity reported
+2025-10-29T10:25:45.171387 - USER:q1 - Web and download activity reported
+2025-10-29T10:25:45.178389 - USER:q1 - Network activity reported
+2025-10-29T10:26:15.205753 - USER:q1 - Web and download activity reported
+2025-10-29T10:26:15.217192 - USER:q1 - Network activity reported
+2025-10-29T10:26:45.310813 - USER:q1 - Network activity reported
+2025-10-29T10:26:45.326533 - USER:q1 - Web and download activity reported
+2025-10-29T10:27:15.359520 - USER:q1 - Network activity reported
+2025-10-29T10:27:15.376556 - USER:q1 - Web and download activity reported
+2025-10-29T10:27:46.024140 - USER:q1 - Network activity reported
+2025-10-29T10:27:46.036665 - USER:q1 - Web and download activity reported
+2025-10-29T10:48:00.030600 - ADMIN - Admin logged in
+2025-10-29T10:48:34.743128 - ADMIN - Added new user: z1
+2025-10-29T10:48:34.743640 - USER:z1 - New user added
+2025-10-29T10:48:39.755655 - ADMIN - Accepted user z1 (ID: 9ac64daa-8de4-4a30-bdcb-4d522e3ee742)
+2025-10-29T10:48:39.755834 - USER:z1 - User accepted by admin
+2025-10-29T10:48:39.952289 - USER:z1 - Web and download activity reported
+2025-10-29T10:48:39.991890 - USER:z1 - Network activity reported
+2025-10-29T10:48:41.145714 - USER:z1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T10:48:41.130295'}
+2025-10-29T10:49:09.989406 - USER:z1 - Web and download activity reported
+2025-10-29T10:49:10.025885 - USER:z1 - Network activity reported
+2025-10-29T10:49:40.031770 - USER:z1 - Web and download activity reported
+2025-10-29T10:49:40.058685 - USER:z1 - Network activity reported
+2025-10-29T10:50:10.078962 - USER:z1 - Web and download activity reported
+2025-10-29T10:50:10.118085 - USER:z1 - Network activity reported
+2025-10-29T10:50:40.118918 - USER:z1 - Web and download activity reported
+2025-10-29T10:50:40.158195 - USER:z1 - Network activity reported
+2025-10-29T10:51:10.225623 - USER:z1 - Network activity reported
+2025-10-29T10:51:10.235787 - USER:z1 - Web and download activity reported
+2025-10-29T10:51:40.374222 - USER:z1 - Network activity reported
+2025-10-29T10:51:40.454335 - USER:z1 - Web and download activity reported
+2025-10-29T10:52:10.509728 - USER:z1 - Network activity reported
+2025-10-29T10:52:10.538401 - USER:z1 - Web and download activity reported
+2025-10-29T10:52:40.557221 - USER:z1 - Network activity reported
+2025-10-29T10:52:40.578791 - USER:z1 - Web and download activity reported
+2025-10-29T10:53:10.668935 - USER:z1 - Network activity reported
+2025-10-29T10:53:10.681305 - USER:z1 - Web and download activity reported
+2025-10-29T10:53:40.715995 - USER:z1 - Network activity reported
+2025-10-29T10:53:40.738901 - USER:z1 - Web and download activity reported
+2025-10-29T10:53:44.571482 - USER:z1 - Web and download activity reported
+2025-10-29T10:53:44.638552 - USER:z1 - Network activity reported
+2025-10-29T10:53:46.263771 - USER:z1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T10:53:46.250431'}
+2025-10-29T10:54:10.770919 - USER:z1 - Network activity reported
+2025-10-29T10:54:10.789266 - USER:z1 - Web and download activity reported
+2025-10-29T10:55:23.481267 - ADMIN - Admin logged in
+2025-10-29T10:55:48.357498 - USER:z1 - Network activity reported
+2025-10-29T10:55:48.364427 - USER:z1 - Web and download activity reported
+2025-10-29T10:55:50.621215 - USER:z1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T10:55:50.610920'}
+2025-10-29T10:56:18.394260 - USER:z1 - Network activity reported
+2025-10-29T10:56:18.411687 - USER:z1 - Web and download activity reported
+2025-10-29T10:58:43.508045 - ADMIN - Admin logged in
+2025-10-29T10:58:48.493782 - USER:z1 - Web and download activity reported
+2025-10-29T10:58:48.510975 - USER:z1 - Network activity reported
+2025-10-29T10:59:18.534791 - USER:z1 - Web and download activity reported
+2025-10-29T10:59:18.553797 - USER:z1 - Network activity reported
+2025-10-29T10:59:48.582329 - USER:z1 - Web and download activity reported
+2025-10-29T10:59:48.593664 - USER:z1 - Network activity reported
+2025-10-29T11:00:18.687257 - USER:z1 - Network activity reported
+2025-10-29T11:00:18.695936 - USER:z1 - Web and download activity reported
+2025-10-29T11:00:40.051807 - USER:z1 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:00:40.072320 - USER:z1 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:00:40.091782 - USER:z1 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:00:48.740480 - USER:z1 - Web and download activity reported
+2025-10-29T11:00:48.740569 - USER:z1 - Network activity reported
+2025-10-29T11:01:48.786956 - USER:z1 - Web and download activity reported
+2025-10-29T11:01:48.811496 - USER:z1 - Network activity reported
+2025-10-29T11:01:58.223472 - ADMIN - Admin logged in
+2025-10-29T11:02:14.097752 - USER:z1 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:02:14.122205 - USER:z1 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:02:14.144588 - USER:z1 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:02:18.834752 - USER:z1 - Web and download activity reported
+2025-10-29T11:02:18.857505 - USER:z1 - Network activity reported
+2025-10-29T11:02:37.241350 - USER:z1 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:02:37.261004 - USER:z1 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:02:37.280862 - USER:z1 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:02:48.740884 - USER:z1 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:02:48.758244 - USER:z1 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:02:48.776231 - USER:z1 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:02:48.872925 - USER:z1 - Web and download activity reported
+2025-10-29T11:02:48.891286 - USER:z1 - Network activity reported
+2025-10-29T11:03:18.922662 - USER:z1 - Web and download activity reported
+2025-10-29T11:03:18.949403 - USER:z1 - Network activity reported
+2025-10-29T11:03:39.579294 - ADMIN - Cleared risk score for user ID: 9ac64daa-8de4-4a30-bdcb-4d522e3ee742
+2025-10-29T11:03:48.966882 - USER:z1 - Web and download activity reported
+2025-10-29T11:03:48.984209 - USER:z1 - Network activity reported
+2025-10-29T11:04:19.004430 - USER:z1 - Web and download activity reported
+2025-10-29T11:04:19.021233 - USER:z1 - Network activity reported
+2025-10-29T11:04:49.046839 - USER:z1 - Web and download activity reported
+2025-10-29T11:04:49.057409 - USER:z1 - Network activity reported
+2025-10-29T11:05:19.090436 - USER:z1 - Web and download activity reported
+2025-10-29T11:05:19.091662 - USER:z1 - Network activity reported
+2025-10-29T11:05:49.136596 - USER:z1 - Network activity reported
+2025-10-29T11:05:49.139192 - USER:z1 - Web and download activity reported
+2025-10-29T11:06:19.188477 - USER:z1 - Network activity reported
+2025-10-29T11:06:19.188353 - USER:z1 - Web and download activity reported
+2025-10-29T11:06:49.234062 - USER:z1 - Web and download activity reported
+2025-10-29T11:06:49.241391 - USER:z1 - Network activity reported
+2025-10-29T11:07:15.427405 - USER:z1 - Web and download activity reported
+2025-10-29T11:07:15.441268 - USER:z1 - Network activity reported
+2025-10-29T11:07:16.635046 - USER:z1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T11:07:16.623814'}
+2025-10-29T11:07:45.462751 - USER:z1 - Web and download activity reported
+2025-10-29T11:07:45.478821 - USER:z1 - Network activity reported
+2025-10-29T11:08:15.501145 - USER:z1 - Web and download activity reported
+2025-10-29T11:08:15.521879 - USER:z1 - Network activity reported
+2025-10-29T11:08:45.545812 - USER:z1 - Web and download activity reported
+2025-10-29T11:08:45.561576 - USER:z1 - Network activity reported
+2025-10-29T11:09:15.586740 - USER:z1 - Web and download activity reported
+2025-10-29T11:09:15.604221 - USER:z1 - Network activity reported
+2025-10-29T11:09:45.682326 - USER:z1 - Network activity reported
+2025-10-29T11:09:45.697883 - USER:z1 - Web and download activity reported
+2025-10-29T11:10:15.726931 - USER:z1 - Network activity reported
+2025-10-29T11:10:15.738587 - USER:z1 - Web and download activity reported
+2025-10-29T11:10:45.771702 - USER:z1 - Network activity reported
+2025-10-29T11:10:45.779627 - USER:z1 - Web and download activity reported
+2025-10-29T11:11:15.825257 - USER:z1 - Web and download activity reported
+2025-10-29T11:11:15.827936 - USER:z1 - Network activity reported
+2025-10-29T11:11:45.938573 - USER:z1 - Network activity reported
+2025-10-29T11:11:45.952811 - USER:z1 - Web and download activity reported
+2025-10-29T11:12:15.983696 - USER:z1 - Network activity reported
+2025-10-29T11:12:15.996284 - USER:z1 - Web and download activity reported
+2025-10-29T11:12:52.316135 - USER:z1 - Web and download activity reported
+2025-10-29T11:12:52.338668 - USER:z1 - Network activity reported
+2025-10-29T11:12:54.319007 - USER:z1 - Location updated: {'ip': '106.195.0.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T11:12:54.306527'}
+2025-10-29T11:13:22.363137 - USER:z1 - Web and download activity reported
+2025-10-29T11:13:22.383519 - USER:z1 - Network activity reported
+2025-10-29T11:13:52.405989 - USER:z1 - Web and download activity reported
+2025-10-29T11:13:52.435854 - USER:z1 - Network activity reported
+2025-10-29T11:14:22.440111 - USER:z1 - Web and download activity reported
+2025-10-29T11:14:22.471659 - USER:z1 - Network activity reported
+2025-10-29T11:14:34.215328 - USER:z1 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T11:14:34.234127 - USER:z1 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T11:14:34.251271 - USER:z1 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T11:14:52.476369 - USER:z1 - Web and download activity reported
+2025-10-29T11:14:52.506786 - USER:z1 - Network activity reported
+2025-10-29T11:15:22.514756 - USER:z1 - Web and download activity reported
+2025-10-29T11:15:22.538761 - USER:z1 - Network activity reported
+2025-10-29T12:47:38.133771 - ADMIN - Admin logged in
+2025-10-29T12:48:43.484104 - USER:a1 - Web and download activity reported
+2025-10-29T12:48:43.638515 - USER:a1 - Network activity reported
+2025-10-29T12:48:45.260379 - USER:a1 - Location updated: {'ip': '106.195.3.25', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-10-29T12:48:45.248912'}
+2025-10-29T12:49:13.545567 - USER:a1 - Web and download activity reported
+2025-10-29T12:49:13.743863 - USER:a1 - Network activity reported
+2025-10-29T12:49:18.077544 - USER:z1 - LOGON ANOMALY: Suspicious logon behavior detected for z1
+2025-10-29T12:49:18.135254 - USER:z1 - FILE ANOMALY: Suspicious file activity detected for z1: Mass_Delete on sensitive.db
+2025-10-29T12:49:18.187729 - USER:z1 - HTTP ANOMALY: Suspicious HTTP activity detected for z1 (URL: http://example.com/download/ve...)
+2025-10-29T12:49:43.624247 - USER:a1 - Web and download activity reported
+2025-10-29T12:49:43.836358 - USER:a1 - Network activity reported
+2025-10-29T12:50:13.679984 - USER:a1 - Web and download activity reported
+2025-10-29T12:50:13.906295 - USER:a1 - Network activity reported
+2025-10-29T12:50:43.728441 - USER:a1 - Web and download activity reported
+2025-10-29T12:50:43.957863 - USER:a1 - Network activity reported
+2025-10-29T12:51:13.782311 - USER:a1 - Web and download activity reported
+2025-10-29T12:51:14.012501 - USER:a1 - Network activity reported
+2025-10-29T12:51:43.834707 - USER:a1 - Web and download activity reported
+2025-10-29T12:51:44.069526 - USER:a1 - Network activity reported
+2025-10-29T12:51:58.010363 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-10-29T12:51:58.126207 - USER:a1 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-10-29T12:51:58.164857 - USER:a1 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-10-29T12:52:13.883361 - USER:a1 - Web and download activity reported
+2025-10-29T12:52:14.119029 - USER:a1 - Network activity reported
+2025-10-29T12:52:43.957298 - USER:a1 - Web and download activity reported
+2025-10-29T12:52:44.170731 - USER:a1 - Network activity reported
+2025-10-29T12:53:14.075459 - USER:a1 - Web and download activity reported
+2025-10-29T12:53:14.222300 - USER:a1 - Network activity reported
+2025-10-29T12:53:44.129297 - USER:a1 - Web and download activity reported
+2025-10-29T12:53:44.272544 - USER:a1 - Network activity reported
+2025-10-29T12:54:14.186339 - USER:a1 - Web and download activity reported
+2025-10-29T12:54:14.320595 - USER:a1 - Network activity reported
+2025-10-29T12:54:44.236206 - USER:a1 - Web and download activity reported
+2025-10-29T12:54:44.380880 - USER:a1 - Network activity reported
+2025-10-29T12:55:14.356345 - USER:a1 - Web and download activity reported
+2025-10-29T12:55:14.429068 - USER:a1 - Network activity reported
+2025-10-29T12:55:44.405306 - USER:a1 - Web and download activity reported
+2025-10-29T12:55:44.476792 - USER:a1 - Network activity reported
+2025-10-29T12:56:14.460301 - USER:a1 - Web and download activity reported
+2025-10-29T12:56:14.525777 - USER:a1 - Network activity reported
+2025-10-29T12:56:44.513641 - USER:a1 - Web and download activity reported
+2025-10-29T12:56:44.579798 - USER:a1 - Network activity reported
+2025-10-29T12:57:14.569413 - USER:a1 - Web and download activity reported
+2025-10-29T12:57:14.640085 - USER:a1 - Network activity reported
+2025-10-29T12:57:44.622927 - USER:a1 - Web and download activity reported
+2025-10-29T12:57:44.685257 - USER:a1 - Network activity reported
+2025-10-29T12:58:14.673917 - USER:a1 - Web and download activity reported
+2025-10-29T12:58:14.741716 - USER:a1 - Network activity reported
+2025-10-29T12:58:44.730606 - USER:a1 - Web and download activity reported
+2025-10-29T12:58:44.806595 - USER:a1 - Network activity reported
+2025-10-29T12:59:14.779762 - USER:a1 - Web and download activity reported
+2025-10-29T12:59:14.858568 - USER:a1 - Network activity reported
+2025-10-29T12:59:44.833547 - USER:a1 - Web and download activity reported
+2025-10-29T12:59:44.904764 - USER:a1 - Network activity reported
+2025-10-29T13:00:14.954378 - USER:a1 - Web and download activity reported
+2025-10-29T13:00:14.954291 - USER:a1 - Network activity reported
+2025-10-30T21:26:16.529161 - ADMIN - Admin logged in
+2025-10-30T21:26:58.505001 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-10-30T21:26:58.535152 - USER:a1 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-10-30T21:26:58.655508 - USER:a1 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-11-04T19:17:04.914029 - ADMIN - Admin logged in
+2025-11-07T11:37:26.011741 - ADMIN - Admin logged in
+2025-11-07T11:38:28.089595 - USER:a1 - Web and download activity reported
+2025-11-07T11:38:28.200194 - USER:a1 - Network activity reported
+2025-11-07T11:38:29.000040 - USER:a1 - Location updated: {'ip': '103.97.164.18', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-07T11:38:28.987861'}
+2025-11-07T11:38:58.209458 - USER:a1 - Web and download activity reported
+2025-11-07T11:38:58.269306 - USER:a1 - Network activity reported
+2025-11-07T11:39:28.263759 - USER:a1 - Web and download activity reported
+2025-11-07T11:39:28.362785 - USER:a1 - Network activity reported
+2025-11-07T11:39:58.311202 - USER:a1 - Web and download activity reported
+2025-11-07T11:39:58.462936 - USER:a1 - Network activity reported
+2025-11-07T11:40:28.370503 - USER:a1 - Web and download activity reported
+2025-11-07T11:40:28.525409 - USER:a1 - Network activity reported
+2025-11-07T11:40:49.058093 - USER:a1 - Web and download activity reported
+2025-11-07T11:40:49.149158 - USER:a1 - Network activity reported
+2025-11-07T11:40:50.006223 - USER:a1 - Location updated: {'ip': '103.97.164.18', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-07T11:40:49.993770'}
+2025-11-07T11:41:19.105015 - USER:a1 - Web and download activity reported
+2025-11-07T11:41:19.245067 - USER:a1 - Network activity reported
+2025-11-20T09:09:04.506348 - ADMIN - Admin logged in
+2025-11-20T09:10:58.721986 - USER:a1 - Web and download activity reported
+2025-11-20T09:10:58.756597 - USER:a1 - Network activity reported
+2025-11-20T09:10:59.677827 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T09:10:59.669045'}
+2025-11-20T09:11:28.766489 - USER:a1 - Web and download activity reported
+2025-11-20T09:11:28.811393 - USER:a1 - Network activity reported
+2025-11-20T09:11:58.808621 - USER:a1 - Web and download activity reported
+2025-11-20T09:11:58.856701 - USER:a1 - Network activity reported
+2025-11-20T09:12:28.856641 - USER:a1 - Web and download activity reported
+2025-11-20T09:12:28.895970 - USER:a1 - Network activity reported
+2025-11-20T09:12:58.903655 - USER:a1 - Web and download activity reported
+2025-11-20T09:12:58.936426 - USER:a1 - Network activity reported
+2025-11-20T09:13:28.950570 - USER:a1 - Web and download activity reported
+2025-11-20T09:13:28.976954 - USER:a1 - Network activity reported
+2025-11-20T09:13:58.991202 - USER:a1 - Web and download activity reported
+2025-11-20T09:13:59.016578 - USER:a1 - Network activity reported
+2025-11-20T09:14:29.034272 - USER:a1 - Web and download activity reported
+2025-11-20T09:14:29.055296 - USER:a1 - Network activity reported
+2025-11-20T09:14:59.069335 - USER:a1 - Web and download activity reported
+2025-11-20T09:14:59.095575 - USER:a1 - Network activity reported
+2025-11-20T09:15:29.113160 - USER:a1 - Web and download activity reported
+2025-11-20T09:15:29.135699 - USER:a1 - Network activity reported
+2025-11-20T09:15:57.157231 - USER:a1 - Web and download activity reported
+2025-11-20T09:15:57.171606 - USER:a1 - Network activity reported
+2025-11-20T09:15:58.166104 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T09:15:58.151254'}
+2025-11-20T09:16:27.198097 - USER:a1 - Web and download activity reported
+2025-11-20T09:16:27.216771 - USER:a1 - Network activity reported
+2025-11-20T09:16:57.238284 - USER:a1 - Web and download activity reported
+2025-11-20T09:16:57.259893 - USER:a1 - Network activity reported
+2025-11-20T09:17:27.281718 - USER:a1 - Web and download activity reported
+2025-11-20T09:17:27.304785 - USER:a1 - Network activity reported
+2025-11-20T09:17:57.324243 - USER:a1 - Web and download activity reported
+2025-11-20T09:17:57.348812 - USER:a1 - Network activity reported
+2025-11-20T09:18:27.371955 - USER:a1 - Web and download activity reported
+2025-11-20T09:18:27.392789 - USER:a1 - Network activity reported
+2025-11-20T09:18:57.415881 - USER:a1 - Web and download activity reported
+2025-11-20T09:18:57.437660 - USER:a1 - Network activity reported
+2025-11-20T09:19:27.467394 - USER:a1 - Web and download activity reported
+2025-11-20T09:19:27.505038 - USER:a1 - Network activity reported
+2025-11-20T09:19:57.513007 - USER:a1 - Web and download activity reported
+2025-11-20T09:19:57.550431 - USER:a1 - Network activity reported
+2025-11-20T09:20:27.588069 - USER:a1 - Network activity reported
+2025-11-20T09:20:27.606000 - USER:a1 - Web and download activity reported
+2025-11-20T09:20:57.628474 - USER:a1 - Network activity reported
+2025-11-20T09:20:57.656525 - USER:a1 - Web and download activity reported
+2025-11-20T09:21:27.670070 - USER:a1 - Network activity reported
+2025-11-20T09:21:27.697753 - USER:a1 - Web and download activity reported
+2025-11-20T09:21:57.704667 - USER:a1 - Network activity reported
+2025-11-20T09:21:57.736879 - USER:a1 - Web and download activity reported
+2025-11-20T09:22:27.745836 - USER:a1 - Network activity reported
+2025-11-20T09:22:27.778344 - USER:a1 - Web and download activity reported
+2025-11-20T09:22:57.787904 - USER:a1 - Network activity reported
+2025-11-20T09:22:57.825751 - USER:a1 - Web and download activity reported
+2025-11-20T09:23:27.826302 - USER:a1 - Network activity reported
+2025-11-20T09:23:27.866134 - USER:a1 - Web and download activity reported
+2025-11-20T09:23:57.872620 - USER:a1 - Network activity reported
+2025-11-20T09:23:57.905633 - USER:a1 - Web and download activity reported
+2025-11-20T09:24:27.918575 - USER:a1 - Network activity reported
+2025-11-20T09:24:27.949274 - USER:a1 - Web and download activity reported
+2025-11-20T09:24:57.959831 - USER:a1 - Network activity reported
+2025-11-20T09:24:57.994306 - USER:a1 - Web and download activity reported
+2025-11-20T09:25:28.002220 - USER:a1 - Network activity reported
+2025-11-20T09:25:28.037390 - USER:a1 - Web and download activity reported
+2025-11-20T09:25:58.059266 - USER:a1 - Network activity reported
+2025-11-20T09:25:58.085841 - USER:a1 - Web and download activity reported
+2025-11-20T09:26:28.172223 - USER:a1 - Network activity reported
+2025-11-20T09:26:28.180057 - USER:a1 - Web and download activity reported
+2025-11-20T09:26:58.224570 - USER:a1 - Network activity reported
+2025-11-20T09:26:58.237031 - USER:a1 - Web and download activity reported
+2025-11-20T09:27:28.334471 - USER:a1 - Network activity reported
+2025-11-20T09:27:28.348382 - USER:a1 - Web and download activity reported
+2025-11-20T09:27:58.379729 - USER:a1 - Network activity reported
+2025-11-20T09:27:58.401169 - USER:a1 - Web and download activity reported
+2025-11-20T09:28:28.427881 - USER:a1 - Network activity reported
+2025-11-20T09:28:28.463707 - USER:a1 - Web and download activity reported
+2025-11-20T09:28:58.469954 - USER:a1 - Network activity reported
+2025-11-20T09:28:58.507751 - USER:a1 - Web and download activity reported
+2025-11-20T10:02:43.007829 - ADMIN - Admin logged in
+2025-11-20T10:02:56.101936 - USER:a1 - Web and download activity reported
+2025-11-20T10:02:56.121898 - USER:a1 - Network activity reported
+2025-11-20T10:02:56.984248 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T10:02:56.974041'}
+2025-11-20T10:03:26.204755 - USER:a1 - Network activity reported
+2025-11-20T10:03:26.218525 - USER:a1 - Web and download activity reported
+2025-11-20T10:03:56.251345 - USER:a1 - Network activity reported
+2025-11-20T10:03:56.319924 - USER:a1 - Web and download activity reported
+2025-11-20T10:04:26.293002 - USER:a1 - Network activity reported
+2025-11-20T10:04:26.366004 - USER:a1 - Web and download activity reported
+2025-11-20T10:04:56.341313 - USER:a1 - Network activity reported
+2025-11-20T10:04:56.406500 - USER:a1 - Web and download activity reported
+2025-11-20T10:05:26.383251 - USER:a1 - Network activity reported
+2025-11-20T10:05:26.452510 - USER:a1 - Web and download activity reported
+2025-11-20T10:05:56.427584 - USER:a1 - Network activity reported
+2025-11-20T10:05:56.499799 - USER:a1 - Web and download activity reported
+2025-11-20T10:06:26.472118 - USER:a1 - Network activity reported
+2025-11-20T10:06:26.540118 - USER:a1 - Web and download activity reported
+2025-11-20T10:06:56.517064 - USER:a1 - Network activity reported
+2025-11-20T10:06:56.578896 - USER:a1 - Web and download activity reported
+2025-11-20T10:07:26.570072 - USER:a1 - Network activity reported
+2025-11-20T10:07:26.618464 - USER:a1 - Web and download activity reported
+2025-11-20T10:07:56.612122 - USER:a1 - Network activity reported
+2025-11-20T10:07:56.656975 - USER:a1 - Web and download activity reported
+2025-11-20T10:08:26.656605 - USER:a1 - Network activity reported
+2025-11-20T10:08:26.695160 - USER:a1 - Web and download activity reported
+2025-11-20T10:08:56.701106 - USER:a1 - Network activity reported
+2025-11-20T10:08:56.738886 - USER:a1 - Web and download activity reported
+2025-11-20T10:09:26.742986 - USER:a1 - Network activity reported
+2025-11-20T10:09:26.776937 - USER:a1 - Web and download activity reported
+2025-11-20T10:09:56.781669 - USER:a1 - Network activity reported
+2025-11-20T10:09:56.813721 - USER:a1 - Web and download activity reported
+2025-11-20T10:10:26.835226 - USER:a1 - Network activity reported
+2025-11-20T10:10:26.857534 - USER:a1 - Web and download activity reported
+2025-11-20T10:10:56.880494 - USER:a1 - Network activity reported
+2025-11-20T10:10:56.898853 - USER:a1 - Web and download activity reported
+2025-11-20T10:11:26.928261 - USER:a1 - Network activity reported
+2025-11-20T10:11:26.992602 - USER:a1 - Web and download activity reported
+2025-11-20T10:11:56.968020 - USER:a1 - Network activity reported
+2025-11-20T10:11:57.027862 - USER:a1 - Web and download activity reported
+2025-11-20T10:12:27.006815 - USER:a1 - Network activity reported
+2025-11-20T10:12:27.069776 - USER:a1 - Web and download activity reported
+2025-11-20T10:12:57.049021 - USER:a1 - Network activity reported
+2025-11-20T10:12:57.109649 - USER:a1 - Web and download activity reported
+2025-11-20T10:13:27.091153 - USER:a1 - Network activity reported
+2025-11-20T10:13:27.147751 - USER:a1 - Web and download activity reported
+2025-11-20T10:13:57.132228 - USER:a1 - Network activity reported
+2025-11-20T10:13:57.182957 - USER:a1 - Web and download activity reported
+2025-11-20T10:14:27.189849 - USER:a1 - Network activity reported
+2025-11-20T10:14:27.224909 - USER:a1 - Web and download activity reported
+2025-11-20T10:14:57.246893 - USER:a1 - Network activity reported
+2025-11-20T10:14:57.257772 - USER:a1 - Web and download activity reported
+2025-11-20T10:15:27.286341 - USER:a1 - Web and download activity reported
+2025-11-20T10:15:27.301871 - USER:a1 - Network activity reported
+2025-11-20T10:15:57.326599 - USER:a1 - Web and download activity reported
+2025-11-20T10:15:57.390231 - USER:a1 - Network activity reported
+2025-11-20T10:16:27.359043 - USER:a1 - Web and download activity reported
+2025-11-20T10:16:27.427941 - USER:a1 - Network activity reported
+2025-11-20T10:16:57.396350 - USER:a1 - Web and download activity reported
+2025-11-20T10:16:57.465136 - USER:a1 - Network activity reported
+2025-11-20T10:17:27.431695 - USER:a1 - Web and download activity reported
+2025-11-20T10:17:27.505770 - USER:a1 - Network activity reported
+2025-11-20T10:17:57.473142 - USER:a1 - Web and download activity reported
+2025-11-20T10:17:57.544310 - USER:a1 - Network activity reported
+2025-11-20T10:18:27.509208 - USER:a1 - Web and download activity reported
+2025-11-20T10:18:27.589019 - USER:a1 - Network activity reported
+2025-11-20T10:18:57.557147 - USER:a1 - Web and download activity reported
+2025-11-20T10:18:57.626888 - USER:a1 - Network activity reported
+2025-11-20T10:19:27.595237 - USER:a1 - Web and download activity reported
+2025-11-20T10:19:27.666274 - USER:a1 - Network activity reported
+2025-11-20T10:19:57.638064 - USER:a1 - Web and download activity reported
+2025-11-20T10:19:57.704399 - USER:a1 - Network activity reported
+2025-11-20T10:20:27.668630 - USER:a1 - Web and download activity reported
+2025-11-20T10:20:27.744227 - USER:a1 - Network activity reported
+2025-11-20T10:20:57.713237 - USER:a1 - Web and download activity reported
+2025-11-20T10:20:57.779705 - USER:a1 - Network activity reported
+2025-11-20T10:21:27.752775 - USER:a1 - Web and download activity reported
+2025-11-20T10:21:27.822815 - USER:a1 - Network activity reported
+2025-11-20T10:21:57.792730 - USER:a1 - Web and download activity reported
+2025-11-20T10:21:57.861180 - USER:a1 - Network activity reported
+2025-11-20T10:22:27.834386 - USER:a1 - Web and download activity reported
+2025-11-20T10:22:27.901380 - USER:a1 - Network activity reported
+2025-11-20T10:22:57.878671 - USER:a1 - Web and download activity reported
+2025-11-20T10:22:58.017366 - USER:a1 - Network activity reported
+2025-11-20T10:23:27.921307 - USER:a1 - Web and download activity reported
+2025-11-20T10:23:28.062265 - USER:a1 - Network activity reported
+2025-11-20T10:23:57.977967 - USER:a1 - Web and download activity reported
+2025-11-20T10:23:58.107222 - USER:a1 - Network activity reported
+2025-11-20T10:24:28.009900 - USER:a1 - Web and download activity reported
+2025-11-20T10:24:28.171265 - USER:a1 - Network activity reported
+2025-11-20T10:24:58.044549 - USER:a1 - Web and download activity reported
+2025-11-20T10:24:58.209657 - USER:a1 - Network activity reported
+2025-11-20T10:25:28.088670 - USER:a1 - Web and download activity reported
+2025-11-20T10:25:28.254862 - USER:a1 - Network activity reported
+2025-11-20T10:25:58.119721 - USER:a1 - Web and download activity reported
+2025-11-20T10:25:58.374657 - USER:a1 - Network activity reported
+2025-11-20T10:26:28.153590 - USER:a1 - Web and download activity reported
+2025-11-20T10:26:28.416486 - USER:a1 - Network activity reported
+2025-11-20T10:26:58.192606 - USER:a1 - Web and download activity reported
+2025-11-20T10:26:58.462962 - USER:a1 - Network activity reported
+2025-11-20T10:27:28.238167 - USER:a1 - Web and download activity reported
+2025-11-20T10:27:28.505656 - USER:a1 - Network activity reported
+2025-11-20T10:27:58.271238 - USER:a1 - Web and download activity reported
+2025-11-20T10:27:58.548384 - USER:a1 - Network activity reported
+2025-11-20T10:28:28.304932 - USER:a1 - Web and download activity reported
+2025-11-20T10:28:28.590473 - USER:a1 - Network activity reported
+2025-11-20T10:28:58.339820 - USER:a1 - Web and download activity reported
+2025-11-20T10:28:58.640665 - USER:a1 - Network activity reported
+2025-11-20T10:29:28.379053 - USER:a1 - Web and download activity reported
+2025-11-20T10:29:28.684123 - USER:a1 - Network activity reported
+2025-11-20T10:29:58.419135 - USER:a1 - Web and download activity reported
+2025-11-20T10:29:58.796611 - USER:a1 - Network activity reported
+2025-11-20T10:30:28.457683 - USER:a1 - Web and download activity reported
+2025-11-20T10:30:28.844805 - USER:a1 - Network activity reported
+2025-11-20T10:30:58.500778 - USER:a1 - Web and download activity reported
+2025-11-20T10:30:58.887916 - USER:a1 - Network activity reported
+2025-11-20T10:31:28.545692 - USER:a1 - Web and download activity reported
+2025-11-20T10:31:28.935097 - USER:a1 - Network activity reported
+2025-11-20T10:31:58.586201 - USER:a1 - Web and download activity reported
+2025-11-20T10:31:58.987253 - USER:a1 - Network activity reported
+2025-11-20T10:32:28.620046 - USER:a1 - Web and download activity reported
+2025-11-20T10:32:29.027134 - USER:a1 - Network activity reported
+2025-11-20T10:32:58.666240 - USER:a1 - Web and download activity reported
+2025-11-20T10:32:59.069628 - USER:a1 - Network activity reported
+2025-11-20T10:33:28.705005 - USER:a1 - Web and download activity reported
+2025-11-20T10:33:29.113722 - USER:a1 - Network activity reported
+2025-11-20T10:33:58.745269 - USER:a1 - Web and download activity reported
+2025-11-20T10:33:59.157699 - USER:a1 - Network activity reported
+2025-11-20T10:34:28.784351 - USER:a1 - Web and download activity reported
+2025-11-20T10:34:29.195058 - USER:a1 - Network activity reported
+2025-11-20T10:34:58.831039 - USER:a1 - Web and download activity reported
+2025-11-20T10:34:59.313424 - USER:a1 - Network activity reported
+2025-11-20T10:35:28.870434 - USER:a1 - Web and download activity reported
+2025-11-20T10:35:29.349537 - USER:a1 - Network activity reported
+2025-11-20T10:35:58.910762 - USER:a1 - Web and download activity reported
+2025-11-20T10:35:59.390156 - USER:a1 - Network activity reported
+2025-11-20T10:36:28.942220 - USER:a1 - Web and download activity reported
+2025-11-20T10:36:29.434613 - USER:a1 - Network activity reported
+2025-11-20T10:36:58.970831 - USER:a1 - Web and download activity reported
+2025-11-20T10:36:59.478276 - USER:a1 - Network activity reported
+2025-11-20T10:37:29.004880 - USER:a1 - Web and download activity reported
+2025-11-20T10:37:29.517364 - USER:a1 - Network activity reported
+2025-11-20T10:37:59.107157 - USER:a1 - Web and download activity reported
+2025-11-20T10:37:59.613321 - USER:a1 - Network activity reported
+2025-11-20T10:38:29.226023 - USER:a1 - Web and download activity reported
+2025-11-20T10:38:29.743990 - USER:a1 - Network activity reported
+2025-11-20T10:38:59.262834 - USER:a1 - Web and download activity reported
+2025-11-20T10:38:59.789510 - USER:a1 - Network activity reported
+2025-11-20T10:39:29.299213 - USER:a1 - Web and download activity reported
+2025-11-20T10:39:29.831647 - USER:a1 - Network activity reported
+2025-11-20T10:39:59.333853 - USER:a1 - Web and download activity reported
+2025-11-20T10:39:59.877385 - USER:a1 - Network activity reported
+2025-11-20T10:40:29.377504 - USER:a1 - Web and download activity reported
+2025-11-20T10:40:29.922671 - USER:a1 - Network activity reported
+2025-11-20T10:40:59.412094 - USER:a1 - Web and download activity reported
+2025-11-20T10:40:59.971192 - USER:a1 - Network activity reported
+2025-11-20T10:41:29.450342 - USER:a1 - Web and download activity reported
+2025-11-20T10:41:30.014240 - USER:a1 - Network activity reported
+2025-11-20T10:41:59.484332 - USER:a1 - Web and download activity reported
+2025-11-20T10:42:00.071762 - USER:a1 - Network activity reported
+2025-11-20T10:42:29.519638 - USER:a1 - Web and download activity reported
+2025-11-20T10:42:30.132461 - USER:a1 - Network activity reported
+2025-11-20T10:42:59.563875 - USER:a1 - Web and download activity reported
+2025-11-20T10:43:00.176674 - USER:a1 - Network activity reported
+2025-11-20T10:43:29.600851 - USER:a1 - Web and download activity reported
+2025-11-20T10:43:30.225036 - USER:a1 - Network activity reported
+2025-11-20T10:43:59.638093 - USER:a1 - Web and download activity reported
+2025-11-20T10:44:00.279372 - USER:a1 - Network activity reported
+2025-11-20T10:44:29.669875 - USER:a1 - Web and download activity reported
+2025-11-20T10:44:30.349966 - USER:a1 - Network activity reported
+2025-11-20T10:44:59.783928 - USER:a1 - Web and download activity reported
+2025-11-20T10:45:00.394527 - USER:a1 - Network activity reported
+2025-11-20T10:45:29.841082 - USER:a1 - Web and download activity reported
+2025-11-20T10:45:30.439420 - USER:a1 - Network activity reported
+2025-11-20T10:45:59.871790 - USER:a1 - Web and download activity reported
+2025-11-20T10:46:00.482569 - USER:a1 - Network activity reported
+2025-11-20T10:46:29.904543 - USER:a1 - Web and download activity reported
+2025-11-20T10:46:30.526617 - USER:a1 - Network activity reported
+2025-11-20T10:46:59.948492 - USER:a1 - Web and download activity reported
+2025-11-20T10:47:00.571094 - USER:a1 - Network activity reported
+2025-11-20T10:47:29.982129 - USER:a1 - Web and download activity reported
+2025-11-20T10:47:30.613831 - USER:a1 - Network activity reported
+2025-11-20T10:48:00.009409 - USER:a1 - Web and download activity reported
+2025-11-20T10:48:00.653439 - USER:a1 - Network activity reported
+2025-11-20T10:48:30.115586 - USER:a1 - Web and download activity reported
+2025-11-20T10:48:30.692706 - USER:a1 - Network activity reported
+2025-11-20T10:49:00.168125 - USER:a1 - Web and download activity reported
+2025-11-20T10:49:00.738434 - USER:a1 - Network activity reported
+2025-11-20T10:49:30.264281 - USER:a1 - Web and download activity reported
+2025-11-20T10:49:30.781616 - USER:a1 - Network activity reported
+2025-11-20T10:50:00.370407 - USER:a1 - Web and download activity reported
+2025-11-20T10:50:00.829043 - USER:a1 - Network activity reported
+2025-11-20T10:50:30.472885 - USER:a1 - Web and download activity reported
+2025-11-20T10:50:30.866933 - USER:a1 - Network activity reported
+2025-11-20T10:51:00.521744 - USER:a1 - Web and download activity reported
+2025-11-20T10:51:00.908904 - USER:a1 - Network activity reported
+2025-11-20T10:51:30.569562 - USER:a1 - Web and download activity reported
+2025-11-20T10:51:30.952864 - USER:a1 - Network activity reported
+2025-11-20T10:52:00.611685 - USER:a1 - Web and download activity reported
+2025-11-20T10:52:00.995244 - USER:a1 - Network activity reported
+2025-11-20T10:52:30.662593 - USER:a1 - Web and download activity reported
+2025-11-20T10:52:31.041674 - USER:a1 - Network activity reported
+2025-11-20T10:53:00.713112 - USER:a1 - Web and download activity reported
+2025-11-20T10:53:01.087594 - USER:a1 - Network activity reported
+2025-11-20T10:53:30.746500 - USER:a1 - Web and download activity reported
+2025-11-20T10:53:31.128496 - USER:a1 - Network activity reported
+2025-11-20T10:54:00.777973 - USER:a1 - Web and download activity reported
+2025-11-20T10:54:01.170543 - USER:a1 - Network activity reported
+2025-11-20T10:54:30.814043 - USER:a1 - Web and download activity reported
+2025-11-20T10:54:31.221067 - USER:a1 - Network activity reported
+2025-11-20T10:55:00.849804 - USER:a1 - Web and download activity reported
+2025-11-20T10:55:01.265027 - USER:a1 - Network activity reported
+2025-11-20T10:55:30.884742 - USER:a1 - Web and download activity reported
+2025-11-20T10:55:31.309888 - USER:a1 - Network activity reported
+2025-11-20T10:56:00.927899 - USER:a1 - Web and download activity reported
+2025-11-20T10:56:01.359121 - USER:a1 - Network activity reported
+2025-11-20T19:32:47.768339 - ADMIN - Admin logged in
+2025-11-20T19:33:13.663534 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T19:33:13.890516 - USER:a1 - Web and download activity reported
+2025-11-20T19:33:13.941512 - USER:a1 - Network activity reported
+2025-11-20T19:33:15.890589 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T19:33:15.880379'}
+2025-11-20T19:33:43.920669 - USER:a1 - Web and download activity reported
+2025-11-20T19:33:43.977185 - USER:a1 - Network activity reported
+2025-11-20T19:47:22.951246 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T19:47:23.194944 - USER:a1 - Web and download activity reported
+2025-11-20T19:47:23.267925 - USER:a1 - Network activity reported
+2025-11-20T19:47:24.484697 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T19:47:24.474119'}
+2025-11-20T19:47:40.132722 - ADMIN - Admin logged in
+2025-11-20T19:47:53.229034 - USER:a1 - Web and download activity reported
+2025-11-20T19:47:53.410569 - USER:a1 - Network activity reported
+2025-11-20T19:48:23.262203 - USER:a1 - Web and download activity reported
+2025-11-20T19:48:23.461522 - USER:a1 - Network activity reported
+2025-11-20T19:48:27.992865 - ADMIN - Logged out user a1 (ID: 78060be8-8926-429d-a16d-eb401536bda4)
+2025-11-20T20:23:58.830150 - ADMIN - Admin logged in
+2025-11-20T20:24:16.877519 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T20:24:17.041004 - USER:a1 - Web and download activity reported
+2025-11-20T20:24:17.083922 - USER:a1 - Network activity reported
+2025-11-20T20:24:18.883816 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T20:24:18.870740'}
+2025-11-20T20:24:47.077989 - USER:a1 - Web and download activity reported
+2025-11-20T20:24:47.120071 - USER:a1 - Network activity reported
+2025-11-20T20:25:17.109360 - USER:a1 - Web and download activity reported
+2025-11-20T20:25:17.156154 - USER:a1 - Network activity reported
+2025-11-20T20:25:47.151368 - USER:a1 - Web and download activity reported
+2025-11-20T20:25:47.211932 - USER:a1 - Network activity reported
+2025-11-20T20:26:17.234911 - USER:a1 - Web and download activity reported
+2025-11-20T20:26:17.274396 - USER:a1 - Network activity reported
+2025-11-20T20:26:47.277906 - USER:a1 - Web and download activity reported
+2025-11-20T20:26:47.321065 - USER:a1 - Network activity reported
+2025-11-20T20:27:17.313801 - USER:a1 - Web and download activity reported
+2025-11-20T20:27:17.361134 - USER:a1 - Network activity reported
+2025-11-20T20:27:47.342847 - USER:a1 - Web and download activity reported
+2025-11-20T20:27:47.396376 - USER:a1 - Network activity reported
+2025-11-20T20:28:17.432023 - USER:a1 - Web and download activity reported
+2025-11-20T20:28:17.545130 - USER:a1 - Network activity reported
+2025-11-20T20:28:47.641457 - USER:a1 - Web and download activity reported
+2025-11-20T20:28:47.789413 - USER:a1 - Network activity reported
+2025-11-20T20:29:17.806053 - USER:a1 - Web and download activity reported
+2025-11-20T20:29:17.836407 - USER:a1 - Network activity reported
+2025-11-20T20:29:47.846411 - USER:a1 - Web and download activity reported
+2025-11-20T20:29:47.896398 - USER:a1 - Network activity reported
+2025-11-20T20:30:17.880473 - USER:a1 - Web and download activity reported
+2025-11-20T20:30:17.932426 - USER:a1 - Network activity reported
+2025-11-20T20:30:47.956763 - USER:a1 - Web and download activity reported
+2025-11-20T20:30:47.980001 - USER:a1 - Network activity reported
+2025-11-20T20:31:17.994161 - USER:a1 - Web and download activity reported
+2025-11-20T20:31:18.027998 - USER:a1 - Network activity reported
+2025-11-20T20:31:48.037651 - USER:a1 - Web and download activity reported
+2025-11-20T20:31:48.067821 - USER:a1 - Network activity reported
+2025-11-20T20:32:18.073040 - USER:a1 - Web and download activity reported
+2025-11-20T20:32:18.108249 - USER:a1 - Network activity reported
+2025-11-20T20:32:48.116208 - USER:a1 - Web and download activity reported
+2025-11-20T20:32:48.155221 - USER:a1 - Network activity reported
+2025-11-20T20:33:18.152458 - USER:a1 - Web and download activity reported
+2025-11-20T20:33:18.192500 - USER:a1 - Network activity reported
+2025-11-20T20:33:48.186728 - USER:a1 - Web and download activity reported
+2025-11-20T20:33:48.234288 - USER:a1 - Network activity reported
+2025-11-20T20:34:18.225397 - USER:a1 - Web and download activity reported
+2025-11-20T20:34:18.276891 - USER:a1 - Network activity reported
+2025-11-20T20:34:48.270067 - USER:a1 - Web and download activity reported
+2025-11-20T20:34:48.315224 - USER:a1 - Network activity reported
+2025-11-20T20:35:18.309802 - USER:a1 - Web and download activity reported
+2025-11-20T20:35:18.350421 - USER:a1 - Network activity reported
+2025-11-20T20:35:48.341587 - USER:a1 - Web and download activity reported
+2025-11-20T20:35:48.393259 - USER:a1 - Network activity reported
+2025-11-20T20:36:18.380629 - USER:a1 - Web and download activity reported
+2025-11-20T20:36:18.429607 - USER:a1 - Network activity reported
+2025-11-20T20:36:48.416544 - USER:a1 - Web and download activity reported
+2025-11-20T20:36:48.468329 - USER:a1 - Network activity reported
+2025-11-20T20:37:18.454705 - USER:a1 - Web and download activity reported
+2025-11-20T20:37:18.508465 - USER:a1 - Network activity reported
+2025-11-20T20:37:48.500325 - USER:a1 - Web and download activity reported
+2025-11-20T20:37:48.546800 - USER:a1 - Network activity reported
+2025-11-20T20:38:18.534221 - USER:a1 - Web and download activity reported
+2025-11-20T20:38:18.582073 - USER:a1 - Network activity reported
+2025-11-20T20:38:48.574206 - USER:a1 - Web and download activity reported
+2025-11-20T20:38:48.616866 - USER:a1 - Network activity reported
+2025-11-20T20:39:18.613540 - USER:a1 - Web and download activity reported
+2025-11-20T20:39:18.654448 - USER:a1 - Network activity reported
+2025-11-20T20:39:48.653997 - USER:a1 - Web and download activity reported
+2025-11-20T20:39:48.692442 - USER:a1 - Network activity reported
+2025-11-20T20:40:18.763320 - USER:a1 - Network activity reported
+2025-11-20T20:40:18.764162 - USER:a1 - Web and download activity reported
+2025-11-20T20:40:48.809529 - USER:a1 - Web and download activity reported
+2025-11-20T20:40:48.820228 - USER:a1 - Network activity reported
+2025-11-20T20:41:18.857849 - USER:a1 - Web and download activity reported
+2025-11-20T20:41:18.880498 - USER:a1 - Network activity reported
+2025-11-20T20:41:48.910243 - USER:a1 - Web and download activity reported
+2025-11-20T20:41:48.938142 - USER:a1 - Network activity reported
+2025-11-20T20:42:18.943752 - USER:a1 - Web and download activity reported
+2025-11-20T20:42:18.976027 - USER:a1 - Network activity reported
+2025-11-20T20:42:48.973793 - USER:a1 - Web and download activity reported
+2025-11-20T20:42:49.014247 - USER:a1 - Network activity reported
+2025-11-20T20:43:36.892772 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T20:43:37.134476 - USER:a1 - Web and download activity reported
+2025-11-20T20:43:37.166622 - USER:a1 - Network activity reported
+2025-11-20T20:43:38.521042 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T20:43:38.508912'}
+2025-11-20T20:43:51.651970 - ADMIN - Admin logged in
+2025-11-20T20:44:07.167534 - USER:a1 - Web and download activity reported
+2025-11-20T20:44:07.205922 - USER:a1 - Network activity reported
+2025-11-20T20:44:37.200862 - USER:a1 - Web and download activity reported
+2025-11-20T20:44:37.242166 - USER:a1 - Network activity reported
+2025-11-20T20:45:07.302542 - USER:a1 - Web and download activity reported
+2025-11-20T20:45:07.398520 - USER:a1 - Network activity reported
+2025-11-20T20:45:37.336495 - USER:a1 - Web and download activity reported
+2025-11-20T20:45:37.436862 - USER:a1 - Network activity reported
+2025-11-20T20:46:07.369202 - USER:a1 - Web and download activity reported
+2025-11-20T20:46:07.479362 - USER:a1 - Network activity reported
+2025-11-20T20:46:37.399717 - USER:a1 - Web and download activity reported
+2025-11-20T20:46:37.516035 - USER:a1 - Network activity reported
+2025-11-20T20:47:07.600034 - USER:a1 - Web and download activity reported
+2025-11-20T20:47:07.620690 - USER:a1 - Network activity reported
+2025-11-20T20:47:37.723354 - USER:a1 - Web and download activity reported
+2025-11-20T20:47:37.796372 - USER:a1 - Network activity reported
+2025-11-20T20:48:07.764045 - USER:a1 - Web and download activity reported
+2025-11-20T20:48:07.903577 - USER:a1 - Network activity reported
+2025-11-20T20:48:37.801804 - USER:a1 - Web and download activity reported
+2025-11-20T20:48:37.948697 - USER:a1 - Network activity reported
+2025-11-20T20:49:07.838556 - USER:a1 - Web and download activity reported
+2025-11-20T20:49:07.987313 - USER:a1 - Network activity reported
+2025-11-20T20:49:37.875907 - USER:a1 - Web and download activity reported
+2025-11-20T20:49:38.029026 - USER:a1 - Network activity reported
+2025-11-20T20:50:07.981411 - USER:a1 - Web and download activity reported
+2025-11-20T20:50:08.072338 - USER:a1 - Network activity reported
+2025-11-20T20:50:38.015698 - USER:a1 - Web and download activity reported
+2025-11-20T20:50:38.116051 - USER:a1 - Network activity reported
+2025-11-20T20:51:08.051780 - USER:a1 - Web and download activity reported
+2025-11-20T20:51:08.157732 - USER:a1 - Network activity reported
+2025-11-20T20:51:38.088900 - USER:a1 - Web and download activity reported
+2025-11-20T20:51:38.203033 - USER:a1 - Network activity reported
+2025-11-20T20:52:08.125375 - USER:a1 - Web and download activity reported
+2025-11-20T20:52:08.236182 - USER:a1 - Network activity reported
+2025-11-20T20:52:38.162752 - USER:a1 - Web and download activity reported
+2025-11-20T20:52:38.277946 - USER:a1 - Network activity reported
+2025-11-20T20:53:08.215084 - USER:a1 - Web and download activity reported
+2025-11-20T20:53:08.319273 - USER:a1 - Network activity reported
+2025-11-20T20:53:38.243872 - USER:a1 - Web and download activity reported
+2025-11-20T20:53:38.396271 - USER:a1 - Network activity reported
+2025-11-20T20:54:08.341393 - USER:a1 - Web and download activity reported
+2025-11-20T20:54:08.442110 - USER:a1 - Network activity reported
+2025-11-20T20:54:38.377400 - USER:a1 - Web and download activity reported
+2025-11-20T20:54:38.477725 - USER:a1 - Network activity reported
+2025-11-20T20:55:08.411045 - USER:a1 - Web and download activity reported
+2025-11-20T20:55:08.517640 - USER:a1 - Network activity reported
+2025-11-20T20:55:38.445603 - USER:a1 - Web and download activity reported
+2025-11-20T20:55:38.562955 - USER:a1 - Network activity reported
+2025-11-20T20:56:08.481844 - USER:a1 - Web and download activity reported
+2025-11-20T20:56:08.609948 - USER:a1 - Network activity reported
+2025-11-20T20:56:38.521748 - USER:a1 - Web and download activity reported
+2025-11-20T20:56:38.648659 - USER:a1 - Network activity reported
+2025-11-20T20:57:08.554815 - USER:a1 - Web and download activity reported
+2025-11-20T20:57:08.688242 - USER:a1 - Network activity reported
+2025-11-20T20:57:38.594935 - USER:a1 - Web and download activity reported
+2025-11-20T20:57:38.736849 - USER:a1 - Network activity reported
+2025-11-20T20:58:08.704502 - USER:a1 - Web and download activity reported
+2025-11-20T20:58:08.770167 - USER:a1 - Network activity reported
+2025-11-20T20:58:38.747505 - USER:a1 - Web and download activity reported
+2025-11-20T20:58:38.807547 - USER:a1 - Network activity reported
+2025-11-20T20:59:08.793794 - USER:a1 - Web and download activity reported
+2025-11-20T20:59:08.845260 - USER:a1 - Network activity reported
+2025-11-20T20:59:38.835334 - USER:a1 - Web and download activity reported
+2025-11-20T20:59:38.882815 - USER:a1 - Network activity reported
+2025-11-20T21:00:08.941579 - USER:a1 - Web and download activity reported
+2025-11-20T21:00:08.941897 - USER:a1 - Network activity reported
+2025-11-20T21:00:38.980476 - USER:a1 - Web and download activity reported
+2025-11-20T21:00:39.010451 - USER:a1 - Network activity reported
+2025-11-20T21:01:09.016829 - USER:a1 - Web and download activity reported
+2025-11-20T21:01:09.048142 - USER:a1 - Network activity reported
+2025-11-20T21:01:39.053996 - USER:a1 - Web and download activity reported
+2025-11-20T21:01:39.087097 - USER:a1 - Network activity reported
+2025-11-20T21:02:09.090389 - USER:a1 - Web and download activity reported
+2025-11-20T21:02:09.127271 - USER:a1 - Network activity reported
+2025-11-20T21:02:39.125372 - USER:a1 - Web and download activity reported
+2025-11-20T21:02:39.177411 - USER:a1 - Network activity reported
+2025-11-20T21:03:09.164031 - USER:a1 - Web and download activity reported
+2025-11-20T21:03:09.217975 - USER:a1 - Network activity reported
+2025-11-20T21:03:39.201759 - USER:a1 - Web and download activity reported
+2025-11-20T21:03:39.253795 - USER:a1 - Network activity reported
+2025-11-20T21:04:09.239729 - USER:a1 - Web and download activity reported
+2025-11-20T21:04:09.286659 - USER:a1 - Network activity reported
+2025-11-20T21:04:39.278079 - USER:a1 - Web and download activity reported
+2025-11-20T21:04:39.322632 - USER:a1 - Network activity reported
+2025-11-20T21:05:09.315315 - USER:a1 - Web and download activity reported
+2025-11-20T21:05:09.359909 - USER:a1 - Network activity reported
+2025-11-20T21:05:39.346861 - USER:a1 - Web and download activity reported
+2025-11-20T21:05:39.394255 - USER:a1 - Network activity reported
+2025-11-20T21:06:09.379522 - USER:a1 - Web and download activity reported
+2025-11-20T21:06:09.427183 - USER:a1 - Network activity reported
+2025-11-20T21:06:39.417034 - USER:a1 - Web and download activity reported
+2025-11-20T21:06:39.461772 - USER:a1 - Network activity reported
+2025-11-20T21:07:09.455966 - USER:a1 - Web and download activity reported
+2025-11-20T21:07:09.499426 - USER:a1 - Network activity reported
+2025-11-20T21:07:39.491289 - USER:a1 - Web and download activity reported
+2025-11-20T21:07:39.535762 - USER:a1 - Network activity reported
+2025-11-20T21:08:09.526784 - USER:a1 - Web and download activity reported
+2025-11-20T21:08:09.574337 - USER:a1 - Network activity reported
+2025-11-20T21:08:39.562998 - USER:a1 - Web and download activity reported
+2025-11-20T21:08:39.612136 - USER:a1 - Network activity reported
+2025-11-20T21:09:09.601266 - USER:a1 - Web and download activity reported
+2025-11-20T21:09:09.648285 - USER:a1 - Network activity reported
+2025-11-20T21:09:39.640790 - USER:a1 - Web and download activity reported
+2025-11-20T21:09:39.682076 - USER:a1 - Network activity reported
+2025-11-20T21:10:09.679196 - USER:a1 - Web and download activity reported
+2025-11-20T21:10:09.720180 - USER:a1 - Network activity reported
+2025-11-20T21:10:39.719183 - USER:a1 - Web and download activity reported
+2025-11-20T21:10:39.760317 - USER:a1 - Network activity reported
+2025-11-20T21:11:09.756012 - USER:a1 - Web and download activity reported
+2025-11-20T21:11:09.800220 - USER:a1 - Network activity reported
+2025-11-20T21:11:39.790782 - USER:a1 - Web and download activity reported
+2025-11-20T21:11:39.842191 - USER:a1 - Network activity reported
+2025-11-20T21:12:09.833234 - USER:a1 - Web and download activity reported
+2025-11-20T21:12:09.875231 - USER:a1 - Network activity reported
+2025-11-20T21:12:39.873144 - USER:a1 - Web and download activity reported
+2025-11-20T21:12:39.916305 - USER:a1 - Network activity reported
+2025-11-20T21:13:09.907307 - USER:a1 - Web and download activity reported
+2025-11-20T21:13:09.951464 - USER:a1 - Network activity reported
+2025-11-20T21:13:39.942756 - USER:a1 - Web and download activity reported
+2025-11-20T21:13:39.987030 - USER:a1 - Network activity reported
+2025-11-20T21:14:09.977556 - USER:a1 - Web and download activity reported
+2025-11-20T21:14:10.019963 - USER:a1 - Network activity reported
+2025-11-20T21:14:40.013878 - USER:a1 - Web and download activity reported
+2025-11-20T21:14:40.059948 - USER:a1 - Network activity reported
+2025-11-20T21:15:10.687285 - USER:a1 - Network activity reported
+2025-11-20T21:15:10.730088 - USER:a1 - Web and download activity reported
+2025-11-20T21:15:40.812321 - USER:a1 - Network activity reported
+2025-11-20T21:15:40.898375 - USER:a1 - Web and download activity reported
+2025-11-20T21:16:10.853906 - USER:a1 - Network activity reported
+2025-11-20T21:16:10.930848 - USER:a1 - Web and download activity reported
+2025-11-20T21:16:40.892070 - USER:a1 - Network activity reported
+2025-11-20T21:16:40.959529 - USER:a1 - Web and download activity reported
+2025-11-20T21:17:10.931586 - USER:a1 - Network activity reported
+2025-11-20T21:17:10.988152 - USER:a1 - Web and download activity reported
+2025-11-20T21:17:40.974570 - USER:a1 - Network activity reported
+2025-11-20T21:17:41.015485 - USER:a1 - Web and download activity reported
+2025-11-20T21:18:11.013902 - USER:a1 - Network activity reported
+2025-11-20T21:18:11.049803 - USER:a1 - Web and download activity reported
+2025-11-20T21:18:41.052460 - USER:a1 - Network activity reported
+2025-11-20T21:18:41.082547 - USER:a1 - Web and download activity reported
+2025-11-20T21:19:11.096267 - USER:a1 - Network activity reported
+2025-11-20T21:19:11.117062 - USER:a1 - Web and download activity reported
+2025-11-20T21:19:41.137776 - USER:a1 - Network activity reported
+2025-11-20T21:19:41.153952 - USER:a1 - Web and download activity reported
+2025-11-20T21:20:11.184644 - USER:a1 - Web and download activity reported
+2025-11-20T21:20:11.190829 - USER:a1 - Network activity reported
+2025-11-20T21:20:41.218864 - USER:a1 - Web and download activity reported
+2025-11-20T21:20:41.239291 - USER:a1 - Network activity reported
+2025-11-20T21:21:11.253215 - USER:a1 - Web and download activity reported
+2025-11-20T21:21:11.279801 - USER:a1 - Network activity reported
+2025-11-20T21:21:41.293231 - USER:a1 - Web and download activity reported
+2025-11-20T21:21:41.322981 - USER:a1 - Network activity reported
+2025-11-20T21:22:11.327561 - USER:a1 - Web and download activity reported
+2025-11-20T21:22:11.357086 - USER:a1 - Network activity reported
+2025-11-20T21:22:41.361403 - USER:a1 - Web and download activity reported
+2025-11-20T21:22:41.398585 - USER:a1 - Network activity reported
+2025-11-20T21:23:11.399471 - USER:a1 - Web and download activity reported
+2025-11-20T21:23:11.437305 - USER:a1 - Network activity reported
+2025-11-20T21:23:41.441342 - USER:a1 - Web and download activity reported
+2025-11-20T21:23:41.480771 - USER:a1 - Network activity reported
+2025-11-20T21:24:11.484001 - USER:a1 - Web and download activity reported
+2025-11-20T21:24:11.517882 - USER:a1 - Network activity reported
+2025-11-20T21:24:41.586813 - USER:a1 - Network activity reported
+2025-11-20T21:24:41.592930 - USER:a1 - Web and download activity reported
+2025-11-20T21:25:11.636118 - USER:a1 - Network activity reported
+2025-11-20T21:25:11.651133 - USER:a1 - Web and download activity reported
+2025-11-20T21:25:41.684485 - USER:a1 - Web and download activity reported
+2025-11-20T21:25:41.685836 - USER:a1 - Network activity reported
+2025-11-20T21:26:11.721323 - USER:a1 - Web and download activity reported
+2025-11-20T21:26:11.742061 - USER:a1 - Network activity reported
+2025-11-20T21:26:41.813843 - USER:a1 - Network activity reported
+2025-11-20T21:26:41.818236 - USER:a1 - Web and download activity reported
+2025-11-20T21:27:11.864605 - USER:a1 - Network activity reported
+2025-11-20T21:27:11.868797 - USER:a1 - Web and download activity reported
+2025-11-20T21:27:41.910389 - USER:a1 - Network activity reported
+2025-11-20T21:27:41.912314 - USER:a1 - Web and download activity reported
+2025-11-20T21:28:11.951530 - USER:a1 - Network activity reported
+2025-11-20T21:28:11.958980 - USER:a1 - Web and download activity reported
+2025-11-20T21:28:42.061875 - USER:a1 - Network activity reported
+2025-11-20T21:28:42.068101 - USER:a1 - Web and download activity reported
+2025-11-20T21:29:12.107407 - USER:a1 - Network activity reported
+2025-11-20T21:29:12.115647 - USER:a1 - Web and download activity reported
+2025-11-20T21:29:42.216357 - USER:a1 - Web and download activity reported
+2025-11-20T21:29:42.216671 - USER:a1 - Network activity reported
+2025-11-20T21:30:12.259861 - USER:a1 - Web and download activity reported
+2025-11-20T21:30:12.277136 - USER:a1 - Network activity reported
+2025-11-20T21:31:00.800215 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:31:01.009645 - USER:a1 - Web and download activity reported
+2025-11-20T21:31:01.023705 - USER:a1 - Network activity reported
+2025-11-20T21:31:02.414645 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T21:31:02.404281'}
+2025-11-20T21:31:22.956445 - ADMIN - Admin logged in
+2025-11-20T21:31:31.044855 - USER:a1 - Web and download activity reported
+2025-11-20T21:31:31.065565 - USER:a1 - Network activity reported
+2025-11-20T21:32:01.077332 - USER:a1 - Web and download activity reported
+2025-11-20T21:32:01.099422 - USER:a1 - Network activity reported
+2025-11-20T21:32:10.211155 - ADMIN - Logged out user a1 (ID: 78060be8-8926-429d-a16d-eb401536bda4)
+2025-11-20T21:32:33.898726 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:32:34.089443 - USER:a1 - Web and download activity reported
+2025-11-20T21:32:34.164367 - USER:a1 - Network activity reported
+2025-11-20T21:32:35.601516 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T21:32:35.591873'}
+2025-11-20T21:33:04.121530 - USER:a1 - Web and download activity reported
+2025-11-20T21:33:04.281894 - USER:a1 - Network activity reported
+2025-11-20T21:33:34.256439 - USER:a1 - Web and download activity reported
+2025-11-20T21:33:34.321356 - USER:a1 - Network activity reported
+2025-11-20T21:33:57.327797 - ADMIN - Cleared risk score for user ID: 78060be8-8926-429d-a16d-eb401536bda4
+2025-11-20T21:34:04.470490 - USER:a1 - Network activity reported
+2025-11-20T21:34:04.474518 - USER:a1 - Web and download activity reported
+2025-11-20T21:34:34.515751 - USER:a1 - Web and download activity reported
+2025-11-20T21:34:34.520111 - USER:a1 - Network activity reported
+2025-11-20T21:35:04.549650 - USER:a1 - Web and download activity reported
+2025-11-20T21:35:04.576798 - USER:a1 - Network activity reported
+2025-11-20T21:35:34.585296 - USER:a1 - Web and download activity reported
+2025-11-20T21:35:34.618261 - USER:a1 - Network activity reported
+2025-11-20T21:36:04.623034 - USER:a1 - Web and download activity reported
+2025-11-20T21:36:04.657827 - USER:a1 - Network activity reported
+2025-11-20T21:36:34.661658 - USER:a1 - Web and download activity reported
+2025-11-20T21:36:34.691424 - USER:a1 - Network activity reported
+2025-11-20T21:37:04.699830 - USER:a1 - Web and download activity reported
+2025-11-20T21:37:04.733589 - USER:a1 - Network activity reported
+2025-11-20T21:37:34.739031 - USER:a1 - Web and download activity reported
+2025-11-20T21:37:34.772956 - USER:a1 - Network activity reported
+2025-11-20T21:38:04.840165 - USER:a1 - Network activity reported
+2025-11-20T21:38:04.844078 - USER:a1 - Web and download activity reported
+2025-11-20T21:38:34.884489 - USER:a1 - Web and download activity reported
+2025-11-20T21:38:34.890876 - USER:a1 - Network activity reported
+2025-11-20T21:39:04.926680 - USER:a1 - Web and download activity reported
+2025-11-20T21:39:04.942331 - USER:a1 - Network activity reported
+2025-11-20T21:39:34.966038 - USER:a1 - Web and download activity reported
+2025-11-20T21:39:34.994818 - USER:a1 - Network activity reported
+2025-11-20T21:39:47.961277 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:39:48.131398 - USER:a1 - Web and download activity reported
+2025-11-20T21:39:48.194441 - USER:a1 - Network activity reported
+2025-11-20T21:39:49.418389 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T21:39:49.406289'}
+2025-11-20T21:40:18.163708 - USER:a1 - Web and download activity reported
+2025-11-20T21:40:18.235089 - USER:a1 - Network activity reported
+2025-11-20T21:40:48.303798 - USER:a1 - Web and download activity reported
+2025-11-20T21:40:48.307216 - USER:a1 - Network activity reported
+2025-11-20T21:41:18.341458 - USER:a1 - Web and download activity reported
+2025-11-20T21:41:18.418086 - USER:a1 - Network activity reported
+2025-11-20T21:41:48.375573 - USER:a1 - Web and download activity reported
+2025-11-20T21:41:48.512056 - USER:a1 - Network activity reported
+2025-11-20T21:42:18.410558 - USER:a1 - Web and download activity reported
+2025-11-20T21:42:18.630547 - USER:a1 - Network activity reported
+2025-11-20T21:42:48.448318 - USER:a1 - Web and download activity reported
+2025-11-20T21:42:48.670352 - USER:a1 - Network activity reported
+2025-11-20T21:43:18.487227 - USER:a1 - Web and download activity reported
+2025-11-20T21:43:18.715220 - USER:a1 - Network activity reported
+2025-11-20T21:43:48.518755 - USER:a1 - Web and download activity reported
+2025-11-20T21:43:48.763521 - USER:a1 - Network activity reported
+2025-11-20T21:44:18.553873 - USER:a1 - Web and download activity reported
+2025-11-20T21:44:18.865354 - USER:a1 - Network activity reported
+2025-11-20T21:44:48.590744 - USER:a1 - Web and download activity reported
+2025-11-20T21:44:48.912353 - USER:a1 - Network activity reported
+2025-11-20T21:45:18.624599 - USER:a1 - Web and download activity reported
+2025-11-20T21:45:18.956657 - USER:a1 - Network activity reported
+2025-11-20T21:45:48.667348 - USER:a1 - Web and download activity reported
+2025-11-20T21:45:48.996605 - USER:a1 - Network activity reported
+2025-11-20T21:46:14.026846 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:46:14.203993 - USER:a1 - Web and download activity reported
+2025-11-20T21:46:14.324837 - USER:a1 - Network activity reported
+2025-11-20T21:46:15.477508 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T21:46:15.464903'}
+2025-11-20T21:46:44.240041 - USER:a1 - Web and download activity reported
+2025-11-20T21:46:44.432820 - USER:a1 - Network activity reported
+2025-11-20T21:46:45.820280 - ADMIN - Admin logged in
+2025-11-20T21:46:49.215504 - ADMIN - Cleared risk score for user ID: 78060be8-8926-429d-a16d-eb401536bda4
+2025-11-20T21:47:14.272519 - USER:a1 - Web and download activity reported
+2025-11-20T21:47:14.481651 - USER:a1 - Network activity reported
+2025-11-20T21:47:44.303561 - USER:a1 - Web and download activity reported
+2025-11-20T21:47:44.574548 - USER:a1 - Network activity reported
+2025-11-20T21:48:14.334456 - USER:a1 - Web and download activity reported
+2025-11-20T21:48:14.616224 - USER:a1 - Network activity reported
+2025-11-20T21:48:44.405847 - USER:a1 - Web and download activity reported
+2025-11-20T21:48:44.661474 - USER:a1 - Network activity reported
+2025-11-20T21:49:14.461103 - USER:a1 - Web and download activity reported
+2025-11-20T21:49:14.704957 - USER:a1 - Network activity reported
+2025-11-20T21:49:44.493684 - USER:a1 - Web and download activity reported
+2025-11-20T21:49:44.748373 - USER:a1 - Network activity reported
+2025-11-20T21:50:14.529097 - USER:a1 - Web and download activity reported
+2025-11-20T21:50:14.789389 - USER:a1 - Network activity reported
+2025-11-20T21:50:44.564207 - USER:a1 - Web and download activity reported
+2025-11-20T21:50:44.829740 - USER:a1 - Network activity reported
+2025-11-20T21:52:42.996408 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:52:43.180746 - USER:a1 - Web and download activity reported
+2025-11-20T21:52:43.282267 - USER:a1 - Network activity reported
+2025-11-20T21:52:44.411214 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T21:52:44.398978'}
+2025-11-20T21:52:56.991362 - ADMIN - Admin logged in
+2025-11-20T21:53:13.222331 - USER:a1 - Web and download activity reported
+2025-11-20T21:53:13.320513 - USER:a1 - Network activity reported
+2025-11-20T21:53:43.265199 - USER:a1 - Web and download activity reported
+2025-11-20T21:53:43.359892 - USER:a1 - Network activity reported
+2025-11-20T21:54:13.372831 - USER:a1 - Web and download activity reported
+2025-11-20T21:54:13.505629 - USER:a1 - Network activity reported
+2025-11-20T21:54:43.414270 - USER:a1 - Web and download activity reported
+2025-11-20T21:54:43.543826 - USER:a1 - Network activity reported
+2025-11-20T21:55:13.449045 - USER:a1 - Web and download activity reported
+2025-11-20T21:55:13.588745 - USER:a1 - Network activity reported
+2025-11-20T21:55:43.482296 - USER:a1 - Web and download activity reported
+2025-11-20T21:55:43.635006 - USER:a1 - Network activity reported
+2025-11-20T21:56:13.516069 - USER:a1 - Web and download activity reported
+2025-11-20T21:56:13.696055 - USER:a1 - Network activity reported
+2025-11-20T21:56:43.546732 - USER:a1 - Web and download activity reported
+2025-11-20T21:56:43.736053 - USER:a1 - Network activity reported
+2025-11-20T21:57:13.657761 - USER:a1 - Web and download activity reported
+2025-11-20T21:57:13.788346 - USER:a1 - Network activity reported
+2025-11-20T21:57:26.031366 - ADMIN - Admin logged in
+2025-11-20T21:58:31.835422 - ADMIN - Cleared risk score for user ID: 78060be8-8926-429d-a16d-eb401536bda4
+2025-11-20T21:58:42.095478 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-20T21:58:42.276168 - USER:a1 - Web and download activity reported
+2025-11-20T21:58:42.364302 - USER:a1 - Network activity reported
+2025-11-20T21:58:43.940000 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-20T21:58:43.927422'}
+2025-11-20T21:59:12.311411 - USER:a1 - Web and download activity reported
+2025-11-20T21:59:12.470666 - USER:a1 - Network activity reported
+2025-11-20T21:59:42.344178 - USER:a1 - Web and download activity reported
+2025-11-20T21:59:42.511070 - USER:a1 - Network activity reported
+2025-11-20T22:00:12.380734 - USER:a1 - Web and download activity reported
+2025-11-20T22:00:12.554246 - USER:a1 - Network activity reported
+2025-11-20T22:00:42.472921 - USER:a1 - Web and download activity reported
+2025-11-20T22:00:42.596503 - USER:a1 - Network activity reported
+2025-11-20T22:01:12.510443 - USER:a1 - Web and download activity reported
+2025-11-20T22:01:12.635620 - USER:a1 - Network activity reported
+2025-11-20T22:01:42.545869 - USER:a1 - Web and download activity reported
+2025-11-20T22:01:42.673444 - USER:a1 - Network activity reported
+2025-11-20T22:02:12.579708 - USER:a1 - Web and download activity reported
+2025-11-20T22:02:12.713284 - USER:a1 - Network activity reported
+2025-11-20T22:02:42.624764 - USER:a1 - Web and download activity reported
+2025-11-20T22:02:42.751653 - USER:a1 - Network activity reported
+2025-11-20T22:03:12.650978 - USER:a1 - Web and download activity reported
+2025-11-20T22:03:12.798796 - USER:a1 - Network activity reported
+2025-11-20T22:03:42.689141 - USER:a1 - Web and download activity reported
+2025-11-20T22:03:42.843894 - USER:a1 - Network activity reported
+2025-11-20T22:04:12.723992 - USER:a1 - Web and download activity reported
+2025-11-20T22:04:12.893673 - USER:a1 - Network activity reported
+2025-11-20T22:04:42.820767 - USER:a1 - Web and download activity reported
+2025-11-20T22:04:44.102323 - USER:a1 - Network activity reported
+2025-11-20T22:05:13.005385 - USER:a1 - Web and download activity reported
+2025-11-20T22:05:14.218790 - USER:a1 - Network activity reported
+2025-11-20T22:05:43.041843 - USER:a1 - Web and download activity reported
+2025-11-20T22:05:44.265638 - USER:a1 - Network activity reported
+2025-11-20T22:06:13.072465 - USER:a1 - Web and download activity reported
+2025-11-20T22:06:14.315947 - USER:a1 - Network activity reported
+2025-11-20T22:06:43.104574 - USER:a1 - Web and download activity reported
+2025-11-20T22:06:44.360164 - USER:a1 - Network activity reported
+2025-11-20T22:07:13.138023 - USER:a1 - Web and download activity reported
+2025-11-20T22:07:14.403141 - USER:a1 - Network activity reported
+2025-11-20T22:07:43.167877 - USER:a1 - Web and download activity reported
+2025-11-20T22:07:44.444991 - USER:a1 - Network activity reported
+2025-11-20T22:08:13.199658 - USER:a1 - Web and download activity reported
+2025-11-20T22:08:14.485543 - USER:a1 - Network activity reported
+2025-11-20T22:08:43.231532 - USER:a1 - Web and download activity reported
+2025-11-20T22:08:44.540435 - USER:a1 - Network activity reported
+2025-11-20T22:09:13.267433 - USER:a1 - Web and download activity reported
+2025-11-20T22:09:14.584265 - USER:a1 - Network activity reported
+2025-11-20T22:09:43.308376 - USER:a1 - Web and download activity reported
+2025-11-20T22:09:44.632126 - USER:a1 - Network activity reported
+2025-11-20T22:10:13.338254 - USER:a1 - Web and download activity reported
+2025-11-20T22:10:14.676579 - USER:a1 - Network activity reported
+2025-11-20T22:10:43.369769 - USER:a1 - Web and download activity reported
+2025-11-20T22:10:44.720992 - USER:a1 - Network activity reported
+2025-11-21T07:50:11.380058 - USER:a1 - Web and download activity reported
+2025-11-21T07:50:11.456175 - USER:a1 - Network activity reported
+2025-11-21T07:50:12.979442 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T07:50:12.967000'}
+2025-11-21T07:50:32.655886 - ADMIN - Admin logged in
+2025-11-21T07:50:41.411931 - USER:a1 - Web and download activity reported
+2025-11-21T07:50:41.562054 - USER:a1 - Network activity reported
+2025-11-21T07:51:11.444904 - USER:a1 - Web and download activity reported
+2025-11-21T07:51:11.693211 - USER:a1 - Network activity reported
+2025-11-21T07:51:41.479243 - USER:a1 - Web and download activity reported
+2025-11-21T07:51:41.733633 - USER:a1 - Network activity reported
+2025-11-21T07:52:11.517473 - USER:a1 - Web and download activity reported
+2025-11-21T07:52:11.772929 - USER:a1 - Network activity reported
+2025-11-21T07:52:41.551685 - USER:a1 - Web and download activity reported
+2025-11-21T07:52:41.809735 - USER:a1 - Network activity reported
+2025-11-21T07:53:11.585841 - USER:a1 - Web and download activity reported
+2025-11-21T07:53:11.951273 - USER:a1 - Network activity reported
+2025-11-21T07:53:41.621582 - USER:a1 - Web and download activity reported
+2025-11-21T07:53:42.003822 - USER:a1 - Network activity reported
+2025-11-21T07:54:11.655801 - USER:a1 - Web and download activity reported
+2025-11-21T07:54:12.052454 - USER:a1 - Network activity reported
+2025-11-21T07:54:41.757746 - USER:a1 - Web and download activity reported
+2025-11-21T07:54:42.094894 - USER:a1 - Network activity reported
+2025-11-21T07:55:11.795112 - USER:a1 - Web and download activity reported
+2025-11-21T07:55:12.139416 - USER:a1 - Network activity reported
+2025-11-21T07:55:41.826743 - USER:a1 - Web and download activity reported
+2025-11-21T07:55:42.183662 - USER:a1 - Network activity reported
+2025-11-21T07:56:11.857721 - USER:a1 - Web and download activity reported
+2025-11-21T07:56:12.218270 - USER:a1 - Network activity reported
+2025-11-21T07:56:41.955658 - USER:a1 - Web and download activity reported
+2025-11-21T07:56:42.250999 - USER:a1 - Network activity reported
+2025-11-21T07:57:11.999209 - USER:a1 - Web and download activity reported
+2025-11-21T07:57:12.288158 - USER:a1 - Network activity reported
+2025-11-21T07:57:42.036631 - USER:a1 - Web and download activity reported
+2025-11-21T07:57:42.333839 - USER:a1 - Network activity reported
+2025-11-21T07:58:12.070394 - USER:a1 - Web and download activity reported
+2025-11-21T07:58:12.370383 - USER:a1 - Network activity reported
+2025-11-21T07:58:42.100877 - USER:a1 - Web and download activity reported
+2025-11-21T07:58:42.416401 - USER:a1 - Network activity reported
+2025-11-21T07:59:12.135895 - USER:a1 - Web and download activity reported
+2025-11-21T07:59:12.455248 - USER:a1 - Network activity reported
+2025-11-21T07:59:24.947171 - ADMIN - Admin logged in
+2025-11-21T07:59:42.172159 - USER:a1 - Web and download activity reported
+2025-11-21T07:59:42.500909 - USER:a1 - Network activity reported
+2025-11-21T08:00:12.207684 - USER:a1 - Web and download activity reported
+2025-11-21T08:00:12.552804 - USER:a1 - Network activity reported
+2025-11-21T08:00:42.239054 - USER:a1 - Web and download activity reported
+2025-11-21T08:00:42.595829 - USER:a1 - Network activity reported
+2025-11-21T08:01:04.257493 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:01:04.375645 - USER:a1 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-11-21T08:01:04.479872 - USER:a1 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-11-21T08:01:12.275699 - USER:a1 - Web and download activity reported
+2025-11-21T08:01:12.637701 - USER:a1 - Network activity reported
+2025-11-21T08:01:42.313823 - USER:a1 - Web and download activity reported
+2025-11-21T08:01:42.682050 - USER:a1 - Network activity reported
+2025-11-21T08:02:12.351939 - USER:a1 - Web and download activity reported
+2025-11-21T08:02:12.721433 - USER:a1 - Network activity reported
+2025-11-21T08:12:14.929189 - USER:a1 - Web and download activity reported
+2025-11-21T08:12:14.976232 - USER:a1 - Network activity reported
+2025-11-21T08:12:16.185863 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T08:12:16.173045'}
+2025-11-21T08:12:37.691035 - ADMIN - Admin logged in
+2025-11-21T08:12:41.241676 - ADMIN - Cleared risk score for user ID: 78060be8-8926-429d-a16d-eb401536bda4
+2025-11-21T08:12:44.961492 - USER:a1 - Web and download activity reported
+2025-11-21T08:12:45.013565 - USER:a1 - Network activity reported
+2025-11-21T08:13:14.997789 - USER:a1 - Web and download activity reported
+2025-11-21T08:13:15.056627 - USER:a1 - Network activity reported
+2025-11-21T08:13:45.032110 - USER:a1 - Web and download activity reported
+2025-11-21T08:13:45.101508 - USER:a1 - Network activity reported
+2025-11-21T08:14:15.061956 - USER:a1 - Web and download activity reported
+2025-11-21T08:14:15.142489 - USER:a1 - Network activity reported
+2025-11-21T08:14:45.105059 - USER:a1 - Web and download activity reported
+2025-11-21T08:14:45.179218 - USER:a1 - Network activity reported
+2025-11-21T08:15:15.140547 - USER:a1 - Web and download activity reported
+2025-11-21T08:15:15.218385 - USER:a1 - Network activity reported
+2025-11-21T08:15:45.179508 - USER:a1 - Web and download activity reported
+2025-11-21T08:15:45.256295 - USER:a1 - Network activity reported
+2025-11-21T08:16:15.210345 - USER:a1 - Web and download activity reported
+2025-11-21T08:16:15.297163 - USER:a1 - Network activity reported
+2025-11-21T08:16:45.247281 - USER:a1 - Web and download activity reported
+2025-11-21T08:16:45.336537 - USER:a1 - Network activity reported
+2025-11-21T08:17:15.280786 - USER:a1 - Web and download activity reported
+2025-11-21T08:17:15.378877 - USER:a1 - Network activity reported
+2025-11-21T08:18:00.229235 - USER:a1 - Web and download activity reported
+2025-11-21T08:18:00.230334 - USER:a1 - Network activity reported
+2025-11-21T08:18:01.332189 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T08:18:01.322274'}
+2025-11-21T08:18:19.197714 - ADMIN - Admin logged in
+2025-11-21T08:18:30.262201 - USER:a1 - Web and download activity reported
+2025-11-21T08:18:30.281709 - USER:a1 - Network activity reported
+2025-11-21T08:19:00.291395 - USER:a1 - Web and download activity reported
+2025-11-21T08:19:00.435980 - USER:a1 - Network activity reported
+2025-11-21T08:19:30.326569 - USER:a1 - Web and download activity reported
+2025-11-21T08:19:30.485287 - USER:a1 - Network activity reported
+2025-11-21T08:20:00.383869 - USER:a1 - Web and download activity reported
+2025-11-21T08:20:00.521733 - USER:a1 - Network activity reported
+2025-11-21T08:20:30.421571 - USER:a1 - Web and download activity reported
+2025-11-21T08:20:30.563819 - USER:a1 - Network activity reported
+2025-11-21T08:21:00.458242 - USER:a1 - Web and download activity reported
+2025-11-21T08:21:00.602287 - USER:a1 - Network activity reported
+2025-11-21T08:21:30.494030 - USER:a1 - Web and download activity reported
+2025-11-21T08:21:30.643474 - USER:a1 - Network activity reported
+2025-11-21T08:22:00.528248 - USER:a1 - Web and download activity reported
+2025-11-21T08:22:00.697595 - USER:a1 - Network activity reported
+2025-11-21T08:22:30.636339 - USER:a1 - Web and download activity reported
+2025-11-21T08:22:30.736864 - USER:a1 - Network activity reported
+2025-11-21T08:23:01.252422 - USER:a1 - Web and download activity reported
+2025-11-21T08:23:01.271333 - USER:a1 - Network activity reported
+2025-11-21T08:38:44.565342 - ADMIN - Admin logged in
+2025-11-21T08:39:11.964955 - USER:a1 - Web and download activity reported
+2025-11-21T08:39:12.004639 - USER:a1 - Network activity reported
+2025-11-21T08:39:13.102046 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T08:39:13.091664'}
+2025-11-21T08:39:42.014523 - USER:a1 - Web and download activity reported
+2025-11-21T08:39:42.043026 - USER:a1 - Network activity reported
+2025-11-21T08:40:12.157607 - USER:a1 - Web and download activity reported
+2025-11-21T08:40:12.163230 - USER:a1 - Network activity reported
+2025-11-21T08:40:42.236641 - USER:a1 - Network activity reported
+2025-11-21T08:40:42.241875 - USER:a1 - Web and download activity reported
+2025-11-21T08:41:12.281060 - USER:a1 - Web and download activity reported
+2025-11-21T08:41:12.290168 - USER:a1 - Network activity reported
+2025-11-21T08:41:42.317654 - USER:a1 - Web and download activity reported
+2025-11-21T08:41:42.332412 - USER:a1 - Network activity reported
+2025-11-21T08:42:12.355192 - USER:a1 - Web and download activity reported
+2025-11-21T08:42:12.373854 - USER:a1 - Network activity reported
+2025-11-21T08:42:42.392082 - USER:a1 - Web and download activity reported
+2025-11-21T08:42:42.421399 - USER:a1 - Network activity reported
+2025-11-21T08:43:12.425604 - USER:a1 - Web and download activity reported
+2025-11-21T08:43:12.490412 - USER:a1 - Network activity reported
+2025-11-21T08:43:42.467519 - USER:a1 - Web and download activity reported
+2025-11-21T08:43:42.606996 - USER:a1 - Network activity reported
+2025-11-21T08:44:13.912034 - USER:a1 - Web and download activity reported
+2025-11-21T08:44:13.914042 - USER:a1 - Network activity reported
+2025-11-21T08:44:14.878542 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T08:44:14.866083'}
+2025-11-21T08:44:20.533085 - ADMIN - Admin logged in
+2025-11-21T08:44:42.584358 - ADMIN - Cleared risk score for user ID: 78060be8-8926-429d-a16d-eb401536bda4
+2025-11-21T08:44:43.972424 - USER:a1 - Network activity reported
+2025-11-21T08:44:43.975593 - USER:a1 - Web and download activity reported
+2025-11-21T08:45:14.046247 - USER:a1 - Network activity reported
+2025-11-21T08:45:14.049999 - USER:a1 - Web and download activity reported
+2025-11-21T08:45:44.211034 - USER:a1 - Network activity reported
+2025-11-21T08:45:44.217363 - USER:a1 - Web and download activity reported
+2025-11-21T08:46:14.256234 - USER:a1 - Web and download activity reported
+2025-11-21T08:46:14.268379 - USER:a1 - Network activity reported
+2025-11-21T08:46:44.294884 - USER:a1 - Web and download activity reported
+2025-11-21T08:46:44.317107 - USER:a1 - Network activity reported
+2025-11-21T08:47:14.334491 - USER:a1 - Web and download activity reported
+2025-11-21T08:47:14.357016 - USER:a1 - Network activity reported
+2025-11-21T08:47:24.329178 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:47:41.743084 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:47:44.371898 - USER:a1 - Web and download activity reported
+2025-11-21T08:47:44.401602 - USER:a1 - Network activity reported
+2025-11-21T08:48:14.410444 - USER:a1 - Web and download activity reported
+2025-11-21T08:48:14.444139 - USER:a1 - Network activity reported
+2025-11-21T08:48:44.449569 - USER:a1 - Web and download activity reported
+2025-11-21T08:48:44.479082 - USER:a1 - Network activity reported
+2025-11-21T08:49:10.733437 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:14.491170 - USER:a1 - Web and download activity reported
+2025-11-21T08:49:14.513829 - USER:a1 - Network activity reported
+2025-11-21T08:49:15.650969 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:19.556249 - USER:a1 - LOGON ANOMALY: Suspicious logon behavior detected for a1
+2025-11-21T08:49:44.586777 - USER:a1 - Network activity reported
+2025-11-21T08:49:44.590072 - USER:a1 - Web and download activity reported
+2025-11-21T08:49:49.512159 - USER:a1 - FILE ANOMALY: Suspicious file activity detected for a1: Mass_Delete on sensitive.db
+2025-11-21T08:50:13.296938 - USER:a1 - HTTP ANOMALY: Suspicious HTTP activity detected for a1 (URL: http://example.com/download/ve...)
+2025-11-21T08:50:14.631198 - USER:a1 - Web and download activity reported
+2025-11-21T08:50:14.643825 - USER:a1 - Network activity reported
+2025-11-21T08:50:44.668503 - USER:a1 - Web and download activity reported
+2025-11-21T08:50:44.689550 - USER:a1 - Network activity reported
+2025-11-21T08:51:14.703103 - USER:a1 - Web and download activity reported
+2025-11-21T08:51:14.732378 - USER:a1 - Network activity reported
+2025-11-21T08:51:44.734925 - USER:a1 - Web and download activity reported
+2025-11-21T08:51:44.876823 - USER:a1 - Network activity reported
+2025-11-21T08:52:14.772104 - USER:a1 - Web and download activity reported
+2025-11-21T08:52:14.937125 - USER:a1 - Network activity reported
+2025-11-21T08:52:44.806250 - USER:a1 - Web and download activity reported
+2025-11-21T08:52:44.978050 - USER:a1 - Network activity reported
+2025-11-21T08:53:14.843114 - USER:a1 - Web and download activity reported
+2025-11-21T08:53:15.020722 - USER:a1 - Network activity reported
+2025-11-21T08:53:44.881385 - USER:a1 - Web and download activity reported
+2025-11-21T08:53:45.184627 - USER:a1 - Network activity reported
+2025-11-21T08:54:14.914859 - USER:a1 - Web and download activity reported
+2025-11-21T08:54:15.231952 - USER:a1 - Network activity reported
+2025-11-21T08:54:44.948652 - USER:a1 - Web and download activity reported
+2025-11-21T08:54:45.273707 - USER:a1 - Network activity reported
+2025-11-21T08:55:14.986061 - USER:a1 - Web and download activity reported
+2025-11-21T08:55:15.319649 - USER:a1 - Network activity reported
+2025-11-21T08:55:45.024557 - USER:a1 - Web and download activity reported
+2025-11-21T08:55:45.372476 - USER:a1 - Network activity reported
+2025-11-21T08:56:15.063549 - USER:a1 - Web and download activity reported
+2025-11-21T08:56:15.444519 - USER:a1 - Network activity reported
+2025-11-21T08:56:45.100353 - USER:a1 - Web and download activity reported
+2025-11-21T08:56:45.480251 - USER:a1 - Network activity reported
+2025-11-21T08:57:15.132216 - USER:a1 - Web and download activity reported
+2025-11-21T08:57:15.518873 - USER:a1 - Network activity reported
+2025-11-21T08:57:45.171247 - USER:a1 - Web and download activity reported
+2025-11-21T08:57:45.564663 - USER:a1 - Network activity reported
+2025-11-21T08:58:15.204982 - USER:a1 - Web and download activity reported
+2025-11-21T08:58:15.614560 - USER:a1 - Network activity reported
+2025-11-21T08:58:45.241538 - USER:a1 - Web and download activity reported
+2025-11-21T08:58:45.651531 - USER:a1 - Network activity reported
+2025-11-21T08:59:15.271743 - USER:a1 - Web and download activity reported
+2025-11-21T08:59:15.689171 - USER:a1 - Network activity reported
+2025-11-21T08:59:45.301489 - USER:a1 - Web and download activity reported
+2025-11-21T08:59:45.728515 - USER:a1 - Network activity reported
+2025-11-21T09:00:15.337709 - USER:a1 - Web and download activity reported
+2025-11-21T09:00:15.768651 - USER:a1 - Network activity reported
+2025-11-21T09:02:57.614216 - USER:a1 - Web and download activity reported
+2025-11-21T09:02:57.771508 - USER:a1 - Network activity reported
+2025-11-21T09:02:58.805341 - USER:a1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T09:02:58.789510'}
+2025-11-21T09:03:13.230929 - ADMIN - Admin logged in
+2025-11-21T09:04:19.652532 - ADMIN - Added new user: s1
+2025-11-21T09:04:19.652680 - USER:s1 - New user added
+2025-11-21T09:04:36.366788 - ADMIN - Admin logged in
+2025-11-21T09:04:38.094780 - ADMIN - Accepted user s1 (ID: cc281fc1-88eb-43ab-ad4d-cc701eed21e9)
+2025-11-21T09:04:38.095162 - USER:s1 - User accepted by admin
+2025-11-21T09:04:39.963168 - USER:s1 - Web and download activity reported
+2025-11-21T09:04:40.101706 - USER:s1 - Email activity reported: 4 entries
+2025-11-21T09:04:40.117539 - USER:s1 - Packet analysis reported: 18 entries
+2025-11-21T09:04:40.136459 - USER:s1 - Network activity reported
+2025-11-21T09:04:46.223977 - USER:s1 - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T09:04:46.210337'}
+2025-11-21T09:05:10.000030 - USER:s1 - Web and download activity reported
+2025-11-21T09:05:10.170394 - USER:s1 - Packet analysis reported: 18 entries
+2025-11-21T09:05:10.183883 - USER:s1 - Network activity reported
+2025-11-21T09:05:40.152225 - USER:s1 - Email activity reported: 4 entries
+2025-11-21T09:05:40.153774 - USER:s1 - Web and download activity reported
+2025-11-21T09:05:40.210097 - USER:s1 - Packet analysis reported: 16 entries
+2025-11-21T09:05:40.232885 - USER:s1 - Network activity reported
+2025-11-21T09:06:10.200586 - USER:s1 - Web and download activity reported
+2025-11-21T09:06:10.364384 - USER:s1 - Packet analysis reported: 15 entries
+2025-11-21T09:06:10.394839 - USER:s1 - Network activity reported
+2025-11-21T09:06:40.186313 - USER:s1 - Email activity reported: 4 entries
+2025-11-21T09:06:40.233029 - USER:s1 - Web and download activity reported
+2025-11-21T09:06:40.448819 - USER:s1 - Packet analysis reported: 17 entries
+2025-11-21T09:06:40.464522 - USER:s1 - Network activity reported
+2025-11-21T09:07:10.264942 - USER:s1 - Web and download activity reported
+2025-11-21T09:07:10.480815 - USER:s1 - Packet analysis reported: 20 entries
+2025-11-21T09:07:10.506540 - USER:s1 - Network activity reported
+2025-11-21T09:07:40.225581 - USER:s1 - Email activity reported: 4 entries
+2025-11-21T09:07:40.303681 - USER:s1 - Web and download activity reported
+2025-11-21T09:07:40.515793 - USER:s1 - Packet analysis reported: 18 entries
+2025-11-21T09:07:40.547145 - USER:s1 - Network activity reported
+2025-11-21T09:08:10.345475 - USER:s1 - Web and download activity reported
+2025-11-21T09:08:10.555014 - USER:s1 - Packet analysis reported: 18 entries
+2025-11-21T09:08:10.587614 - USER:s1 - Network activity reported
+2025-11-21T09:08:40.257426 - USER:s1 - Email activity reported: 4 entries
+2025-11-21T09:08:40.376851 - USER:s1 - Web and download activity reported
+2025-11-21T09:08:40.703819 - USER:s1 - Packet analysis reported: 16 entries
+2025-11-21T09:08:40.733847 - USER:s1 - Network activity reported
+2025-11-21T09:09:10.413884 - USER:s1 - Web and download activity reported
+2025-11-21T09:09:10.771596 - USER:s1 - Network activity reported
+2025-11-21T09:12:30.159075 - ADMIN - Added new user: arun
+2025-11-21T09:12:30.159115 - USER:arun - New user added
+2025-11-21T09:12:38.318410 - ADMIN - Admin logged in
+2025-11-21T09:12:43.452780 - ADMIN - Accepted user arun (ID: 150df25b-24e4-4d5f-88bf-acfa65371982)
+2025-11-21T09:12:43.453725 - USER:arun - User accepted by admin
+2025-11-21T09:12:45.441768 - USER:arun - Web and download activity reported
+2025-11-21T09:12:45.535095 - USER:arun - Network activity reported
+2025-11-21T09:12:45.552832 - USER:arun - Packet analysis reported: 16 entries
+2025-11-21T09:12:46.684416 - USER:arun - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T09:12:46.670846'}
+2025-11-21T09:13:15.473917 - USER:arun - Web and download activity reported
+2025-11-21T09:13:15.628681 - USER:arun - Network activity reported
+2025-11-21T09:13:15.646046 - USER:arun - Packet analysis reported: 16 entries
+2025-11-21T09:13:45.513587 - USER:arun - Web and download activity reported
+2025-11-21T09:13:45.692914 - USER:arun - Network activity reported
+2025-11-21T09:13:45.709166 - USER:arun - Packet analysis reported: 28 entries
+2025-11-21T09:14:15.539664 - USER:arun - Web and download activity reported
+2025-11-21T09:14:15.760264 - USER:arun - Network activity reported
+2025-11-21T09:14:15.772076 - USER:arun - Packet analysis reported: 27 entries
+2025-11-21T09:14:45.687564 - USER:arun - Web and download activity reported
+2025-11-21T09:14:45.803532 - USER:arun - Network activity reported
+2025-11-21T09:14:45.821999 - USER:arun - Packet analysis reported: 23 entries
+2025-11-21T09:15:15.719865 - USER:arun - Web and download activity reported
+2025-11-21T09:15:15.842702 - USER:arun - Network activity reported
+2025-11-21T09:15:15.863920 - USER:arun - Packet analysis reported: 28 entries
+2025-11-21T09:15:45.746171 - USER:arun - Web and download activity reported
+2025-11-21T09:15:45.877683 - USER:arun - Network activity reported
+2025-11-21T09:15:45.900458 - USER:arun - Packet analysis reported: 24 entries
+2025-11-21T09:16:15.774117 - USER:arun - Web and download activity reported
+2025-11-21T09:16:15.917243 - USER:arun - Network activity reported
+2025-11-21T09:16:15.938001 - USER:arun - Packet analysis reported: 22 entries
+2025-11-21T09:16:45.804917 - USER:arun - Web and download activity reported
+2025-11-21T09:16:45.968005 - USER:arun - Network activity reported
+2025-11-21T09:16:45.979274 - USER:arun - Packet analysis reported: 20 entries
+2025-11-21T09:17:15.836815 - USER:arun - Web and download activity reported
+2025-11-21T09:17:16.060402 - USER:arun - Network activity reported
+2025-11-21T09:17:16.074080 - USER:arun - Packet analysis reported: 25 entries
+2025-11-21T09:17:45.868910 - USER:arun - Web and download activity reported
+2025-11-21T09:17:46.105135 - USER:arun - Network activity reported
+2025-11-21T09:17:46.124967 - USER:arun - Packet analysis reported: 29 entries
+2025-11-21T09:18:15.907648 - USER:arun - Web and download activity reported
+2025-11-21T09:18:16.152915 - USER:arun - Network activity reported
+2025-11-21T09:18:16.189858 - USER:arun - Packet analysis reported: 40 entries
+2025-11-21T09:18:45.943489 - USER:arun - Web and download activity reported
+2025-11-21T09:18:46.199462 - USER:arun - Network activity reported
+2025-11-21T09:18:46.364716 - USER:arun - Packet analysis reported: 37 entries
+2025-11-21T09:19:16.054491 - USER:arun - Web and download activity reported
+2025-11-21T09:19:16.242299 - USER:arun - Network activity reported
+2025-11-21T09:19:16.409883 - USER:arun - Packet analysis reported: 34 entries
+2025-11-21T09:19:46.101680 - USER:arun - Web and download activity reported
+2025-11-21T09:19:46.291893 - USER:arun - Network activity reported
+2025-11-21T09:19:46.447650 - USER:arun - Packet analysis reported: 35 entries
+2025-11-21T09:20:16.130917 - USER:arun - Web and download activity reported
+2025-11-21T09:20:16.339540 - USER:arun - Network activity reported
+2025-11-21T09:20:16.487603 - USER:arun - Packet analysis reported: 48 entries
+2025-11-21T09:20:46.169422 - USER:arun - Web and download activity reported
+2025-11-21T09:20:46.388214 - USER:arun - Network activity reported
+2025-11-21T09:20:46.613774 - USER:arun - Packet analysis reported: 55 entries
+2025-11-21T09:21:16.212177 - USER:arun - Web and download activity reported
+2025-11-21T09:21:16.447633 - USER:arun - Network activity reported
+2025-11-21T09:21:16.655899 - USER:arun - Packet analysis reported: 51 entries
+2025-11-21T09:21:46.245736 - USER:arun - Web and download activity reported
+2025-11-21T09:21:46.491385 - USER:arun - Network activity reported
+2025-11-21T09:21:46.712680 - USER:arun - Packet analysis reported: 47 entries
+2025-11-21T09:22:16.280371 - USER:arun - Web and download activity reported
+2025-11-21T09:22:16.535000 - USER:arun - Network activity reported
+2025-11-21T09:22:16.756713 - USER:arun - Packet analysis reported: 43 entries
+2025-11-21T09:22:46.311662 - USER:arun - Web and download activity reported
+2025-11-21T09:22:46.603657 - USER:arun - Network activity reported
+2025-11-21T09:22:46.797557 - USER:arun - Packet analysis reported: 42 entries
+2025-11-21T09:23:16.348106 - USER:arun - Web and download activity reported
+2025-11-21T09:23:16.642165 - USER:arun - Network activity reported
+2025-11-21T09:23:16.859427 - USER:arun - Packet analysis reported: 45 entries
+2025-11-21T09:23:46.384031 - USER:arun - Web and download activity reported
+2025-11-21T09:23:46.700464 - USER:arun - Network activity reported
+2025-11-21T09:24:01.939447 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:24:01.946424 - USER:arun - Web and download activity reported
+2025-11-21T09:24:02.082434 - USER:arun - Network activity reported
+2025-11-21T09:24:03.029972 - USER:arun - Location updated: {'ip': '58.84.61.53', 'city': 'Pune', 'region': 'Maharashtra', 'country': 'India', 'lat': 18.5211, 'lon': 73.8502, 'time': '2025-11-21T09:24:03.019000'}
+2025-11-21T09:24:23.518921 - ADMIN - Admin logged in
+2025-11-21T09:24:31.962553 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:24:31.984163 - USER:arun - Web and download activity reported
+2025-11-21T09:24:32.166682 - USER:arun - Network activity reported
+2025-11-21T09:25:02.087561 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:25:02.091527 - USER:arun - Web and download activity reported
+2025-11-21T09:25:02.209429 - USER:arun - Network activity reported
+2025-11-21T09:25:32.109440 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:25:32.142203 - USER:arun - Web and download activity reported
+2025-11-21T09:25:32.253952 - USER:arun - Network activity reported
+2025-11-21T09:26:02.135675 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:26:02.172877 - USER:arun - Web and download activity reported
+2025-11-21T09:26:02.329620 - USER:arun - Network activity reported
+2025-11-21T09:26:32.231822 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:26:32.237831 - USER:arun - Web and download activity reported
+2025-11-21T09:26:32.370474 - USER:arun - Network activity reported
+2025-11-21T09:27:02.898018 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:27:02.947887 - USER:arun - Web and download activity reported
+2025-11-21T09:27:03.046701 - USER:arun - Network activity reported
+2025-11-21T09:27:33.077299 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:27:33.198592 - USER:arun - Network activity reported
+2025-11-21T09:27:33.283454 - USER:arun - Web and download activity reported
+2025-11-21T09:28:03.102168 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:28:03.241272 - USER:arun - Network activity reported
+2025-11-21T09:28:03.317955 - USER:arun - Web and download activity reported
+2025-11-21T09:28:33.126233 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:28:33.279433 - USER:arun - Network activity reported
+2025-11-21T09:28:33.349016 - USER:arun - Web and download activity reported
+2025-11-21T09:29:03.150115 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:29:03.319932 - USER:arun - Network activity reported
+2025-11-21T09:29:03.377758 - USER:arun - Web and download activity reported
+2025-11-21T09:29:33.179414 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:29:33.355841 - USER:arun - Network activity reported
+2025-11-21T09:29:33.414627 - USER:arun - Web and download activity reported
+2025-11-21T09:30:03.204373 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:30:03.400097 - USER:arun - Network activity reported
+2025-11-21T09:30:03.445397 - USER:arun - Web and download activity reported
+2025-11-21T09:30:33.227791 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:30:33.441067 - USER:arun - Network activity reported
+2025-11-21T09:30:33.474212 - USER:arun - Web and download activity reported
+2025-11-21T09:31:03.255347 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:31:03.484139 - USER:arun - Network activity reported
+2025-11-21T09:31:03.507423 - USER:arun - Web and download activity reported
+2025-11-21T09:31:28.775663 - ADMIN - Admin logged in
+2025-11-21T09:31:33.281358 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:31:33.523409 - USER:arun - Network activity reported
+2025-11-21T09:31:33.545428 - USER:arun - Web and download activity reported
+2025-11-21T09:32:03.304121 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:32:03.564676 - USER:arun - Network activity reported
+2025-11-21T09:32:03.588281 - USER:arun - Web and download activity reported
+2025-11-21T09:32:33.322357 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:32:33.626776 - USER:arun - Network activity reported
+2025-11-21T09:32:33.629787 - USER:arun - Web and download activity reported
+2025-11-21T09:33:03.346948 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:33:03.668742 - USER:arun - Web and download activity reported
+2025-11-21T09:33:03.676076 - USER:arun - Network activity reported
+2025-11-21T09:33:33.379469 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:33:33.707682 - USER:arun - Web and download activity reported
+2025-11-21T09:33:33.727399 - USER:arun - Network activity reported
+2025-11-21T09:34:03.403220 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:34:03.744064 - USER:arun - Web and download activity reported
+2025-11-21T09:34:03.773166 - USER:arun - Network activity reported
+2025-11-21T09:34:33.428906 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:34:33.777344 - USER:arun - Web and download activity reported
+2025-11-21T09:34:33.816611 - USER:arun - Network activity reported
+2025-11-21T09:35:03.548735 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:35:03.816675 - USER:arun - Web and download activity reported
+2025-11-21T09:35:03.867010 - USER:arun - Network activity reported
+2025-11-21T09:35:33.608552 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:35:33.862348 - USER:arun - Web and download activity reported
+2025-11-21T09:35:33.907550 - USER:arun - Network activity reported
+2025-11-21T09:36:03.702746 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:36:03.899249 - USER:arun - Web and download activity reported
+2025-11-21T09:36:03.947505 - USER:arun - Network activity reported
+2025-11-21T09:36:33.730020 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:36:33.936066 - USER:arun - Web and download activity reported
+2025-11-21T09:36:33.990414 - USER:arun - Network activity reported
+2025-11-21T09:37:03.762591 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:37:03.972550 - USER:arun - Web and download activity reported
+2025-11-21T09:37:04.030738 - USER:arun - Network activity reported
+2025-11-21T09:37:33.836699 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:37:34.008868 - USER:arun - Web and download activity reported
+2025-11-21T09:37:34.074390 - USER:arun - Network activity reported
+2025-11-21T09:38:03.860890 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:38:04.044653 - USER:arun - Web and download activity reported
+2025-11-21T09:38:04.119871 - USER:arun - Network activity reported
+2025-11-21T09:38:33.883040 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:38:34.076863 - USER:arun - Web and download activity reported
+2025-11-21T09:38:34.164720 - USER:arun - Network activity reported
+2025-11-21T09:39:03.951267 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:39:04.112063 - USER:arun - Web and download activity reported
+2025-11-21T09:39:04.213126 - USER:arun - Network activity reported
+2025-11-21T09:39:34.000426 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:39:34.148470 - USER:arun - Web and download activity reported
+2025-11-21T09:39:34.253311 - USER:arun - Network activity reported
+2025-11-21T09:40:04.024648 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:40:04.183015 - USER:arun - Web and download activity reported
+2025-11-21T09:40:04.302813 - USER:arun - Network activity reported
+2025-11-21T09:40:34.046493 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:40:34.220999 - USER:arun - Web and download activity reported
+2025-11-21T09:40:34.347392 - USER:arun - Network activity reported
+2025-11-21T09:41:04.210780 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:41:04.254787 - USER:arun - Web and download activity reported
+2025-11-21T09:41:04.542384 - USER:arun - Network activity reported
+2025-11-21T09:41:34.239448 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:41:34.284291 - USER:arun - Web and download activity reported
+2025-11-21T09:41:34.583416 - USER:arun - Network activity reported
+2025-11-21T09:42:04.266772 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:42:04.322599 - USER:arun - Web and download activity reported
+2025-11-21T09:42:04.747361 - USER:arun - Network activity reported
+2025-11-21T09:42:23.043301 - ADMIN - Admin logged in
+2025-11-21T09:42:38.881746 - USER:arun - Packet analysis reported: 2 entries
+2025-11-21T09:42:38.893265 - USER:arun - Web and download activity reported
+2025-11-21T09:42:38.906104 - USER:arun - Network activity reported
+2025-11-21T09:43:21.169088 - USER:arun - Packet analysis reported: 1 entries
+2025-11-21T09:43:21.178151 - USER:arun - Web and download activity reported
+2025-11-21T09:43:21.185448 - USER:arun - Network activity reported
+2025-11-21T09:43:31.191923 - ADMIN - Admin logged in
+2025-11-21T09:43:56.194767 - USER:arun - Packet analysis reported: 1 entries
+2025-11-21T09:43:56.214820 - USER:arun - Web and download activity reported
+2025-11-21T09:43:56.230589 - USER:arun - Network activity reported
+2025-11-21T09:44:31.225706 - USER:arun - Packet analysis reported: 1 entries
+2025-11-21T09:44:31.255903 - USER:arun - Web and download activity reported
+2025-11-21T09:44:31.275594 - USER:arun - Network activity reported
+2025-11-21T09:45:01.250530 - USER:arun - Packet analysis reported: 1 entries
+2025-11-21T09:45:01.285971 - USER:arun - Web and download activity reported
+2025-11-21T09:45:01.313048 - USER:arun - Network activity reported
+2025-11-21T09:45:31.278499 - USER:arun - Packet analysis reported: 1 entries
+2025-11-21T09:45:31.316656 - ADMIN - Logged out user arun (ID: 150df25b-24e4-4d5f-88bf-acfa65371982)
+2025-11-21T09:45:31.320623 - USER:arun - Web and download activity reported
+2025-11-21T12:57:39.949376 - ADMIN - Admin logged in

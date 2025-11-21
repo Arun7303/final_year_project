@@ -3,63 +3,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const anomalySound = document.getElementById('anomaly-sound');
     const usbSound = document.getElementById('usb-sound');
     
-    // Sound control
-    let soundsAllowed = false;
-    const soundToggle = document.getElementById('sound-toggle');
-    
     // Initialize audio
     function initAudio() {
         anomalySound.volume = 0.3;
         usbSound.volume = 0.3;
         
-        // Try to play/pause to unlock audio on mobile
-        const playPromise = anomalySound.play().then(() => {
-            anomalySound.pause();
-        }).catch(e => console.log("Audio init error:", e));
-    }
-    
-    // Toggle sound
-    function toggleSounds() {
-        soundsAllowed = !soundsAllowed;
-        soundToggle.textContent = soundsAllowed ? "Disable Sounds" : "Enable Sounds";
-        localStorage.setItem('soundsAllowed', soundsAllowed);
-        
-        if (soundsAllowed) {
-            initAudio();
-        }
+        // A more reliable way to unlock audio
+        const unlockAudio = () => {
+            document.removeEventListener('click', unlockAudio);
+            const promises = [anomalySound.play(), usbSound.play()];
+            Promise.all(promises).then(() => {
+                anomalySound.pause();
+                usbSound.pause();
+                anomalySound.currentTime = 0;
+                usbSound.currentTime = 0;
+            }).catch(e => console.log("Audio unlock error:", e));
+        };
+        document.addEventListener('click', unlockAudio);
     }
     
     // Play anomaly sound
     function playAnomalySound() {
-        if (!soundsAllowed) return;
-        
-        try {
+        console.log("Attempting to play anomaly sound.");
+        if (anomalySound.paused) {
             anomalySound.currentTime = 0;
-            anomalySound.play().catch(e => console.log("Anomaly sound play error:", e));
-        } catch (e) {
-            console.error("Anomaly sound error:", e);
+            anomalySound.play().catch(e => console.error("Anomaly sound play error:", e));
+        } else {
+            console.log("Anomaly sound is already playing.");
         }
     }
     
     // Play USB sound
     function playUsbSound() {
-        if (!soundsAllowed) return;
-        
-        try {
+        console.log("Attempting to play USB sound.");
+        if (usbSound.paused) {
             usbSound.currentTime = 0;
-            usbSound.play().catch(e => console.log("USB sound play error:", e));
-        } catch (e) {
-            console.error("USB sound error:", e);
+            usbSound.play().catch(e => console.error("USB sound play error:", e));
+        } else {
+            console.log("USB sound is already playing.");
         }
     }
     
     // Initialize
-    soundToggle.addEventListener('click', toggleSounds);
-    
-    // Load sound preference
-    soundsAllowed = localStorage.getItem('soundsAllowed') === 'true';
-    soundToggle.textContent = soundsAllowed ? "Disable Sounds" : "Enable Sounds";
-    if (soundsAllowed) initAudio();
+    initAudio();
     
     // Socket.IO connection
     const socket = io();

@@ -11,7 +11,7 @@
         <source src="{{ url_for('static', filename='sounds/anomaly.mp3') }}" type="audio/mpeg">
     </audio>
     <audio id="usb-sound" preload="auto">
-        <source src="{{ url_for('static', filename='sounds/usb.mp3') }}" type="audio/mpeg">
+        <source src="{{ url_for('static', filename='sounds/usb_alert.mp3') }}" type="audio/mpeg">
     </audio>
     <style>
         /* Styles for the risk score */
@@ -36,18 +36,103 @@
             border: none;
             cursor: pointer;
         }
+        .anomaly-log {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .anomaly-log.high {
+            border-left: 4px solid #dc3545;
+            background-color: #f8d7da;
+        }
+        .anomaly-log.medium {
+            border-left: 4px solid #ffc107;
+            background-color: #fff3cd;
+        }
+        .anomaly-log.low {
+            border-left: 4px solid #28a745;
+            background-color: #d4edda;
+        }
+        .log-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .log-type {
+            font-weight: bold;
+            color: #495057;
+        }
+        .log-time {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        .log-severity {
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .log-severity.high {
+            background-color: #dc3545;
+            color: white;
+        }
+        .log-severity.medium {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .log-severity.low {
+            background-color: #28a745;
+            color: white;
+        }
+        .log-content {
+            color: #495057;
+        }
+        .no-alerts {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            padding: 20px;
+        }
+        .logs-scroll-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        .logs-scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        .logs-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .logs-scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .logs-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
     </style>
 </head>
 
 <body>
-    <div class="dashboard-container" data-online-users='{{ online_user_ids | tojson | safe }}' data-risk-scores='{{ risk_scores | safe }}'>
+    <div class="dashboard-container" data-online-users='{{ online_user_ids | tojson | safe }}' data-risk-scores='{{ risk_scores | safe }}' data-anomaly-logs='{{ anomaly_logs | safe }}'>
         <h1 class="dashboard-title">Insider Threat Detection</h1>
 
         <div class="top-section">
             <div class="usb-alerts-section">
                 <h2>USB Alerts History</h2>
                 <button onclick="clearUsbAlerts()" class="clear-btn">Clear USB History</button>
-                <div id="usb-alerts-container"></div>
+                <div class="logs-scroll-container">
+                    <div id="usb-alerts-container"></div>
+                </div>
             </div>
 
             <div class="network-section">
@@ -59,8 +144,10 @@
             </div>
 
             <div class="alerts-section">
-                <h2>Anomaly Alerts</h2>
-                <div id="alerts-container"></div>
+                <h2>Anomaly Alerts (Last 24 Hours)</h2>
+                <div class="logs-scroll-container">
+                    <div id="anomaly-logs-container"></div>
+                </div>
             </div>
         </div>
 
@@ -101,6 +188,47 @@
         const container = document.querySelector('.dashboard-container');
         const onlineUsers = new Set(JSON.parse(container.dataset.onlineUsers || '[]'));
         const riskScores = JSON.parse(container.dataset.riskScores || '{}');
+        const anomalyLogs = JSON.parse(container.dataset.anomalyLogs || '[]');
+
+        function displayAnomalyLogs(logs) {
+            const container = document.getElementById('anomaly-logs-container');
+            if (!logs || logs.length === 0) {
+                container.innerHTML = '<div class="no-alerts">No anomalies detected in the last 24 hours</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            logs.forEach(log => {
+                const logDiv = document.createElement('div');
+                logDiv.className = `anomaly-log ${log.severity}`;
+                logDiv.innerHTML = `
+                    <div class="log-header">
+                        <span class="log-type">${log.type.toUpperCase()}</span>
+                        <span class="log-time">${new Date(log.timestamp).toLocaleString()}</span>
+                        <span class="log-severity ${log.severity}">${log.severity.toUpperCase()}</span>
+                    </div>
+                    <div class="log-content">
+                        <strong>User:</strong> ${log.username} (${log.user_id})<br>
+                        <strong>Details:</strong> ${log.details}
+                    </div>
+                `;
+                container.appendChild(logDiv);
+            });
+        }
+        
+        // Function to fetch and refresh anomaly logs
+        function fetchAnomalyLogs() {
+            fetch('/get_anomaly_logs?hours=24')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.anomalies) {
+                        displayAnomalyLogs(data.anomalies);
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching anomaly logs:', err);
+                });
+        }
 
         function updateRiskScore(userId, score) {
             const riskElement = document.getElementById(`risk-${userId}`);
@@ -133,6 +261,11 @@
             for (const [userId, score] of Object.entries(riskScores)) {
                 updateRiskScore(userId, score);
             }
+            // Initial display of anomaly logs
+            displayAnomalyLogs(anomalyLogs);
+            
+            // Auto-refresh anomaly logs every 5 seconds
+            setInterval(fetchAnomalyLogs, 5000);
         });
 
         socket.on('update_risk_score', (data) => updateRiskScore(data.user_id, data.score));
@@ -184,12 +317,15 @@
         });
         
         function createAnomalyAlert(data, type) {
+            console.log('Anomaly alert received:', data, type);
+            
+            // Play sound first
             playAnomalySound();
-            const alertsContainer = document.getElementById('alerts-container');
-            const alertDiv = document.createElement('div');
-            alertDiv.className = `alert alert-${type}`;
-            alertDiv.textContent = data.message;
-            alertsContainer.prepend(alertDiv);
+            
+            // Refresh anomaly logs to show the new anomaly immediately
+            fetchAnomalyLogs();
+            
+            // Highlight the user tile
             const userTile = document.getElementById(`user-${data.user_id}`);
             if (userTile) {
                 userTile.classList.add('anomaly-detected');
@@ -302,16 +438,63 @@
 
         const anomalySound = document.getElementById('anomaly-sound');
         const usbSound = document.getElementById('usb-sound');
+        
+        // Preload and enable audio on user interaction (required by browsers)
+        let audioEnabled = false;
+        document.addEventListener('click', function enableAudio() {
+            if (!audioEnabled) {
+                if (anomalySound) {
+                    anomalySound.load();
+                }
+                if (usbSound) {
+                    usbSound.load();
+                }
+                audioEnabled = true;
+                document.removeEventListener('click', enableAudio);
+            }
+        }, { once: true });
 
         function playAnomalySound() {
-            anomalySound.currentTime = 0;
-            anomalySound.play().catch(e => {});
+            if (anomalySound && audioEnabled) {
+                try {
+                    anomalySound.currentTime = 0;
+                    const playPromise = anomalySound.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(e => {
+                            console.warn("Could not play anomaly sound:", e);
+                            // Try to enable audio again
+                            audioEnabled = false;
+                        });
+                    }
+                } catch (e) {
+                    console.warn("Error playing anomaly sound:", e);
+                }
+            } else if (!audioEnabled) {
+                console.log("Audio not enabled yet - user interaction required");
+            }
         }
 
         function playUsbSound() {
-            usbSound.currentTime = 0;
-            usbSound.play().catch(e => {});
+            if (usbSound && audioEnabled) {
+                try {
+                    usbSound.currentTime = 0;
+                    const playPromise = usbSound.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(e => {
+                            console.warn("Could not play USB sound:", e);
+                            // Try to enable audio again
+                            audioEnabled = false;
+                        });
+                    }
+                } catch (e) {
+                    console.warn("Error playing USB sound:", e);
+                }
+            } else if (!audioEnabled) {
+                console.log("Audio not enabled yet - user interaction required");
+            }
         }
+     
     </script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>

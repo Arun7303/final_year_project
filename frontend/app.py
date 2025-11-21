@@ -4,7 +4,7 @@ import sqlite3
 import joblib
 import numpy as np
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import logging
 import psutil
@@ -51,9 +51,16 @@ for name, filename in model_files.items():
 
 # Ensure directories exist
 os.makedirs("users/admin", exist_ok=True)
-for filename in ['usb_alerts.txt', 'anomaly_alerts.txt', 'admin_activity.log']:
+os.makedirs("logs", exist_ok=True)
+for filename in ['usb_alerts.txt', 'anomaly_alerts.txt', 'admin_activity.log', 'file_access_logs.txt']:
     if not os.path.exists(f"users/admin/{filename}"):
         open(f"users/admin/{filename}", 'w').close()
+
+# Initialize anomaly logs
+for log_type in ['logon', 'file', 'http', 'device']:
+    log_file = f"logs/anomaly_{log_type}.log"
+    if not os.path.exists(log_file):
+        open(log_file, 'w').close()
 
 # --- User Online Status and Risk Score Tracking ---
 online_users = {}
@@ -63,11 +70,11 @@ user_risk_scores = {} # NEW: For dynamic risk scoring
 
 # --- NEW: Anomaly Point Values ---
 ANOMALY_POINTS = {
-    'logon': 10,
-    'device': 15,
-    'file': 20,
-    'http': 20,
-    'usb_file_copy': 30
+    'logon': 5,
+    'device': 5,
+    'file': 3,
+    'http': 3,
+    'usb_file_copy': 7
 }
 
 def risk_score_decay():
@@ -103,6 +110,17 @@ def check_offline_users():
 threading.Thread(target=check_offline_users, daemon=True).start()
 threading.Thread(target=risk_score_decay, daemon=True).start() # NEW: Start decay thread
 
+def cleanup_logs_periodically():
+    """Background thread to clean up old logs every hour"""
+    while True:
+        try:
+            cleanup_old_logs()
+        except Exception as e:
+            logger.error(f"Error in cleanup_logs_periodically: {e}")
+        socketio.sleep(3600)  # Clean up every hour
+
+threading.Thread(target=cleanup_logs_periodically, daemon=True).start()
+
 
 # Database Functions (remain unchanged)
 def init_admin_db():
@@ -121,12 +139,18 @@ def init_admin_db():
 def init_user_db():
     """Initializes the main user database and loads risk scores."""
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         
         # Add risk_score column if it doesn't exist (for backward compatibility)
         try:
             c.execute("ALTER TABLE user_data ADD COLUMN risk_score INTEGER DEFAULT 0")
+        except sqlite3.OperationalError:
+            pass # Column already exists
+        
+        # Add usb_count column if it doesn't exist
+        try:
+            c.execute("ALTER TABLE user_data ADD COLUMN usb_count INTEGER DEFAULT 0")
         except sqlite3.OperationalError:
             pass # Column already exists
 
@@ -221,7 +245,34 @@ def init_user_databases(username):
                 timestamp TEXT
             )
         """)
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS packet_analysis (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                interface TEXT,
+                remote_ip TEXT,
+                bytes_sent INTEGER,
+                bytes_recv INTEGER,
+                bytes_sent_rate REAL,
+                bytes_recv_rate REAL,
+                packets_sent INTEGER,
+                packets_recv INTEGER,
+                packets_sent_rate REAL,
+                packets_recv_rate REAL,
+                errors_in INTEGER,
+                errors_out INTEGER,
+                drops_in INTEGER,
+                drops_out INTEGER,
+                connection_count INTEGER,
+                ports TEXT,
+                protocols TEXT,
+                processes TEXT,
+                total_bytes_sent INTEGER,
+                total_bytes_recv INTEGER,
+                timestamp TEXT
+            )
+        """)
         c.execute("CREATE INDEX IF NOT EXISTS idx_network_activity_time ON network_activity(timestamp)")
+        c.execute("CREATE INDEX IF NOT EXISTS idx_packet_analysis_time ON packet_analysis(timestamp)")
         conn.commit()
     except Exception as e:
         logger.error(f"Error initializing network activity DB for {username}: {e}")
@@ -232,7 +283,7 @@ def init_user_databases(username):
     access_file = os.path.join(shared_folder, "file_access.txt")
     if not os.path.exists(access_file):
         with open(access_file, 'w') as f:
-            f.write("read:False\nwrite:False\n")
+            f.write("read:True\nwrite:True\n")  # Default to enabled for testing
 init_admin_db()
 init_user_db()
 
@@ -244,13 +295,25 @@ def detect_logon_anomaly(data):
         return None
     try:
         df = pd.DataFrame([data])
-        df["date"] = pd.to_datetime(df["date"])
-        login_count_placeholder = 1
-        logon_duration_placeholder = 0
-        X = pd.DataFrame(
-            [[login_count_placeholder, logon_duration_placeholder]], 
-            columns=['login_count', 'logon_duration']
-        )
+        df["date"] = pd.to_datetime(df["date"], errors='coerce')
+        # Derive the same temporal/categorical features used in other models
+        df["hour_of_day"] = df["date"].dt.hour
+        df["day_of_week"] = df["date"].dt.dayofweek
+        df["is_weekend"] = df["day_of_week"].apply(lambda x: 1 if x >= 5 else 0)
+        df["is_midnight_activity"] = df["hour_of_day"].apply(lambda x: 1 if x < 5 else 0)
+        df["time_since_last_activity"] = 0
+        df["log_time_since_last_activity"] = np.log1p(df["time_since_last_activity"])
+        df["activity_encoded"] = LabelEncoder().fit_transform(df["activity"])
+
+        features = [
+            "hour_of_day",
+            "day_of_week",
+            "is_weekend",
+            "is_midnight_activity",
+            "log_time_since_last_activity",
+            "activity_encoded",
+        ]
+        X = df[features]
         prediction = models['logon'].predict(X)[0]
         return {"is_anomaly": prediction == -1}
     except Exception as e:
@@ -327,21 +390,176 @@ def add_risk_score(user_id, anomaly_type):
 
 # Utility Functions
 def get_user_folder(username):
-    user_folder = os.path.join("users", username)
+    # Get the project root directory (parent of frontend)
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    user_folder = os.path.join(project_root, "users", username)
     os.makedirs(user_folder, exist_ok=True)
     os.makedirs(os.path.join(user_folder, "photos"), exist_ok=True)
     os.makedirs(os.path.join(user_folder, "screenshots"), exist_ok=True)
     return user_folder
 
+def log_anomaly(anomaly_type, user_id, username, details, severity="medium"):
+    """Log anomaly to persistent logs with 24-hour retention"""
+    try:
+        timestamp = datetime.now().isoformat()
+        log_entry = {
+            "timestamp": timestamp,
+            "type": anomaly_type,
+            "user_id": user_id,
+            "username": username,
+            "details": details,
+            "severity": severity
+        }
+        
+        # Log to specific anomaly type file
+        log_file = f"logs/anomaly_{anomaly_type}.log"
+        with open(log_file, 'a') as f:
+            f.write(json.dumps(log_entry) + "\n")
+        
+        # Log to general anomaly log
+        with open("logs/anomaly_all.log", 'a') as f:
+            f.write(json.dumps(log_entry) + "\n")
+        
+        # Log to admin alerts (existing functionality)
+        alert_msg = f"{timestamp} - {anomaly_type.upper()} ANOMALY: {details}"
+        _append_line('users/admin/anomaly_alerts.txt', alert_msg)
+        
+        logger.info(f"Anomaly logged: {anomaly_type} for {username}")
+        
+    except Exception as e:
+        logger.error(f"Error logging anomaly: {e}")
+
+
+def get_anomaly_logs(hours=24):
+    """Get anomaly logs from the last N hours"""
+    try:
+        cutoff_time = datetime.now() - timedelta(hours=hours)
+        all_anomalies = []
+        
+        # Read from general anomaly log
+        if os.path.exists("logs/anomaly_all.log"):
+            with open("logs/anomaly_all.log", 'r') as f:
+                for line in f:
+                    try:
+                        entry = json.loads(line.strip())
+                        entry_time = datetime.fromisoformat(entry['timestamp'])
+                        if entry_time >= cutoff_time:
+                            all_anomalies.append(entry)
+                    except (json.JSONDecodeError, ValueError):
+                        continue
+        
+        # Sort by timestamp (newest first)
+        all_anomalies.sort(key=lambda x: x['timestamp'], reverse=True)
+        
+        return all_anomalies
+        
+    except Exception as e:
+        logger.error(f"Error getting anomaly logs: {e}")
+        return []
+
+
+def cleanup_old_logs():
+    """Clean up logs older than 24 hours"""
+    try:
+        cutoff_time = datetime.now() - timedelta(hours=24)
+        
+        # Clean up general anomaly log
+        if os.path.exists("logs/anomaly_all.log"):
+            temp_lines = []
+            with open("logs/anomaly_all.log", 'r') as f:
+                for line in f:
+                    try:
+                        entry = json.loads(line.strip())
+                        entry_time = datetime.fromisoformat(entry['timestamp'])
+                        if entry_time >= cutoff_time:
+                            temp_lines.append(line)
+                    except (json.JSONDecodeError, ValueError):
+                        continue
+            
+            with open("logs/anomaly_all.log", 'w') as f:
+                f.writelines(temp_lines)
+        
+        # Clean up specific anomaly logs
+        for log_type in ['logon', 'file', 'http', 'device']:
+            log_file = f"logs/anomaly_{log_type}.log"
+            if os.path.exists(log_file):
+                temp_lines = []
+                with open(log_file, 'r') as f:
+                    for line in f:
+                        try:
+                            entry = json.loads(line.strip())
+                            entry_time = datetime.fromisoformat(entry['timestamp'])
+                            if entry_time >= cutoff_time:
+                                temp_lines.append(line)
+                        except (json.JSONDecodeError, ValueError):
+                            continue
+                
+                with open(log_file, 'w') as f:
+                    f.writelines(temp_lines)
+        
+        logger.info("Cleaned up old anomaly logs")
+        
+    except Exception as e:
+        logger.error(f"Error cleaning up logs: {e}")
+
+
+def _append_line(filepath: str, line: str) -> None:
+    try:
+        with open(filepath, 'a') as f:
+            f.write(line + "\n")
+    except Exception as e:
+        logger.error(f"Error writing to {filepath}: {e}")
+
+
 def log_user_activity(username, message, logs=None):
-    pass
+    try:
+        timestamp = datetime.now().isoformat()
+        user_folder = get_user_folder(username)
+        # Persist to admin consolidated activity log
+        _append_line('users/admin/admin_activity.log', f"{timestamp} - USER:{username} - {message}")
+
+        # Also persist into users.db 'logs' JSON array (prepend, cap at 200)
+        conn = sqlite3.connect("../users.db")
+        c = conn.cursor()
+        c.execute("SELECT logs FROM user_data WHERE username = ?", (username,))
+        row = c.fetchone()
+        log_arr = []
+        if row and row[0]:
+            try:
+                log_arr = json.loads(row[0])
+            except Exception:
+                log_arr = []
+        log_arr.insert(0, {"time": timestamp, "message": message})
+        log_arr = log_arr[:200]
+        c.execute("UPDATE user_data SET logs = ? WHERE username = ?", (json.dumps(log_arr), username))
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        logger.error(f"Error in log_user_activity: {e}")
 
 def log_admin_activity(action):
-    pass
+    try:
+        timestamp = datetime.now().isoformat()
+        _append_line('users/admin/admin_activity.log', f"{timestamp} - ADMIN - {action}")
+    except Exception as e:
+        logger.error(f"Error in log_admin_activity: {e}")
+
+
+def log_file_access(username: str, action: str, details: dict) -> None:
+    try:
+        timestamp = datetime.now().isoformat()
+        user_folder = get_user_folder(username)
+        per_user_log = os.path.join(user_folder, "shared", "file_access.log")
+        os.makedirs(os.path.dirname(per_user_log), exist_ok=True)
+        line = f"{timestamp} - USER:{username} - ACTION:{action} - DETAILS:{json.dumps(details, ensure_ascii=False)}"
+        _append_line(per_user_log, line)
+        _append_line('users/admin/file_access_logs.txt', line)
+    except Exception as e:
+        logger.error(f"Error in log_file_access: {e}")
 
 def get_all_users():
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT user_id, username, pc_name, platform, accepted FROM user_data")
         return c.fetchall()
@@ -357,12 +575,16 @@ def dashboard():
     if 'admin_logged_in' not in session:
         return redirect(url_for('login'))
     
-    # NEW: Pass the current risk scores to the dashboard
+    # Load anomaly logs for the last 24 hours
+    anomaly_logs = get_anomaly_logs(24)
+    
+    # NEW: Pass the current risk scores and anomaly logs to the dashboard
     return render_template(
         "dashboard.html", 
         users=get_all_users(), 
         online_user_ids=list(online_users.keys()),
-        risk_scores=json.dumps(user_risk_scores)
+        risk_scores=json.dumps(user_risk_scores),
+        anomaly_logs=json.dumps(anomaly_logs)
     )
 
 @app.route("/login", methods=["GET", "POST"])
@@ -406,6 +628,9 @@ def report_logon_activity():
         socketio.emit("logon_anomaly_alert", {"message": alert_msg, "user_id": user_id})
         log_user_activity(username, f"LOGON ANOMALY: {alert_msg}")
         
+        # Log to persistent anomaly logs
+        log_anomaly("logon", user_id, username, alert_msg, "high")
+        
     return jsonify({"status": "processed"})
 
 @app.route("/report_file_activity", methods=["POST"])
@@ -421,6 +646,9 @@ def report_file_activity():
         socketio.emit("file_anomaly_alert", {"message": alert_msg, "user_id": user_id})
         log_user_activity(username, f"FILE ANOMALY: {alert_msg}")
         
+        # Log to persistent anomaly logs
+        log_anomaly("file", user_id, username, alert_msg, "high")
+        
     return jsonify({"status": "processed"})
 
 @app.route("/report_http_activity", methods=["POST"])
@@ -435,14 +663,18 @@ def report_http_activity():
         alert_msg = f"Suspicious HTTP activity detected for {username} (URL: {data.get('url')[:30]}...)"
         socketio.emit("http_anomaly_alert", {"message": alert_msg, "user_id": user_id, "score": anomaly_result.get('score', 0)})
         log_user_activity(username, f"HTTP ANOMALY: {alert_msg}")
+        
+        # Log to persistent anomaly logs
+        log_anomaly("http", user_id, username, alert_msg, "medium")
 
     return jsonify({"status": "processed"})
+
 @app.route("/usb_event", methods=["POST"])
 def usb_event():
     try:
         data = request.json
         username = data.get("username")
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT user_id, removable_media_transfers FROM user_data WHERE username = ?", (username,))
         result = c.fetchone()
@@ -455,9 +687,6 @@ def usb_event():
         device_data = {"date": data.get("timestamp"), "user": username, "activity": operation}
         anomaly_result = detect_device_anomaly(device_data)
 
-        # Check for a specific file transfer operation
-        is_file_transfer = "File Copied" in operation or "File Moved" in operation
-        
         # Add the new USB event to the user's log
         transfer_entry = {
             "operation": operation,
@@ -472,31 +701,33 @@ def usb_event():
         
         alert_msg = f"{datetime.now().isoformat()} - USB Event: {operation} by {username}"
         
-        if is_file_transfer:
+        if "Inserted" in operation:
+            add_risk_score(user_id, 'device')
+            alert_msg = f"ANOMALY: Suspicious device connection for {username}"
+            socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
+            
+            # Log to persistent anomaly logs
+            log_anomaly("device", user_id, username, alert_msg, "high")
+        
+        elif "Removed" in operation:
+            alert_msg = f"USB removed by {username}"
+            socketio.emit("usb_alert", {"message": alert_msg, "user_id": user_id})
+            with open('users/admin/usb_alerts.txt', 'a') as f:
+                f.write(alert_msg + "\n")
+        
+        elif "File Copied" in operation:
             add_risk_score(user_id, 'usb_file_copy')
             file_details = data.get("details", {})
             file_name = file_details.get("filename", "N/A")
             direction = file_details.get("direction", "N/A")
             from_loc = file_details.get("from_location", "N/A")
             to_loc = file_details.get("to_location", "N/A")
-
+            
             alert_msg = f"ANOMALY: File '{file_name}' transferred from '{from_loc}' to '{to_loc}' ({direction.upper()})"
             socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
             with open('users/admin/anomaly_alerts.txt', 'a') as f:
                 f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
-        
-        elif anomaly_result and anomaly_result["is_anomaly"]:
-            add_risk_score(user_id, 'device')
-            alert_msg = f"ANOMALY: Suspicious device connection for {username}"
-            socketio.emit("device_anomaly_alert", {"message": alert_msg, "user_id": user_id})
-            with open('users/admin/anomaly_alerts.txt', 'a') as f:
-                f.write(f"{datetime.now().isoformat()} - {alert_msg}\n")
-        
-        else:
-            socketio.emit("usb_alert", {"message": alert_msg, "user_id": user_id})
-            with open('users/admin/usb_alerts.txt', 'a') as f:
-                f.write(alert_msg + "\n")
-        
+
         return jsonify({"status": "logged"})
 
     except Exception as e:
@@ -505,7 +736,7 @@ def usb_event():
     finally:
         conn.close()
 
-# ... (rest of the app.py code remains unchanged) ...
+
 
 @app.route("/report_location/<user_id>", methods=["POST"])
 def report_location(user_id):
@@ -517,7 +748,7 @@ def report_location(user_id):
         if not location:
             return jsonify({"error": "No location data"}), 400
             
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         
         # Get current locations
@@ -575,14 +806,117 @@ def get_usb_alerts():
         logger.error(f"Error getting USB alerts: {e}")
         return jsonify({"error": str(e)}), 500
 
-@app.route("/get_anomaly_alerts", methods=["GET"])
-def get_anomaly_alerts():
+@app.route("/get_anomaly_logs", methods=["GET"])
+def get_anomaly_logs_route():
+    """Get anomaly logs for the last 24 hours"""
     try:
-        with open('users/admin/anomaly_alerts.txt', 'r') as f:
-            alerts = [line.strip() for line in f.readlines() if line.strip()]
-        return jsonify({"alerts": alerts[-50:]})  # Last 50 alerts
+        hours = request.args.get('hours', 24, type=int)
+        logs = get_anomaly_logs(hours)
+        return jsonify({"anomalies": logs, "count": len(logs)})
     except Exception as e:
-        logger.error(f"Error getting anomaly alerts: {e}")
+        logger.error(f"Error getting anomaly logs: {e}")
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/get_packet_data/<user_id>", methods=["GET"])
+def get_packet_data(user_id):
+    """Get packet analysis data for a user"""
+    try:
+        with sqlite3.connect("../users.db") as conn:
+            c = conn.cursor()
+            c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
+            result = c.fetchone()
+            if not result:
+                return jsonify({"error": "User not found"}), 404
+            
+            username = result[0]
+            user_folder = get_user_folder(username)
+            network_activity_db = os.path.join(user_folder, "network_activity.db")
+            
+            packet_analysis = []
+            
+            if os.path.exists(network_activity_db):
+                with sqlite3.connect(network_activity_db) as conn_network:
+                    c_network = conn_network.cursor()
+                    
+                    # Get packet analysis - only most recent entry per interface (excluding loopback)
+                    try:
+                        c_network.execute("""
+                            SELECT interface, remote_ip, bytes_sent, bytes_recv, bytes_sent_rate, bytes_recv_rate,
+                                   packets_sent, packets_recv, packets_sent_rate, packets_recv_rate,
+                                   errors_in, errors_out, drops_in, drops_out, connection_count, 
+                                   ports, protocols, processes, total_bytes_sent, total_bytes_recv, timestamp
+                            FROM packet_analysis
+                            WHERE interface IS NOT NULL AND interface != '' AND interface != 'lo'
+                            AND id IN (
+                                SELECT MAX(id)
+                                FROM packet_analysis
+                                WHERE interface IS NOT NULL AND interface != '' AND interface != 'lo'
+                                GROUP BY interface
+                            )
+                            ORDER BY timestamp DESC
+                            LIMIT 20
+                        """)
+                        packet_analysis = [{
+                            "interface": row[0],
+                            "remote_ip": row[1],
+                            "bytes_sent": row[2],
+                            "bytes_recv": row[3],
+                            "bytes_sent_rate": row[4],
+                            "bytes_recv_rate": row[5],
+                            "packets_sent": row[6],
+                            "packets_recv": row[7],
+                            "packets_sent_rate": row[8],
+                            "packets_recv_rate": row[9],
+                            "errors_in": row[10],
+                            "errors_out": row[11],
+                            "drops_in": row[12],
+                            "drops_out": row[13],
+                            "connection_count": row[14],
+                            "ports": json.loads(row[15]) if row[15] else [],
+                            "protocols": json.loads(row[16]) if row[16] else [],
+                            "processes": json.loads(row[17]) if row[17] else [],
+                            "total_bytes_sent": row[18],
+                            "total_bytes_recv": row[19],
+                            "timestamp": row[20]
+                        } for row in c_network.fetchall()]
+                    except sqlite3.OperationalError:
+                        # Fallback to old schema
+                        c_network.execute("""
+                            SELECT interface, remote_ip, bytes_sent, bytes_recv, packets_sent, packets_recv,
+                                   errors_in, errors_out, drops_in, drops_out, connection_count, ports, protocols, timestamp
+                            FROM packet_analysis
+                            ORDER BY timestamp DESC
+                            LIMIT 100
+                        """)
+                        packet_analysis = [{
+                            "interface": row[0],
+                            "remote_ip": row[1],
+                            "bytes_sent": row[2],
+                            "bytes_recv": row[3],
+                            "bytes_sent_rate": 0.0,
+                            "bytes_recv_rate": 0.0,
+                            "packets_sent": row[4],
+                            "packets_recv": row[5],
+                            "packets_sent_rate": 0.0,
+                            "packets_recv_rate": 0.0,
+                            "errors_in": row[6],
+                            "errors_out": row[7],
+                            "drops_in": row[8],
+                            "drops_out": row[9],
+                            "connection_count": row[10],
+                            "ports": json.loads(row[11]) if row[11] else [],
+                            "protocols": json.loads(row[12]) if row[12] else [],
+                            "processes": [],
+                            "total_bytes_sent": row[2],
+                            "total_bytes_recv": row[3],
+                            "timestamp": row[13]
+                        } for row in c_network.fetchall()]
+            
+            return jsonify({
+                "packet_analysis": packet_analysis
+            })
+    except Exception as e:
+        logger.error(f"Error getting packet data: {e}")
         return jsonify({"error": str(e)}), 500
 
 @app.route("/validate_user_password", methods=["POST"])
@@ -592,7 +926,7 @@ def validate_user_password():
         username = data.get("username")
         password = data.get("password")
         
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT password FROM user_data WHERE username = ?", (username,))
         result = c.fetchone()
@@ -609,7 +943,7 @@ def validate_user_password():
 @app.route("/get_user_id/<username>", methods=["GET"])
 def get_user_id(username):
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT user_id FROM user_data WHERE username = ?", (username,))
         result = c.fetchone()
@@ -627,7 +961,7 @@ def get_user_id(username):
 def add_user():
     data = request.json
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute(
             "INSERT INTO user_data (user_id, username, password, pc_name, platform) VALUES (?, ?, ?, ?, ?)",
@@ -657,7 +991,7 @@ def add_user():
 @app.route("/accept_user/<user_id>", methods=["POST"])
 def accept_user(user_id):
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
@@ -733,7 +1067,7 @@ def logout_user(user_id):
         return jsonify({"error": "Unauthorized"}), 401
 
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         
         # Get username and login_time for logging
@@ -765,7 +1099,20 @@ def logout_user(user_id):
         conn.commit()
         
         log_admin_activity(f"Logged out user {username} (ID: {user_id})")
-        socketio.emit("user_logged_out", {"user_id": user_id})
+        
+        # Emit logout event to specific user's client using their session ID
+        client_sid = client_sids.get(user_id)
+        if client_sid:
+            socketio.emit("user_logged_out", {"user_id": user_id}, to=client_sid)
+            logger.info(f"Sent logout command to user {username} (ID: {user_id}, SID: {client_sid})")
+        else:
+            logger.warning(f"User {username} (ID: {user_id}) not connected via SocketIO, logout event not sent")
+        
+        # Clean up user tracking
+        if user_id in online_users:
+            del online_users[user_id]
+        if user_id in client_sids:
+            del client_sids[user_id]
         
         return jsonify({"status": "user_logged_out"})
     except Exception as e:
@@ -780,7 +1127,7 @@ def clear_risk_score(user_id):
         return jsonify({"error": "Unauthorized"}), 401
     try:
         user_risk_scores[user_id] = 0
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("UPDATE user_data SET risk_score = 0 WHERE user_id = ?", (user_id,))
         conn.commit()
@@ -797,13 +1144,13 @@ def clear_risk_score(user_id):
 @app.route("/user_details/<user_id>", methods=["GET"])
 def user_details(user_id):
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("""
             SELECT user_id, username, password, pc_name, platform, accepted, 
                    logs, network_traffic, file_operations, removable_media_transfers, 
                    user_activity, login_time, logout_time, login_duration, 
-                   internet_status, usb_count, system_info, locations
+                   internet_status, usb_count, system_info, locations, risk_score
             FROM user_data 
             WHERE user_id = ?
         """, (user_id,))
@@ -828,7 +1175,8 @@ def user_details(user_id):
             "usb_count": data[15],
             "system_info": data[16] if data[16] else "{}",
             "locations": data[17] if data[17] else "[]",
-            "accepted": data[5]
+            "accepted": data[5],
+            "risk_score": data[18]
         })
     except Exception as e:
         logger.error(f"Error getting user details: {e}")
@@ -862,15 +1210,28 @@ def report_web_activity(user_id):
         with sqlite3.connect(online_data_db) as conn_online:
             c_online = conn_online.cursor()
             for download in data.get("downloaded_files", []):
+                file_path = download.get("path", "")
+                filename = download.get("filename", "")
+                timestamp = download.get("timestamp", "")
+                
+                # Check if this download already exists (based on path and timestamp)
                 c_online.execute("""
-                    INSERT INTO file_downloads (url, filename, timestamp, size)
-                    VALUES (?, ?, ?, ?)
-                """, (
-                    download.get("path", ""), 
-                    download.get("filename", ""),
-                    download.get("timestamp", ""),
-                    download.get("size", "N/A")
-                ))
+                    SELECT COUNT(*) FROM file_downloads 
+                    WHERE url = ? AND filename = ? AND timestamp = ?
+                """, (file_path, filename, timestamp))
+                
+                if c_online.fetchone()[0] == 0:
+                    # Only insert if it doesn't already exist
+                    c_online.execute("""
+                        INSERT INTO file_downloads (url, filename, timestamp, size)
+                        VALUES (?, ?, ?, ?)
+                    """, (
+                        file_path, 
+                        filename,
+                        timestamp,
+                        download.get("size", "N/A")
+                    ))
+            conn_online.commit()
 
         log_user_activity(username, "Web and download activity reported")
         return jsonify({"status": "success"})
@@ -918,6 +1279,58 @@ def report_network_activity(user_id):
     finally:
         conn.close()
 
+@app.route("/report_packet_analysis/<user_id>", methods=["POST"])
+def report_packet_analysis(user_id):
+    try:
+        data = request.json
+        username = data.get("username")
+        
+        user_folder = get_user_folder(username)
+        network_activity_db = os.path.join(user_folder, "network_activity.db")
+        conn = sqlite3.connect(network_activity_db)
+        c = conn.cursor()
+        
+        for packet in data.get("packets", []):
+            c.execute("""
+                INSERT INTO packet_analysis (
+                    interface, remote_ip, bytes_sent, bytes_recv, bytes_sent_rate, bytes_recv_rate,
+                    packets_sent, packets_recv, packets_sent_rate, packets_recv_rate,
+                    errors_in, errors_out, drops_in, drops_out, connection_count, 
+                    ports, protocols, processes, total_bytes_sent, total_bytes_recv, timestamp
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                packet.get("interface", ""),
+                packet.get("remote_ip", ""),
+                packet.get("bytes_sent", 0),
+                packet.get("bytes_recv", 0),
+                packet.get("bytes_sent_rate", 0.0),
+                packet.get("bytes_recv_rate", 0.0),
+                packet.get("packets_sent", 0),
+                packet.get("packets_recv", 0),
+                packet.get("packets_sent_rate", 0.0),
+                packet.get("packets_recv_rate", 0.0),
+                packet.get("errors_in", 0),
+                packet.get("errors_out", 0),
+                packet.get("drops_in", 0),
+                packet.get("drops_out", 0),
+                packet.get("connection_count", 0),
+                json.dumps(packet.get("ports", [])),
+                json.dumps(packet.get("protocols", [])),
+                json.dumps(packet.get("processes", [])),
+                packet.get("total_bytes_sent", 0),
+                packet.get("total_bytes_recv", 0),
+                packet.get("timestamp", datetime.now().isoformat())
+            ))
+        
+        conn.commit()
+        log_user_activity(username, f"Packet analysis reported: {len(data.get('packets', []))} entries")
+        return jsonify({"status": "success"})
+    except Exception as e:
+        logger.error(f"Error processing packet analysis: {e}")
+        return jsonify({"error": str(e)}), 500
+    finally:
+        conn.close()
+
 @app.route("/user_logs/<user_id>")
 def user_logs(user_id):
     try:
@@ -930,7 +1343,7 @@ def user_logs(user_id):
         locations = []
         removable_media_transfers = []
 
-        with sqlite3.connect("users.db") as conn:
+        with sqlite3.connect("../users.db") as conn:
             c = conn.cursor()
             c.execute("""
                 SELECT user_id, username, password, pc_name, platform, accepted, 
@@ -964,9 +1377,15 @@ def user_logs(user_id):
                     visits = [{"url": row[0], "title": row[1], "timestamp": row[2]} 
                             for row in c_online.fetchall()]
                     
+                    # Get unique downloads (deduplicate by path and filename, keeping the most recent)
                     c_online.execute("""
                         SELECT url, filename, timestamp, size
                         FROM file_downloads 
+                        WHERE id IN (
+                            SELECT MAX(id) 
+                            FROM file_downloads 
+                            GROUP BY url, filename
+                        )
                         ORDER BY timestamp DESC 
                         LIMIT 100
                     """)
@@ -1009,6 +1428,90 @@ def user_logs(user_id):
                         "received_bytes": row[5],
                         "timestamp": row[6]
                     } for row in c_network.fetchall()]
+                    
+                    # Get packet analysis - only most recent entry per interface (excluding loopback)
+                    try:
+                        c_network.execute("""
+                            SELECT interface, remote_ip, bytes_sent, bytes_recv, bytes_sent_rate, bytes_recv_rate,
+                                   packets_sent, packets_recv, packets_sent_rate, packets_recv_rate,
+                                   errors_in, errors_out, drops_in, drops_out, connection_count, 
+                                   ports, protocols, processes, total_bytes_sent, total_bytes_recv, timestamp
+                            FROM packet_analysis
+                            WHERE interface IS NOT NULL AND interface != '' AND interface != 'lo'
+                            AND id IN (
+                                SELECT MAX(id)
+                                FROM packet_analysis
+                                WHERE interface IS NOT NULL AND interface != '' AND interface != 'lo'
+                                GROUP BY interface
+                            )
+                            ORDER BY timestamp DESC
+                            LIMIT 20
+                        """)
+                        packet_analysis = [{
+                            "interface": row[0],
+                            "remote_ip": row[1],
+                            "bytes_sent": row[2],
+                            "bytes_recv": row[3],
+                            "bytes_sent_rate": row[4],
+                            "bytes_recv_rate": row[5],
+                            "packets_sent": row[6],
+                            "packets_recv": row[7],
+                            "packets_sent_rate": row[8],
+                            "packets_recv_rate": row[9],
+                            "errors_in": row[10],
+                            "errors_out": row[11],
+                            "drops_in": row[12],
+                            "drops_out": row[13],
+                            "connection_count": row[14],
+                            "ports": json.loads(row[15]) if row[15] else [],
+                            "protocols": json.loads(row[16]) if row[16] else [],
+                            "processes": json.loads(row[17]) if row[17] else [],
+                            "total_bytes_sent": row[18],
+                            "total_bytes_recv": row[19],
+                            "timestamp": row[20]
+                        } for row in c_network.fetchall()]
+                    except sqlite3.OperationalError:
+                        # Fallback to old schema
+                        c_network.execute("""
+                            SELECT interface, remote_ip, bytes_sent, bytes_recv, packets_sent, packets_recv,
+                                   errors_in, errors_out, drops_in, drops_out, connection_count, ports, protocols, timestamp
+                            FROM packet_analysis
+                            WHERE interface IS NOT NULL AND interface != '' AND interface != 'lo'
+                            AND id IN (
+                                SELECT MAX(id)
+                                FROM packet_analysis
+                                WHERE interface IS NOT NULL AND interface != '' AND interface != 'lo'
+                                GROUP BY interface
+                            )
+                            ORDER BY timestamp DESC
+                            LIMIT 20
+                        """)
+                        packet_analysis = [{
+                            "interface": row[0],
+                            "remote_ip": row[1],
+                            "bytes_sent": row[2],
+                            "bytes_recv": row[3],
+                            "bytes_sent_rate": 0.0,
+                            "bytes_recv_rate": 0.0,
+                            "packets_sent": row[4],
+                            "packets_recv": row[5],
+                            "packets_sent_rate": 0.0,
+                            "packets_recv_rate": 0.0,
+                            "errors_in": row[6],
+                            "errors_out": row[7],
+                            "drops_in": row[8],
+                            "drops_out": row[9],
+                            "connection_count": row[10],
+                            "ports": json.loads(row[11]) if row[11] else [],
+                            "protocols": json.loads(row[12]) if row[12] else [],
+                            "processes": [],
+                            "total_bytes_sent": row[2],
+                            "total_bytes_recv": row[3],
+                            "timestamp": row[13]
+                        } for row in c_network.fetchall()]
+            else:
+                email_activity = []
+                packet_analysis = []
 
             system_info = json.loads(user_data[16]) if user_data[16] else {}
             locations = json.loads(user_data[17]) if user_data[17] else []
@@ -1040,6 +1543,7 @@ def user_logs(user_id):
                 downloaded_files=downloads,
                 web_activity=web_activity,
                 network_activity=network_activity,
+                packet_analysis=packet_analysis,
                 system_info=system_info,
                 locations=locations,
                 last_update=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -1056,7 +1560,7 @@ def update_activity(user_id):
     try:
         data = request.json
         
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username, usb_count FROM user_data WHERE user_id = ?", (user_id,))
         user = c.fetchone()
@@ -1083,7 +1587,8 @@ def update_activity(user_id):
                 logout_time = ?,
                 system_info = ?,
                 usb_count = ?,
-                login_duration = ?
+                login_duration = ?,
+                risk_score = ?
             WHERE user_id = ?
         """, (
             data.get("logs", "[]"),
@@ -1093,6 +1598,7 @@ def update_activity(user_id):
             data.get("system_info", "{}"),
             data.get("usb_count", 0),
             login_duration_sec,
+            user_risk_scores.get(user_id, 0),
             user_id
         ))
         conn.commit()
@@ -1116,7 +1622,7 @@ def webcam(user_id):
     if 'admin_logged_in' not in session:
         return redirect(url_for('login'))
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username, pc_name FROM user_data WHERE user_id = ?", (user_id,))
         user = c.fetchone()
@@ -1135,7 +1641,7 @@ def get_user_media(media_type, user_id):
         return jsonify({"error": "Unauthorized"}), 401
     
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         user = c.fetchone()
@@ -1159,7 +1665,7 @@ def view_media(media_type, user_id, filename):
     if 'admin_logged_in' not in session:
         return "Unauthorized", 401
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         user = c.fetchone()
@@ -1198,7 +1704,7 @@ def overall_network_usage():
 @app.route("/create_shared_folder/<user_id>", methods=["POST"])
 def create_shared_folder(user_id):
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         result = c.fetchone()
@@ -1213,8 +1719,12 @@ def create_shared_folder(user_id):
         access_file = os.path.join(shared_folder, "file_access.txt")
         if not os.path.exists(access_file):
             with open(access_file, 'w') as f:
-                f.write("read:False\nwrite:False\n")
+                f.write("read:True\nwrite:True\n")  # Default to enabled for testing
         
+        try:
+            log_file_access(username, "create_shared_folder", {})
+        except Exception as _:
+            pass
         return jsonify({"status": "folder_created"})
     except Exception as e:
         logger.error(f"Error creating shared folder: {e}")
@@ -1226,7 +1736,7 @@ def create_shared_folder(user_id):
 def update_file_access(user_id):
     try:
         data = request.json
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         result = c.fetchone()
@@ -1239,6 +1749,10 @@ def update_file_access(user_id):
         with open(access_file, 'w') as f:
             f.write(f"read:{data.get('read', False)}\n")
             f.write(f"write:{data.get('write', False)}\n")
+        try:
+            log_file_access(username, "update_file_access", {"read": data.get('read', False), "write": data.get('write', False)})
+        except Exception as _:
+            pass
         
         return jsonify({"status": "access_updated"})
     except Exception as e:
@@ -1247,57 +1761,81 @@ def update_file_access(user_id):
     finally:
         conn.close()
 
-@app.route("/get_file_access/<user_id>", methods=["GET"])
-def get_file_access(user_id):
+def check_file_access(user_id):
+    """Helper function to check file access permissions for a user"""
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         result = c.fetchone()
         
         if not result:
-            return jsonify({"error": "User not found"}), 404
-            
+            return None, None
+        
         username = result[0]
-        access_file = os.path.join(get_user_folder(username), "shared", "file_access.txt")
-        access = {"read": False, "write": False}
+        shared_folder = os.path.join(get_user_folder(username), "shared")
+        os.makedirs(shared_folder, exist_ok=True)
+        
+        access_file = os.path.join(shared_folder, "file_access.txt")
+        access = {"read": True, "write": True}  # Default to enabled
         
         if os.path.exists(access_file):
-            with open(access_file, 'r') as f:
-                for line in f:
-                    if line.startswith("read:"):
-                        access["read"] = line.split(":")[1].strip().lower() == "true"
-                    elif line.startswith("write:"):
-                        access["write"] = line.split(":")[1].strip().lower() == "true"
+            try:
+                with open(access_file, 'r') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line.startswith("read:"):
+                            access["read"] = line.split(":")[1].strip().lower() == "true"
+                        elif line.startswith("write:"):
+                            access["write"] = line.split(":")[1].strip().lower() == "true"
+            except Exception as e:
+                logger.error(f"Error reading access file: {e}")
+        else:
+            # Create default access file
+            with open(access_file, 'w') as f:
+                f.write("read:True\nwrite:True\n")
         
+        conn.close()
+        return access, username
+    except Exception as e:
+        logger.error(f"Error checking file access: {e}")
+        if 'conn' in locals():
+            conn.close()
+        return None, None
+
+@app.route("/get_file_access/<user_id>", methods=["GET"])
+def get_file_access(user_id):
+    try:
+        access, username = check_file_access(user_id)
+        if not access or not username:
+            return jsonify({"error": "User not found"}), 404
+        
+        try:
+            log_file_access(username, "get_file_access", access)
+        except Exception as e:
+            logger.error(f"Error logging file access: {e}")
         return jsonify(access)
     except Exception as e:
         logger.error(f"Error getting file access: {e}")
         return jsonify({"error": str(e)}), 500
-    finally:
-        conn.close()
 
 @app.route("/list_shared_files/<user_id>", methods=["GET"])
 def list_shared_files(user_id):
     try:
-        conn = sqlite3.connect("users.db")
-        c = conn.cursor()
-        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
-        result = c.fetchone()
-        
-        if not result:
+        # Check file access permissions
+        access, username = check_file_access(user_id)
+        if not access or not username:
             return jsonify({"error": "User not found"}), 404
-            
-        username = result[0]
+        
+        # Check read permission
+        if not access.get("read", False):
+            logger.warning(f"User {username} (ID: {user_id}) attempted to list files without read permission")
+            return jsonify({"error": "Read access denied"}), 403
+        
         shared_folder = os.path.join(get_user_folder(username), "shared")
         files = []
         
         os.makedirs(shared_folder, exist_ok=True)
-        
-        access_file = os.path.join(shared_folder, "file_access.txt")
-        if not os.path.exists(access_file):
-            with open(access_file, 'w') as f:
-                f.write("read:False\nwrite:False\n")
         
         for f in os.listdir(shared_folder):
             if f != "file_access.txt" and os.path.isfile(os.path.join(shared_folder, f)):
@@ -1308,74 +1846,96 @@ def list_shared_files(user_id):
                     "modified": datetime.fromtimestamp(stat.st_mtime).isoformat()
                 })
         
+        # Log listing action (summary only)
+        try:
+            log_file_access(username, "list_shared_files", {"count": len(files)})
+        except Exception as _:
+            pass
         return jsonify({"files": files})
     except Exception as e:
         logger.error(f"Error listing shared files: {e}")
         return jsonify({"error": str(e)}), 500
-    finally:
-        conn.close()
 
 @app.route("/upload_file/<user_id>", methods=["POST"])
 def upload_file(user_id):
     try:
-        conn = sqlite3.connect("users.db")
-        c = conn.cursor()
-        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
-        result = c.fetchone()
-        
-        if not result:
+        # Check file access permissions
+        access, username = check_file_access(user_id)
+        if not access or not username:
             return jsonify({"error": "User not found"}), 404
+        
+        # Check write permission
+        if not access.get("write", False):
+            logger.warning(f"User {username} (ID: {user_id}) attempted to upload file without write permission")
+            return jsonify({"error": "Write access denied"}), 403
             
-        username = result[0]
         shared_folder = os.path.join(get_user_folder(username), "shared")
         os.makedirs(shared_folder, exist_ok=True)
         
-        if 'file' not in request.files:
-            return jsonify({"error": "No file part"}), 400
+        # Handle multiple files
+        uploaded_files = []
+        if 'file' in request.files:
+            files = request.files.getlist('file')
+            if not files or all(f.filename == '' for f in files):
+                return jsonify({"error": "No files selected"}), 400
+                
+            for file in files:
+                if file and file.filename:
+                    filename = secure_filename(file.filename)
+                    if filename:  # Ensure filename is not empty after sanitization
+                        file_path = os.path.join(shared_folder, filename)
+                        file.save(file_path)
+                        file_size = os.path.getsize(file_path)
+                        uploaded_files.append({"filename": filename, "size": file_size})
+                        try:
+                            log_file_access(username, "upload", {"filename": filename, "size": file_size})
+                        except Exception as e:
+                            logger.error(f"Error logging file access: {e}")
+        
+        if not uploaded_files:
+            return jsonify({"error": "No valid files uploaded"}), 400
             
-        file = request.files['file']
-        if file.filename == '':
-            return jsonify({"error": "No selected file"}), 400
-            
-        if file:
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(shared_folder, filename))
-            return jsonify({"status": "file_uploaded", "filename": filename})
+        return jsonify({
+            "status": "files_uploaded", 
+            "uploaded_files": uploaded_files,
+            "count": len(uploaded_files)
+        })
     except Exception as e:
         logger.error(f"Error uploading file: {e}")
         return jsonify({"error": str(e)}), 500
-    finally:
-        conn.close()
 
 @app.route("/download_file/<user_id>/<filename>", methods=["GET"])
 def download_file(user_id, filename):
     try:
-        conn = sqlite3.connect("users.db")
-        c = conn.cursor()
-        c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
-        result = c.fetchone()
-        
-        if not result:
+        # Check file access permissions
+        access, username = check_file_access(user_id)
+        if not access or not username:
             return jsonify({"error": "User not found"}), 404
+        
+        # Check read permission
+        if not access.get("read", False):
+            logger.warning(f"User {username} (ID: {user_id}) attempted to download file '{filename}' without read permission")
+            return jsonify({"error": "Read access denied"}), 403
             
-        username = result[0]
         shared_folder = os.path.join(get_user_folder(username), "shared")
         file_path = os.path.join(shared_folder, secure_filename(filename))
         
         if not os.path.exists(file_path):
             return jsonify({"error": "File not found"}), 404
             
+        try:
+            log_file_access(username, "download", {"filename": filename, "size": os.path.getsize(file_path)})
+        except Exception as _:
+            pass
         return send_file(file_path, as_attachment=True)
     except Exception as e:
         logger.error(f"Error downloading file: {e}")
         return jsonify({"error": str(e)}), 500
-    finally:
-        conn.close()
 
 @app.route("/delete_file/<user_id>/<filename>", methods=["DELETE"])
 def delete_file(user_id, filename):
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         result = c.fetchone()
@@ -1391,6 +1951,10 @@ def delete_file(user_id, filename):
             return jsonify({"error": "File not found"}), 404
             
         os.remove(file_path)
+        try:
+            log_file_access(username, "delete", {"filename": filename})
+        except Exception as _:
+            pass
         return jsonify({"status": "file_deleted"})
     except Exception as e:
         logger.error(f"Error deleting file: {e}")
@@ -1398,10 +1962,15 @@ def delete_file(user_id, filename):
     finally:
         conn.close()
 
+@app.route("/debug_file_manager")
+def debug_file_manager():
+    """Debug page for file manager issues"""
+    return render_template("debug_file_manager.html")
+
 @app.route("/file_manager/<user_id>")
 def file_manager(user_id):
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username, pc_name FROM user_data WHERE user_id = ?", (user_id,))
         user = c.fetchone()
@@ -1469,7 +2038,7 @@ def handle_save_capture(data):
     
     conn = None
     try:
-        conn = sqlite3.connect("users.db")
+        conn = sqlite3.connect("../users.db")
         c = conn.cursor()
         c.execute("SELECT username FROM user_data WHERE user_id = ?", (user_id,))
         user = c.fetchone()
@@ -1524,4 +2093,4 @@ def handle_disconnect():
         logger.info(f"Admin {admin_sid} disconnected, stopped watching {user_id}")
 
 if __name__ == "__main__":
-    socketio.run(app, host="0.0.0.0", port=5000, debug=True, allow_unsafe_werkzeug=True)
+    socketio.run(app, host="0.0.0.0", port=5000, debug=True)
